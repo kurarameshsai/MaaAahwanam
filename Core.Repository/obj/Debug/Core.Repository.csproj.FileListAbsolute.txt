@@ -1,0 +1,5 @@
+D:\Maa-Backup 2.0\Maa-Aahwanam\Core.Repository\bin\Debug\Core.Repository.dll
+D:\Maa-Backup 2.0\Maa-Aahwanam\Core.Repository\bin\Debug\Core.Repository.pdb
+D:\Maa-Backup 2.0\Maa-Aahwanam\Core.Repository\obj\Debug\Core.Repository.csprojResolveAssemblyReference.cache
+D:\Maa-Backup 2.0\Maa-Aahwanam\Core.Repository\obj\Debug\Core.Repository.dll
+D:\Maa-Backup 2.0\Maa-Aahwanam\Core.Repository\obj\Debug\Core.Repository.pdb

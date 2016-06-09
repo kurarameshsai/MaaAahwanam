@@ -1,0 +1,4 @@
+D:\Maa-Backup 2.0\Maa-Aahwanam\Portal.Repository\bin\Debug\Portal.Repository.dll
+D:\Maa-Backup 2.0\Maa-Aahwanam\Portal.Repository\bin\Debug\Portal.Repository.pdb
+D:\Maa-Backup 2.0\Maa-Aahwanam\Portal.Repository\obj\Debug\Portal.Repository.dll
+D:\Maa-Backup 2.0\Maa-Aahwanam\Portal.Repository\obj\Debug\Portal.Repository.pdb
