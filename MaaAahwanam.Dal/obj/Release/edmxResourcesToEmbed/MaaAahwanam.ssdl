@@ -1,0 +1,1327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="MA_Admin_BiddingRequest">
+    <Key>
+      <PropertyRef Name="BidID" />
+    </Key>
+    <Property Name="BidID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EventID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Amount" Type="decimal" Precision="30" Scale="5" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MA_Admin_giftdesigns_multipleimages">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="giftid" Type="int" Nullable="false" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="Imageid" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="MA_Admin_Invitationdesigns_multiimages">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Invitaitonid" Type="int" Nullable="false" />
+    <Property Name="image" Type="nvarchar(max)" />
+    <Property Name="imageid" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="MA_Admin_QuotationRequest">
+    <Key>
+      <PropertyRef Name="QuoteID" />
+    </Key>
+    <Property Name="QuoteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RequestID" Type="int" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Amount" Type="decimal" Precision="30" Scale="5" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MA_Admin_Testimonials">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Createdby" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MA_Admin_TestimonialsPath">
+    <Key>
+      <PropertyRef Name="PathID" />
+    </Key>
+    <Property Name="PathID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" />
+    <Property Name="ImagePath" Type="nvarchar(max)" />
+    <Property Name="VideoPath" Type="nvarchar(max)" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MA_Bidding_Orders">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderID" Type="int" Nullable="false" />
+    <Property Name="BidID" Type="int" />
+    <Property Name="EventID" Type="int" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="PricePerQty" Type="decimal" Precision="30" Scale="5" />
+    <Property Name="AmountPaid" Type="decimal" Precision="30" Scale="5" />
+    <Property Name="TotalPrice" Type="decimal" Precision="30" Scale="5" />
+    <Property Name="ServiceName" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="VendorId" Type="int" />
+  </EntityType>
+  <EntityType Name="MA_BookNow_Orders">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderID" Type="int" Nullable="false" />
+    <Property Name="VendorPackageId" Type="int" />
+    <Property Name="EventID" Type="int" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="PricePerQty" Type="decimal" Precision="30" Scale="5" />
+    <Property Name="AmountPaid" Type="decimal" Precision="30" Scale="5" />
+    <Property Name="TotalPrice" Type="decimal" Precision="30" Scale="5" />
+    <Property Name="ServiceName" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="VendorId" Type="int" />
+  </EntityType>
+  <EntityType Name="MA_Budgets_QuotationRequest">
+    <Key>
+      <PropertyRef Name="RequestID" />
+    </Key>
+    <Property Name="RequestID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EventID" Type="int" />
+    <Property Name="Budget" Type="decimal" Precision="30" Scale="5" />
+  </EntityType>
+  <EntityType Name="MA_CartAddressbook">
+    <Key>
+      <PropertyRef Name="AddressBookID" />
+    </Key>
+    <Property Name="AddressBookID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CarttItemID" Type="int" />
+    <Property Name="VendorID" Type="int" />
+    <Property Name="EventID" Type="int" />
+    <Property Name="SoftCopy" Type="int" />
+    <Property Name="SoftCopyAddressBooks" Type="nvarchar(max)" />
+    <Property Name="SoftCopyPrice" Type="decimal" Precision="30" Scale="5" />
+    <Property Name="HardCopy" Type="int" />
+    <Property Name="HardCopyAddressBooks" Type="nvarchar(max)" />
+    <Property Name="HardCopyPrice" Type="decimal" Precision="30" Scale="5" />
+    <Property Name="Premium" Type="int" />
+    <Property Name="PremiumAddressBooks" Type="nvarchar(max)" />
+    <Property Name="PremiumPrice" Type="decimal" Precision="30" Scale="5" />
+  </EntityType>
+  <EntityType Name="MA_CartItems_Master">
+    <Key>
+      <PropertyRef Name="CartItemID" />
+    </Key>
+    <Property Name="CartItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="EventID" Type="int" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="PricePerQty" Type="decimal" Precision="30" Scale="5" />
+    <Property Name="TotalPrice" Type="decimal" Precision="30" Scale="5" />
+    <Property Name="ServiceName" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="VendorID" Type="int" />
+  </EntityType>
+  <EntityType Name="MA_CommentDetails">
+    <Key>
+      <PropertyRef Name="CommentDetId" />
+    </Key>
+    <Property Name="CommentDetId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CommentId" Type="int" Nullable="false" />
+    <Property Name="UserLoginId" Type="int" Nullable="false" />
+    <Property Name="CommentDetails" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CommentDate" Type="date" />
+    <Property Name="AttachFileName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MA_Comments">
+    <Key>
+      <PropertyRef Name="CommentId" />
+    </Key>
+    <Property Name="CommentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceId" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceType" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MA_Enquiry">
+    <Key>
+      <PropertyRef Name="EnquiryId" />
+    </Key>
+    <Property Name="EnquiryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PersonName" Type="nvarchar" MaxLength="50" />
+    <Property Name="SenderEmailId" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SenderPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="EnquiryTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="EnquiryDetails" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="EnquiryDate" Type="date" Nullable="false" />
+    <Property Name="EnquiryStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" MaxLength="100" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MA_EventDates">
+    <Key>
+      <PropertyRef Name="EventDatesID" />
+    </Key>
+    <Property Name="EventDatesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EventID" Type="int" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="StartTime" Type="nvarchar" MaxLength="30" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="EndTime" Type="nvarchar" MaxLength="30" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="MA_Events_Master">
+    <Key>
+      <PropertyRef Name="EventID" />
+    </Key>
+    <Property Name="EventID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EventName" Type="nvarchar" MaxLength="500" />
+    <Property Name="ServiceType" Type="nvarchar" MaxLength="500" />
+    <Property Name="Preferences" Type="nvarchar(max)" />
+    <Property Name="EventAddress" Type="nvarchar" MaxLength="500" />
+    <Property Name="EventLocation" Type="nvarchar" MaxLength="100" />
+    <Property Name="State" Type="nvarchar" MaxLength="100" />
+    <Property Name="City" Type="nvarchar" MaxLength="100" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="ServiceFrom" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="MA_EventsandTips">
+    <Key>
+      <PropertyRef Name="EventID" />
+    </Key>
+    <Property Name="EventID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" />
+    <Property Name="Description" Type="nvarchar" MaxLength="800" />
+    <Property Name="location" Type="nvarchar" MaxLength="500" />
+    <Property Name="image" Type="nvarchar(max)" />
+    <Property Name="phone" Type="nvarchar" MaxLength="100" />
+    <Property Name="price" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="person" Type="nvarchar" MaxLength="500" />
+    <Property Name="Type" Type="nvarchar" MaxLength="500" />
+    <Property Name="link" Type="nvarchar" MaxLength="800" />
+    <Property Name="Eventstartdate" Type="datetime" />
+    <Property Name="Eventenddate" Type="datetime" />
+    <Property Name="Imageid" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="MA_ExceptionLogs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExceptionType" Type="nvarchar(max)" />
+    <Property Name="ErrorMessage" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UrlPattern" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="LogType" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="IPAddress" Type="nvarchar" MaxLength="100" />
+    <Property Name="Browsertype" Type="nvarchar(max)" />
+    <Property Name="URL" Type="nvarchar(max)" />
+    <Property Name="usertype" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MA_ForgotPassword">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserLoginId" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ReqRaised" Type="bit" Nullable="false" />
+    <Property Name="RaisedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MA_GiftDesign_Orders">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderID" Type="int" Nullable="false" />
+    <Property Name="GiftID" Type="int" />
+    <Property Name="EventID" Type="int" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="PricePerQty" Type="decimal" Precision="30" Scale="5" />
+    <Property Name="AmountPaid" Type="decimal" Precision="30" Scale="5" />
+    <Property Name="TotalPrice" Type="decimal" Precision="30" Scale="5" />
+    <Property Name="ServiceName" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="VendorId" Type="int" />
+  </EntityType>
+  <EntityType Name="MA_Giftdesigns">
+    <Key>
+      <PropertyRef Name="Giftid" />
+    </Key>
+    <Property Name="Giftid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category" Type="nvarchar" MaxLength="100" />
+    <Property Name="Giftname" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Image" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageId" Type="nvarchar(max)" />
+    <Property Name="GiftCost" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="VendorId" Type="int" />
+  </EntityType>
+  <EntityType Name="MA_Invi_Designs">
+    <Key>
+      <PropertyRef Name="DesignId" />
+    </Key>
+    <Property Name="DesignId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category" Type="nvarchar" MaxLength="50" />
+    <Property Name="DesignName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Image" Type="nvarchar" MaxLength="50" />
+    <Property Name="ImageId" Type="nvarchar(max)" />
+    <Property Name="CardCost" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="VendorId" Type="int" />
+  </EntityType>
+  <EntityType Name="MA_InviDesignPrices">
+    <Key>
+      <PropertyRef Name="PriceId" />
+    </Key>
+    <Property Name="PriceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DesignId" Type="int" Nullable="false" />
+    <Property Name="EmailCost" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SmsCost" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PostCost" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PremiumCost" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="MA_Invitation_Orders">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderID" Type="int" Nullable="false" />
+    <Property Name="DesignID" Type="int" />
+    <Property Name="EventID" Type="int" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="PricePerQty" Type="decimal" Precision="30" Scale="5" />
+    <Property Name="AmountPaid" Type="decimal" Precision="30" Scale="5" />
+    <Property Name="TotalPrice" Type="decimal" Precision="30" Scale="5" />
+    <Property Name="ServiceName" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="VendorId" Type="int" />
+  </EntityType>
+  <EntityType Name="MA_Issue_Details">
+    <Key>
+      <PropertyRef Name="Ticket_Commu_Id" />
+    </Key>
+    <Property Name="Ticket_Commu_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ticket_Id" Type="int" Nullable="false" />
+    <Property Name="Msg" Type="varchar(max)" />
+    <Property Name="RepliedBy" Type="varchar" MaxLength="50" />
+    <Property Name="ReplayedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MA_IssueTickets">
+    <Key>
+      <PropertyRef Name="Ticket_Id" />
+    </Key>
+    <Property Name="Ticket_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserLoginId" Type="int" />
+    <Property Name="Order_Id" Type="int" />
+    <Property Name="Issue_Type" Type="varchar(max)" />
+    <Property Name="Subject" Type="varchar(max)" />
+    <Property Name="Severity" Type="varchar" MaxLength="50" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Status" Type="varchar(max)" />
+    <Property Name="ClosedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MA_Orders_Master">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderAmt" Type="decimal" Precision="30" Scale="5" Nullable="false" />
+    <Property Name="DiscountAmt" Type="decimal" Precision="30" Scale="5" />
+    <Property Name="TotalTaxAmt" Type="decimal" Precision="30" Scale="5" />
+    <Property Name="Tax" Type="decimal" Precision="30" Scale="5" />
+    <Property Name="PaidAmount" Type="decimal" Precision="30" Scale="5" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MA_Payment_Carddetails">
+    <Key>
+      <PropertyRef Name="CardID" />
+    </Key>
+    <Property Name="CardID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderID" Type="int" Nullable="false" />
+    <Property Name="Nameoncard" Type="nvarchar" MaxLength="500" />
+    <Property Name="CardType" Type="nvarchar" MaxLength="50" />
+    <Property Name="CardNumber" Type="nvarchar" MaxLength="100" />
+    <Property Name="ExpiryDate" Type="datetime" />
+    <Property Name="SecurityCode" Type="int" />
+    <Property Name="BankName" Type="nvarchar" MaxLength="500" />
+    <Property Name="TypeofPayment" Type="nvarchar" MaxLength="500" />
+    <Property Name="AmountPaid" Type="decimal" Precision="30" Scale="5" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MA_Quotation_Orders">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderID" Type="int" Nullable="false" />
+    <Property Name="QuoteID" Type="int" />
+    <Property Name="EventID" Type="int" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="PricePerQty" Type="decimal" Precision="30" Scale="5" />
+    <Property Name="AmountPaid" Type="decimal" Precision="30" Scale="5" />
+    <Property Name="TotalPrice" Type="decimal" Precision="30" Scale="5" />
+    <Property Name="ServiceName" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MA_Quotation_Vendors">
+    <Key>
+      <PropertyRef Name="MultipleVendorID" />
+    </Key>
+    <Property Name="MultipleVendorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QuoteID" Type="int" />
+    <Property Name="VendorID" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MA_Reviews">
+    <Key>
+      <PropertyRef Name="ReviewID" />
+    </Key>
+    <Property Name="ReviewID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="500" />
+    <Property Name="EmailID" Type="nvarchar" MaxLength="100" />
+    <Property Name="Comments" Type="nvarchar(max)" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MA_SavedCardDetails">
+    <Key>
+      <PropertyRef Name="CardID" />
+    </Key>
+    <Property Name="CardID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nameoncard" Type="nvarchar" MaxLength="500" />
+    <Property Name="CardType" Type="nvarchar" MaxLength="50" />
+    <Property Name="CardNumber" Type="nvarchar" MaxLength="100" />
+    <Property Name="ExpiryDate" Type="datetime" />
+    <Property Name="SecurityCode" Type="int" />
+    <Property Name="BankName" Type="nvarchar" MaxLength="500" />
+    <Property Name="TypeofPayment" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatdDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MA_SiteFaq">
+    <Key>
+      <PropertyRef Name="FaqId" />
+    </Key>
+    <Property Name="FaqId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+    <Property Name="Question" Type="varchar(max)" />
+    <Property Name="Answer" Type="varchar(max)" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="MA_Subscription">
+    <Key>
+      <PropertyRef Name="SubscriptionId" />
+    </Key>
+    <Property Name="SubscriptionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmailId" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Status" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="MA_User_AddBook">
+    <Key>
+      <PropertyRef Name="AddBookId" />
+    </Key>
+    <Property Name="AddBookId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserLoginId" Type="int" Nullable="false" />
+    <Property Name="PersonName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PersonAddress" Type="nvarchar" MaxLength="100" />
+    <Property Name="PersonLocation" Type="nvarchar" MaxLength="100" />
+    <Property Name="PersonCity" Type="nvarchar" MaxLength="50" />
+    <Property Name="PersonPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="PersonEmail" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="MA_User_Details">
+    <Key>
+      <PropertyRef Name="UserDetailId" />
+    </Key>
+    <Property Name="UserDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserLoginId" Type="int" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserPhone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Url" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="State" Type="nvarchar" MaxLength="50" />
+    <Property Name="ZipCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="UserImgId" Type="nvarchar(max)" />
+    <Property Name="UserImgName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MA_User_Login">
+    <Key>
+      <PropertyRef Name="UserLoginId" />
+    </Key>
+    <Property Name="UserLoginId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="UserType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RegDate" Type="datetime" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MA_User_Vendor">
+    <Key>
+      <PropertyRef Name="UserBusiId" />
+    </Key>
+    <Property Name="UserBusiId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserLoginId" Type="int" Nullable="false" />
+    <Property Name="BusinessName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="BusinessDesc" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BusinessEstDate" Type="date" />
+    <Property Name="BusinessPhone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="BusinessPhLand" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="BusinessAddress" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="BusinessLocation" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="BusinessCity" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="BusinessState" Type="nvarchar" MaxLength="50" />
+    <Property Name="BusinessZIP" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ServiceType" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Experience" Type="int" />
+    <Property Name="BusinessUrl" Type="nvarchar" MaxLength="50" />
+    <Property Name="BusinessStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="BusinessEmail" Type="nvarchar" MaxLength="50" />
+    <Property Name="Requestdate" Type="datetime" />
+    <Property Name="TermsandConditions" Type="varchar(max)" />
+    <Property Name="BookNow" Type="bit" />
+    <Property Name="Quotation" Type="bit" />
+    <Property Name="Bidding" Type="bit" />
+  </EntityType>
+  <EntityType Name="MA_UserLogInTimings">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MA_Vendor_Aminities">
+    <Key>
+      <PropertyRef Name="UserBusiAminitiesId" />
+    </Key>
+    <Property Name="UserBusiAminitiesId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserBusiId" Type="int" Nullable="false" />
+    <Property Name="UserAminitiesType" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="MA_Vendor_Images">
+    <Key>
+      <PropertyRef Name="UserBusiImageId" />
+    </Key>
+    <Property Name="UserBusiImageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserBusiId" Type="int" Nullable="false" />
+    <Property Name="UserImgId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ImageName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ImageType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MA_Vendor_Packages">
+    <Key>
+      <PropertyRef Name="VendorPackageId" />
+    </Key>
+    <Property Name="VendorPackageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserBusiId" Type="int" Nullable="false" />
+    <Property Name="Packagename" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="PackageDesc" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="PackageStartDate" Type="date" Nullable="false" />
+    <Property Name="PackageEndDate" Type="date" Nullable="false" />
+    <Property Name="actualamount" Type="decimal" Precision="30" Scale="5" />
+    <Property Name="sellingamount" Type="decimal" Precision="30" Scale="5" />
+    <Property Name="dealamount" Type="decimal" Precision="30" Scale="5" />
+    <Property Name="discount" Type="decimal" Precision="30" Scale="5" />
+    <Property Name="createdby" Type="int" />
+    <Property Name="createddate" Type="datetime" />
+    <Property Name="updatedby" Type="int" />
+    <Property Name="updateddate" Type="datetime" />
+    <Property Name="tax" Type="decimal" Precision="30" Scale="5" />
+  </EntityType>
+  <EntityType Name="MA_VendorPayments">
+    <Key>
+      <PropertyRef Name="VendorPaymentId" />
+    </Key>
+    <Property Name="VendorPaymentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserBusiId" Type="int" />
+    <Property Name="PaidAmt" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="PaidDate" Type="datetime" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_MA_Admin_BiddingRequest_MA_Events_Master">
+    <End Role="MA_Events_Master" Type="Self.MA_Events_Master" Multiplicity="1" />
+    <End Role="MA_Admin_BiddingRequest" Type="Self.MA_Admin_BiddingRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_Events_Master">
+        <PropertyRef Name="EventID" />
+      </Principal>
+      <Dependent Role="MA_Admin_BiddingRequest">
+        <PropertyRef Name="EventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_Admin_giftdesigns_multipleimages_MA_Giftdesigns">
+    <End Role="MA_Giftdesigns" Type="Self.MA_Giftdesigns" Multiplicity="1" />
+    <End Role="MA_Admin_giftdesigns_multipleimages" Type="Self.MA_Admin_giftdesigns_multipleimages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_Giftdesigns">
+        <PropertyRef Name="Giftid" />
+      </Principal>
+      <Dependent Role="MA_Admin_giftdesigns_multipleimages">
+        <PropertyRef Name="giftid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_Admin_Invitationdesigns_multiimages_MA_Invi_Designs">
+    <End Role="MA_Invi_Designs" Type="Self.MA_Invi_Designs" Multiplicity="1" />
+    <End Role="MA_Admin_Invitationdesigns_multiimages" Type="Self.MA_Admin_Invitationdesigns_multiimages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_Invi_Designs">
+        <PropertyRef Name="DesignId" />
+      </Principal>
+      <Dependent Role="MA_Admin_Invitationdesigns_multiimages">
+        <PropertyRef Name="Invitaitonid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_Admin_QuotationRequest_MA_Budgets_QuotationRequest">
+    <End Role="MA_Budgets_QuotationRequest" Type="Self.MA_Budgets_QuotationRequest" Multiplicity="0..1" />
+    <End Role="MA_Admin_QuotationRequest" Type="Self.MA_Admin_QuotationRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_Budgets_QuotationRequest">
+        <PropertyRef Name="RequestID" />
+      </Principal>
+      <Dependent Role="MA_Admin_QuotationRequest">
+        <PropertyRef Name="RequestID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_Admin_TestimonialsPath_MA_Admin_Testimonials">
+    <End Role="MA_Admin_Testimonials" Type="Self.MA_Admin_Testimonials" Multiplicity="0..1" />
+    <End Role="MA_Admin_TestimonialsPath" Type="Self.MA_Admin_TestimonialsPath" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_Admin_Testimonials">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MA_Admin_TestimonialsPath">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_Bidding_Orders_MA_Admin_BiddingRequest">
+    <End Role="MA_Events_Master" Type="Self.MA_Events_Master" Multiplicity="0..1" />
+    <End Role="MA_Bidding_Orders" Type="Self.MA_Bidding_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_Events_Master">
+        <PropertyRef Name="EventID" />
+      </Principal>
+      <Dependent Role="MA_Bidding_Orders">
+        <PropertyRef Name="EventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_Bidding_Orders_MA_Admin_BiddingRequest1">
+    <End Role="MA_Admin_BiddingRequest" Type="Self.MA_Admin_BiddingRequest" Multiplicity="0..1" />
+    <End Role="MA_Bidding_Orders" Type="Self.MA_Bidding_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_Admin_BiddingRequest">
+        <PropertyRef Name="BidID" />
+      </Principal>
+      <Dependent Role="MA_Bidding_Orders">
+        <PropertyRef Name="BidID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_Bidding_Orders_MA_Orders_Master">
+    <End Role="MA_Orders_Master" Type="Self.MA_Orders_Master" Multiplicity="1" />
+    <End Role="MA_Bidding_Orders" Type="Self.MA_Bidding_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_Orders_Master">
+        <PropertyRef Name="OrderId" />
+      </Principal>
+      <Dependent Role="MA_Bidding_Orders">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_BookNow_Orders_MA_Events_Master">
+    <End Role="MA_Events_Master" Type="Self.MA_Events_Master" Multiplicity="0..1" />
+    <End Role="MA_BookNow_Orders" Type="Self.MA_BookNow_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_Events_Master">
+        <PropertyRef Name="EventID" />
+      </Principal>
+      <Dependent Role="MA_BookNow_Orders">
+        <PropertyRef Name="EventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_BookNow_Orders_MA_Orders_Master">
+    <End Role="MA_Orders_Master" Type="Self.MA_Orders_Master" Multiplicity="1" />
+    <End Role="MA_BookNow_Orders" Type="Self.MA_BookNow_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_Orders_Master">
+        <PropertyRef Name="OrderId" />
+      </Principal>
+      <Dependent Role="MA_BookNow_Orders">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_BookNow_Orders_MA_Vendor_Packages">
+    <End Role="MA_Vendor_Packages" Type="Self.MA_Vendor_Packages" Multiplicity="0..1" />
+    <End Role="MA_BookNow_Orders" Type="Self.MA_BookNow_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_Vendor_Packages">
+        <PropertyRef Name="VendorPackageId" />
+      </Principal>
+      <Dependent Role="MA_BookNow_Orders">
+        <PropertyRef Name="VendorPackageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_Budgets_QuotationRequest_MA_Events_Master">
+    <End Role="MA_Events_Master" Type="Self.MA_Events_Master" Multiplicity="0..1" />
+    <End Role="MA_Budgets_QuotationRequest" Type="Self.MA_Budgets_QuotationRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_Events_Master">
+        <PropertyRef Name="EventID" />
+      </Principal>
+      <Dependent Role="MA_Budgets_QuotationRequest">
+        <PropertyRef Name="EventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_CartAddressbook_MA_Events_Master">
+    <End Role="MA_Events_Master" Type="Self.MA_Events_Master" Multiplicity="0..1" />
+    <End Role="MA_CartAddressbook" Type="Self.MA_CartAddressbook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_Events_Master">
+        <PropertyRef Name="EventID" />
+      </Principal>
+      <Dependent Role="MA_CartAddressbook">
+        <PropertyRef Name="EventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_CartItems_Master_MA_Events_Master">
+    <End Role="MA_Events_Master" Type="Self.MA_Events_Master" Multiplicity="0..1" />
+    <End Role="MA_CartItems_Master" Type="Self.MA_CartItems_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_Events_Master">
+        <PropertyRef Name="EventID" />
+      </Principal>
+      <Dependent Role="MA_CartItems_Master">
+        <PropertyRef Name="EventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_CommentDetails_MA_Comments">
+    <End Role="MA_Comments" Type="Self.MA_Comments" Multiplicity="1" />
+    <End Role="MA_CommentDetails" Type="Self.MA_CommentDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_Comments">
+        <PropertyRef Name="CommentId" />
+      </Principal>
+      <Dependent Role="MA_CommentDetails">
+        <PropertyRef Name="CommentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_EventDates_MA_Events_Master">
+    <End Role="MA_Events_Master" Type="Self.MA_Events_Master" Multiplicity="0..1" />
+    <End Role="MA_EventDates" Type="Self.MA_EventDates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_Events_Master">
+        <PropertyRef Name="EventID" />
+      </Principal>
+      <Dependent Role="MA_EventDates">
+        <PropertyRef Name="EventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_GiftDesign_Orders_MA_Events_Master">
+    <End Role="MA_Events_Master" Type="Self.MA_Events_Master" Multiplicity="0..1" />
+    <End Role="MA_GiftDesign_Orders" Type="Self.MA_GiftDesign_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_Events_Master">
+        <PropertyRef Name="EventID" />
+      </Principal>
+      <Dependent Role="MA_GiftDesign_Orders">
+        <PropertyRef Name="EventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_GiftDesign_Orders_MA_Giftdesigns">
+    <End Role="MA_Giftdesigns" Type="Self.MA_Giftdesigns" Multiplicity="0..1" />
+    <End Role="MA_GiftDesign_Orders" Type="Self.MA_GiftDesign_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_Giftdesigns">
+        <PropertyRef Name="Giftid" />
+      </Principal>
+      <Dependent Role="MA_GiftDesign_Orders">
+        <PropertyRef Name="GiftID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_GiftDesign_Orders_MA_Orders_Master">
+    <End Role="MA_Orders_Master" Type="Self.MA_Orders_Master" Multiplicity="1" />
+    <End Role="MA_GiftDesign_Orders" Type="Self.MA_GiftDesign_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_Orders_Master">
+        <PropertyRef Name="OrderId" />
+      </Principal>
+      <Dependent Role="MA_GiftDesign_Orders">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ma_Invi_Designs_MA_User_Login">
+    <End Role="MA_User_Login" Type="Self.MA_User_Login" Multiplicity="1" />
+    <End Role="MA_Invi_Designs" Type="Self.MA_Invi_Designs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_User_Login">
+        <PropertyRef Name="UserLoginId" />
+      </Principal>
+      <Dependent Role="MA_Invi_Designs">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_InviDesignPrices_MA_Invi_Designs">
+    <End Role="MA_Invi_Designs" Type="Self.MA_Invi_Designs" Multiplicity="1" />
+    <End Role="MA_InviDesignPrices" Type="Self.MA_InviDesignPrices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_Invi_Designs">
+        <PropertyRef Name="DesignId" />
+      </Principal>
+      <Dependent Role="MA_InviDesignPrices">
+        <PropertyRef Name="DesignId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_Invitation_Orders_MA_Events_Master">
+    <End Role="MA_Events_Master" Type="Self.MA_Events_Master" Multiplicity="0..1" />
+    <End Role="MA_Invitation_Orders" Type="Self.MA_Invitation_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_Events_Master">
+        <PropertyRef Name="EventID" />
+      </Principal>
+      <Dependent Role="MA_Invitation_Orders">
+        <PropertyRef Name="EventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_Invitation_Orders_MA_Invi_Designs">
+    <End Role="MA_Invi_Designs" Type="Self.MA_Invi_Designs" Multiplicity="0..1" />
+    <End Role="MA_Invitation_Orders" Type="Self.MA_Invitation_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_Invi_Designs">
+        <PropertyRef Name="DesignId" />
+      </Principal>
+      <Dependent Role="MA_Invitation_Orders">
+        <PropertyRef Name="DesignID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_Invitation_Orders_MA_Orders_Master">
+    <End Role="MA_Orders_Master" Type="Self.MA_Orders_Master" Multiplicity="1" />
+    <End Role="MA_Invitation_Orders" Type="Self.MA_Invitation_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_Orders_Master">
+        <PropertyRef Name="OrderId" />
+      </Principal>
+      <Dependent Role="MA_Invitation_Orders">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_Issue_Details_MA_IssueTickets">
+    <End Role="MA_IssueTickets" Type="Self.MA_IssueTickets" Multiplicity="1" />
+    <End Role="MA_Issue_Details" Type="Self.MA_Issue_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_IssueTickets">
+        <PropertyRef Name="Ticket_Id" />
+      </Principal>
+      <Dependent Role="MA_Issue_Details">
+        <PropertyRef Name="Ticket_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_IssueTickets_MA_User_Login">
+    <End Role="MA_User_Login" Type="Self.MA_User_Login" Multiplicity="0..1" />
+    <End Role="MA_IssueTickets" Type="Self.MA_IssueTickets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_User_Login">
+        <PropertyRef Name="UserLoginId" />
+      </Principal>
+      <Dependent Role="MA_IssueTickets">
+        <PropertyRef Name="UserLoginId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_Quotation_Orders_MA_Admin_QuotationRequest">
+    <End Role="MA_Admin_QuotationRequest" Type="Self.MA_Admin_QuotationRequest" Multiplicity="0..1" />
+    <End Role="MA_Quotation_Orders" Type="Self.MA_Quotation_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_Admin_QuotationRequest">
+        <PropertyRef Name="QuoteID" />
+      </Principal>
+      <Dependent Role="MA_Quotation_Orders">
+        <PropertyRef Name="QuoteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_Quotation_Orders_MA_Events_Master">
+    <End Role="MA_Events_Master" Type="Self.MA_Events_Master" Multiplicity="0..1" />
+    <End Role="MA_Quotation_Orders" Type="Self.MA_Quotation_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_Events_Master">
+        <PropertyRef Name="EventID" />
+      </Principal>
+      <Dependent Role="MA_Quotation_Orders">
+        <PropertyRef Name="EventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_Quotation_Orders_MA_Orders_Master">
+    <End Role="MA_Orders_Master" Type="Self.MA_Orders_Master" Multiplicity="1" />
+    <End Role="MA_Quotation_Orders" Type="Self.MA_Quotation_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_Orders_Master">
+        <PropertyRef Name="OrderId" />
+      </Principal>
+      <Dependent Role="MA_Quotation_Orders">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_Quotation_Vendors_MA_Admin_QuotationRequest">
+    <End Role="MA_Admin_QuotationRequest" Type="Self.MA_Admin_QuotationRequest" Multiplicity="0..1" />
+    <End Role="MA_Quotation_Vendors" Type="Self.MA_Quotation_Vendors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_Admin_QuotationRequest">
+        <PropertyRef Name="QuoteID" />
+      </Principal>
+      <Dependent Role="MA_Quotation_Vendors">
+        <PropertyRef Name="QuoteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_User_AddBook_MA_User_Login">
+    <End Role="MA_User_Login" Type="Self.MA_User_Login" Multiplicity="1" />
+    <End Role="MA_User_AddBook" Type="Self.MA_User_AddBook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_User_Login">
+        <PropertyRef Name="UserLoginId" />
+      </Principal>
+      <Dependent Role="MA_User_AddBook">
+        <PropertyRef Name="UserLoginId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_User_Details_MA_User_Login">
+    <End Role="MA_User_Login" Type="Self.MA_User_Login" Multiplicity="1" />
+    <End Role="MA_User_Details" Type="Self.MA_User_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_User_Login">
+        <PropertyRef Name="UserLoginId" />
+      </Principal>
+      <Dependent Role="MA_User_Details">
+        <PropertyRef Name="UserLoginId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_User_Vendor_MA_User_Login">
+    <End Role="MA_User_Login" Type="Self.MA_User_Login" Multiplicity="1" />
+    <End Role="MA_User_Vendor" Type="Self.MA_User_Vendor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_User_Login">
+        <PropertyRef Name="UserLoginId" />
+      </Principal>
+      <Dependent Role="MA_User_Vendor">
+        <PropertyRef Name="UserLoginId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_Vendor_Aminities_MA_User_Vendor">
+    <End Role="MA_User_Vendor" Type="Self.MA_User_Vendor" Multiplicity="1" />
+    <End Role="MA_Vendor_Aminities" Type="Self.MA_Vendor_Aminities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_User_Vendor">
+        <PropertyRef Name="UserBusiId" />
+      </Principal>
+      <Dependent Role="MA_Vendor_Aminities">
+        <PropertyRef Name="UserBusiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_Vendor_Images_MA_User_Vendor">
+    <End Role="MA_User_Vendor" Type="Self.MA_User_Vendor" Multiplicity="1" />
+    <End Role="MA_Vendor_Images" Type="Self.MA_Vendor_Images" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_User_Vendor">
+        <PropertyRef Name="UserBusiId" />
+      </Principal>
+      <Dependent Role="MA_Vendor_Images">
+        <PropertyRef Name="UserBusiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_Vendor_Packages_MA_User_Vendor">
+    <End Role="MA_User_Vendor" Type="Self.MA_User_Vendor" Multiplicity="1" />
+    <End Role="MA_Vendor_Packages" Type="Self.MA_Vendor_Packages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_User_Vendor">
+        <PropertyRef Name="UserBusiId" />
+      </Principal>
+      <Dependent Role="MA_Vendor_Packages">
+        <PropertyRef Name="UserBusiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MA_VendorPayments_MA_User_Vendor">
+    <End Role="MA_User_Vendor" Type="Self.MA_User_Vendor" Multiplicity="0..1" />
+    <End Role="MA_VendorPayments" Type="Self.MA_VendorPayments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MA_User_Vendor">
+        <PropertyRef Name="UserBusiId" />
+      </Principal>
+      <Dependent Role="MA_VendorPayments">
+        <PropertyRef Name="UserBusiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="DistinctList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar(max)">
+    <Parameter Name="List" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Delim" Type="char" Mode="In" />
+  </Function>
+  <Function Name="MA_Admin_dashboardcounts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_ADDRESSBOOK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserLoginId" Type="int" Mode="In" />
+    <Parameter Name="ntype" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_ADMIN_ORDERDITEMS_USER" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ORDERID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_ADMIN_ORDERS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ORDERID" Type="int" Mode="In" />
+    <Parameter Name="USERID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_ADMIN_Servicerequest" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="type" Type="varchar" Mode="In" />
+    <Parameter Name="nType" Type="int" Mode="In" />
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Sp_Admin_UserProfile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ticket" Type="int" Mode="In" />
+    <Parameter Name="ntype" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_CART_ITEMSVIEW" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="USERID" Type="int" Mode="In" />
+    <Parameter Name="NTYPE" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_COUNTS_TICKETS_AND_NOTIFICATIONS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="USERID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DEALSEARCH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NTYPE" Type="int" Mode="In" />
+    <Parameter Name="SERVICETYPE" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="BusinessLocation" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="SP_DEALSLIST" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NTYPE" Type="int" Mode="In" />
+    <Parameter Name="SERVICETYPE" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="BusinessLocation" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="SP_EVENT_BEAUTY_HEALTH_LIST" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NTYPE" Type="int" Mode="In" />
+    <Parameter Name="TYPE" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="SP_EVENTDETAILSANDEVENTDATES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EVENTID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TESTIMONIALSLIST" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NTYPE" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TICKETLIST" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ntype" Type="int" Mode="In" />
+    <Parameter Name="Ticket_Id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TicketsUserList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserLoginId" Type="int" Mode="In" />
+    <Parameter Name="ntype" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_vendorlist" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ntype" Type="int" Mode="In" />
+    <Parameter Name="vendorid" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="MA_Admin_BiddingRequest" EntityType="Self.MA_Admin_BiddingRequest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_Admin_giftdesigns_multipleimages" EntityType="Self.MA_Admin_giftdesigns_multipleimages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_Admin_Invitationdesigns_multiimages" EntityType="Self.MA_Admin_Invitationdesigns_multiimages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_Admin_QuotationRequest" EntityType="Self.MA_Admin_QuotationRequest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_Admin_Testimonials" EntityType="Self.MA_Admin_Testimonials" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_Admin_TestimonialsPath" EntityType="Self.MA_Admin_TestimonialsPath" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_Bidding_Orders" EntityType="Self.MA_Bidding_Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_BookNow_Orders" EntityType="Self.MA_BookNow_Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_Budgets_QuotationRequest" EntityType="Self.MA_Budgets_QuotationRequest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_CartAddressbook" EntityType="Self.MA_CartAddressbook" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_CartItems_Master" EntityType="Self.MA_CartItems_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_CommentDetails" EntityType="Self.MA_CommentDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_Comments" EntityType="Self.MA_Comments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_Enquiry" EntityType="Self.MA_Enquiry" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_EventDates" EntityType="Self.MA_EventDates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_Events_Master" EntityType="Self.MA_Events_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_EventsandTips" EntityType="Self.MA_EventsandTips" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_ExceptionLogs" EntityType="Self.MA_ExceptionLogs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_ForgotPassword" EntityType="Self.MA_ForgotPassword" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_GiftDesign_Orders" EntityType="Self.MA_GiftDesign_Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_Giftdesigns" EntityType="Self.MA_Giftdesigns" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_Invi_Designs" EntityType="Self.MA_Invi_Designs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_InviDesignPrices" EntityType="Self.MA_InviDesignPrices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_Invitation_Orders" EntityType="Self.MA_Invitation_Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_Issue_Details" EntityType="Self.MA_Issue_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_IssueTickets" EntityType="Self.MA_IssueTickets" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_Orders_Master" EntityType="Self.MA_Orders_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_Payment_Carddetails" EntityType="Self.MA_Payment_Carddetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_Quotation_Orders" EntityType="Self.MA_Quotation_Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_Quotation_Vendors" EntityType="Self.MA_Quotation_Vendors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_Reviews" EntityType="Self.MA_Reviews" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_SavedCardDetails" EntityType="Self.MA_SavedCardDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_SiteFaq" EntityType="Self.MA_SiteFaq" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_Subscription" EntityType="Self.MA_Subscription" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_User_AddBook" EntityType="Self.MA_User_AddBook" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_User_Details" EntityType="Self.MA_User_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_User_Login" EntityType="Self.MA_User_Login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_User_Vendor" EntityType="Self.MA_User_Vendor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_UserLogInTimings" EntityType="Self.MA_UserLogInTimings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_Vendor_Aminities" EntityType="Self.MA_Vendor_Aminities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_Vendor_Images" EntityType="Self.MA_Vendor_Images" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_Vendor_Packages" EntityType="Self.MA_Vendor_Packages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_VendorPayments" EntityType="Self.MA_VendorPayments" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_MA_Admin_BiddingRequest_MA_Events_Master" Association="Self.FK_MA_Admin_BiddingRequest_MA_Events_Master">
+      <End Role="MA_Events_Master" EntitySet="MA_Events_Master" />
+      <End Role="MA_Admin_BiddingRequest" EntitySet="MA_Admin_BiddingRequest" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_Admin_giftdesigns_multipleimages_MA_Giftdesigns" Association="Self.FK_MA_Admin_giftdesigns_multipleimages_MA_Giftdesigns">
+      <End Role="MA_Giftdesigns" EntitySet="MA_Giftdesigns" />
+      <End Role="MA_Admin_giftdesigns_multipleimages" EntitySet="MA_Admin_giftdesigns_multipleimages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_Admin_Invitationdesigns_multiimages_MA_Invi_Designs" Association="Self.FK_MA_Admin_Invitationdesigns_multiimages_MA_Invi_Designs">
+      <End Role="MA_Invi_Designs" EntitySet="MA_Invi_Designs" />
+      <End Role="MA_Admin_Invitationdesigns_multiimages" EntitySet="MA_Admin_Invitationdesigns_multiimages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_Admin_QuotationRequest_MA_Budgets_QuotationRequest" Association="Self.FK_MA_Admin_QuotationRequest_MA_Budgets_QuotationRequest">
+      <End Role="MA_Budgets_QuotationRequest" EntitySet="MA_Budgets_QuotationRequest" />
+      <End Role="MA_Admin_QuotationRequest" EntitySet="MA_Admin_QuotationRequest" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_Admin_TestimonialsPath_MA_Admin_Testimonials" Association="Self.FK_MA_Admin_TestimonialsPath_MA_Admin_Testimonials">
+      <End Role="MA_Admin_Testimonials" EntitySet="MA_Admin_Testimonials" />
+      <End Role="MA_Admin_TestimonialsPath" EntitySet="MA_Admin_TestimonialsPath" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_Bidding_Orders_MA_Admin_BiddingRequest" Association="Self.FK_MA_Bidding_Orders_MA_Admin_BiddingRequest">
+      <End Role="MA_Events_Master" EntitySet="MA_Events_Master" />
+      <End Role="MA_Bidding_Orders" EntitySet="MA_Bidding_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_Bidding_Orders_MA_Admin_BiddingRequest1" Association="Self.FK_MA_Bidding_Orders_MA_Admin_BiddingRequest1">
+      <End Role="MA_Admin_BiddingRequest" EntitySet="MA_Admin_BiddingRequest" />
+      <End Role="MA_Bidding_Orders" EntitySet="MA_Bidding_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_Bidding_Orders_MA_Orders_Master" Association="Self.FK_MA_Bidding_Orders_MA_Orders_Master">
+      <End Role="MA_Orders_Master" EntitySet="MA_Orders_Master" />
+      <End Role="MA_Bidding_Orders" EntitySet="MA_Bidding_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_BookNow_Orders_MA_Events_Master" Association="Self.FK_MA_BookNow_Orders_MA_Events_Master">
+      <End Role="MA_Events_Master" EntitySet="MA_Events_Master" />
+      <End Role="MA_BookNow_Orders" EntitySet="MA_BookNow_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_BookNow_Orders_MA_Orders_Master" Association="Self.FK_MA_BookNow_Orders_MA_Orders_Master">
+      <End Role="MA_Orders_Master" EntitySet="MA_Orders_Master" />
+      <End Role="MA_BookNow_Orders" EntitySet="MA_BookNow_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_BookNow_Orders_MA_Vendor_Packages" Association="Self.FK_MA_BookNow_Orders_MA_Vendor_Packages">
+      <End Role="MA_Vendor_Packages" EntitySet="MA_Vendor_Packages" />
+      <End Role="MA_BookNow_Orders" EntitySet="MA_BookNow_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_Budgets_QuotationRequest_MA_Events_Master" Association="Self.FK_MA_Budgets_QuotationRequest_MA_Events_Master">
+      <End Role="MA_Events_Master" EntitySet="MA_Events_Master" />
+      <End Role="MA_Budgets_QuotationRequest" EntitySet="MA_Budgets_QuotationRequest" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_CartAddressbook_MA_Events_Master" Association="Self.FK_MA_CartAddressbook_MA_Events_Master">
+      <End Role="MA_Events_Master" EntitySet="MA_Events_Master" />
+      <End Role="MA_CartAddressbook" EntitySet="MA_CartAddressbook" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_CartItems_Master_MA_Events_Master" Association="Self.FK_MA_CartItems_Master_MA_Events_Master">
+      <End Role="MA_Events_Master" EntitySet="MA_Events_Master" />
+      <End Role="MA_CartItems_Master" EntitySet="MA_CartItems_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_CommentDetails_MA_Comments" Association="Self.FK_MA_CommentDetails_MA_Comments">
+      <End Role="MA_Comments" EntitySet="MA_Comments" />
+      <End Role="MA_CommentDetails" EntitySet="MA_CommentDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_EventDates_MA_Events_Master" Association="Self.FK_MA_EventDates_MA_Events_Master">
+      <End Role="MA_Events_Master" EntitySet="MA_Events_Master" />
+      <End Role="MA_EventDates" EntitySet="MA_EventDates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_GiftDesign_Orders_MA_Events_Master" Association="Self.FK_MA_GiftDesign_Orders_MA_Events_Master">
+      <End Role="MA_Events_Master" EntitySet="MA_Events_Master" />
+      <End Role="MA_GiftDesign_Orders" EntitySet="MA_GiftDesign_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_GiftDesign_Orders_MA_Giftdesigns" Association="Self.FK_MA_GiftDesign_Orders_MA_Giftdesigns">
+      <End Role="MA_Giftdesigns" EntitySet="MA_Giftdesigns" />
+      <End Role="MA_GiftDesign_Orders" EntitySet="MA_GiftDesign_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_GiftDesign_Orders_MA_Orders_Master" Association="Self.FK_MA_GiftDesign_Orders_MA_Orders_Master">
+      <End Role="MA_Orders_Master" EntitySet="MA_Orders_Master" />
+      <End Role="MA_GiftDesign_Orders" EntitySet="MA_GiftDesign_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ma_Invi_Designs_MA_User_Login" Association="Self.FK_Ma_Invi_Designs_MA_User_Login">
+      <End Role="MA_User_Login" EntitySet="MA_User_Login" />
+      <End Role="MA_Invi_Designs" EntitySet="MA_Invi_Designs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_InviDesignPrices_MA_Invi_Designs" Association="Self.FK_MA_InviDesignPrices_MA_Invi_Designs">
+      <End Role="MA_Invi_Designs" EntitySet="MA_Invi_Designs" />
+      <End Role="MA_InviDesignPrices" EntitySet="MA_InviDesignPrices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_Invitation_Orders_MA_Events_Master" Association="Self.FK_MA_Invitation_Orders_MA_Events_Master">
+      <End Role="MA_Events_Master" EntitySet="MA_Events_Master" />
+      <End Role="MA_Invitation_Orders" EntitySet="MA_Invitation_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_Invitation_Orders_MA_Invi_Designs" Association="Self.FK_MA_Invitation_Orders_MA_Invi_Designs">
+      <End Role="MA_Invi_Designs" EntitySet="MA_Invi_Designs" />
+      <End Role="MA_Invitation_Orders" EntitySet="MA_Invitation_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_Invitation_Orders_MA_Orders_Master" Association="Self.FK_MA_Invitation_Orders_MA_Orders_Master">
+      <End Role="MA_Orders_Master" EntitySet="MA_Orders_Master" />
+      <End Role="MA_Invitation_Orders" EntitySet="MA_Invitation_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_Issue_Details_MA_IssueTickets" Association="Self.FK_MA_Issue_Details_MA_IssueTickets">
+      <End Role="MA_IssueTickets" EntitySet="MA_IssueTickets" />
+      <End Role="MA_Issue_Details" EntitySet="MA_Issue_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_IssueTickets_MA_User_Login" Association="Self.FK_MA_IssueTickets_MA_User_Login">
+      <End Role="MA_User_Login" EntitySet="MA_User_Login" />
+      <End Role="MA_IssueTickets" EntitySet="MA_IssueTickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_Quotation_Orders_MA_Admin_QuotationRequest" Association="Self.FK_MA_Quotation_Orders_MA_Admin_QuotationRequest">
+      <End Role="MA_Admin_QuotationRequest" EntitySet="MA_Admin_QuotationRequest" />
+      <End Role="MA_Quotation_Orders" EntitySet="MA_Quotation_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_Quotation_Orders_MA_Events_Master" Association="Self.FK_MA_Quotation_Orders_MA_Events_Master">
+      <End Role="MA_Events_Master" EntitySet="MA_Events_Master" />
+      <End Role="MA_Quotation_Orders" EntitySet="MA_Quotation_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_Quotation_Orders_MA_Orders_Master" Association="Self.FK_MA_Quotation_Orders_MA_Orders_Master">
+      <End Role="MA_Orders_Master" EntitySet="MA_Orders_Master" />
+      <End Role="MA_Quotation_Orders" EntitySet="MA_Quotation_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_Quotation_Vendors_MA_Admin_QuotationRequest" Association="Self.FK_MA_Quotation_Vendors_MA_Admin_QuotationRequest">
+      <End Role="MA_Admin_QuotationRequest" EntitySet="MA_Admin_QuotationRequest" />
+      <End Role="MA_Quotation_Vendors" EntitySet="MA_Quotation_Vendors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_User_AddBook_MA_User_Login" Association="Self.FK_MA_User_AddBook_MA_User_Login">
+      <End Role="MA_User_Login" EntitySet="MA_User_Login" />
+      <End Role="MA_User_AddBook" EntitySet="MA_User_AddBook" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_User_Details_MA_User_Login" Association="Self.FK_MA_User_Details_MA_User_Login">
+      <End Role="MA_User_Login" EntitySet="MA_User_Login" />
+      <End Role="MA_User_Details" EntitySet="MA_User_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_User_Vendor_MA_User_Login" Association="Self.FK_MA_User_Vendor_MA_User_Login">
+      <End Role="MA_User_Login" EntitySet="MA_User_Login" />
+      <End Role="MA_User_Vendor" EntitySet="MA_User_Vendor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_Vendor_Aminities_MA_User_Vendor" Association="Self.FK_MA_Vendor_Aminities_MA_User_Vendor">
+      <End Role="MA_User_Vendor" EntitySet="MA_User_Vendor" />
+      <End Role="MA_Vendor_Aminities" EntitySet="MA_Vendor_Aminities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_Vendor_Images_MA_User_Vendor" Association="Self.FK_MA_Vendor_Images_MA_User_Vendor">
+      <End Role="MA_User_Vendor" EntitySet="MA_User_Vendor" />
+      <End Role="MA_Vendor_Images" EntitySet="MA_Vendor_Images" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_Vendor_Packages_MA_User_Vendor" Association="Self.FK_MA_Vendor_Packages_MA_User_Vendor">
+      <End Role="MA_User_Vendor" EntitySet="MA_User_Vendor" />
+      <End Role="MA_Vendor_Packages" EntitySet="MA_Vendor_Packages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MA_VendorPayments_MA_User_Vendor" Association="Self.FK_MA_VendorPayments_MA_User_Vendor">
+      <End Role="MA_User_Vendor" EntitySet="MA_User_Vendor" />
+      <End Role="MA_VendorPayments" EntitySet="MA_VendorPayments" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

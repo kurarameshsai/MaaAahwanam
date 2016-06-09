@@ -1,0 +1,315 @@
+﻿@model Tuple<List<MaaAahwanam.Dal.SP_ADMIN_ORDERS_Result>, List<MaaAahwanam.Dal.SP_EVENTDETAILSANDEVENTDATES_Result>, List<MaaAahwanam.Dal.SP_COUNTS_TICKETS_AND_NOTIFICATIONS_Result>>
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/SharedWeb/DashboardMaster.cshtml";
+}
+@section Navigation
+{
+    <div class="breads">
+        <div class="breads_inner">
+            <div class="pageWidth">
+                <div class="title">
+                    @if (ViewBag.Type == "User")
+                    {
+                        <h3>Dashboard</h3>
+                    }
+                    @if (ViewBag.Type == "Vendor")
+                    {
+                        <h3>Vendor's Dashboard</h3>
+                    }
+                </div>
+                <div class="breadcrumbs">
+                    <ul>
+                        @if (ViewBag.Type == "User")
+                        {
+                            <li><a href="~/index/Index">Home</a></li>
+                        }
+                        <li><i class="breads_arrow"></i></li>
+                        <li>Dashboard</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div id="quatation" class="zoom-anim-dialog mfp-hide large-dialog">
+    <div class="popup-box pop-content">
+        <div class="popup-head">
+            <h3>Description &amp; Preferences</h3>
+        </div>
+        <!-- /popup-head -->
+        <div class="popup-space popup-desc-space">
+            <div class="dashboardList">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width:100%">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+                                <p>But also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+                                <p>But also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width:100%">Preferences</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p>But also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+                                <p>But also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="dashInner">
+    <div class="dashDetails">
+        <ul class="info-box">
+            <li>
+                <div class="bg-info bg-info-orange">
+                    <div class="info-icon info-icon-orange"> <i class="ti-bell"></i> </div>
+                    <div class="info-details">
+                        @if (ViewBag.Type == "User")
+                        {
+                            <h4>Alerts</h4>
+                            <p>11</p>
+                        }
+                        @if (ViewBag.Type == "Vendor")
+                        {
+                            <h4>Upcoming Events</h4>
+                            <p>@this.Model.Item3[0].UPCOMINGEVENTS</p>
+                        }
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="bg-info bg-info-blue">
+                    <div class="info-icon info-icon-blue"> <i class="ti-email"></i> </div>
+                    <div class="info-details">
+                        <h4>Notification</h4>
+                        <p>124</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="bg-info bg-info-red">
+                    <div class="info-icon info-icon-red"> <i class="ti-ticket"></i> </div>
+                    <div class="info-details">
+                        <h4>Tickets</h4>
+                        <p>@this.Model.Item3[0].TICKETSCOUNT</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- /dashDetails -->
+    @*@if (ViewBag.Type == "User")
+        {*@
+    <div class="dashboardList dashboardList-nospace">
+        <table class=" responsive">
+            <thead>
+                <tr>
+                    <th style="width:10%">S.No</th>
+                    <th style="width:15%">Bill No</th>
+                    <th style="width:25%">Service Type</th>
+                    <th style="width:18%">Requested Date</th>
+                    <th style="width:15%">Advanced Amount</th>
+                    <th style="width:15%">Status</th>
+                </tr>
+            </thead>
+            @{int i = 1; }
+            @if (Model.Item1.Count != 0)
+            {
+                foreach (var Obj1 in Model.Item1)
+                {
+                    <tbody>
+                        <tr>
+                            <td>@i</td>
+                            <td><a href="../OrderDetails?id=@Obj1.OrderId" class="green-link">@Obj1.OrderId</a></td>
+                            <td>@Obj1.SERVICENAME</td>
+                            <td>@string.Format("{0:dd/MM/yyyy}", @Obj1.CreatedDate)</td>
+                            <td>@string.Format("{0:F2}", @Obj1.PaidAmount)</td>
+                            <td class="active">Active</td>
+                        </tr>
+                    </tbody>
+                    { i++; }
+                }
+            }
+            else
+            {
+                <tbody>
+                    <tr>
+                        <td colspan="6">No Records Found</td>
+                    </tr>
+                </tbody>
+            }
+        </table>
+        @if (Model.Item1.Count != 0)
+        {
+            <div class="pagination">
+                <ul>
+                    <li><a href="javascript:void(0)">Prev</a></li>
+                    <li><a href="javascript:void(0)" class="active">1</a></li>
+                    <li><a href="javascript:void(0)">2</a></li>
+                    <li><a class="pagination-gap">...</a></li>
+                    <li><a href="javascript:void(0)">24</a></li>
+                    <li><a href="javascript:void(0)">25</a></li>
+                    <li><a href="javascript:void(0)">Next</a></li>
+                </ul>
+            </div>
+        }
+        <div class="clear"></div>
+    </div>
+    @*}*@
+    @*@if (ViewBag.Type == "Vendor")
+        {
+            <div class="dashboardList dashboardList-nospace">
+                <table class=" responsive">
+                    <thead>
+                        <tr>
+                            <th style="width:10%">S.No</th>
+                            <th style="width:15%">Request No</th>
+                            <th style="width:17%">Requested Date</th>
+                            <th style="width:15%">Amount</th>
+                            <th style="width:15%">Event Name</th>
+                            <th style="width:38%">Start Date and End Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><a href="#quatation" class="green-link ml-center popup-with-move-anim">SDA15678</a></td>
+                            <td>17-12-2015</td>
+                            <td>Rs. 6003</td>
+                            <td>Birthday function</td>
+                            <td>02-12-2015</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td><a href="#" class="green-link">SDA15678</a></td>
+                            <td>17-12-2015</td>
+                            <td>Rs. 600</td>
+                            <td>Birthday function</td>
+                            <td>02-12-2015</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><a href="#" class="green-link">SDA15678</a></td>
+                            <td>17-12-2015</td>
+                            <td>Rs. 600</td>
+                            <td>Birthday function</td>
+                            <td>02-12-2015</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><a href="#" class="green-link">SDA15678</a></td>
+                            <td>17-12-2015</td>
+                            <td>Rs. 600</td>
+                            <td>Birthday function</td>
+                            <td>02-12-2015</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><a href="#" class="green-link">SDA15678</a></td>
+                            <td>17-12-2015</td>
+                            <td>Rs. 600</td>
+                            <td>Birthday function</td>
+                            <td>02-12-2015</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><a href="#" class="green-link">SDA15678</a></td>
+                            <td>17-12-2015</td>
+                            <td>Rs. 600</td>
+                            <td>Birthday function</td>
+                            <td>02-12-2015</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td><a href="#" class="green-link">SDA15678</a></td>
+                            <td>17-12-2015</td>
+                            <td>Rs. 600</td>
+                            <td>Birthday function</td>
+                            <td>02-12-2015</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td><a href="#" class="green-link">SDA15678</a></td>
+                            <td>17-12-2015</td>
+                            <td>Rs. 600</td>
+                            <td>Birthday function</td>
+                            <td>02-12-2015</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td><a href="#" class="green-link">SDA15678</a></td>
+                            <td>17-12-2015</td>
+                            <td>Rs. 600</td>
+                            <td>Birthday function</td>
+                            <td>02-12-2015</td>
+                        </tr>
+
+                        <tr>
+                            <td>9</td>
+                            <td><a href="#" class="green-link">SDA15678</a></td>
+                            <td>17-12-2015</td>
+                            <td>Rs. 600</td>
+                            <td>Birthday function</td>
+                            <td>02-12-2015</td>
+                        </tr>
+
+                        <tr>
+                            <td>10</td>
+                            <td><a href="#" class="green-link">SDA15678</a></td>
+                            <td>17-12-2015</td>
+                            <td>Rs. 600</td>
+                            <td>Birthday function</td>
+                            <td>02-12-2015</td>
+                        </tr>
+
+                        <tr>
+                            <td>11</td>
+                            <td><a href="#" class="green-link">SDA15678</a></td>
+                            <td>17-12-2015</td>
+                            <td>Rs. 600</td>
+                            <td>Birthday function</td>
+                            <td>02-12-2015</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <ul>
+                        <li><a href="javascript:void(0)">Prev</a></li>
+                        <li><a href="javascript:void(0)" class="active">1</a></li>
+                        <li><a href="javascript:void(0)">2</a></li>
+                        <li><a class="pagination-gap">...</a></li>
+                        <li><a href="javascript:void(0)">24</a></li>
+                        <li><a href="javascript:void(0)">25</a></li>
+                        <li><a href="javascript:void(0)">Next</a></li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+        }*@
+    <!-- /dashboardList -->
+</div>
+     @*<script type="text/javascript">
+            $(document).ready(function () {
+                BootstrapDialog.alert('Welcom to MaaAahwanam DashBoard');
+            });
+        </script>*@

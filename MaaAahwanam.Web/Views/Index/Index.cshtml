@@ -1,0 +1,493 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/SharedWeb/MainMaster.cshtml";
+}
+
+<div class="feedback_right">
+    <a href="#" class="email-signup-link"><img src="../CSSWeb/images/btn-request.png" alt=""></a>
+    <div class="email-signup">
+        <ul>
+            <li><a href="~/Deals/Index">Book Now</a></li>
+            <li><a href="~/Invitation/Index">Invitation</a></li>
+            <li><a href="~/QuatationSubmit/Index">Quatation</a></li>
+            <li><a href="~/Bidding/Index">Bidding</a></li>
+            <li><a href="~/ReturnGift/Index">Return Gifts</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<section>
+    <div class="slider">
+        @using (Html.BeginForm("Index", "AllServices", FormMethod.Post))
+        {
+            <div class="ms-layer search-box" style="left:0; right:0; top:215px;">
+                <div class="select-cats">
+                    <select id="e2" style="width:100%">
+                        <option>Select Event</option>
+                    </select>
+                </div>
+                <div class="search-input">
+                    <input type="text" name="name" class="autosuggest" id="txt_Location_Bottom" placeholder="Enter your location">
+                </div>
+                <div class="submit-button">
+                    <button class="btn-1" value="Search" onclick="GetSearchValue_Bottom()">Search</button>
+                </div>
+                <div class="searh-footer">
+                    <div class="left">
+                        <input id="checkbox1" type="checkbox" name="checkbox" value="1" checked="checked">
+                        <label for="checkbox1">Show Deals Only</label>
+                    </div>
+                    <!--<div class="right"> <a href="deals.html">View All <i class="ti-angle-double-right"></i></a> </div>-->
+                </div>
+            </div>
+        }
+        <div class="master-slider ms-skin-black-2 round-skin" id="masterslider">
+            <div class="ms-slide slide-1" style="z-index: 10" data-delay="6">
+                <img data-src="../CSSWeb/images/slider/slider-1.jpg" alt="slider-1"  />
+                <div class="mask"></div>
+                <h3 class="ms-layer light-title" style="left:0; right:0;top:120px"
+                    data-effect="back(1000)"
+                    data-duration="1500"
+                    data-delay="400"
+                    data-ease="easeOutQuint">
+                    Lorem ipsum dolor sit amet consectetur
+                </h3>
+                <p class="ms-layer normal-desc" style="left:0; right:0; top:180px; width:100%"
+                   data-effect="bottom(40)"
+                   data-duration="1700"
+                   data-delay="900"
+                   data-ease="easeOutQuint">Cras maximus ultrices erat et molestie. Curabitur at diam eleifend, vehicula orci sit amet</p>
+            </div>
+            <div class="ms-slide slide-1" style="z-index: 10" data-delay="6">
+                <img data-src="../CSSWeb/images/slider/slider-2.png" alt="slider-1" />
+                <div class="mask"></div>
+                <h3 class="ms-layer light-title" style="left:0; right:0;top:120px"
+                    data-effect="front(1000)"
+                    data-duration="1500"
+                    data-delay="400"
+                    data-ease="easeOutQuint">
+                    Duis autem vel eum iriure dolor
+                </h3>
+                <p class="ms-layer normal-desc" style="left:0; right:0; top:180px; width:100%"
+                   data-effect="bottom(40)"
+                   data-duration="1700"
+                   data-delay="900"
+                   data-ease="easeOutQuint">Mirum est notare quam littera gothica, quam nunc putamus parum claram</p>
+            </div>
+            <div class="ms-slide slide-1" style="z-index: 10" data-delay="6">
+                <img data-src="../CSSWeb/images/slider/slider-3.jpg" alt="slider-1"  />
+                <div class="mask"></div>
+                <h3 class="ms-layer light-title" style="left:0; right:0;top:120px"
+                    data-effect="fade(400)"
+                    data-duration="1500"
+                    data-delay="400"
+                    data-ease="easeOutQuint">
+                    Lorem ipsum dolor sit amet
+                </h3>
+                <p class="ms-layer normal-desc" style="left:0; right:0; top:180px; width:100%"
+                   data-effect="bottom(40)"
+                   data-duration="1700"
+                   data-delay="900"
+                   data-ease="easeOutQuint">Cras maximus ultrices erat et molestie. Curabitur at diam eleifend, vehicula orci sit amet, condimentum nibh</p>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!-- /slider -->
+</section>
+<section>
+    <div class="home-aboutus">
+        <div class="pageWidth">
+            <div class="home-aboutus-inner">
+                <div class="video wow fadeInLeft animated">
+                    <a title="" href="https://www.youtube.com/embed/8jKYP24uhzI" class="popup-youtube">
+                        <div class="zoomDiv">
+                            <img src="../CSSWeb/images/maxresdefault.jpg" alt="Hqdefault">
+                            <div class="hoverDiv"></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="content wow fadeInLeft animated">
+                    <div class="heading-title wow fadeInRight animated">
+                        <h2>About Maa Aahwanam</h2>
+                    </div>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                    <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+                </div>
+                <a href="aboutus.html" class="btn btn-white wow fadeInLeft animated">Read more</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="top-deals">
+        <div class="pageWidth">
+            <div class="heading-title">
+                <h2>Top Deals</h2>
+            </div>
+
+            <!--Horizontal Tab-->
+            <div id="parentHorizontalTab">
+                <ul class="resp-tabs-list hor_1">
+                    <li>Photographers</li>
+                    <li>Tours & Travels </li>
+                    <li>Decorators</li>
+                    <li>Beautician</li>
+                </ul>
+                <div class="deals_all">
+                    <a href="#">View All</a>
+                    <div class="view_all_deals">
+                        <span>&nbsp;</span>
+                        <h3>Choose Category</h3>
+                        <div class="deals_list">
+                            <ul>
+                                <li><a href="~/Deals"><i class="ti-angle-right"></i> Venues</a></li>
+                                <li><a href="~/Deals"><i class="ti-angle-right"></i> Caterer</a></li>
+                                <li><a href="~/Deals"><i class="ti-angle-right"></i> Decorators</a></li>
+                                <li><a href="~/Deals"><i class="ti-angle-right"></i> Photographers</a></li>
+                                <li><a href="~/Deals"><i class="ti-angle-right"></i> Tours and travels</a></li>
+                                <li><a href="~/Deals"><i class="ti-angle-right"></i> Beautician</a></li>
+                                <li><a href="~/Deals"><i class="ti-angle-right"></i> Designer</a></li>
+                                <li><a href="~/Deals"><i class="ti-angle-right"></i> Event organizers</a></li>
+                                <li><a href="~/Deals"><i class="ti-angle-right"></i> Wedding Favors</a></li>
+                                <li><a href="~/Deals"><i class="ti-angle-right"></i> Wedding collection</a></li>
+                                <li><a href="~/Deals"><i class="ti-angle-right"></i> Religious priest</a></li>
+                                <li><a href="~/Deals"><i class="ti-angle-right"></i> Music troop/Band </a></li>
+                                <li><a href="~/Deals"><i class="ti-angle-right"></i> Cake vendors</a></li>
+                                <li><a href="~/Deals"><i class="ti-angle-right"></i> Godi wale</a></li>
+                                <li><a href="~/Deals"><i class="ti-angle-right"></i> Hotels and accommodation</a></li>
+                                <li><a href="~/Deals"><i class="ti-angle-right"></i> Hospitality Staff</a></li>
+                                <li><a href="~/Deals"><i class="ti-angle-right"></i> Sangeeth and mehendi </a></li>
+                                <li><a href="~/Deals"><i class="ti-angle-right"></i> Entertainment</a></li>
+                                <li><a href="~/Deals"><i class="ti-angle-right"></i> Fireworks</a></li>
+                                <li><a href="~/Deals"><i class="ti-angle-right"></i> Maids or Helping staff</a></li>
+                                <li><a href="~/Deals"><i class="ti-angle-right"></i> Sweet shops</a></li>
+                                <li><a href="~/Deals"><i class="ti-angle-right"></i> Wedding cards</a></li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="resp-tabs-container hor_1">
+                    <div>
+                        @*Photographer Details*@
+                        @if (ViewBag.PhotographersDetails != null)
+                        {
+                            foreach (var PhDet in ViewBag.PhotographersDetails)
+                            {
+                                <div class="step2">
+                                    <div class="deals-main">
+                                        <div class="deal">
+                                            <div class="deal-thumb">
+                                                <a href="~/DealInfo">
+                                                    <div class="zoomDiv">
+                                                        <img data-src="../Content/VendorImages/@PhDet.ImageId" alt="thumb" src="blank.gif" class="lazy">
+                                                        <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span>  </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="deal-details">
+                                                <h4 style="font-size: 15px; font-weight:bold; color: #2d3e52; font-family: Helvetica,sans-serif; ">Wedding Favors</h4>
+                                                <div class="amount">
+                                                    <span class="price">Rs. 570</span> <span class="buy">
+                                                        <a href="~/CardInfo/Index"><i class="ti-shopping-cart"></i> Add to Cart</a>
+                                                    </span>
+                                                </div>
+                                                <span style="color:#838383">Contrary to popular belief, Lorem Ipsum is not ...</span>
+                                                <div class="deal-footer">
+                                                    <ul>
+                                                        <li><div class="rate" data-rate-value=5></div></li>
+                                                        <li><i class="ti-comment-alt"></i> 1362</li>
+                                                        <li><i class="ti-eye"></i> 1500</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+                    <div>
+                        @*Tours and Travells*@
+                        @if (ViewBag.ToursandTravels != null)
+                        {
+                            foreach (var tnt in ViewBag.ToursandTravels)
+                            {
+                                <div class="step2">
+                                    <div class="deals-main">
+                                        <div class="deal">
+                                            <div class="deal-thumb">
+                                                <a href="~/DealInfo">
+                                                    <div class="zoomDiv">
+                                                        <img src="blank.gif" class="lazy" data-src="../Content/VendorImages/@tnt.ImageId" alt="thumb">
+                                                        <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span>  </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="deal-details">
+                                                <h4 style="font-size: 15px; font-weight:bold; color: #2d3e52; font-family: Helvetica,sans-serif; ">Wedding Favors</h4>
+                                                <div class="amount">
+                                                    <span class="price">Rs. 570</span> <span class="buy">
+                                                        <a href="~/CardInfo/Index"><i class="ti-shopping-cart"></i> Add to Cart</a>
+                                                    </span>
+                                                </div>
+                                                <span style="color:#838383">Contrary to popular belief, Lorem Ipsum is not ...</span>
+                                                <div class="deal-footer">
+                                                    <ul>
+                                                        <li><div class="rate" data-rate-value=5></div></li>
+                                                        <li><i class="ti-comment-alt"></i> 1362</li>
+                                                        <li><i class="ti-eye"></i> 1500</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+                    <div>
+                        @*Decorators*@
+                        @if (ViewBag.Decorators != null)
+                        {
+                            foreach (var dec in ViewBag.Decorators)
+                            {
+                                <div class="step2">
+                                    <div class="deals-main">
+                                        <div class="deal">
+                                            <div class="deal-thumb">
+                                                <a href="~/DealInfo">
+                                                    <div class="zoomDiv">
+                                                        <img src="blank.gif" class="lazy" data-src="../Content/VendorImages/@dec.ImageId" alt="thumb">
+                                                        <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span>  </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="deal-details">
+                                                <h4 style="font-size: 15px; font-weight:bold; color: #2d3e52; font-family: Helvetica,sans-serif; ">Wedding Favors</h4>
+                                                <div class="amount">
+                                                    <span class="price">Rs. 570</span> <span class="buy">
+                                                        <a href="~/CardInfo/Index"><i class="ti-shopping-cart"></i> Add to Cart</a>
+                                                    </span>
+                                                </div>
+                                                <span style="color:#838383">Contrary to popular belief, Lorem Ipsum is not ...</span>
+                                                <div class="deal-footer">
+                                                    <ul>
+                                                        <li><div class="rate" data-rate-value=5></div></li>
+                                                        <li><i class="ti-comment-alt"></i> 1362</li>
+                                                        <li><i class="ti-eye"></i> 1500</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+                    <div>
+                        @*Beautician*@
+                        @if (ViewBag.Beautician != null)
+                        {
+                            foreach (var beau in ViewBag.Beautician)
+                            {
+                                <div class="step2">
+                                    <div class="deals-main">
+                                        <div class="deal">
+                                            <div class="deal-thumb">
+                                                <a href="~/DealInfo">
+                                                    <div class="zoomDiv">
+                                                        <img src="blank.gif" class="lazy" data-src="../Content/VendorImages/@beau.ImageId" alt="thumb">
+                                                        <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span>  </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="deal-details">
+                                                <h4 style="font-size: 15px; font-weight:bold; color: #2d3e52; font-family: Helvetica,sans-serif; ">Wedding Favors</h4>
+                                                <div class="amount">
+                                                    <span class="price">Rs. 570</span> <span class="buy">
+                                                        <a href="~/CardInfo/Index"><i class="ti-shopping-cart"></i> Add to Cart</a>
+                                                    </span>
+                                                </div>
+                                                <span style="color:#838383">Contrary to popular belief, Lorem Ipsum is not ...</span>
+                                                <div class="deal-footer">
+                                                    <ul>
+                                                        <li><div class="rate" data-rate-value=5></div></li>
+                                                        <li><i class="ti-comment-alt"></i> 1362</li>
+                                                        <li><i class="ti-eye"></i> 1500</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- testimonials -->
+@if (ViewBag.Testimonials != null)
+{
+    <section>
+        <div class="pageWidth">
+            <div class="testimonials">
+                <div class="heading-title">
+                    <h2>What Our Customers Say!</h2>
+                </div>
+                <div id="testimonials" class="owl-carousel owl-theme">
+                    @foreach (var item in @ViewBag.Testimonials)
+                    {
+                        <div class="item">
+                            <div class="studentPic">
+                                <div class="studentPic-inner">
+                                    <div> <img src="blank.gif" class="lazy" data-src="../Content/AdminUserfiles/@item.UserImage" alt="student"> </div>
+                                </div>
+                            </div>
+                            <div class="studentTest">
+                                <p>
+                                    @item.Description.ToString().Substring(0, 200)
+                                    <a href="~/Testimonials">......More</a>
+                                </p>
+                                <div class="stuTitle">
+                                    @item.Name
+                                </div>
+                                <small>@item.City</small>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+}
+<!-- // testimonials -->
+
+<section>
+    <div class="smart_counts">
+        <div class="smart_counts_mask"></div>
+        <div class="pageWidth">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever when an unknown printer .</p>
+            <div class="counts">
+            </div>
+            <div class="counts">
+                <i class="ti-thumb-up"></i>
+                <h2><span class="counter">@ViewBag.EventsCount</span>+</h2>
+                <h4>Successful Events</h4>
+            </div>
+            <div class="counts">
+                <i class="ti-receipt"></i>
+                <h2><span class="counter">@ViewBag.Ticketscount</span>+</h2>
+                <h4>Answered Tickets</h4>
+            </div>
+            <div class="counts">
+            </div>
+        </div>
+    </div>
+</section>
+@*<div class="ad">
+        <div class="pageWidth">
+            <div class="ad_728"><img src="../CSSWeb/images/ad_728_2.jpg" alt="advertise"></div>
+        </div>
+    </div>*@
+
+<!-- Events -->
+<section>
+    <div class="home_events">
+        <div class="pageWidth">
+            <!--Horizontal Tab-->
+            <div id="parentHorizontalTab2">
+                <ul class="resp-tabs-list hor_1">
+                    <li>Upcoming Events</li>
+                    <li>Beauty Tips</li>
+                    <li>Health Tips</li>
+                </ul>
+                <div class="resp-tabs-container hor_1">
+                    <!-- UpcomingEvents -->
+                    <div>
+                        @if (ViewBag.UpcomingEvents != null)
+                        {
+                            foreach (var Upcomingevents in ViewBag.UpcomingEvents)
+                            {
+                                <a href="#">
+                                    <div class="home_events_main no-margin">
+                                        <div class="event-thumb"><img src="blank.gif" class="lazy" data-src="../CSSWeb/images/events/thumb-1.jpg" alt="events"> </div>
+                                        <div class="event-details">
+                                            <h2>@Upcomingevents.Title</h2>
+                                            <p class="event-desc">@Upcomingevents.Description.ToString().Substring(0, 5)</p>
+                                            <p><i class="ti-location-pin"></i>@Upcomingevents.location</p>
+                                            <p><i class="ti-user"></i>@Upcomingevents.person</p>
+                                            <p><i class="ti-mobile"></i>@Upcomingevents.phone</p>
+                                            <p><i class="ti-calendar"></i>@Upcomingevents.Eventstartdate am</p>
+                                            <p>Rs.@Html.Encode(string.Format("{0:2}", Upcomingevents.price))</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            }
+                        }
+                    </div>
+                    <!-- HealthTips -->
+                    <div>
+                        @if (ViewBag.HealthTips != null)
+                        {
+                            foreach (var HealthTips in ViewBag.HealthTips)
+                            {
+                                <a href="#">
+                                    <div class="home_events_main no-margin">
+                                        <div class="event-thumb"><img src="blank.gif" class="lazy" data-src="../CSSWeb/images/events/thumb-1.jpg" alt="events"> </div>
+                                        <div class="event-details">
+                                            <h2>@HealthTips.Title</h2>
+                                            <p class="event-desc">@HealthTips.Description.ToString().Substring(0, 5)</p>
+                                            <p><i class="ti-location-pin"></i>@HealthTips.location</p>
+                                            <p><i class="ti-user"></i>@HealthTips.person</p>
+                                            <p><i class="ti-mobile"></i>@HealthTips.phone</p>
+                                            <p><i class="ti-calendar"></i>@HealthTips.Eventstartdate am</p>
+                                            <p>Rs.@Html.Encode(string.Format("{0:2}", HealthTips.price))</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            }
+                        }
+                    </div>
+                    <!-- BeautyTips -->
+                    <div>
+                        @if (ViewBag.BeautyTips != null)
+                        {
+                            foreach (var BeautyTips in ViewBag.BeautyTips)
+                            {
+                                <a href="#">
+                                    <div class="home_events_main no-margin">
+                                        <div class="event-thumb"><img src="blank.gif" class="lazy" data-src="../CSSWeb/images/events/thumb-1.jpg" alt="events"> </div>
+                                        <div class="event-details">
+                                            <h2>@BeautyTips.Title</h2>
+                                            <p class="event-desc">@BeautyTips.Description.ToString().Substring(0, 5)</p>
+                                            <p><i class="ti-location-pin"></i>@BeautyTips.location</p>
+                                            <p><i class="ti-user"></i>@BeautyTips.person</p>
+                                            <p><i class="ti-mobile"></i>@BeautyTips.phone</p>
+                                            <p><i class="ti-calendar"></i>@BeautyTips.Eventstartdate am</p>
+                                            <p>Rs.@Html.Encode(string.Format("{0:2}", BeautyTips.price))</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<!-- // Events -->
+@section scripts
+{
+    <script type="text/javascript" src="~/CSSWeb/js/jquery-ui.js"></script>
+    <script type="text/javascript" src="~/CSSWeb/js/masterslider.min.js"></script>
+    <script type="text/javascript" src="~/CSSWeb/js/tabs.js"></script>
+    <script type="text/javascript" src="~/CSSWeb/js/owl.carousel.min.js"></script>
+}
+<script type="text/javascript" async="async" defer="defer" data-cfasync="false" src="https://mylivechat.com/chatinline.aspx?hccid=84879164"></script>

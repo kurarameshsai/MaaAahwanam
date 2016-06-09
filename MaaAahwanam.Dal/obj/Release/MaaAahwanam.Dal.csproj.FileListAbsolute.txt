@@ -1,0 +1,10 @@
+F:\MaaAahwanam\MaaAahwanam.Dal\bin\Release\MaaAahwanam.Dal.dll.config
+F:\MaaAahwanam\MaaAahwanam.Dal\bin\Release\MaaAahwanam.Dal.dll
+F:\MaaAahwanam\MaaAahwanam.Dal\bin\Release\MaaAahwanam.Dal.pdb
+F:\MaaAahwanam\MaaAahwanam.Dal\bin\Release\EntityFramework.dll
+F:\MaaAahwanam\MaaAahwanam.Dal\bin\Release\EntityFramework.SqlServer.dll
+F:\MaaAahwanam\MaaAahwanam.Dal\bin\Release\EntityFramework.xml
+F:\MaaAahwanam\MaaAahwanam.Dal\bin\Release\EntityFramework.SqlServer.xml
+F:\MaaAahwanam\MaaAahwanam.Dal\obj\Release\MaaAahwanam.Dal.dll
+F:\MaaAahwanam\MaaAahwanam.Dal\obj\Release\MaaAahwanam.Dal.pdb
+F:\MaaAahwanam\MaaAahwanam.Dal\obj\Release\MaaAahwanam.Dal.csprojResolveAssemblyReference.cache

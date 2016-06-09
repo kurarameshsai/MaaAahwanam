@@ -1,0 +1,398 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/SharedWeb/MainMaster.cshtml";
+}
+
+@section Navigation
+{
+<div class="breads">
+    <div class="breads_inner">
+        <div class="pageWidth">
+            <div class="title">
+                <h3>Gift Selec</h3>
+            </div>
+            <div class="breadcrumbs">
+                <ul>
+                    <li><a href="../Index">Home</a></li>
+                    <li><i class="breads_arrow"></i></li>
+                    <li><a href="index.html">Services</a></li>
+                    <li><i class="breads_arrow"></i></li>
+                    <li>Invitation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+}
+<section>
+    <div class="about_main">
+        <div class="pageWidth">
+            <aside>
+                <h4>Categories</h4>
+                <span>&nbsp;</span>
+                <ul>
+                    <li><a href="#"> Wedding Cards</a></li>
+                    <li><a href="../Deals"> Birthday Cards</a></li>
+                    <li><a href="#"> Special  Cards</a></li>
+                    <li><a href="#"> New Arrivals</a></li>
+                    <li><a href="#"> Scroll Invitations</a></li>
+                    <li><a href="#"> Best Sellers</a></li>
+                    <li><a href="#"> Theme Cards</a></li>
+                </ul>
+                <div class="line">&nbsp;</div>
+                <h4>Filter By</h4>
+                <span>&nbsp;</span>
+                <div class="clear"></div>
+                <form class="form">
+                    <label>Location</label>
+                    <input type="text" name="location" placeholder="Enter your Location">
+                    <label>Price Range</label>
+                    <div class="radioButtons" id="radio-demo">
+                        <input type="radio" name="radio-group" id="lowto_high" checked value="Low to High" />
+                        <label for="first-choice">Low to High</label>
+                        <br />
+                        <input type="radio" name="radio-group" id="highto_low" value="High to Low" />
+                        <label for="second-choice">High to Low</label>
+                    </div>
+                </form>
+            </aside>
+            <article>
+                <div class="about_categories">
+                    <select>
+                        <option>Beautician</option>
+                        <option>Photographers</option>
+                        <option>Cake Vendors</option>
+                        <option>Caterer Decorators</option>
+                        <option>Designer Photographers</option>
+                        <option>Entertainment</option>
+                        <option>Fireworks</option>
+                        <option>Godi wale</option>
+                    </select>
+                </div>
+                <div class="about_content">
+                    <fieldset class="address-data-inputs">
+                        <ul class="steps">
+                            <li class="done"><a href="~/ReturnGift/Index"><i class="ti-agenda"></i> <span>Event Details</span><strong></strong></a></li>
+                            <li class="current"><a href="../GiftSelect/Index"><i class="ti-thumb-up"></i> <span>Select Gift</span> <strong></strong></a></li>
+                            <li><a href="../GiftInfo/Index"><i class="ti-receipt"></i><span>Gift Info</span><strong></strong></a></li>
+                        </ul>
+                        <div class="displayDiv">
+                            <div class="deals-main">
+                                <div class="step2">
+                                    <div class="deal selectCard">
+                                        <div class="deal-thumb">
+                                            <a href="~/GiftInfo/Index">
+                                                <div class="zoomDiv">
+                                                    <img src="../CSSWeb/images/gifts/gift-1.jpg" alt="thumb">
+                                                    <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span> </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="deal-details">
+                                            <h2><a href="~/GiftInfo/Index">Gilded Scrollwork</a></h2>
+                                            <div class="amount"> <span class="price">Rs. 999</span> <span class="buy"> <a href="gift-info.html"><i class="ti-shopping-cart"></i> Add to Cart</a></span> </div>
+                                            <p>Lorem Ipsum is simply text is one of the printing...</p>
+                                            <div class="deal-footer">
+                                                <ul>
+                                                    <li>
+                                                        <div class="rate" data-rate-value=4></div>
+                                                    </li>
+                                                    <li><i class="ti-comment-alt"></i> 1362</li>
+                                                    <li><i class="ti-eye"></i> 1500</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="deal selectCard">
+                                        <div class="deal-thumb">
+                                            <a href="~/GiftInfo/Index">
+                                                <div class="zoomDiv">
+                                                    <img src="../CSSWeb/images/gifts/gift-2.jpg" alt="thumb">
+                                                    <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span> </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="deal-details">
+                                            <h2><a href="~/GiftInfo/Index">Splendid Succulent</a></h2>
+                                            <div class="amount"> <span class="price">Rs. 599</span> <span class="buy"> <a href="gift-info.html"><i class="ti-shopping-cart"></i> Add to Cart</a></span> </div>
+                                            <p>It is a long established fact that a reader ...</p>
+                                            <div class="deal-footer">
+                                                <ul>
+                                                    <li>
+                                                        <div class="rate" data-rate-value=1></div>
+                                                    </li>
+                                                    <li><i class="ti-comment-alt"></i> 1362</li>
+                                                    <li><i class="ti-eye"></i> 1500</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="deal selectCard">
+                                        <div class="deal-thumb">
+                                            <a href="~/GiftInfo/Index">
+                                                <div class="zoomDiv">
+                                                    <img src="../CSSWeb/images/gifts/gift-3.jpg" alt="thumb">
+                                                    <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span> </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="deal-details">
+                                            <h2><a href="~/GiftInfo/Index">Wedding Favors</a></h2>
+                                            <div class="amount"> <span class="price">Rs. 570</span> <span class="buy"> <a href="gift-info.html"><i class="ti-shopping-cart"></i> Add to Cart</a></span> </div>
+                                            <p>Contrary to popular belief, Lorem Ipsum is not ...</p>
+                                            <div class="deal-footer">
+                                                <ul>
+                                                    <li>
+                                                        <div class="rate" data-rate-value=5></div>
+                                                    </li>
+                                                    <li><i class="ti-comment-alt"></i> 1362</li>
+                                                    <li><i class="ti-eye"></i> 1500</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="deal selectCard">
+                                        <div class="deal-thumb">
+                                            <a href="~/GiftInfo/Index">
+                                                <div class="zoomDiv">
+                                                    <img src="../CSSWeb/images/gifts/gift-4.jpg" alt="thumb">
+                                                    <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span> </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="deal-details">
+                                            <h2><a href="~/GiftInfo/Index">Add on Card</a></h2>
+                                            <div class="amount"> <span class="price">Rs. 350</span> <span class="buy"><a href="gift-info.html"><i class="ti-shopping-cart"></i> Book Now</a></span> </div>
+                                            <p>It is a long established fact that a reader will be distracted by...</p>
+                                            <div class="deal-footer">
+                                                <ul>
+                                                    <li>
+                                                        <div class="rate" data-rate-value=3></div>
+                                                    </li>
+                                                    <li><i class="ti-comment-alt"></i> 1362</li>
+                                                    <li><i class="ti-eye"></i> 1500</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="step2">
+                                    <div class="deal selectCard">
+                                        <div class="deal-thumb">
+                                            <a href="~/GiftInfo/Index">
+                                                <div class="zoomDiv">
+                                                    <img src="../CSSWeb/images/gifts/gift-4.jpg" alt="thumb">
+                                                    <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span> </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="deal-details">
+                                            <h2><a href="~/GiftInfo/Index">Gilded Scrollwork</a></h2>
+                                            <div class="amount"> <span class="price">Rs. 999</span> <span class="buy"> <a href="gift-info.html"><i class="ti-shopping-cart"></i> Add to Cart</a></span> </div>
+                                            <p>Lorem Ipsum is simply text is one of the printing...</p>
+                                            <div class="deal-footer">
+                                                <ul>
+                                                    <li>
+                                                        <div class="rate" data-rate-value=4></div>
+                                                    </li>
+                                                    <li><i class="ti-comment-alt"></i> 1362</li>
+                                                    <li><i class="ti-eye"></i> 1500</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="deal selectCard">
+                                        <div class="deal-thumb">
+                                            <a href="~/GiftInfo/Index">
+                                                <div class="zoomDiv">
+                                                    <img src="../CSSWeb/images/gifts/gift-3.jpg" alt="thumb">
+                                                    <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span> </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="deal-details">
+                                            <h2><a href="~/GiftInfo/Index">Splendid Succulent</a></h2>
+                                            <div class="amount"> <span class="price">Rs. 599</span> <span class="buy"> <a href="gift-info.html"><i class="ti-shopping-cart"></i> Add to Cart</a></span> </div>
+                                            <p>It is a long established fact that a reader ...</p>
+                                            <div class="deal-footer">
+                                                <ul>
+                                                    <li>
+                                                        <div class="rate" data-rate-value=1></div>
+                                                    </li>
+                                                    <li><i class="ti-comment-alt"></i> 1362</li>
+                                                    <li><i class="ti-eye"></i> 1500</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="deal selectCard">
+                                        <div class="deal-thumb">
+                                            <a href="~/GiftInfo/Index">
+                                                <div class="zoomDiv">
+                                                    <img src="../CSSWeb/images/gifts/gift-1.jpg" alt="thumb">
+                                                    <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span> </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="deal-details">
+                                            <h2><a href="~/GiftInfo/Index">Wedding Favors</a></h2>
+                                            <div class="amount"> <span class="price">Rs. 570</span> <span class="buy"> <a href="gift-info.html"><i class="ti-shopping-cart"></i> Add to Cart</a></span> </div>
+                                            <p>Contrary to popular belief, Lorem Ipsum is not ...</p>
+                                            <div class="deal-footer">
+                                                <ul>
+                                                    <li>
+                                                        <div class="rate" data-rate-value=5></div>
+                                                    </li>
+                                                    <li><i class="ti-comment-alt"></i> 1362</li>
+                                                    <li><i class="ti-eye"></i> 1500</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="deal selectCard">
+                                        <div class="deal-thumb">
+                                            <a href="~/GiftInfo/Index">
+                                                <div class="zoomDiv">
+                                                    <img src="../CSSWeb/images/gifts/gift-2.jpg" alt="thumb">
+                                                    <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span> </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="deal-details">
+                                            <h2><a href="~/GiftInfo/Index">Add on Card</a></h2>
+                                            <div class="amount"> <span class="price">Rs. 350</span> <span class="buy"><a href="gift-info.html"><i class="ti-shopping-cart"></i> Book Now</a></span> </div>
+                                            <p>It is a long established fact that a reader will be distracted by...</p>
+                                            <div class="deal-footer">
+                                                <ul>
+                                                    <li>
+                                                        <div class="rate" data-rate-value=3></div>
+                                                    </li>
+                                                    <li><i class="ti-comment-alt"></i> 1362</li>
+                                                    <li><i class="ti-eye"></i> 1500</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="step2">
+                                    <div class="deal selectCard">
+                                        <div class="deal-thumb">
+                                            <a href="~/GiftInfo/Index">
+                                                <div class="zoomDiv">
+                                                    <img src="../CSSWeb/images/gifts/gift-3.jpg" alt="thumb">
+                                                    <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span> </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="deal-details">
+                                            <h2><a href="~/GiftInfo/Index">Gilded Scrollwork</a></h2>
+                                            <div class="amount"> <span class="price">Rs. 999</span> <span class="buy"> <a href="gift-info.html"><i class="ti-shopping-cart"></i> Add to Cart</a></span> </div>
+                                            <p>Lorem Ipsum is simply text is one of the printing...</p>
+                                            <div class="deal-footer">
+                                                <ul>
+                                                    <li>
+                                                        <div class="rate" data-rate-value=4></div>
+                                                    </li>
+                                                    <li><i class="ti-comment-alt"></i> 1362</li>
+                                                    <li><i class="ti-eye"></i> 1500</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="deal selectCard">
+                                        <div class="deal-thumb">
+                                            <a href="~/GiftInfo/Index">
+                                                <div class="zoomDiv">
+                                                    <img src="../CSSWeb/images/gifts/gift-1.jpg" alt="thumb">
+                                                    <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span> </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="deal-details">
+                                            <h2><a href="~/GiftInfo/Index">Splendid Succulent</a></h2>
+                                            <div class="amount"> <span class="price">Rs. 599</span> <span class="buy"> <a href="gift-info.html"><i class="ti-shopping-cart"></i> Add to Cart</a></span> </div>
+                                            <p>It is a long established fact that a reader ...</p>
+                                            <div class="deal-footer">
+                                                <ul>
+                                                    <li>
+                                                        <div class="rate" data-rate-value=1></div>
+                                                    </li>
+                                                    <li><i class="ti-comment-alt"></i> 1362</li>
+                                                    <li><i class="ti-eye"></i> 1500</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="deal selectCard">
+                                        <div class="deal-thumb">
+                                            <a href="~/GiftInfo/Index">
+                                                <div class="zoomDiv">
+                                                    <img src="../CSSWeb/images/gifts/gift-2.jpg" alt="thumb">
+                                                    <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span> </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="deal-details">
+                                            <h2><a href="~/GiftInfo/Index">Wedding Favors</a></h2>
+                                            <div class="amount"> <span class="price">Rs. 570</span> <span class="buy"> <a href="gift-info.html"><i class="ti-shopping-cart"></i> Add to Cart</a></span> </div>
+                                            <p>Contrary to popular belief, Lorem Ipsum is not ...</p>
+                                            <div class="deal-footer">
+                                                <ul>
+                                                    <li>
+                                                        <div class="rate" data-rate-value=5></div>
+                                                    </li>
+                                                    <li><i class="ti-comment-alt"></i> 1362</li>
+                                                    <li><i class="ti-eye"></i> 1500</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="deal selectCard">
+                                        <div class="deal-thumb">
+                                            <a href="~/GiftInfo/Index">
+                                                <div class="zoomDiv">
+                                                    <img src="../CSSWeb/images/gifts/gift-4.jpg" alt="thumb">
+                                                    <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span> </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="deal-details">
+                                            <h2><a href="~/GiftInfo/Index">Add on Card</a></h2>
+                                            <div class="amount"> <span class="price">Rs. 350</span> <span class="buy"><a href="gift-info.html"><i class="ti-shopping-cart"></i> Book Now</a></span> </div>
+                                            <p>It is a long established fact that a reader will be distracted by...</p>
+                                            <div class="deal-footer">
+                                                <ul>
+                                                    <li>
+                                                        <div class="rate" data-rate-value=3></div>
+                                                    </li>
+                                                    <li><i class="ti-comment-alt"></i> 1362</li>
+                                                    <li><i class="ti-eye"></i> 1500</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<div class="pagination2">
+                              <div class="prev"> <a href="return-gifts.html" class="btn btn-big btn-green float-left"><i class="ti-angle-double-left"></i> Back to Prev</a> </div>
+                              <div class="next"> <a href="gift-info.html" class="btn btn-big btn-red float-right">Go to Next <i class="ti-angle-double-right"></i></a> </div>
+                            </div>-->
+                            <div class="loadMore">
+                                <button name="loadmore" class="btn btn-green more-button"><i class="ti-reload"></i> Load More</button>
+                            </div>
+                        </div>
+                        <!-- displayDiv -->
+                    </fieldset>
+                </div>
+            </article>
+            <div class="clear"></div>
+            <div class="ad">
+                <div class="pageWidth">
+                    <div class="ad_728 margin_bottom_20"><img src="../CSSWeb/images/ad_728_2.jpg" alt="advertise"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="clear"></div>

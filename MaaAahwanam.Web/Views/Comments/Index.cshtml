@@ -1,0 +1,67 @@
+﻿@model MaaAahwanam.Models.IssueTicketDetails
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/SharedWeb/DashBoardMaster.cshtml";
+}
+
+@section Navigation
+{
+    <div class="breads">
+        <div class="breads_inner">
+            <div class="pageWidth">
+                <div class="title">
+                    <h3>Comments</h3>
+                </div>
+                <div class="breadcrumbs">
+                    <ul>
+                        <li><a href="~/Index/Index">Home</a></li>
+                        <li><i class="breads_arrow"></i></li>
+                        <li><a href="~/Dashboard/Index">Dashboard</a></li>
+                        <li><i class="breads_arrow"></i></li>
+                        <li><a href="notifications.html">Notifications</a></li>
+                        <li><i class="breads_arrow"></i></li>
+                        <li>Comments</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div class="comments-page">
+    <div class="comments-box comments-div">
+        @using (Html.BeginForm("Update", "Comments", FormMethod.Post, new { @class = "form", @id = "contact_form" }))
+        {
+            <ul>
+                <li class="full">
+                    <label>Comments</label>
+                    @Html.HiddenFor(m => m.Ticket_Id)
+                    @Html.TextAreaFor(m => m.Msg, 10, 55, new { @id = "comments", @name = "comments", @placeholder = "Enter your comments here ..." })
+                </li>
+            </ul>
+            <button type="submit" class="btn btn btn-orange m-l-0 btn-right" name="Command"><i class="ti-thumb-up"></i> &nbsp;Submit</button>
+            <div class="clear"></div>
+        }
+        <div class="clear"></div>
+    </div>
+    <!-- /comments-box -->
+    <div class="replyStyle comments m-t-30">
+        <h2>Comments <span>@this.Model.SP_TICKETLIST1.Count()</span></h2>
+        @foreach (var item in Model.SP_TICKETLIST1)
+        {
+            <dl>
+                <dt><img class="person" alt="img-profile1" src="../Content/AdminUserfiles/@item.UserImag"></dt>
+                <dd>
+                    <h5>@item.FirstName</h5>
+                    <p>@item.Msg</p>
+                    <div class="cmntsPublish">
+                        <ul>
+                            <li><i class="ti-time"></i><span>@item.ReplayedDate</span></li>
+                        </ul>
+                    </div>
+                </dd>
+            </dl>
+        }
+
+    </div>
+    <div class="clear"></div>
+</div>

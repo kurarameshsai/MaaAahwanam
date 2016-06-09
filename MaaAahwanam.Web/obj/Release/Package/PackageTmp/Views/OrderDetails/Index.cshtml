@@ -1,0 +1,185 @@
+﻿@model Tuple<List<MaaAahwanam.Dal.SP_ADMIN_ORDERDITEMS_USER_Result>, List<MaaAahwanam.Dal.MA_Payment_Carddetails>>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/SharedWeb/DashBoardMaster.cshtml";
+}
+@section Navigation
+{
+    <div class="breads">
+        <div class="breads_inner">
+            <div class="pageWidth">
+                <div class="title">
+                    <h3>Book Now View Cart</h3>
+                </div>
+                <div class="breadcrumbs">
+                    <ul>
+                        <li><a href="~/Index/Index">Home</a></li>
+                        <li><i class="breads_arrow"></i></li>
+                        <li><a href="~/Dashboard/Index">Dashboard</a></li>
+                        <li><i class="breads_arrow"></i></li>
+                        <li>Order Details</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+<div class="dashInner">
+    <div class="order-details">
+        <h2>Order ID : @this.Model.Item1[0].ORDERID</h2>
+        <p>Order Date :@string.Format("{0:dd/MM/yyyy}", Model.Item1[0].OrderdDate)</p>
+        <div class="clear"></div>
+    </div>
+    <!-- /order-details -->
+    <div class="dashboardList dashboardList-whitebg dashboardList-nospace">
+        <table class="responsive">
+            <thead>
+                <tr>
+                    <th style="width:35%">Item Details</th>
+                    @if (ViewBag.Type == "User")
+                    {
+                        <th style="width:24%">Vendor Details</th>
+                    }
+                    @if (ViewBag.Type == "Vendor")
+                    {
+                        <th style="width:24%">Event Details</th>
+                    }
+                    <th style="width:26%">Event Date/Time</th>
+                    <th style="width:15%">Price</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model.Item1)
+            {
+                <tbody>
+                    <tr>
+                        <td>
+                            @if ((@item.SERVICENAME == "BookNow" || @item.SERVICENAME == "Quotation" || @item.SERVICENAME == "Bidding") && @item.IMAGEPATH != null)
+                            {
+                                <div class="item-img"><img src="../Content/VendorImages/@item.IMAGEPATH" /></div>
+                            }
+                            @if (@item.SERVICENAME == "Invitation" && @item.IMAGEPATH != null)
+                            {
+                                <div class="item-img"><img src="../Content/InvitationDesignfiles/@item.IMAGEPATH" /></div>
+                            }
+                            @if (@item.SERVICENAME == "ReturnGifts" && @item.IMAGEPATH != null)
+                            {
+                                <div class="item-img"><img src="../Content/Giftdesignfiles/@item.IMAGEPATH" /></div>
+                            }
+                            @if (@item.IMAGEPATH == null)
+                            {
+                                <div class="item-img"><img src="../Assets/img/demoUpload.jpg" /></div>
+                            }
+                            <div class="item-details">
+                                <h4>@item.SERVICETYPE</h4>
+                            </div>
+                            @item.ITEMNAME
+                        </td>
+                        <td>
+                            <h4>@item.EVENTNAME</h4>
+                            @if (ViewBag.Type == "User")
+                            {
+                                @Html.Raw(item.VENDORDETAILS.Replace("!", "<br/>"))
+                            }
+                            @if (ViewBag.Type == "Vendor")
+                            {
+                                @Html.Raw(item.EVENTDETAILS)
+                            }
+                        </td>
+                        <td>
+                            @Html.Raw(item.EVENTDATES.Replace(",", "<br/>"))
+                        </td>
+                        <td>
+                            <div class="item-price">
+                                <p>Rs. @string.Format("{0:F2}", item.TOTALPRICE)</p>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            }
+        </table>
+        <div class="clear"></div>
+    </div>
+    <!-- /dashboardList -->
+    <div class="price-information">
+        <div class="total-price">
+            <div class="price-desc">
+                <h6>Payment Terms & Conditions</h6>
+                <p>Lorem Ipsum is simply dummy<br /> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+            </div>
+            <div class="price-info">
+                <table>
+                    <tr>
+                        <td style="width:55%;">Sub Total</td>
+                        <td style="width:15%;" align="center">:</td>
+                        <td style="width:30%;">@string.Format("{0:F2}", Model.Item1[0].TOTALPRICEOFITEMS)</td>
+                    </tr>
+                    <tr>
+                        <td>Tax</td>
+                        <td align="center">:</td>
+                        <td>@string.Format("{0:F2}", Model.Item1[0].TOTALTAX)</td>
+                    </tr>
+                    <tr>
+                        <td><h5>Payble Total</h5></td>
+                        <td align="center"><h5>:</h5></td>
+                        <td><h5>@string.Format("{0:F2}", Model.Item1[0].TOTALPRICE)</h5></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <!-- /total-price -->
+        <div class="paid-amount">
+            <h5>Amount Paid&nbsp;&nbsp;:&nbsp;&nbsp;Rs. @string.Format("{0:F2}", Model.Item1[0].TOTALAMOUNTPAID)</h5>
+            <h4>Balance Amount to be Paid&nbsp;&nbsp;:&nbsp;&nbsp;Rs. @string.Format("{0:F2}", Model.Item1[0].BALANCEAMOUNT)</h4>
+        </div>
+        <div class="pay-btn btn-right">
+            <button class="btn btn-big btn-red" onclick="window.location.href='../Dashboard';"><i class="ti-close"></i> Cancel</button>
+            <button class="btn btn-big btn-green" onclick="window.location.href='/Payment/Index';"><i class="ti-money"></i> Pay Now</button>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!-- /price-information -->
+    <div class="dashboardList m-t-30">
+        <h2>Payment Details</h2>
+        <table class="responsive">
+            <thead>
+                <tr>
+                    <th style="width:10%">S.No</th>
+                    <th style="width:20%">Paid Date</th>
+                    <th style="width:50%">Details</th>
+                    <th style="width:20%">Amount</th>
+                </tr>
+            </thead>
+            @{int i = 1; }
+            @if (Model.Item2.Count != 0)
+            {
+                foreach (var Obj1 in Model.Item2)
+                {
+                    <tbody>
+                        <tr>
+                            <td>@i</td>
+                            <td>@string.Format("{0:dd/MM/yyyy}", @Obj1.CreatedDate)</td>
+                            <td>Paid with @Obj1.CardType card -  card @Obj1.CardNumber</td>
+                            <td>Rs. @string.Format("{0:F2}", @Obj1.AmountPaid)</td>
+                        </tr>
+                    </tbody>
+                    { i++; }
+                }
+            }
+            else
+            {
+                <tbody>
+                    <tr>
+                        <td>No Records Found</td>
+                    </tr>
+                </tbody>
+            }
+        </table>
+        <div class="clear"></div>
+    </div>
+    <!-- /dashboardList -->
+</div>
+<!-- /dashInner -->

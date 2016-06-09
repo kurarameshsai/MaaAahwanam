@@ -1,0 +1,150 @@
+﻿@model MaaAahwanam.Models.IssueTicketDetails
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/SharedWeb/DashBoardMaster.cshtml";
+}
+
+@section Navigation
+{
+    <div class="breads">
+    <div class="breads_inner">
+        <div class="pageWidth">
+            <div class="title">
+                <h3>Tickets</h3>
+            </div>
+            <div class="breadcrumbs">
+                <ul>
+                    @if (ViewBag.Type == "User")
+                    {
+                        <li><a href="~/index/Index">Home</a></li>
+                    }
+                    <li><i class="breads_arrow"></i></li>
+                    <li>Tickets</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+}
+<div class="dashInner">
+    <div class="tickets_header">
+        <h3>All Tickets</h3>
+        <a href="#newTicket" class="popup-with-move-anim">New Ticket</a>
+    </div>
+    <div class="clear"></div>
+    <!-- popup -->
+    <div id="newTicket" class="zoom-anim-dialog mfp-hide large-dialog">
+        <div class="popup-box pop-content">
+            <div class="popup-head">
+                <h3>Add New Ticket</h3>
+            </div>
+            <!-- /popup-head -->
+            <div class="popup-space popup-desc-space">
+                <div class="dashboardList">
+        @using (Html.BeginForm("Index", "Tickets", FormMethod.Post, new { @class = "form", @id = "contact_form" }))
+            {
+                    @*<form id="contact_form" class="form">*@
+                        <ul>
+                            <li>
+                                <label>Name</label>
+                                @Html.TextBoxFor(Model => Model.Name, new { @id = "fname", @name = "name", placeholder = "Name" })
+                               
+                            </li>
+                            <li>
+                                <label>Category</label>
+                                @Html.HiddenFor(Model => Model.UserLoginId)
+                                @Html.DropDownListFor(Model => Model.Issue_Type, new SelectList(
+                            new List<Object>{
+                            new  { Text ="Select Category", Value = ""},
+                            new  { Text ="Request Process", Value = "Request Process"},
+                            new  { Text ="Information On Site", Value = "Information On Site"},
+                            new  { Text ="Service Execution", Value = "Service Execution"},
+                                }, "value", "text"), new { @class = "form-control" })                               
+                            </li>
+                        </ul>
+
+                        <ul>
+                            <li>
+                                <label>Priority</label>
+                                @Html.DropDownListFor(Model => Model.Severity, new SelectList(
+                            new List<Object>{
+                            new  { Text ="Select Priority", Value = ""},
+                            new  { Text ="Urgent", Value = "Urgent"},
+                            new  { Text ="High", Value = "High"},
+                            new  { Text ="Medium", Value = "Medium"},
+                            new  { Text ="Low", Value = "Low"},
+                                }, "value", "text"), new { @class = "form-control" })                               
+                            </li>
+                            <li>
+                                <label>Subject</label>
+                                @Html.TextBoxFor(Model => Model.Subject, new { @id="subject", @name="subject", placeholder="Subject"})
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="fullwidth">
+                                <label>Description</label>
+                                @Html.TextAreaFor(Model => Model.Msg, 10, 55, new { @name = "Description", placeholder = "Description" })
+                                @*<textarea name="Description" placeholder="Description"></textarea>*@
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>&nbsp;</li>
+                            <li>                             
+                            <button type="submit" name="submit" class="btn btn-big btn-green float-right" value="submit">Submit <i class="ti-angle-double-right"></i></button>
+                            </li>
+                        </ul>
+                    @*</form>*@
+             }
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end popup -->
+    <!-- /dashDetails -->
+    <div class="dashboardList dashboardList-nospace">
+    @using (Html.BeginForm(FormMethod.Post))
+                {
+        <table class="responsive">
+            <thead>
+                <tr>
+                    <th style="width:10%">Sl. No.</th>
+                    <th style="width:10%">ID</th>
+                    <th style="width:25%">Name</th>
+                    <th style="width:25%">Subject</th>
+                    <th style="width:18%">Date</th>
+                    <th style="width:15%">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model.SP_TicketsUserList1)
+                 {
+                <tr>
+                    <td>@item.Ticket_Id</td>                 
+                     <td><a href="../Comments/Index?Id=@item.Ticket_Id" class="green-link">@item.Ticket_Id</a>                        
+                    </td>
+                    <td>@item.Name</td>
+                    <td>@item.Subject</td>
+                    <td>@item.CreatedDate</td>
+                    <td class="active">@item.Status</td>
+                </tr>  
+}            
+            </tbody>
+        </table>
+        <div class="pagination">
+            <ul>
+                <li><a href="javascript:void(0)">Prev</a></li>
+                <li><a href="javascript:void(0)" class="active">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a class="pagination-gap">...</a></li>
+                <li><a href="javascript:void(0)">24</a></li>
+                <li><a href="javascript:void(0)">25</a></li>
+                <li><a href="javascript:void(0)">Next</a></li>
+            </ul>
+        </div>
+        }
+        <div class="clear"></div>
+    </div>
+    <!-- /dashboardList -->
+
+</div>

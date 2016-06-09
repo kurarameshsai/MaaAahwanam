@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/SharedWeb/DashBoardMaster.cshtml";
+}
+
+@section Navigation
+{
+<div class="breads">
+    <div class="breads_inner">
+        <div class="pageWidth">
+            <div class="title">
+                <h3>Change Password</h3>
+            </div>
+            <div class="breadcrumbs">
+                <ul>
+                    @if (ViewBag.Type == "User")
+                    {
+                        <li><a href="~/index/Index">Home</a></li>
+                    }
+                    <li><i class="breads_arrow"></i></li>
+                    <li><a href="../Dashboard">Dashboard</a></li>
+                    <li><i class="breads_arrow"></i></li>
+                    <li>Change Password</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+}
+
+<div class="change-pwd">
+    <form id="change_password" class="form">
+        <ul>
+            <li>
+                <label>Old Password<span>*</span></label>
+                <input type="text" id="opword" name="opword" placeholder="Old Password">
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <label>New Password<span>*</span></label>
+                <input type="text" id="npwd" name="npwd" placeholder="New Password">
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <label>Confirm Password<span>*</span></label>
+                <input type="text" id="cpwd" name="cpwd" placeholder="Confirm Password">
+            </li>
+        </ul>
+        <div class="btn-left">
+            <button type="submit" class="btn btn btn-orange m-l-0"><i class="ti-save"></i>Save</button>
+            <button type="submit" class="btn btn btn-red"><i class="ti-close"></i>Cancel</button>
+            <div class="clear"></div>
+        </div>
+    </form>
+    <div class="clear"></div>
+</div>

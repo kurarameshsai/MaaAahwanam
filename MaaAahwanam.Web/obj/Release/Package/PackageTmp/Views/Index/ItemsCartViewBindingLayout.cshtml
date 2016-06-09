@@ -1,0 +1,75 @@
+﻿@model MaaAahwanam.Models.CartViewItemDetails
+@if(this.Model.cartlistcount!=0)
+{ 
+<div class="menu-cart">
+        <div class="click-nav">
+            <ul>
+                <li>
+                    <a href="../CartView"> <span class="userName">@this.Model.cartlistcount Items in Cart</span></a>
+                    <div class="scroll">
+                        <ul>
+                        @{ int counter = 0;}
+                           <span>&nbsp;</span>  
+                          @foreach(var item in this.Model.cartlist)
+                          { 
+                           if(item.ToString().Count()!=this.Model.cartlistcount)
+                           {
+                               if (counter==0)
+                               { 
+                                 <li class="no-border">
+                                <a href="../CartView">
+                                    <div class="cart-thumb"><img src="../Content/VendorImages/@item.image" alt="thumb"></div>
+                                    <div class="cart-title">
+                                        <h3>@item.Vendorname</h3>
+                                        <p>@item.Quantity X @item.PricePerQty</p>
+                                    </div>
+                                </a>
+                                <a href="#"><i class="ti-close"></i></a>
+                            </li>
+                            }
+                            else
+                               {
+                                 <li>
+                                <a href="../CartView">
+                                    <div class="cart-thumb"><img src="../Content/VendorImages/@item.image"  alt="thumb"></div>
+                                    <div class="cart-title">
+                                        <h3>@item.Vendorname</h3>
+                                        <p>@item.Quantity X @item.PricePerQty</p>
+                                    </div>
+                                </a>
+                                <a href="#"><i class="ti-close"></i></a>
+                            </li>   
+                               }
+                          }
+                              counter++;
+                          }                        
+                            <li>
+                                <div class="clear"></div>
+                                <div class="cart_footer">
+                                    <a href="../CartView">Check Out</a>
+                                    @if (this.Model.cartlistcount != 0) { 
+                                    <div class="cart_total">Total:@Html.Encode(string.Format("{0:n2}", Model.TotalPrice))</div>
+                                    }
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <span class="cart-icon"><i class="ti-shopping-cart"></i></span>
+    </div>
+}
+else
+{
+ <div class="menu-cart">
+        <div class="click-nav">
+            <ul>
+                <li>
+                    <a href="../CartView"> <span class="userName">0 Items in Cart</span></a>                   
+                </li>
+            </ul>
+        </div>
+        <span class="cart-icon"><i class="ti-shopping-cart"></i></span>
+    </div>
+}

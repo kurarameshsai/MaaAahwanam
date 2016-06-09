@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/SharedWeb/DashBoardMaster.cshtml";
+}
+
+@section Navigation
+{
+<div class="breads">
+    <div class="breads_inner">
+        <div class="pageWidth">
+            <div class="title">
+                <h3>Edit Profile</h3>
+            </div>
+            <div class="breadcrumbs">
+                <ul>
+                    @if (ViewBag.Type == "User")
+                    {
+                        <li><a href="~/index/Index">Home</a></li>
+                    }
+                    <li><i class="breads_arrow"></i></li>
+                    <li><a href="../Dashboard">Dashboard</a></li>
+                    <li><i class="breads_arrow"></i></li>
+                    <li>Edit Profile</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+}
+
+<div class="edit-profile">
+    <form id="edit_profile" class="form">
+        <ul>
+            <li>
+                <label>First Name<span>*</span></label>
+                <input type="text" id="fname" name="firstname" placeholder="First Name">
+            </li>
+            <li>
+                <label>Last Name<span>*</span></label>
+                <input type="text" id="lname" name="lastname" placeholder="last Name">
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <label>Email ID<span>*</span></label>
+                <input type="text" id="email" name="email" placeholder="Email">
+            </li>
+            <li>
+                <label>Gender<span>*</span></label>
+                <select name="gender" id="gender">
+                    <option value="">---Select---</option>
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                </select>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <label>Mobile Number<span>*</span></label>
+                <input type="text" id="mobile" name="mobile" placeholder="Mobile Number">
+            </li>
+            <li>
+                <label>Alternative Mobile Number</label>
+                <input type="text" id="mobile2" name="mobile2" placeholder="Alternative Mobile Number">
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <label>Street1</label>
+                <input type="text" id="street1" name="street2" placeholder="Street Name">
+            </li>
+            <li>
+                <label>Street2</label>
+                <input type="text" id="street2" name="street2" placeholder="Street Name">
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <label>Country</label>
+                <select name="select_option" id="select_option">
+                    <option value="">---Select---</option>
+                    <option value="1">India</option>
+                    <option value="2">USA</option>
+                </select>
+            </li>
+            <li>
+                <label>State</label>
+                <select name="select_option" id="select_option">
+                    <option value="">---Select---</option>
+                    <option value="1">Andhrapradesh</option>
+                    <option value="2">Telangana</option>
+                </select>
+            </li>
+        </ul>
+        <div class="btn-left">
+            <button type="submit" class="btn btn btn-orange m-l-0"><i class="ti-save"></i>Update</button>
+            <button type="submit" class="btn btn btn-red"><i class="ti-close"></i>Cancel</button>
+            <div class="clear"></div>
+        </div>
+    </form>
+    <div class="clear"></div>
+</div>

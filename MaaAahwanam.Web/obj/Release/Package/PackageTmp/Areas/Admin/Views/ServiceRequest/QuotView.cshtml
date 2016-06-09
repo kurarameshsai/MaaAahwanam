@@ -1,0 +1,138 @@
+﻿@{
+    ViewBag.Title = "QuotView";
+    Layout = "~/Areas/Admin/Views/Shared/Master.cshtml";
+}
+
+@section header{
+    <!-- PAGE LEVEL STYLES -->
+    <link href="~/Assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Assets/plugins/wysihtml5/dist/bootstrap-wysihtml5-0.0.2.css" />
+    <!-- END PAGE LEVEL  STYLES -->
+}
+<!--PAGE CONTENT -->
+<div id="content">
+    <div class="inner">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2> Quatation Requests Details</h2>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="body collapse in" id="div1"> <a href="/DashBoard/dashboard" class="btn btn-primary btn-xs">Home</a>&nbsp;&nbsp;&nbsp;<a href="QuotationRequest" class="btn btn-primary btn-xs">Quatation Requests</a>&nbsp;&nbsp;&nbsp;<a href="#" class="btn btn-primary btn-xs">Quatation Request Details</a> </div>
+                </br>
+                <h4><i class="icon-th-list"></i> Request #12313232 | Aug 27, 2015 7:16:25</h4>
+            </div>
+            </br>
+        </div>
+        <!-- Quot Starts here -->
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="pricing-table">
+                    <li class="col-lg-4">
+                        <h3>12313232-Quot1</h3>
+                        <!--<div class="price-body">-->
+                        <div class="price"><sup>&#x20B9;</sup>75,000</div>
+                        <!--</div>-->
+                        <div class="features">
+                            <ul>
+                                <li>SLN Function Hall</li>
+                                <li>Unlimited File Access</li>
+                                <li>Free Appointments</li>
+                                <li><strong>5 Bonus Points</strong> every month</li>
+                                <li>Customizable Profile Page</li>
+                                <li><strong>2 months</strong> support</li>
+                            </ul>
+                        </div>
+                        <div class="footer"> <a href="#" class="btn btn-info btn-rect"> Edit </a> <a href="#" class="btn btn-danger btn-rect"> Delete </a></div>
+                    </li>
+                    <li class="active danger col-lg-4">
+                        <h3>12313232-Quot2</h3>
+                        <!--<div class="price-body">-->
+                        <div class="price"><span class="price-figure"><sup>&#x20B9;</sup>1,00,000</div>
+                        <!--</div>-->
+                        <div class="features">
+                            <ul>
+                                <li>Hotel NKM Grand</li>
+                                <li>Unlimited File Access</li>
+                                <li>Free Appointments</li>
+                                <li><strong>20 Bonus Points</strong> every month</li>
+                                <li>Customizable Profile Page</li>
+                                <li><strong>6 months</strong> support</li>
+                            </ul>
+                        </div>
+                        <div class="footer"> <a href="#" class="btn btn-info btn-rect"> Edit </a> <a href="#" class="btn btn-danger btn-rect"> Delete </a></div>
+                        <!--<div class="footer"> <a href="#" class="btn btn-metis-1 btn-lg btn-rect">Get Started</a> </div>-->
+                    </li>
+                    <li class="col-lg-4">
+                        <h3>12313232-Quot3</h3>
+                        <!--<div class="price-body">-->
+                        <div class="price"><span class="price-figure"><sup>&#x20B9;</sup>60,000</div>
+                        <!--</div>-->
+                        <div class="features">
+                            <ul>
+                                <li>Maharaja Classic Inn</li>
+                                <li>Unlimited File Access</li>
+                                <li>Free Appointments</li>
+                                <li><strong>50 Bonus Points</strong> every month</li>
+                                <li>Customizable Profile Page</li>
+                                <li><strong>Lifetime</strong> support</li>
+                            </ul>
+                        </div>
+                        <div class="footer"> <a href="#" class="btn btn-info btn-rect"> Edit </a> <a href="#" class="btn btn-danger btn-rect"> Delete </a></div>
+                        <!--<div class="footer"> <a href="#" class="btn btn-info btn-rect">Get Started</a> </div>-->
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- Quot Ends here -->
+        </br></br>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="box">
+                    <header>
+                        <div class="icons"><i class="icon-th-large"></i></div>
+                        <h5>Create New Quotation</h5>
+
+                    </header>
+                    <div id="div-1" class="body collapse in">
+                        <form>
+                            <textarea id="wysihtml5" class="form-control" rows="10"></textarea>
+                            <div class="form-actions">
+                                <br />
+                                <input type="submit" value="Create Quotation" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Comments -->
+        <div class="row"></div>
+        <!-- comments end -->
+    </div>
+</div>
+<!--END PAGE CONTENT -->
+@section Bottom{
+    <script src="~/Assets/plugins/jquery-2.0.3.min.js"></script>
+    <script src="~/Assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+    <!-- PAGE LEVEL SCRIPTS -->
+    <script src="~/Assets/plugins/dataTables/jquery.dataTables.js"></script>
+    <script src="~/Assets/plugins/dataTables/dataTables.bootstrap.js"></script>
+    <script src="~/Assets/plugins/wysihtml5/lib/js/wysihtml5-0.3.0.js"></script>
+    <script src="~/Assets/plugins/bootstrap-wysihtml5-hack.js"></script>
+    <script src="~/Assets/js/editorInit.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dataTables-example').dataTable();
+        });
+    </script>
+    <script>
+        $(function () { formWysiwyg(); });
+    </script>
+    <!-- END PAGE LEVEL SCRIPTS -->
+}

@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/SharedWeb/DashBoardMaster.cshtml";
+}
+
+@section Navigation
+{
+    <div class="breads">
+    <div class="breads_inner">
+        <div class="pageWidth">
+            <div class="title">
+                <h3>My Profile</h3>
+            </div>
+            <div class="breadcrumbs">
+                <ul>
+                    @if (ViewBag.Type == "User")
+                    {
+                        <li><a href="~/index/Index">Home</a></li>
+                    }
+                    <li><i class="breads_arrow"></i></li>
+                    <li><a href="../Dashboard">Dashboard</a></li>
+                    <li><i class="breads_arrow"></i></li>
+                    <li>My Profile</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+}
+<div class="my-profile">
+    <div class="profileInfo">
+        <ul>
+            <li><strong>First Name:</strong> Satyam</li>
+            <li><strong>Last Name:</strong> Ganta</li>
+        </ul>
+        <ul>
+            <li><strong>Email ID:</strong> satyam.g@siriinnovations.com</li>
+            <li><strong>Gender:</strong> Male</li>
+        </ul>
+        <ul>
+            <li><strong>Mobile Number:</strong> 96525 44441</li>
+            <li><strong>Alternative Mobile Number:</strong> 96525 44441</li>
+        </ul>
+        <ul>
+            <li><strong>Street 1:</strong> Lorem ipsum dolor</li>
+            <li><strong>Street 2:</strong> Consectetur adipiscing elit</li>
+        </ul>
+        <ul>
+            <li><strong>Country:</strong> India</li>
+            <li><strong>State:</strong> Telangana</li>
+        </ul>
+        <ul>
+            <li><strong>City:</strong> Hyderabad</li>
+            <li><strong>Location:</strong> Banjarahills</li>
+        </ul>
+        <ul>
+            <li><strong>Landmark:</strong> Near HDFC Bank</li>
+            <li><strong>Zip:</strong> 500084</li>
+        </ul>
+
+        <ul>
+            <li class="fullDiv"><strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pharetra lacinia tincidunt. Duis pretium dolor at risus iaculis, ac laoreet risus mollis. Sed at diam lacinia ligula facilisis convallis vel non sapien. Curabitur pellentesque lorem sit amet metus ornare, id molestie nisi dignissim. Nullam venenatis dolor bibendum, viverra nisi eu, cursus est. Praesent vitae arcu dui. In euismod pharetra lorem at malesuada. Proin ac nulla quis nisi scelerisque convallis. Nulla augue odio, luctus non ante sit amet, interdum eleifend libero.  </li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+</div>
+
