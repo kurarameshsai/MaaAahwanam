@@ -14,7 +14,8 @@ namespace MaaAahwanam
     {
         Maa_AhwaanamBase _Repositories = new Maa_AhwaanamBase();
         public int SaveInviDesigns(GIftdesign Giftdesigns)
-        {
+        { 
+            // hai
             MaaAahwanam.Dal.MA_Giftdesigns Gifts = new MA_Giftdesigns();
             if (Giftdesigns.giftid != 0) Gifts = _Repositories.Giftdesigns.Get().SingleOrDefault(i => i.Giftid == Giftdesigns.giftid);
             Gifts.Giftname = Giftdesigns.GiftName;
