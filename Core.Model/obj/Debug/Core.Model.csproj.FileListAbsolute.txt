@@ -1,4 +1,0 @@
-D:\Maa-Backup 2.0\Maa-Aahwanam\Core.Model\bin\Debug\Core.Model.dll
-D:\Maa-Backup 2.0\Maa-Aahwanam\Core.Model\bin\Debug\Core.Model.pdb
-D:\Maa-Backup 2.0\Maa-Aahwanam\Core.Model\obj\Debug\Core.Model.dll
-D:\Maa-Backup 2.0\Maa-Aahwanam\Core.Model\obj\Debug\Core.Model.pdb

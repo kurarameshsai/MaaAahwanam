@@ -1,4 +1,0 @@
-D:\Maa-Backup 2.0\Maa-Aahwanam\Portal.Model\bin\Debug\Portal.Model.dll
-D:\Maa-Backup 2.0\Maa-Aahwanam\Portal.Model\bin\Debug\Portal.Model.pdb
-D:\Maa-Backup 2.0\Maa-Aahwanam\Portal.Model\obj\Debug\Portal.Model.dll
-D:\Maa-Backup 2.0\Maa-Aahwanam\Portal.Model\obj\Debug\Portal.Model.pdb

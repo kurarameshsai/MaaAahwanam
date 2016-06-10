@@ -1,4 +1,0 @@
-D:\Maa-Backup 2.0\Maa-Aahwanam\Core.Service\bin\Debug\Core.Service.dll
-D:\Maa-Backup 2.0\Maa-Aahwanam\Core.Service\bin\Debug\Core.Service.pdb
-D:\Maa-Backup 2.0\Maa-Aahwanam\Core.Service\obj\Debug\Core.Service.dll
-D:\Maa-Backup 2.0\Maa-Aahwanam\Core.Service\obj\Debug\Core.Service.pdb

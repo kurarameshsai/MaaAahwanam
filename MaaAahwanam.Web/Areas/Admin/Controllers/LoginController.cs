@@ -38,7 +38,7 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
                         ValidUserUtility.SetAuthCookie(userlogindetails.UserLoginId.ToString(), userlogindetailsbal.Usertype(userlogindetails.UserLoginId));
                         logs.LogEvents("Login Successfully", "Login/Index");
                         logs.LogTimings("In");
-                        return RedirectToAction("dashboard", "DashBoard");
+                        return RedirectToAction("Dashboard", "DashBoard");
                     }
                     else
                     {

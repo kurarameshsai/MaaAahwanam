@@ -56,6 +56,7 @@
     <Compile Include="TestmonialsBAL.cs" />
     <Compile Include="UserAddressBookBal.cs" />
     <Compile Include="UserLoginDetalsBal.cs" />
+    <Compile Include="VendorDetailsBal.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
