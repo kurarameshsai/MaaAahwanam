@@ -44,7 +44,7 @@ namespace MaaAahwanam.Web.Controllers
             var BeautyTips = EventsandTipsList.Where(p => p.Type == "Beauty").OrderByDescending(p => p.Eventstartdate).ToList().Take(10);
             ViewBag.BeautyTips = BeautyTips;
 
-            //Testimonials List
+            //Testimonials List--santosh
             TestmonialsBAL testmonialbal = new TestmonialsBAL();
             var Testimonials = testmonialbal.TestmonialsViewList(1).ToList();
             ViewBag.Testimonials = Testimonials;
