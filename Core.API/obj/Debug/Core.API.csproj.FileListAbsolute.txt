@@ -27,6 +27,5 @@ D:\Maa-Backup 2.0\Maa-Aahwanam\Core.API\bin\System.Web.WebPages.xml
 D:\Maa-Backup 2.0\Maa-Aahwanam\Core.API\bin\System.Web.WebPages.Deployment.xml
 D:\Maa-Backup 2.0\Maa-Aahwanam\Core.API\bin\System.Web.WebPages.Razor.xml
 D:\Maa-Backup 2.0\Maa-Aahwanam\Core.API\bin\Antlr3.Runtime.pdb
-D:\Maa-Backup 2.0\Maa-Aahwanam\Core.API\obj\Debug\Core.API.csprojResolveAssemblyReference.cache
 D:\Maa-Backup 2.0\Maa-Aahwanam\Core.API\obj\Debug\Core.API.dll
 D:\Maa-Backup 2.0\Maa-Aahwanam\Core.API\obj\Debug\Core.API.pdb

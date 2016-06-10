@@ -50,6 +50,5 @@ D:\Maa-Backup 2.0\Maa-Aahwanam\Portal\bin\Microsoft.Owin.Security.OAuth.xml
 D:\Maa-Backup 2.0\Maa-Aahwanam\Portal\bin\Microsoft.Owin.Security.Google.xml
 D:\Maa-Backup 2.0\Maa-Aahwanam\Portal\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Maa-Backup 2.0\Maa-Aahwanam\Portal\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-D:\Maa-Backup 2.0\Maa-Aahwanam\Portal\obj\Debug\Portal.csprojResolveAssemblyReference.cache
 D:\Maa-Backup 2.0\Maa-Aahwanam\Portal\obj\Debug\Portal.dll
 D:\Maa-Backup 2.0\Maa-Aahwanam\Portal\obj\Debug\Portal.pdb

@@ -412,6 +412,7 @@ F:\MaaAahwanam1.0\MaaAahwanam.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.x
 F:\MaaAahwanam1.0\MaaAahwanam.Web\obj\Debug\MaaAahwanam.Web.csprojResolveAssemblyReference.cache
 F:\MaaAahwanam1.0\MaaAahwanam.Web\obj\Debug\MaaAahwanam.Web.dll
 F:\MaaAahwanam1.0\MaaAahwanam.Web\obj\Debug\MaaAahwanam.Web.pdb
+D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\obj\Debug\MaaAahwanam.Web.csprojResolveAssemblyReference.cache
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\MaaAahwanam.Web.dll.config
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\MaaAahwanam.Web.dll
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\MaaAahwanam.Web.pdb
@@ -478,6 +479,5 @@ D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\Microsoft.Owin.Security.OAuth
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\Microsoft.Owin.Security.Google.xml
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\obj\Debug\MaaAahwanam.Web.csprojResolveAssemblyReference.cache
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\obj\Debug\MaaAahwanam.Web.dll
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\obj\Debug\MaaAahwanam.Web.pdb

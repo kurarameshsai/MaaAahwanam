@@ -68,15 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminDashboard.cs" />
     <Compile Include="BuyNowDetails.cs" />
     <Compile Include="CartViewItemDetails.cs" />
     <Compile Include="ContactUs.cs" />
     <Compile Include="DDLServiceModel.cs" />
     <Compile Include="DealsDetails.cs" />
     <Compile Include="Eventsandtips.cs" />
-    <Compile Include="GIftdesign.cs" />
-    <Compile Include="InviDesigns.cs" />
     <Compile Include="InvitationRequest.cs" />
     <Compile Include="IssueTicketDetails.cs" />
     <Compile Include="MultipleImagesforInvitations.cs" />

@@ -16,7 +16,7 @@ namespace MaaAahwanam
         public IEnumerable<SP_DEALSLIST_Result> DealsBindingLayoutList(string servicetype)
         {
             return _Repositories.SP_DEALSLIST.ExecuteProcedure_WithParameters("exec SP_DEALSLIST {0},{1}", 1, servicetype).ToList();
-           
+
         }
     }
 }
