@@ -22,7 +22,7 @@
 <div id="content" style="width:83%">
     <div class="inner" style="min-height: 700px;">
         <!--BLOCK SECTION -->
-        <div class="row">
+        @*<div class="row">
             <div class="col-lg-12">
                 @foreach (var item in Model.Dashboardcounts)
                 {
@@ -48,131 +48,8 @@
                     </div>
                 }
             </div>
-        </div>
+        </div>*@
         <!--END BLOCK SECTION -->
-        <hr />
-
-        <div class="box box-info" style="width:65%;float:left">
-            <div class="box-header with-border">
-                <h3 class="box-title">Latest Orders</h3>
-                @*<div class="box-tools pull-right">
-                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                        <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                    </div>*@
-            </div><!-- /.box-header -->
-            <div class="box-body">
-                <div class="table-responsive">
-                    <table class="table no-margin">
-                        <thead>
-                            <tr>
-                                <th>Order ID</th>
-                                <th>Item</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><a href="#">OR9842</a></td>
-                                <td>Call of Duty IV</td>
-                                <td><span class="label label-success">Approved</span></td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">OR1848</a></td>
-                                <td>Samsung Smart TV</td>
-                                <td><span class="label label-warning">Pending</span></td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">OR7429</a></td>
-                                <td>iPhone 6 Plus</td>
-                                <td><span class="label label-danger">Advance Paid</span></td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">OR7429</a></td>
-                                <td>Samsung Smart TV</td>
-                                <td><span class="label label-info">Approved</span></td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">OR1848</a></td>
-                                <td>Samsung Smart TV</td>
-                                <td><span class="label label-warning">Pending</span></td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">OR7429</a></td>
-                                <td>iPhone 6 Plus</td>
-                                <td><span class="label label-danger">Advance Paid</span></td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">OR9842</a></td>
-                                <td>Call of Duty IV</td>
-                                <td><span class="label label-success">Advance Paid</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div><!-- /.table-responsive -->
-            </div><!-- /.box-body -->
-            <div class="box-footer clearfix">
-                <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
-                <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a>
-            </div><!-- /.box-footer -->
-        </div>
-        <!-- PRODUCT LIST -->
-        <div class="box box-primary" style="width:33%;float:right">
-            <div class="box-header with-border">
-                <h3 class="box-title">Recently Registered Users</h3>
-            </div><!-- /.box-header -->
-            <div class="box-body">
-                <ul class="products-list product-list-in-box">
-                    <li class="item">
-                        <div class="product-img">
-                            <img src="~/CSSWeb/bootstrap/css/default-50x50.gif" alt="Product Image" />
-                            @*<img src="CSSWeb/bootstrap/css/default-50x50.gif" alt="Product Image">*@
-                        </div>
-                        <div class="product-info">
-                            <a href="javascript::;" class="product-title">Sai Krishna<span class="label label-warning pull-right">$1800</span></a>
-                            <span class="product-description">
-                                Event Organizer
-                            </span>
-                        </div>
-                    </li><!-- /.item -->
-                    <li class="item">
-                        <div class="product-img">
-                            <img src="~/CSSWeb/bootstrap/css/default-50x50.gif" alt="Product Image" />
-                        </div>
-                        <div class="product-info">
-                            <a href="javascript::;" class="product-title">Santosh <span class="label label-info pull-right">$700</span></a>
-                            <span class="product-description">
-                                Photography
-                            </span>
-                        </div>
-                    </li><!-- /.item -->
-                    <li class="item">
-                        <div class="product-img">
-                            <img src="~/CSSWeb/bootstrap/css/default-50x50.gif" alt="Product Image" />
-                        </div>
-                        <div class="product-info">
-                            <a href="javascript::;" class="product-title">Reddy<span class="label label-danger pull-right">$350</span></a>
-                            <span class="product-description">
-                                beautician
-                            </span>
-                        </div>
-                    </li><!-- /.item -->
-                    <li class="item">
-                        <div class="product-img">
-                            <img src="~/CSSWeb/bootstrap/css/default-50x50.gif" alt="Product Image" />
-                        </div>
-                        <div class="product-info">
-                            <a href="javascript::;" class="product-title">Kumar <span class="label label-success pull-right">$399</span></a>
-                            <span class="product-description">
-                                electrician
-                            </span>
-                        </div>
-                    </li><!-- /.item -->
-                </ul>
-            </div><!-- /.box-body -->
-            <div class="box-footer text-center">
-                <a href="javascript::;" class="uppercase">View All Services</a>
-            </div><!-- /.box-footer -->
-        </div><!-- /.box -->
     </div>
 </div>
 

@@ -39,7 +39,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminDashboardBAL.cs" />
     <Compile Include="CartViewBal.cs" />
     <Compile Include="ContactUsBal.cs" />
     <Compile Include="DealsBAL.cs" />
