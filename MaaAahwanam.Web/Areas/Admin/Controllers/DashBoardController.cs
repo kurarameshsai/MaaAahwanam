@@ -17,7 +17,7 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
 {
     public class DashBoardController : Controller
     {
-        public ActionResult Dashboard()
+        public ActionResult dashboard()
         {
             return View();
         }
