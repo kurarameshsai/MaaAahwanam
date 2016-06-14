@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaaAahwanam.Bal", "MaaAahwanam\MaaAahwanam.Bal.csproj", "{4E659A36-5781-45E8-9A08-D107AC7CABCF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaaAahwanam.Service", "MaaAahwanam\MaaAahwanam.Service.csproj", "{4E659A36-5781-45E8-9A08-D107AC7CABCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaaAahwanam.Dal", "MaaAahwanam.Dal\MaaAahwanam.Dal.csproj", "{25CDAF6E-DAE5-445E-828B-59F5D3F866EF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaaAahwanam.Repository", "MaaAahwanam.Dal\MaaAahwanam.Repository.csproj", "{25CDAF6E-DAE5-445E-828B-59F5D3F866EF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaaAahwanam.Utility", "MaaAahwanam.Utility\MaaAahwanam.Utility.csproj", "{4C881A69-1323-4BD4-AFCD-7B7D20CFD2F8}"
 EndProject

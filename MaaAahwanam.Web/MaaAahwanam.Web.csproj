@@ -174,18 +174,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DashBoardController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
-    <Compile Include="Areas\Admin\Models\BuyNowModel.cs" />
-    <Compile Include="Areas\Admin\Models\GiftdesignModel.cs" />
-    <Compile Include="Areas\Admin\Models\InviDesignsModel.cs" />
-    <Compile Include="Areas\Admin\Models\InvitationRequestModel.cs" />
-    <Compile Include="Areas\Admin\Models\IssueTicketsModel.cs" />
-    <Compile Include="Areas\Admin\Models\OrderReqsModel.cs" />
-    <Compile Include="Areas\Admin\Models\ReqQuotationDetailsModel.cs" />
-    <Compile Include="Areas\Admin\Models\SiteFaqModel.cs" />
     <Compile Include="Areas\Admin\Models\UserLoginDetailsModel.cs" />
-    <Compile Include="Areas\Admin\Models\VendorDetailsModel.cs" />
-    <Compile Include="Areas\Admin\Models\VendorImagesDetailsModel.cs" />
-    <Compile Include="Areas\Admin\Models\VendorPackagedetailsModel.cs" />
     <Compile Include="Controllers\AboutusController.cs" />
     <Compile Include="Controllers\AddressBookController.cs" />
     <Compile Include="Controllers\BeautyTipsController.cs" />
@@ -2068,9 +2057,6 @@
     <Content Include="CSSWeb\js\waypoints.min.js" />
     <Content Include="CSSWeb\js\wow.min.js" />
     <Content Include="Global.asax" />
-    <Content Include="Areas\Admin\Views\Shared\Masterdata.cshtml" />
-    <Content Include="Areas\Admin\Views\DashBoard\Masterdata.cshtml" />
-    <Content Include="Areas\Admin\Views\DashBoard\ChangePassword.cshtml" />
     <Content Include="CSSWeb\fonts\aileron\aileron-bold-webfont.eot" />
     <Content Include="CSSWeb\fonts\aileron\aileron-bold-webfont.ttf" />
     <Content Include="CSSWeb\fonts\aileron\aileron-bold-webfont.woff" />
@@ -2087,7 +2073,6 @@
     <Content Include="CSSWeb\fonts\themify\themify.ttf" />
     <Content Include="CSSWeb\fonts\themify\themify.woff" />
     <Content Include="Areas\Admin\Views\Shared\dashboardMaster.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\Master.cshtml" />
     <Content Include="CSSWeb\bootstrap\css\bootstrap.css.map" />
     <Content Include="CSSWeb\bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="CSSWeb\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
@@ -2183,10 +2168,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Areas\Admin\Views\DashBoard\dashboard.cshtml" />
-    <Content Include="Areas\Admin\Views\DashBoard\Lock.cshtml" />
-    <Content Include="Areas\Admin\Views\DashBoard\UserProfile.cshtml" />
     <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Login\ResetPassword.cshtml" />
     <Content Include="Assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.woff" />
@@ -2824,9 +2806,9 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MaaAahwanam.Dal\MaaAahwanam.Dal.csproj">
+    <ProjectReference Include="..\MaaAahwanam.Dal\MaaAahwanam.Repository.csproj">
       <Project>{25cdaf6e-dae5-445e-828b-59f5d3f866ef}</Project>
-      <Name>MaaAahwanam.Dal</Name>
+      <Name>MaaAahwanam.Repository</Name>
     </ProjectReference>
     <ProjectReference Include="..\MaaAahwanam.Models\MaaAahwanam.Models.csproj">
       <Project>{debe23e4-7447-4922-a3ad-11bac6b9e260}</Project>
@@ -2836,9 +2818,9 @@
       <Project>{4c881a69-1323-4bd4-afcd-7b7d20cfd2f8}</Project>
       <Name>MaaAahwanam.Utility</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MaaAahwanam\MaaAahwanam.Bal.csproj">
+    <ProjectReference Include="..\MaaAahwanam\MaaAahwanam.Service.csproj">
       <Project>{4e659a36-5781-45e8-9a08-d107ac7cabcf}</Project>
-      <Name>MaaAahwanam.Bal</Name>
+      <Name>MaaAahwanam.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

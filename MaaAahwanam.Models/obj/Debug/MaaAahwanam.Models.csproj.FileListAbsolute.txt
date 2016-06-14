@@ -66,7 +66,6 @@ D:\Maa-backup\Integrated code\9th may 16\MaaAahwanam\MaaAahwanam.Models\obj\Debu
 D:\Maa-backup\Integrated code\9th may 16\MaaAahwanam\MaaAahwanam.Models\obj\Debug\MaaAahwanam.Models.pdb
 F:\MaaAahwanam\MaaAahwanam.Models\bin\Debug\MaaAahwanam.Models.dll
 F:\MaaAahwanam\MaaAahwanam.Models\bin\Debug\MaaAahwanam.Models.pdb
-F:\MaaAahwanam\MaaAahwanam.Models\bin\Debug\MaaAahwanam.Dal.dll
 F:\MaaAahwanam\MaaAahwanam.Models\bin\Debug\Microsoft.Web.Infrastructure.dll
 F:\MaaAahwanam\MaaAahwanam.Models\bin\Debug\System.Web.Helpers.dll
 F:\MaaAahwanam\MaaAahwanam.Models\bin\Debug\System.Web.Mvc.dll
@@ -74,16 +73,12 @@ F:\MaaAahwanam\MaaAahwanam.Models\bin\Debug\System.Web.Razor.dll
 F:\MaaAahwanam\MaaAahwanam.Models\bin\Debug\System.Web.WebPages.Deployment.dll
 F:\MaaAahwanam\MaaAahwanam.Models\bin\Debug\System.Web.WebPages.dll
 F:\MaaAahwanam\MaaAahwanam.Models\bin\Debug\System.Web.WebPages.Razor.dll
-F:\MaaAahwanam\MaaAahwanam.Models\bin\Debug\EntityFramework.dll
-F:\MaaAahwanam\MaaAahwanam.Models\bin\Debug\MaaAahwanam.Dal.pdb
 F:\MaaAahwanam\MaaAahwanam.Models\bin\Debug\System.Web.Helpers.xml
 F:\MaaAahwanam\MaaAahwanam.Models\bin\Debug\System.Web.Mvc.xml
 F:\MaaAahwanam\MaaAahwanam.Models\bin\Debug\System.Web.Razor.xml
 F:\MaaAahwanam\MaaAahwanam.Models\bin\Debug\System.Web.WebPages.xml
 F:\MaaAahwanam\MaaAahwanam.Models\bin\Debug\System.Web.WebPages.Deployment.xml
 F:\MaaAahwanam\MaaAahwanam.Models\bin\Debug\System.Web.WebPages.Razor.xml
-F:\MaaAahwanam\MaaAahwanam.Models\bin\Debug\EntityFramework.xml
-F:\MaaAahwanam\MaaAahwanam.Models\obj\Debug\MaaAahwanam.Models.csprojResolveAssemblyReference.cache
 F:\MaaAahwanam\MaaAahwanam.Models\obj\Debug\MaaAahwanam.Models.dll
 F:\MaaAahwanam\MaaAahwanam.Models\obj\Debug\MaaAahwanam.Models.pdb
 F:\MaaAahwanam1.0\MaaAahwanam.Models\bin\Debug\MaaAahwanam.Models.dll

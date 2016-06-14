@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using MaaAahwanam.Bal;
 using MaaAahwanam.Models;
 using MaaAahwanam.Utility;
 using MaaAahwanam.Dal;
@@ -15,11 +14,9 @@ namespace MaaAahwanam.Web.Controllers
     {
         //
         // GET: /Faq/
-        public ActionResult Index(SiteFaq sitefaq)
+        public ActionResult Index()
         {
-            SiteFaqBal sitefaqbal = new SiteFaqBal();
-            sitefaq.FaqsList = sitefaqbal.FaqsList();
-            return View(sitefaq);
+            return View();
         }   
 	}
 }

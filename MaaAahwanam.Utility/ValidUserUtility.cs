@@ -10,7 +10,6 @@ namespace MaaAahwanam.Utility
 {
     public class ValidUserUtility
     {
-        Maa_AhwaanamBase _Repositories = new Maa_AhwaanamBase();
         public static int ValidUser()
         {
             int Userid = 0;

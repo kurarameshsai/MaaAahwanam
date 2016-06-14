@@ -95,3 +95,7 @@ E:\MAA\MaaAahwanam.Utility\bin\Debug\EntityFramework.xml
 E:\MAA\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.csprojResolveAssemblyReference.cache
 E:\MAA\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.dll
 E:\MAA\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.pdb
+F:\MaaAahwanam\MaaAahwanam.Utility\bin\Debug\TrackerEnabledDbContext.dll
+F:\MaaAahwanam\MaaAahwanam.Utility\bin\Debug\TrackerEnabledDbContext.Common.dll
+F:\MaaAahwanam\MaaAahwanam.Utility\bin\Debug\EntityFramework.MappingAPI.dll
+F:\MaaAahwanam\MaaAahwanam.Utility\bin\Debug\EntityFramework.MappingAPI.pdb

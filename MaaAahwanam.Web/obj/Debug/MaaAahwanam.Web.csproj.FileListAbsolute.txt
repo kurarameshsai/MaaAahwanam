@@ -550,3 +550,7 @@ E:\MAA\MaaAahwanam.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 E:\MAA\MaaAahwanam.Web\obj\Debug\MaaAahwanam.Web.csprojResolveAssemblyReference.cache
 E:\MAA\MaaAahwanam.Web\obj\Debug\MaaAahwanam.Web.dll
 E:\MAA\MaaAahwanam.Web\obj\Debug\MaaAahwanam.Web.pdb
+F:\MaaAahwanam\MaaAahwanam.Web\bin\TrackerEnabledDbContext.dll
+F:\MaaAahwanam\MaaAahwanam.Web\bin\TrackerEnabledDbContext.Common.dll
+F:\MaaAahwanam\MaaAahwanam.Web\bin\EntityFramework.MappingAPI.dll
+F:\MaaAahwanam\MaaAahwanam.Web\bin\EntityFramework.MappingAPI.pdb

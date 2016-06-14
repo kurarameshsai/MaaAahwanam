@@ -68,44 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminDashboard.cs" />
-    <Compile Include="BuyNowDetails.cs" />
-    <Compile Include="CartViewItemDetails.cs" />
-    <Compile Include="ContactUs.cs" />
-    <Compile Include="DDLServiceModel.cs" />
-    <Compile Include="DealsDetails.cs" />
-    <Compile Include="Eventsandtips.cs" />
-    <Compile Include="GIftdesign.cs" />
-    <Compile Include="InviDesigns.cs" />
-    <Compile Include="InvitationRequest.cs" />
-    <Compile Include="IssueTicketDetails.cs" />
-    <Compile Include="MultipleImagesforInvitations.cs" />
-    <Compile Include="Multipleimagesgiftdesings.cs" />
-    <Compile Include="OrderReqs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReqQuotationDetails.cs" />
-    <Compile Include="ServiceRequest.cs" />
-    <Compile Include="SiteFaq.cs" />
-    <Compile Include="SmartCount.cs" />
-    <Compile Include="Subscription.cs" />
-    <Compile Include="TestimonialDetails.cs" />
-    <Compile Include="UserAddBook.cs" />
-    <Compile Include="UserLoginDetails.cs" />
-    <Compile Include="VendorDetails.cs" />
-    <Compile Include="VendorImagesDetails.cs" />
-    <Compile Include="VendorPackagedetails.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MaaAahwanam.Dal\MaaAahwanam.Dal.csproj">
-      <Project>{25cdaf6e-dae5-445e-828b-59f5d3f866ef}</Project>
-      <Name>MaaAahwanam.Dal</Name>
-    </ProjectReference>
+    <Compile Include="UserDetails.cs" />
+    <Compile Include="UserLogin.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
