@@ -130,3 +130,25 @@ D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Models\bin\Debug\EntityFramework.xml
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Models\obj\Debug\MaaAahwanam.Models.csprojResolveAssemblyReference.cache
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Models\obj\Debug\MaaAahwanam.Models.dll
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Models\obj\Debug\MaaAahwanam.Models.pdb
+E:\MAA\MaaAahwanam.Models\bin\Debug\MaaAahwanam.Models.dll
+E:\MAA\MaaAahwanam.Models\bin\Debug\MaaAahwanam.Models.pdb
+E:\MAA\MaaAahwanam.Models\bin\Debug\MaaAahwanam.Dal.dll
+E:\MAA\MaaAahwanam.Models\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\MAA\MaaAahwanam.Models\bin\Debug\System.Web.Helpers.dll
+E:\MAA\MaaAahwanam.Models\bin\Debug\System.Web.Mvc.dll
+E:\MAA\MaaAahwanam.Models\bin\Debug\System.Web.Razor.dll
+E:\MAA\MaaAahwanam.Models\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\MAA\MaaAahwanam.Models\bin\Debug\System.Web.WebPages.dll
+E:\MAA\MaaAahwanam.Models\bin\Debug\System.Web.WebPages.Razor.dll
+E:\MAA\MaaAahwanam.Models\bin\Debug\EntityFramework.dll
+E:\MAA\MaaAahwanam.Models\bin\Debug\MaaAahwanam.Dal.pdb
+E:\MAA\MaaAahwanam.Models\bin\Debug\System.Web.Helpers.xml
+E:\MAA\MaaAahwanam.Models\bin\Debug\System.Web.Mvc.xml
+E:\MAA\MaaAahwanam.Models\bin\Debug\System.Web.Razor.xml
+E:\MAA\MaaAahwanam.Models\bin\Debug\System.Web.WebPages.xml
+E:\MAA\MaaAahwanam.Models\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\MAA\MaaAahwanam.Models\bin\Debug\System.Web.WebPages.Razor.xml
+E:\MAA\MaaAahwanam.Models\bin\Debug\EntityFramework.xml
+E:\MAA\MaaAahwanam.Models\obj\Debug\MaaAahwanam.Models.csprojResolveAssemblyReference.cache
+E:\MAA\MaaAahwanam.Models\obj\Debug\MaaAahwanam.Models.dll
+E:\MAA\MaaAahwanam.Models\obj\Debug\MaaAahwanam.Models.pdb

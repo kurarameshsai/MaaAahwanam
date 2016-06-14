@@ -56,3 +56,12 @@ D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Dal\bin\Debug\EntityFramework.SqlServ
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Dal\obj\Debug\MaaAahwanam.Dal.csprojResolveAssemblyReference.cache
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Dal\obj\Debug\MaaAahwanam.Dal.dll
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Dal\obj\Debug\MaaAahwanam.Dal.pdb
+E:\MAA\MaaAahwanam.Dal\bin\Debug\MaaAahwanam.Dal.dll.config
+E:\MAA\MaaAahwanam.Dal\bin\Debug\MaaAahwanam.Dal.dll
+E:\MAA\MaaAahwanam.Dal\bin\Debug\MaaAahwanam.Dal.pdb
+E:\MAA\MaaAahwanam.Dal\bin\Debug\EntityFramework.dll
+E:\MAA\MaaAahwanam.Dal\bin\Debug\EntityFramework.SqlServer.dll
+E:\MAA\MaaAahwanam.Dal\bin\Debug\EntityFramework.xml
+E:\MAA\MaaAahwanam.Dal\bin\Debug\EntityFramework.SqlServer.xml
+E:\MAA\MaaAahwanam.Dal\obj\Debug\MaaAahwanam.Dal.dll
+E:\MAA\MaaAahwanam.Dal\obj\Debug\MaaAahwanam.Dal.pdb

@@ -84,3 +84,14 @@ D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Utility\bin\Debug\EntityFramework.xml
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.csprojResolveAssemblyReference.cache
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.dll
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.pdb
+E:\MAA\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Utility.dll
+E:\MAA\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Utility.pdb
+E:\MAA\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Dal.dll
+E:\MAA\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Models.dll
+E:\MAA\MaaAahwanam.Utility\bin\Debug\EntityFramework.dll
+E:\MAA\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Dal.pdb
+E:\MAA\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Models.pdb
+E:\MAA\MaaAahwanam.Utility\bin\Debug\EntityFramework.xml
+E:\MAA\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.csprojResolveAssemblyReference.cache
+E:\MAA\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.dll
+E:\MAA\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.pdb

@@ -119,3 +119,16 @@ F:\MaaAahwanam\MaaAahwanam\bin\Debug\EntityFramework.xml
 F:\MaaAahwanam\MaaAahwanam\obj\Debug\MaaAahwanam.Bal.csprojResolveAssemblyReference.cache
 F:\MaaAahwanam\MaaAahwanam\obj\Debug\MaaAahwanam.dll
 F:\MaaAahwanam\MaaAahwanam\obj\Debug\MaaAahwanam.pdb
+E:\MAA\MaaAahwanam\bin\Debug\MaaAahwanam.dll
+E:\MAA\MaaAahwanam\bin\Debug\MaaAahwanam.pdb
+E:\MAA\MaaAahwanam\bin\Debug\MaaAahwanam.Dal.dll
+E:\MAA\MaaAahwanam\bin\Debug\MaaAahwanam.Models.dll
+E:\MAA\MaaAahwanam\bin\Debug\MaaAahwanam.Utility.dll
+E:\MAA\MaaAahwanam\bin\Debug\EntityFramework.dll
+E:\MAA\MaaAahwanam\bin\Debug\MaaAahwanam.Dal.pdb
+E:\MAA\MaaAahwanam\bin\Debug\MaaAahwanam.Models.pdb
+E:\MAA\MaaAahwanam\bin\Debug\MaaAahwanam.Utility.pdb
+E:\MAA\MaaAahwanam\bin\Debug\EntityFramework.xml
+E:\MAA\MaaAahwanam\obj\Debug\MaaAahwanam.Bal.csprojResolveAssemblyReference.cache
+E:\MAA\MaaAahwanam\obj\Debug\MaaAahwanam.dll
+E:\MAA\MaaAahwanam\obj\Debug\MaaAahwanam.pdb
