@@ -68,9 +68,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminTestimonial.cs" />
+    <Compile Include="AdminTestimonialPath.cs" />
+    <Compile Include="CartItem.cs" />
+    <Compile Include="Comment.cs" />
+    <Compile Include="CommentDetail.cs" />
+    <Compile Include="Enquiry.cs" />
+    <Compile Include="EventDate.cs" />
+    <Compile Include="EventInformation.cs" />
+    <Compile Include="EventsandTip.cs" />
+    <Compile Include="IssueDetail.cs" />
+    <Compile Include="IssueTicket.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="OrderDetail.cs" />
+    <Compile Include="OrdersServiceRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Review.cs" />
+    <Compile Include="ServiceRequest.cs" />
+    <Compile Include="ServiceResponse.cs" />
+    <Compile Include="SiteFaq.cs" />
+    <Compile Include="Subscription.cs" />
+    <Compile Include="UserAddBook.cs" />
     <Compile Include="UserDetail.cs" />
     <Compile Include="UserLogin.cs" />
+    <Compile Include="UserLogInTiming.cs" />
+    <Compile Include="VendorImage.cs" />
+    <Compile Include="Vendormaster.cs" />
+    <Compile Include="VendorsBeautyService.cs" />
+    <Compile Include="VendorsCatering.cs" />
+    <Compile Include="VendorsDecorator.cs" />
+    <Compile Include="VendorsEntertainment.cs" />
+    <Compile Include="VendorsEventOrganiser.cs" />
+    <Compile Include="VendorsGift.cs" />
+    <Compile Include="VendorsInvitationCard.cs" />
+    <Compile Include="VendorsOther.cs" />
+    <Compile Include="VendorsPhotography.cs" />
+    <Compile Include="VendorsTravelandAccomodation.cs" />
+    <Compile Include="VendorsWeddingCollection.cs" />
+    <Compile Include="VendorVenue.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
