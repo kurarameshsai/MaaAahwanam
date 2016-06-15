@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MaaAahwanam.Models
 {
-    public class UserDetails
+    public class UserDetail
     {
         [Key]
         public long UserLoginId { get; set; }

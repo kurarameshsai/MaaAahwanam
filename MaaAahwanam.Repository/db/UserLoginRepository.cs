@@ -14,7 +14,7 @@ namespace MaaAahwanam.Repository.db
 
         public UserLogin AddLoginCredentials(UserLogin userLogin)
         {
-            _dbContext.MaUserLogin.Add(userLogin);
+            _dbContext.UserLogin.Add(userLogin);
             _dbContext.SaveChanges();
             return userLogin;
         }
@@ -23,9 +23,9 @@ namespace MaaAahwanam.Repository.db
         {
             UserLogin list = null;
             if (userLogin.Password != null)
-                list = _dbContext.MaUserLogin.FirstOrDefault(p => p.UserName == userLogin.UserName && p.Password == userLogin.Password);
+                list = _dbContext.UserLogin.FirstOrDefault(p => p.UserName == userLogin.UserName && p.Password == userLogin.Password);
             if (userLogin.Password == null)
-                list = _dbContext.MaUserLogin.FirstOrDefault(p => p.UserName == userLogin.UserName);
+                list = _dbContext.UserLogin.FirstOrDefault(p => p.UserName == userLogin.UserName);
             return list;
         }
     }

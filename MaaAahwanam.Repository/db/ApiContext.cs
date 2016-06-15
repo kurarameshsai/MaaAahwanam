@@ -10,8 +10,8 @@ namespace MaaAahwanam.Repository.db
         {
         }
 
-        public DbSet<UserLogin> MaUserLogin { get; set; }
-        public DbSet<UserDetails> MaUserDetails { get; set; }
+        public DbSet<UserLogin> UserLogin { get; set; }
+        public DbSet<UserDetail> UserDetail { get; set; }
 
     }
 }

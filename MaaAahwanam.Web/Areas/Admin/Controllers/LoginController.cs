@@ -1,5 +1,4 @@
-﻿//using MaaAahwanam.Web.Areas.Admin.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -20,7 +19,7 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index([Bind(Prefix = "Item1")] UserLogin userLogin,[Bind(Prefix = "Item2")] UserDetails userDetails, string command)
+        public ActionResult Index([Bind(Prefix = "Item1")] UserLogin userLogin,[Bind(Prefix = "Item2")] UserDetail userDetails, string command)
         {
             if (command == "Register")
             {

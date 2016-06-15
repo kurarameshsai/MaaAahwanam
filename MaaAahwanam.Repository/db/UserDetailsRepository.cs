@@ -12,9 +12,9 @@ namespace MaaAahwanam.Repository.db
 
         }
 
-        public UserDetails AddUserDetails(UserDetails userDetails)
+        public UserDetail AddUserDetails(UserDetail userDetails)
         {
-            _dbContext.MaUserDetails.Add(userDetails);
+            _dbContext.UserDetail.Add(userDetails);
             _dbContext.SaveChanges();
             return userDetails;
         }

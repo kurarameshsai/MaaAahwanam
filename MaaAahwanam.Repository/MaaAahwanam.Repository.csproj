@@ -55,6 +55,15 @@
     <Compile Include="db\ApiContext.cs" />
     <Compile Include="db\UserDetailsRepository.cs" />
     <Compile Include="db\UserLoginRepository.cs" />
+    <Compile Include="Migrations\201606141454305_InitialCreate.cs" />
+    <Compile Include="Migrations\201606141454305_InitialCreate.Designer.cs">
+      <DependentUpon>201606141454305_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606150748328_migrations_date_06152016.cs" />
+    <Compile Include="Migrations\201606150748328_migrations_date_06152016.Designer.cs">
+      <DependentUpon>201606150748328_migrations_date_06152016.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -68,6 +77,14 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201606141454305_InitialCreate.resx">
+      <DependentUpon>201606141454305_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606150748328_migrations_date_06152016.resx">
+      <DependentUpon>201606150748328_migrations_date_06152016.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -6,7 +6,7 @@ namespace MaaAahwanam.Service
 {
     public class UserLoginDetailsService
     {
-        public string AddUserDetails(UserLogin userLogin, UserDetails userDetails)
+        public string AddUserDetails(UserLogin userLogin, UserDetail userDetails)
         {
             string response;
             UserLoginRepository userLoginRepository = new UserLoginRepository();
@@ -14,7 +14,7 @@ namespace MaaAahwanam.Service
             try
             {
                 UserLogin l1 = userLoginRepository.AddLoginCredentials(userLogin);
-                UserDetails l2 = userDetailsRepository.AddUserDetails(userDetails);
+                UserDetail l2 = userDetailsRepository.AddUserDetails(userDetails);
                 response = "sucess";
             }
             catch(Exception ex)

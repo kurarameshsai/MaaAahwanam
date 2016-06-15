@@ -147,3 +147,4 @@ F:\MaaAahwanam\MaaAahwanam.Models\bin\Debug\System.Web.WebPages.Deployment.xml
 F:\MaaAahwanam\MaaAahwanam.Models\bin\Debug\System.Web.WebPages.Razor.xml
 F:\MaaAahwanam\MaaAahwanam.Models\obj\Debug\MaaAahwanam.Models.dll
 F:\MaaAahwanam\MaaAahwanam.Models\obj\Debug\MaaAahwanam.Models.pdb
+F:\MaaAahwanam\MaaAahwanam.Models\obj\Debug\MaaAahwanam.Models.csprojResolveAssemblyReference.cache
