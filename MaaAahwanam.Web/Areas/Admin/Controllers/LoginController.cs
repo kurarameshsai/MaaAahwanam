@@ -31,7 +31,7 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
                 }
                 else
                 {
-                    return Content("<script language='javascript' type='text/javascript'>alert('Registeration Failed');location.href='" + @Url.Action("Index", "Login") + "'</script>");
+                    return Content("<script language='javascript' type='text/javascript'>alert('Registration Failed');location.href='" + @Url.Action("Index", "Login") + "'</script>");
                 }
             }
             if (command == "Authenticate")
