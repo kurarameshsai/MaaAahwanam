@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Configuration;
 using System.Web.Security;
-using MaaAahwanam.Dal;
+//using MaaAahwanam.Repository;
 
 namespace MaaAahwanam.Utility
 {

@@ -2,7 +2,7 @@
 using System.Data.Entity;
 using MaaAahwanam.Models;
 
-namespace MaaAahwanam.Dal.db
+namespace MaaAahwanam.Repository.db
 {
     public class ApiContext : TrackerContext
     {
@@ -10,8 +10,8 @@ namespace MaaAahwanam.Dal.db
         {
         }
 
-        public DbSet<UserLogin> MA_User_Login { get; set; }
-        public DbSet<UserDetails> MA_User_Details { get; set; }
+        public DbSet<UserLogin> MaUserLogin { get; set; }
+        public DbSet<UserDetails> MaUserDetails { get; set; }
 
     }
 }

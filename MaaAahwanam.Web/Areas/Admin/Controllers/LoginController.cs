@@ -1,4 +1,4 @@
-﻿using MaaAahwanam.Web.Areas.Admin.Models;
+﻿//using MaaAahwanam.Web.Areas.Admin.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using MaaAahwanam.Models;
 using MaaAahwanam.Utility;
+using MaaAahwanam.Service;
 using System.Configuration;
 using System.Web.Security;
 
@@ -19,8 +20,13 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(string command)
+        public ActionResult Index([Bind(Prefix = "Item1")] UserLogin userLogin,[Bind(Prefix = "Item2")] UserDetails userDetails, string command)
         {
+            if (command == "Register")
+            {
+                UserLoginDetailsService userLoginDetailsService = new UserLoginDetailsService();
+                var response = userLoginDetailsService.AddUserDetails(userLogin, userDetails);
+            }
             return View();
         }
         public JsonResult RegularExpressionPattern_Password()

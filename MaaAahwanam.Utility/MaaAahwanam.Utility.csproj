@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -52,10 +53,6 @@
     <Compile Include="ValidUserUtility.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MaaAahwanam.Dal\MaaAahwanam.Repository.csproj">
-      <Project>{25cdaf6e-dae5-445e-828b-59f5d3f866ef}</Project>
-      <Name>MaaAahwanam.Repository</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MaaAahwanam.Models\MaaAahwanam.Models.csproj">
       <Project>{debe23e4-7447-4922-a3ad-11bac6b9e260}</Project>
       <Name>MaaAahwanam.Models</Name>
@@ -63,6 +60,10 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

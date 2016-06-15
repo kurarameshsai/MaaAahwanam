@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using MaaAahwanam.Models;
 using MaaAahwanam.Utility;
-using MaaAahwanam.Dal;
+//using MaaAahwanam.Repository;
 
 namespace MaaAahwanam.Web.Controllers
 {

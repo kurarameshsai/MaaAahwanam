@@ -1,4 +1,4 @@
-﻿using MaaAahwanam.Web.Areas.Admin.Models;
+﻿//using MaaAahwanam.Web.Areas.Admin.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using MaaAahwanam.Models;
 using MaaAahwanam.Utility;
 using System.Configuration;
 using System.Web.Security;
-using MaaAahwanam.Dal;
+//using MaaAahwanam.Repository;
 using System.Text;
 using System.IO;
 

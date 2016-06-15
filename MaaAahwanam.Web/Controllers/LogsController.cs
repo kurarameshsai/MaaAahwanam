@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Net;
 using System.Xml.Linq;
 using Newtonsoft.Json.Linq;
-using MaaAahwanam.Dal;
+//using MaaAahwanam.Repository;
 
 namespace MaaAahwanam.Web.Controllers
 {

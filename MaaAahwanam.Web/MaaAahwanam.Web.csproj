@@ -174,7 +174,6 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DashBoardController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
-    <Compile Include="Areas\Admin\Models\UserLoginDetailsModel.cs" />
     <Compile Include="Controllers\AboutusController.cs" />
     <Compile Include="Controllers\AddressBookController.cs" />
     <Compile Include="Controllers\BeautyTipsController.cs" />
@@ -2161,6 +2160,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -2806,21 +2806,17 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MaaAahwanam.Dal\MaaAahwanam.Repository.csproj">
-      <Project>{25cdaf6e-dae5-445e-828b-59f5d3f866ef}</Project>
-      <Name>MaaAahwanam.Repository</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MaaAahwanam.Models\MaaAahwanam.Models.csproj">
       <Project>{debe23e4-7447-4922-a3ad-11bac6b9e260}</Project>
       <Name>MaaAahwanam.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MaaAahwanam.Service\MaaAahwanam.Service.csproj">
+      <Project>{2b99ae8a-a891-4106-96de-56a380870be3}</Project>
+      <Name>MaaAahwanam.Service</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MaaAahwanam.Utility\MaaAahwanam.Utility.csproj">
       <Project>{4c881a69-1323-4bd4-afcd-7b7d20cfd2f8}</Project>
       <Name>MaaAahwanam.Utility</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MaaAahwanam\MaaAahwanam.Service.csproj">
-      <Project>{4e659a36-5781-45e8-9a08-d107ac7cabcf}</Project>
-      <Name>MaaAahwanam.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

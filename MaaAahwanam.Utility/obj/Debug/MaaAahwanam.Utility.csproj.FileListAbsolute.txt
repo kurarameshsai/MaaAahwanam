@@ -51,17 +51,6 @@ D:\Maa-backup\Integrated code\9th may 16\MaaAahwanam\MaaAahwanam.Utility\bin\Deb
 D:\Maa-backup\Integrated code\9th may 16\MaaAahwanam\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.csprojResolveAssemblyReference.cache
 D:\Maa-backup\Integrated code\9th may 16\MaaAahwanam\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.dll
 D:\Maa-backup\Integrated code\9th may 16\MaaAahwanam\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.pdb
-F:\MaaAahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Utility.dll
-F:\MaaAahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Utility.pdb
-F:\MaaAahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Dal.dll
-F:\MaaAahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Models.dll
-F:\MaaAahwanam\MaaAahwanam.Utility\bin\Debug\EntityFramework.dll
-F:\MaaAahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Dal.pdb
-F:\MaaAahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Models.pdb
-F:\MaaAahwanam\MaaAahwanam.Utility\bin\Debug\EntityFramework.xml
-F:\MaaAahwanam\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.csprojResolveAssemblyReference.cache
-F:\MaaAahwanam\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.dll
-F:\MaaAahwanam\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.pdb
 F:\MaaAahwanam1.0\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Utility.dll
 F:\MaaAahwanam1.0\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Utility.pdb
 F:\MaaAahwanam1.0\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Dal.dll
@@ -95,7 +84,11 @@ E:\MAA\MaaAahwanam.Utility\bin\Debug\EntityFramework.xml
 E:\MAA\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.csprojResolveAssemblyReference.cache
 E:\MAA\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.dll
 E:\MAA\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.pdb
-F:\MaaAahwanam\MaaAahwanam.Utility\bin\Debug\TrackerEnabledDbContext.dll
-F:\MaaAahwanam\MaaAahwanam.Utility\bin\Debug\TrackerEnabledDbContext.Common.dll
-F:\MaaAahwanam\MaaAahwanam.Utility\bin\Debug\EntityFramework.MappingAPI.dll
-F:\MaaAahwanam\MaaAahwanam.Utility\bin\Debug\EntityFramework.MappingAPI.pdb
+F:\MaaAahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Utility.dll.config
+F:\MaaAahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Utility.dll
+F:\MaaAahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Utility.pdb
+F:\MaaAahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Models.dll
+F:\MaaAahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Models.pdb
+F:\MaaAahwanam\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.csprojResolveAssemblyReference.cache
+F:\MaaAahwanam\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.dll
+F:\MaaAahwanam\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.pdb

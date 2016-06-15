@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4E659A36-5781-45E8-9A08-D107AC7CABCF}</ProjectGuid>
+    <ProjectGuid>{2B99AE8A-A891-4106-96DE-56A380870BE3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MaaAahwanam</RootNamespace>
-    <AssemblyName>MaaAahwanam</AssemblyName>
+    <RootNamespace>MaaAahwanam.Service</RootNamespace>
+    <AssemblyName>MaaAahwanam.Service</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -43,16 +43,13 @@
     <Compile Include="UserLoginDetailsService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MaaAahwanam.Dal\MaaAahwanam.Repository.csproj">
-      <Project>{25cdaf6e-dae5-445e-828b-59f5d3f866ef}</Project>
-      <Name>MaaAahwanam.Repository</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MaaAahwanam.Models\MaaAahwanam.Models.csproj">
       <Project>{debe23e4-7447-4922-a3ad-11bac6b9e260}</Project>
       <Name>MaaAahwanam.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MaaAahwanam.Repository\MaaAahwanam.Repository.csproj">
+      <Project>{8b73dd55-1b19-4fac-98ab-432d5af2e66c}</Project>
+      <Name>MaaAahwanam.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

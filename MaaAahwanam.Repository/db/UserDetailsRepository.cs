@@ -1,6 +1,7 @@
 ﻿using MaaAahwanam.Models;
 
-namespace MaaAahwanam.Dal.db
+
+namespace MaaAahwanam.Repository.db
 {
     public class UserDetailsRepository
     {
@@ -13,7 +14,7 @@ namespace MaaAahwanam.Dal.db
 
         public UserDetails AddUserDetails(UserDetails userDetails)
         {
-            _dbContext.MA_User_Details.Add(userDetails);
+            _dbContext.MaUserDetails.Add(userDetails);
             _dbContext.SaveChanges();
             return userDetails;
         }
