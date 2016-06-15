@@ -23,5 +23,23 @@ namespace MaaAahwanam.Service
             }
             return response;
         }
+        public string AuthenticateUser(UserLogin UserLogin)
+        {
+            string response = string.Empty;
+            UserLoginRepository userLoginRepository = new UserLoginRepository();
+            try
+            {
+                UserLogin l1 = userLoginRepository.GetLoginDetailsByUsername(UserLogin);
+                if (l1.UserLoginId != null)
+                {
+                    response = "sucess";
+                }
+            }
+            catch (Exception ex)
+            {
+                response = "failure";
+            }
+            return response;
+        }
     }
 }

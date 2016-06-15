@@ -350,8 +350,6 @@ D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\MaaAahwanam.Web.pdb
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\Antlr3.Runtime.dll
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\EntityFramework.dll
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\EntityFramework.SqlServer.dll
-D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\MaaAahwanam.Dal.dll
-D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\MaaAahwanam.dll
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\MaaAahwanam.Models.dll
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\MaaAahwanam.Utility.dll
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\Microsoft.AspNet.Identity.Core.dll
@@ -380,10 +378,8 @@ D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\System.Web.WebPages.Deploymen
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\System.Web.WebPages.dll
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\System.Web.WebPages.Razor.dll
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\WebGrease.dll
-D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\MaaAahwanam.Dal.pdb
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\MaaAahwanam.Models.pdb
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\MaaAahwanam.Utility.pdb
-D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\MaaAahwanam.pdb
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\EntityFramework.xml
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\EntityFramework.SqlServer.xml
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\Newtonsoft.Json.xml
@@ -553,3 +549,10 @@ F:\MaaAahwanam\MaaAahwanam.Web\bin\MaaAahwanam.Repository.pdb
 F:\MaaAahwanam\MaaAahwanam.Web\obj\Debug\MaaAahwanam.Web.csprojResolveAssemblyReference.cache
 F:\MaaAahwanam\MaaAahwanam.Web\obj\Debug\MaaAahwanam.Web.dll
 F:\MaaAahwanam\MaaAahwanam.Web\obj\Debug\MaaAahwanam.Web.pdb
+D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\MaaAahwanam.Service.dll
+D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\MaaAahwanam.Repository.dll
+D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\TrackerEnabledDbContext.dll
+D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\TrackerEnabledDbContext.Common.dll
+D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\EntityFramework.MappingAPI.dll
+D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\MaaAahwanam.Service.pdb
+D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Web\bin\MaaAahwanam.Repository.pdb

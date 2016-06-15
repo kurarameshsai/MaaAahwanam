@@ -25,11 +25,33 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             {
                 UserLoginDetailsService userLoginDetailsService = new UserLoginDetailsService();
                 var response = userLoginDetailsService.AddUserDetails(userLogin, userDetails);
+                if (response == "sucess")
+                {
+                    return Content("<script language='javascript' type='text/javascript'>alert('Registered Successfully');location.href='" + @Url.Action("Index", "Login") + "'</script>");
+                }
+                else
+                {
+                    return Content("<script language='javascript' type='text/javascript'>alert('Registeration Failed');location.href='" + @Url.Action("Index", "Login") + "'</script>");
+                }
+            }
+            if (command == "Authenticate")
+            {
+                UserLoginDetailsService userLoginDetailsService = new UserLoginDetailsService();
+                var response = userLoginDetailsService.AuthenticateUser(userLogin);
+                if (response == "sucess")
+                {
+                    Response.Redirect("DashBoard/Dashboard");
+                }
+                else
+                {
+                    return Content("<script language='javascript' type='text/javascript'>alert('Wrong Credentials,Check Username and password');location.href='" + @Url.Action("Index", "Login") + "'</script>");
+                }
             }
             return View();
         }
         public JsonResult RegularExpressionPattern_Password()
         {
+            // Password Reguler Expression Pattern
             return Json(ValidationsUtility.PatternforPassword(), JsonRequestBehavior.AllowGet);
         }
         public ActionResult SignOut()
@@ -38,9 +60,6 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Login");
         }
-        public ActionResult ResetPassword()
-        {
-            return View();
-        }
+
     }
 }

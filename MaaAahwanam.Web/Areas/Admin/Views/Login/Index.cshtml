@@ -53,7 +53,7 @@
                         <p class="text-muted text-center btn-block btn btn-primary btn-rect">Enter your valid e-mail</p>
                         @Html.TextBoxFor(model => this.Model.Item1.UserName, new { @class = "form-control", placeholder = "Your E-mail", required = "required", @type = "email" })
                         <br />
-                        <button class="btn text-muted text-center btn-success" name="Command" value="ForgotPassword" type="submit" onclick="check();">Recover Password</button>
+                        <button class="btn text-muted text-center btn-success" name="Command" value="ForgotPassword" type="submit">Recover Password</button>
                     }
                 </div>
                 <div id="signup" class="tab-pane">

@@ -2071,7 +2071,6 @@
     <Content Include="CSSWeb\fonts\themify\themify.eot" />
     <Content Include="CSSWeb\fonts\themify\themify.ttf" />
     <Content Include="CSSWeb\fonts\themify\themify.woff" />
-    <Content Include="Areas\Admin\Views\Shared\dashboardMaster.cshtml" />
     <Content Include="CSSWeb\bootstrap\css\bootstrap.css.map" />
     <Content Include="CSSWeb\bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="CSSWeb\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
@@ -2161,6 +2160,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
