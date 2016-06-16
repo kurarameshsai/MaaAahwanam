@@ -1,13 +1,11 @@
-﻿@model MaaAahwanam.Models.UserLoginDetails
-@if (this.Model.UserLoginId != 0)
-{
+﻿
     <div class="signin-area after_login">
-        <div class="loginDiv">
+        @*<div class="loginDiv">
             <ul>
                 <li>
                     <a class="dropdown-toggle" href="javascript:void(0)">
                         <img src="../CSSWeb/images/dashboard/img-profile.jpg" alt="img-profile">
-                        <span>@this.Model.FirstName @this.Model.LastName</span> <i class="ti-angle-down"></i>
+                        <span>TestName</span> <i class="ti-angle-down"></i>
                         <div class="clear"></div>
                     </a>
                     <div class="loginForm">
@@ -31,20 +29,20 @@
                     </div>
                 </li>
             </ul>
-        </div>
+        </div>*@
         <!-- /loginDiv -->
-        <div class="top-social-icons">
+        @*<div class="top-social-icons">
             <ul>
                 <li><a href="#"><i class="ti-facebook fb"></i></a></li>
                 <li><a href="#"><i class="ti-google gplus"></i></a></li>
                 <li><a href="#"><i class="ti-linkedin in"></i></a></li>
                 <li><a href="#"><i class="ti-twitter twitter"></i></a></li>
             </ul>
-        </div>
+        </div>*@
     </div>
-}
+@*}
 else
-{
+{*@
     <div class="signin-area wow fadeInRight animated">
         <ul>
             <li><a href="../Signin"><i class="ti-lock"></i><span class="display-none">Sign In</span> </a></li>
@@ -60,4 +58,4 @@ else
             </ul>
         </div>
     </div>
-}
+@*}*@

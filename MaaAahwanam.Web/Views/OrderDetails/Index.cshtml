@@ -1,5 +1,4 @@
-﻿@model Tuple<List<MaaAahwanam.Dal.SP_ADMIN_ORDERDITEMS_USER_Result>, List<MaaAahwanam.Dal.MA_Payment_Carddetails>>
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Views/SharedWeb/DashBoardMaster.cshtml";
 }
@@ -28,8 +27,8 @@
 
 <div class="dashInner">
     <div class="order-details">
-        <h2>Order ID : @this.Model.Item1[0].ORDERID</h2>
-        <p>Order Date :@string.Format("{0:dd/MM/yyyy}", Model.Item1[0].OrderdDate)</p>
+        <h2>Order ID :</h2>
+        <p>Order Date :</p>
         <div class="clear"></div>
     </div>
     <!-- /order-details -->
@@ -38,61 +37,32 @@
             <thead>
                 <tr>
                     <th style="width:35%">Item Details</th>
-                    @if (ViewBag.Type == "User")
-                    {
-                        <th style="width:24%">Vendor Details</th>
-                    }
-                    @if (ViewBag.Type == "Vendor")
-                    {
-                        <th style="width:24%">Event Details</th>
-                    }
+                    <th style="width:24%">User(Vendor Details) / Vendor(Event Details)</th>
+                    <th style="width:24%">Event Details</th>
                     <th style="width:26%">Event Date/Time</th>
                     <th style="width:15%">Price</th>
                 </tr>
             </thead>
-            @foreach (var item in Model.Item1)
-            {
+           
                 <tbody>
                     <tr>
                         <td>
-                            @if ((@item.SERVICENAME == "BookNow" || @item.SERVICENAME == "Quotation" || @item.SERVICENAME == "Bidding") && @item.IMAGEPATH != null)
-                            {
-                                <div class="item-img"><img src="../Content/VendorImages/@item.IMAGEPATH" /></div>
-                            }
-                            @if (@item.SERVICENAME == "Invitation" && @item.IMAGEPATH != null)
-                            {
-                                <div class="item-img"><img src="../Content/InvitationDesignfiles/@item.IMAGEPATH" /></div>
-                            }
-                            @if (@item.SERVICENAME == "ReturnGifts" && @item.IMAGEPATH != null)
-                            {
-                                <div class="item-img"><img src="../Content/Giftdesignfiles/@item.IMAGEPATH" /></div>
-                            }
-                            @if (@item.IMAGEPATH == null)
-                            {
-                                <div class="item-img"><img src="../Assets/img/demoUpload.jpg" /></div>
-                            }
+                            ServiceName
                             <div class="item-details">
-                                <h4>@item.SERVICETYPE</h4>
+                                <h4>SERVICETYPE</h4>
                             </div>
-                            @item.ITEMNAME
+                           ITEMNAME
                         </td>
                         <td>
-                            <h4>@item.EVENTNAME</h4>
-                            @if (ViewBag.Type == "User")
-                            {
-                                @Html.Raw(item.VENDORDETAILS.Replace("!", "<br/>"))
-                            }
-                            @if (ViewBag.Type == "Vendor")
-                            {
-                                @Html.Raw(item.EVENTDETAILS)
-                            }
+                            <h4>EVENTNAME</h4>
+                            
                         </td>
                         <td>
-                            @Html.Raw(item.EVENTDATES.Replace(",", "<br/>"))
+                            EVENTDATES
                         </td>
                         <td>
                             <div class="item-price">
-                                <p>Rs. @string.Format("{0:F2}", item.TOTALPRICE)</p>
+                              TOTALPRICE
                             </div>
                         </td>
                     </tr>
@@ -113,17 +83,17 @@
                     <tr>
                         <td style="width:55%;">Sub Total</td>
                         <td style="width:15%;" align="center">:</td>
-                        <td style="width:30%;">@string.Format("{0:F2}", Model.Item1[0].TOTALPRICEOFITEMS)</td>
+                        <td style="width:30%;">TOTALPRICEOFITEMS</td>
                     </tr>
                     <tr>
                         <td>Tax</td>
                         <td align="center">:</td>
-                        <td>@string.Format("{0:F2}", Model.Item1[0].TOTALTAX)</td>
+                        <td>TOTALTAX</td>
                     </tr>
                     <tr>
                         <td><h5>Payble Total</h5></td>
                         <td align="center"><h5>:</h5></td>
-                        <td><h5>@string.Format("{0:F2}", Model.Item1[0].TOTALPRICE)</h5></td>
+                        <td><h5>TOTALPRICE</h5></td>
                     </tr>
                 </table>
             </div>
@@ -131,8 +101,8 @@
         </div>
         <!-- /total-price -->
         <div class="paid-amount">
-            <h5>Amount Paid&nbsp;&nbsp;:&nbsp;&nbsp;Rs. @string.Format("{0:F2}", Model.Item1[0].TOTALAMOUNTPAID)</h5>
-            <h4>Balance Amount to be Paid&nbsp;&nbsp;:&nbsp;&nbsp;Rs. @string.Format("{0:F2}", Model.Item1[0].BALANCEAMOUNT)</h4>
+            <h5>Amount Paid&nbsp;&nbsp;:&nbsp;&nbsp;Rs.TOTALAMOUNTPAID</h5>
+            <h4>Balance Amount to be Paid&nbsp;&nbsp;:&nbsp;&nbsp;Rs.BALANCEAMOUNT</h4>
         </div>
         <div class="pay-btn btn-right">
             <button class="btn btn-big btn-red" onclick="window.location.href='../Dashboard';"><i class="ti-close"></i> Cancel</button>
@@ -153,30 +123,18 @@
                     <th style="width:20%">Amount</th>
                 </tr>
             </thead>
-            @{int i = 1; }
-            @if (Model.Item2.Count != 0)
-            {
-                foreach (var Obj1 in Model.Item2)
-                {
+           
+               
                     <tbody>
                         <tr>
-                            <td>@i</td>
-                            <td>@string.Format("{0:dd/MM/yyyy}", @Obj1.CreatedDate)</td>
-                            <td>Paid with @Obj1.CardType card -  card @Obj1.CardNumber</td>
-                            <td>Rs. @string.Format("{0:F2}", @Obj1.AmountPaid)</td>
+                            <td>sno</td>
+                            <td>CreatedDate</td>
+                            <td>Paid with CardNumber</td>
+                            <td>Rs. AmountPaid</td>
                         </tr>
                     </tbody>
-                    { i++; }
-                }
-            }
-            else
-            {
-                <tbody>
-                    <tr>
-                        <td>No Records Found</td>
-                    </tr>
-                </tbody>
-            }
+              
+          
         </table>
         <div class="clear"></div>
     </div>

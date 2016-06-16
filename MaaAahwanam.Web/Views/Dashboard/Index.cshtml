@@ -1,5 +1,4 @@
-﻿@model Tuple<List<MaaAahwanam.Dal.SP_ADMIN_ORDERS_Result>, List<MaaAahwanam.Dal.SP_EVENTDETAILSANDEVENTDATES_Result>, List<MaaAahwanam.Dal.SP_COUNTS_TICKETS_AND_NOTIFICATIONS_Result>>
-@{
+﻿@{
     ViewBag.Title = "Dashboard";
     Layout = "~/Views/SharedWeb/DashboardMaster.cshtml";
 }
@@ -111,7 +110,7 @@
                     <div class="info-icon info-icon-red"> <i class="ti-ticket"></i> </div>
                     <div class="info-details">
                         <h4>Tickets</h4>
-                        <p>@this.Model.Item3[0].TICKETSCOUNT</p>
+                        <p>@*@this.Model.Item3[0].TICKETSCOUNT*@ 5</p>
                     </div>
                 </div>
             </li>
@@ -132,47 +131,95 @@
                     <th style="width:15%">Status</th>
                 </tr>
             </thead>
-            @{int i = 1; }
-            @if (Model.Item1.Count != 0)
-            {
-                foreach (var Obj1 in Model.Item1)
-                {
-                    <tbody>
-                        <tr>
-                            <td>@i</td>
-                            <td><a href="../OrderDetails?id=@Obj1.OrderId" class="green-link">@Obj1.OrderId</a></td>
-                            <td>@Obj1.SERVICENAME</td>
-                            <td>@string.Format("{0:dd/MM/yyyy}", @Obj1.CreatedDate)</td>
-                            <td>@string.Format("{0:F2}", @Obj1.PaidAmount)</td>
-                            <td class="active">Active</td>
-                        </tr>
-                    </tbody>
-                    { i++; }
-                }
-            }
-            else
-            {
-                <tbody>
-                    <tr>
-                        <td colspan="6">No Records Found</td>
-                    </tr>
-                </tbody>
-            }
+
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><a href="#quatation" class="green-link ml-center popup-with-move-anim">SDA15678</a></td>
+                    <td>17-12-2015</td>
+                    <td>Rs. 6003</td>
+                    <td>Birthday function</td>
+                    <td>02-12-2015</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td><a href="#" class="green-link">SDA15678</a></td>
+                    <td>17-12-2015</td>
+                    <td>Rs. 600</td>
+                    <td>Birthday function</td>
+                    <td>02-12-2015</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><a href="#" class="green-link">SDA15678</a></td>
+                    <td>17-12-2015</td>
+                    <td>Rs. 600</td>
+                    <td>Birthday function</td>
+                    <td>02-12-2015</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><a href="#" class="green-link">SDA15678</a></td>
+                    <td>17-12-2015</td>
+                    <td>Rs. 600</td>
+                    <td>Birthday function</td>
+                    <td>02-12-2015</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><a href="#" class="green-link">SDA15678</a></td>
+                    <td>17-12-2015</td>
+                    <td>Rs. 600</td>
+                    <td>Birthday function</td>
+                    <td>02-12-2015</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><a href="#" class="green-link">SDA15678</a></td>
+                    <td>17-12-2015</td>
+                    <td>Rs. 600</td>
+                    <td>Birthday function</td>
+                    <td>02-12-2015</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td><a href="#" class="green-link">SDA15678</a></td>
+                    <td>17-12-2015</td>
+                    <td>Rs. 600</td>
+                    <td>Birthday function</td>
+                    <td>02-12-2015</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td><a href="#" class="green-link">SDA15678</a></td>
+                    <td>17-12-2015</td>
+                    <td>Rs. 600</td>
+                    <td>Birthday function</td>
+                    <td>02-12-2015</td>
+                </tr>
+            </tbody>
+
+
+            <tbody>
+                <tr>
+                    <td colspan="6">No Records Found</td>
+                </tr>
+            </tbody>
+
         </table>
-        @if (Model.Item1.Count != 0)
-        {
-            <div class="pagination">
-                <ul>
-                    <li><a href="javascript:void(0)">Prev</a></li>
-                    <li><a href="javascript:void(0)" class="active">1</a></li>
-                    <li><a href="javascript:void(0)">2</a></li>
-                    <li><a class="pagination-gap">...</a></li>
-                    <li><a href="javascript:void(0)">24</a></li>
-                    <li><a href="javascript:void(0)">25</a></li>
-                    <li><a href="javascript:void(0)">Next</a></li>
-                </ul>
-            </div>
-        }
+
+        <div class="pagination">
+            <ul>
+                <li><a href="javascript:void(0)">Prev</a></li>
+                <li><a href="javascript:void(0)" class="active">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a class="pagination-gap">...</a></li>
+                <li><a href="javascript:void(0)">24</a></li>
+                <li><a href="javascript:void(0)">25</a></li>
+                <li><a href="javascript:void(0)">Next</a></li>
+            </ul>
+        </div>
+
         <div class="clear"></div>
     </div>
     @*}*@
@@ -308,8 +355,8 @@
         }*@
     <!-- /dashboardList -->
 </div>
-     @*<script type="text/javascript">
-            $(document).ready(function () {
-                BootstrapDialog.alert('Welcom to MaaAahwanam DashBoard');
-            });
-        </script>*@
+@*<script type="text/javascript">
+        $(document).ready(function () {
+            BootstrapDialog.alert('Welcom to MaaAahwanam DashBoard');
+        });
+    </script>*@

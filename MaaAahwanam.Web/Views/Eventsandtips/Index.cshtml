@@ -1,5 +1,4 @@
-﻿@model MaaAahwanam.Models.Eventsandtips
-@{
+﻿@{
     ViewBag.Title = ViewBag.Pagetitle;
     Layout = "~/Areas/Admin/Views/Shared/Master.cshtml";
 }
@@ -20,45 +19,44 @@
 }
 
 <h2>@ViewBag.Pagetitle</h2>
-@using (Html.BeginForm("Index", "Eventsandtips", FormMethod.Post, new { @class = "form-horizontal", @id = "popup-validation", enctype = "multipart/form-data" }))
-{
+
     <div class="container">
         <table class="table" style="width:500px;margin-left:170px;margin-top:30px">
             <tr>
                 <td>Tilte:</td>
-                <td>@Html.TextBoxFor(m => m.Title)</td>
+                <td><input id="Text1" type="text" /></td>
             </tr>
             <tr>
                 <td>Description:</td>
-                <td>@Html.TextBoxFor(m => m.Description)</td>
+                <td><input id="Text2" type="text" /></td>
             </tr>
             <tr>
                 <td>Location:</td>
-                <td>@Html.TextBoxFor(m => m.Location)</td>
+                <td><input id="Text3" type="text" /></td>
             </tr>
             <tr>
                 <td>Link:</td>
-                <td>@Html.TextBoxFor(m => m.Link)</td>
+                <td><input id="Text4" type="text" /></td>
             </tr>
             <tr>
                 <td>Price:</td>
-                <td>@Html.TextBoxFor(m => m.Price, "{0:F2}")</td>
+                <td><input id="Text5" type="text" /></td>
             </tr>
             <tr>
                 <td>Person:</td>
-                <td>@Html.TextBoxFor(m => m.Person)</td>
+                <td><input id="Text6" type="text" /></td>
             </tr>
             <tr>
                 <td>Phone:</td>
-                <td>@Html.TextBoxFor(m => m.phone)</td>
+                <td><input id="Text7" type="text" /></td>
             </tr>
             <tr>
                 <td>Eventstartdate:</td>
-                <td>@Html.TextBoxFor(m => m.Eventstartdate, "{0:dd-MM-yyyy}")</td>
+                <td><input id="Text8" type="text" /></td>
             </tr>
             <tr>
                 <td>Eventenddate:</td>
-                <td>@Html.TextBoxFor(m => m.Eventenddate, "{0:dd-MM-yyyy}")</td>
+                <td><input id="Text9" type="text" /></td>
             </tr>
             <tr>
                 <td>
@@ -66,8 +64,7 @@
                 </td>
                 <td>
                     <div class="col-lg-8">
-                        @if (Model.Image == null)
-                        {
+                       
                             <div class="fileupload fileupload-new" data-provides="fileupload">
                                 <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="~/Assets/img/demoUpload.jpg" alt="" /></div>
                                 <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
@@ -78,30 +75,16 @@
                                     </span> <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Remove</a>
                                 </div>
                             </div>
-                        }
-                        else
-                        {
-                            <div class="fileupload fileupload-exists" data-provides="fileupload">
-                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="~/Assets/img/demoUpload.jpg" alt="" /></div>
-                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"><img src="/Content/EventsandtipsFiles/@Model.Image" alt="" style="width:100px;height:100px" /></div>
-                                <div>
-                                    <span class="btn btn-file btn-primary">
-                                        <span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span>
-                                        <input type="file" name="file" />
-                                    </span> <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Remove</a>
-                                </div>
-                            </div>
-                        }
+                       
                     </div>
                 </td>
             </tr>
             <tr>
                 <td>
                     <div style="text-align:center" class="form-actions no-margin-bottom">
-                        @Html.HiddenFor(m => m.parameter)
-                        @Html.HiddenFor(m=>m.eventid)
+                       
                         @*@Html.ActionLink("Save", "UserProfileSave", "DashBoard", new { @class = "btn btn-primary btn-lg " })*@
-                        <input type="submit" value="Save" class="btn text-muted text-center btn-success" name="Command" />
+                        <input id="Button1" type="button" value="Submit" />
                     </div>
                 </td>
             </tr>
@@ -126,28 +109,27 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.Eventsandtipslist)
-            {
+           
                 <tr>
-                    <td><a id="example7" href="/Content/EventsandtipsFiles/@item.image" title="Lorem ipsum dolor sit amet"><img width="100px" height="100px" src="/Content/EventsandtipsFiles/@item.image" alt="" /></a></td>
-                    <td>@item.Title</td>
+                    <td><a id="example7" href="/Content/EventsandtipsFiles/image1" title="Lorem ipsum dolor sit amet"><img width="100px" height="100px" src="/Content/EventsandtipsFiles/@item.image" alt="" /></a></td>
+                    <td>Title</td>
                     @*<td><label class="control-label col-lg-4">@item.Description</label></td>*@
-                    <td>@item.location,@item.phone</td>
-                    <td>@item.price</td>
-                    <td>@item.person</td>
-                    <td>@item.Eventstartdate - @item.Eventenddate</td>
+                    <td>location,phone</td>
+                    <td>price</td>
+                    <td>person</td>
+                    <td>Eventstartdate - Eventenddate</td>
                     <td>
-                        <a href="/admin/Eventsandtips/index?id=@item.EventID&page=@item.Type" class="btn btn-default btn-xs">Update</a> ||
-                        <a href="/admin/giftdesigns/Delete?did=@item.EventID" class="btn btn-default btn-xs">Delete</a>
+                        <a href="/admin/Eventsandtips/index" class="btn btn-default btn-xs">Update</a> ||
+                        <a href="/admin/giftdesigns/Delete" class="btn btn-default btn-xs">Delete</a>
                     </td>
                 </tr>
 
 
-            }
+            
         </tbody>
     </table>
 </div>
-}
+
 
 
 

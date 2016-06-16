@@ -1,4 +1,4 @@
-﻿@model MaaAahwanam.Models.ContactUs
+﻿
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/SharedWeb/MainMaster.cshtml";
@@ -41,55 +41,49 @@
             </div>
             <div class="contactForm">
                 <div class="leftPanel">
-                    @using (Html.BeginForm("Index", "ContactUs", FormMethod.Post, new { @class = "form", @id = "contact_form" }))
-                    {
-                        @*<form id="contact_form" class="form">*@
+                    <form id="contact_form" class="form">
                         <ul>
                             <li>
                                 <label>Name<span>*</span></label>
-                                @Html.TextBoxFor(Model => Model.PersonName, new { @id = "name", @name = "name", placeholder = "Name" })
+                                <input type="text" id="name" name="name" placeholder="Name">
                             </li>
                             <li>
                                 <label>Email<span>*</span></label>
-                                @Html.TextBoxFor(Model => Model.SenderEmailId, new { @id = "email", @name = "email", placeholder = "Email" })
+                                <input type="text" id="email" name="email" placeholder="Email">
                             </li>
                         </ul>
                         <ul>
                             <li>
                                 <label>Phone<span>*</span></label>
-                                @Html.TextBoxFor(Model => Model.SenderPhone, new { @id = "phoneno", @name = "phoneno", placeholder = "Phone" })
+                                <input type="text" id="phone" name="phone" placeholder="Phone">
                             </li>
                             <li>
                                 <label>Country <span>*</span></label>
-                                @Html.DropDownListFor(Model => Model.Country, new SelectList(
-                                          new List<Object>{
-                                              new {Text ="Select Country", Value = ""},
-                                               new { Text ="India", Value = "India"  },
-                                               new { Text ="USA", Value = "USA" },
-                                               new { Text ="Australia", Value = "Australia" },
-                                            },
-                                          "value", "text"), new { @class = "validate[required] form-control" })                                                  
+                                <select class="selectBox">
+                                    <option>India</option>
+                                    <option>USA</option>
+                                    <option>Australia</option>
+                                </select>
                             </li>
                         </ul>
                         <ul>
                             <li>
                                 <label>Postal Code</label>
-                                @Html.TextBoxFor(Model => Model.PostalCode, new { @id = "postalcode", @name = "postalcode", placeholder = "Postal Code" })
+                                <input type="text" id="postal_code" name="postal_code" placeholder="Postal Code">
                             </li>
                             <li>
                                 <label>Company Name<span>*</span></label>
-                                @Html.TextBoxFor(Model => Model.CompanyName, new { @id = "company", @name = "company", placeholder = "Company Name" })
+                                <input type="text" id="company_name" name="company_name" placeholder="Company Name">
                             </li>
                         </ul>
                         <ul>
                             <li class="full">
                                 <label>Message<span>*</span></label>
-                                @Html.TextAreaFor(Model =>Model.EnquiryDetails, new { @class = "validate[required] form-control" })
+                                <textarea id="message" name="message" placeholder="Message"></textarea>
                             </li>
                         </ul>
                         <button type="submit" class="btn btn-green">Submit <i class="ti-angle-double-right"></i></button>
-                        @*</form>*@
-                    }
+                    </form>
                 </div>
                 <div class="rightPanel">
                     <div class="contactList">
