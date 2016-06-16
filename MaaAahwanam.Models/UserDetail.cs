@@ -10,10 +10,10 @@ namespace MaaAahwanam.Models
     public class UserDetail
     {
         [Key]
-        public long UserLoginId { get; set; }
         public long UserDetailId { get; set; }
+        public long UserLoginId { get; set; }
         public string FirstName { get; set; }
-        public string LastName { get; set; }     
+        public string LastName { get; set; }
         public string UserPhone { get; set; }
         public string Url { get; set; }
         public string Address { get; set; }
