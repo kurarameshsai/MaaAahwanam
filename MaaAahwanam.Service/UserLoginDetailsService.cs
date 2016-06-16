@@ -9,6 +9,9 @@ namespace MaaAahwanam.Service
         public string AddUserDetails(UserLogin userLogin, UserDetail userDetails)
         {
             string response;
+            userLogin.Status = "Active";
+            userLogin.RegDate = DateTime.Now;
+            userLogin.UpdatedDate = DateTime.Now;
             UserLoginRepository userLoginRepository = new UserLoginRepository();
             UserDetailsRepository userDetailsRepository = new UserDetailsRepository();
             try
