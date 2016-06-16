@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using MaaAahwanam.Utility;
 using MaaAahwanam.Models;
-//using MaaAahwanam.Repository;
+using MaaAahwanam.Service;
 
 namespace MaaAahwanam.Web.Controllers
 {
@@ -30,9 +30,20 @@ namespace MaaAahwanam.Web.Controllers
         }
 
         [HttpPost]
-        public JsonResult SubmittingSubscriber()
+        public JsonResult SubmittingSubscriber(Subscription Subscription)
         {
-            return Json(String.Format("ss"));
+            string message = string.Empty;
+            try
+            {
+                SubscriptionService subscriptionService = new SubscriptionService();
+                subscriptionService.addsubscription(Subscription);
+                message = "subscribed successfully";
+            }
+            catch
+            {
+                message = "subscription failed";
+            }
+            return Json(String.Format(message));
         }
     }
 }

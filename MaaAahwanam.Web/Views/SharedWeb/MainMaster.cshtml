@@ -138,6 +138,8 @@
                 <p>Praesent vel libero id dui pretium maximus in non velit. Donec ipsum ante, volutpat ut aliquet et</p>
                 <input type="text" id="emailid" name="emailid" placeholder="email@yourdomain.com" class="subscribe">
                 <input type="submit" value="Subscribe" class="subscribe_button" onclick="SaveSubscriber()">
+
+
             </div>
             <div class="clear"></div>
         </div>
@@ -304,8 +306,8 @@
         /* ------------------ To save the subscriber -----------------------------  */
         function SaveSubscriber() {
             var Subscription = {};
-            Subscription.emailid = $('#emailid').val();
-            Subscription.status = null;
+            Subscription.EmailId = $('#emailid').val();
+            Subscription.Status = null;
             $.ajax({
                 type: "POST",
                 url: "/Index/SubmittingSubscriber",
@@ -315,10 +317,11 @@
                 //data: JSON.stringify(Subscription),
                 data: Subscription,
                 success: function (data) {
-                    if (data == 'success')
-                        alert('subscribed successfully');
-                    if (data == 'failed')
-                        alert('subscription failed');
+                    alert(data);
+                    //if (data == 'success')
+                    //    alert('subscribed successfully');
+                    //if (data == 'failed')
+                    //    alert('subscription failed');
                 },
                 error: function (data) {
                     alert("Exception as occured");
@@ -346,7 +349,7 @@
                     }
                 },
                 error: function (result) {
-                    alert("Error");
+                    //alert("Error");
                 }
             });
             $("#txt_Location_Top").autocomplete({

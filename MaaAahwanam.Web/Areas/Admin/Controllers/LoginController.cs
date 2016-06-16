@@ -24,6 +24,7 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             if (command == "Register")
             {
                 UserLoginDetailsService userLoginDetailsService = new UserLoginDetailsService();
+                userLogin.UserType = "Admin";
                 var response = userLoginDetailsService.AddUserDetails(userLogin, userDetails);
                 if (response == "sucess")
                 {
@@ -38,8 +39,9 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             {
                 UserLoginDetailsService userLoginDetailsService = new UserLoginDetailsService();
                 var response = userLoginDetailsService.AuthenticateUser(userLogin);
-                if (response == "sucess")
+                if (response.UserLoginId != 0)
                 {
+                    ValidUserUtility.SetAuthCookie(response.UserLoginId.ToString(),response.UserType);
                     Response.Redirect("DashBoard/Dashboard");
                 }
                 else

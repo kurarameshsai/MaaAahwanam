@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="db\ApiContext.cs" />
+    <Compile Include="db\SubscribeRepository.cs" />
     <Compile Include="db\UserDetailsRepository.cs" />
     <Compile Include="db\UserLoginRepository.cs" />
     <Compile Include="Migrations\201606151128598_Indu_migrations_date_06152016.cs" />

@@ -62,13 +62,6 @@ F:\MaaAahwanam1.0\MaaAahwanam.Utility\bin\Debug\EntityFramework.xml
 F:\MaaAahwanam1.0\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.csprojResolveAssemblyReference.cache
 F:\MaaAahwanam1.0\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.dll
 F:\MaaAahwanam1.0\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.pdb
-D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Utility.dll
-D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Utility.pdb
-D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Models.dll
-D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Models.pdb
-D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.csprojResolveAssemblyReference.cache
-D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.dll
-D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.pdb
 F:\MaaAahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Utility.dll.config
 F:\MaaAahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Utility.dll
 F:\MaaAahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Utility.pdb
@@ -77,7 +70,6 @@ F:\MaaAahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Models.pdb
 F:\MaaAahwanam\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.csprojResolveAssemblyReference.cache
 F:\MaaAahwanam\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.dll
 F:\MaaAahwanam\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.pdb
-D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Utility.dll.config
 E:\MAA\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Utility.dll.config
 E:\MAA\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Utility.dll
 E:\MAA\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Utility.pdb
@@ -86,3 +78,11 @@ E:\MAA\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Models.pdb
 E:\MAA\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.csprojResolveAssemblyReference.cache
 E:\MAA\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.dll
 E:\MAA\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.pdb
+D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Utility.dll.config
+D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Utility.dll
+D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Utility.pdb
+D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Models.dll
+D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Models.pdb
+D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.csprojResolveAssemblyReference.cache
+D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.dll
+D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.pdb

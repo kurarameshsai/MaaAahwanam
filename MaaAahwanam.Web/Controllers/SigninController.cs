@@ -10,6 +10,7 @@ using MaaAahwanam.Utility;
 using System.Configuration;
 using System.Web.Security;
 using Newtonsoft.Json.Linq;
+using MaaAahwanam.Service;
 
 namespace MaaAahwanam.Web.Controllers
 {
@@ -28,8 +29,36 @@ namespace MaaAahwanam.Web.Controllers
             }
         }
         [HttpPost]
-        public ActionResult Index(string command)
+        public ActionResult Index(string command, [Bind(Prefix = "Item1")] UserLogin userLogin, [Bind(Prefix = "Item2")] UserDetail userDetail)
         {
+            if(command=="Register")
+            {
+                UserLoginDetailsService userLoginDetailsService = new UserLoginDetailsService();
+                userLogin.UserType = "User";
+                var response = userLoginDetailsService.AddUserDetails(userLogin, userDetail);
+                if (response == "sucess")
+                {
+                    return Content("<script language='javascript' type='text/javascript'>alert('Registered Successfully');location.href='" + @Url.Action("Index", "Signin") + "'</script>");
+                }
+                else
+                {
+                    return Content("<script language='javascript' type='text/javascript'>alert('Registration Failed');location.href='" + @Url.Action("Index", "Signin") + "'</script>");
+                }
+            }
+            if (command == "Authenticate")
+            {
+                UserLoginDetailsService userLoginDetailsService = new UserLoginDetailsService();
+                var response = userLoginDetailsService.AuthenticateUser(userLogin);
+                if (response.UserLoginId != 0)
+                {
+                    ValidUserUtility.SetAuthCookie(response.UserLoginId.ToString(), response.UserType);
+                    Response.Redirect("DashBoard/Index");
+                }
+                else
+                {
+                    return Content("<script language='javascript' type='text/javascript'>alert('Wrong Credentials,Check Username and password');location.href='" + @Url.Action("Index", "Signin") + "'</script>");
+                }
+            }
             return View();
         }
 
