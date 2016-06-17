@@ -13,6 +13,8 @@ namespace MaaAahwanam.Web.Controllers
     {
         public ActionResult Index()
         {
+            AllVendorsService allVendorsService = new AllVendorsService();
+            ViewBag.PhotographersDetails = allVendorsService.VendorsPhotographyList();
             return View();
         }
 

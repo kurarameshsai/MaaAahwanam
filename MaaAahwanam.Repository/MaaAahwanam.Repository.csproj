@@ -53,7 +53,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="db\ApiContext.cs" />
+    <Compile Include="db\VendorImageRepository.cs" />
+    <Compile Include="db\VendorsBeautyServiceRepository.cs" />
+    <Compile Include="db\CartItemRepoitory.cs" />
+    <Compile Include="db\VendorsDecoratorRepository.cs" />
+    <Compile Include="db\EventsandTipRepository.cs" />
+    <Compile Include="db\EventInformationRepository.cs" />
+    <Compile Include="db\VendormasterRepository.cs" />
+    <Compile Include="db\VendorsPhotographyRepository.cs" />
     <Compile Include="db\SubscribeRepository.cs" />
+    <Compile Include="db\AdminTestimonialRepository.cs" />
+    <Compile Include="db\IssueTicketRepository.cs" />
+    <Compile Include="db\VendorsTravelandAccomodationRepository.cs" />
     <Compile Include="db\UserDetailsRepository.cs" />
     <Compile Include="db\UserLoginRepository.cs" />
     <Compile Include="Migrations\201606151128598_Indu_migrations_date_06152016.cs" />
