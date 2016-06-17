@@ -17,6 +17,7 @@ namespace MaaAahwanam.Service
             try
             {
                 UserLogin l1 = userLoginRepository.AddLoginCredentials(userLogin);
+                userDetails.UserLoginId = l1.UserLoginId;
                 UserDetail l2 = userDetailsRepository.AddUserDetails(userDetails);
                 response = "sucess";
             }
