@@ -10,7 +10,7 @@ namespace MaaAahwanam.Repository.db
     public class VendormasterRepository
     {
         readonly ApiContext _dbContext = new ApiContext();
-        public List<Vendormaster> VendormasterList(Vendormaster Vendormaster)
+        public List<Vendormaster> VendormasterList()
         {
             return _dbContext.Vendormaster.ToList();
         }

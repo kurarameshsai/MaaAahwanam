@@ -7,12 +7,14 @@ using MaaAahwanam.Models;
 
 namespace MaaAahwanam.Repository.db
 {
-    public class AdminTestimonialRepository
+    public class ServiceRequestRepository
     {
         readonly ApiContext _dbContext = new ApiContext();
-        public List<dynamic> AdminTestimonialList()
+        public ServiceRequest SaveQuotation(ServiceRequest serviceRequest)
         {
-            return _dbContext.AdminTesimonial.Join(_dbContext.Vendormaster, i => i.Id, p => p.Id, (i, p) => new { p = p, i = i }).ToList<dynamic>();
+            _dbContext.ServiceRequest.Add(serviceRequest);
+            _dbContext.SaveChanges();
+            return serviceRequest;
         }
     }
 }

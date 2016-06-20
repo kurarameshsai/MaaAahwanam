@@ -1,4 +1,4 @@
-﻿
+﻿@model MaaAahwanam.Models.Enquiry
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/SharedWeb/MainMaster.cshtml";
@@ -41,49 +41,55 @@
             </div>
             <div class="contactForm">
                 <div class="leftPanel">
-                    <form id="contact_form" class="form">
+                    @using (Html.BeginForm("Index", "ContactUs", FormMethod.Post, new { @class = "form", @id = "contact_form" }))
+                    {
+                        @*<form id="contact_form" class="form">*@
                         <ul>
                             <li>
                                 <label>Name<span>*</span></label>
-                                <input type="text" id="name" name="name" placeholder="Name">
+                                @Html.TextBoxFor(Model => Model.PersonName, new { @id = "firstname", @name = "firstname", placeholder = "First Name", required = "required" })
                             </li>
                             <li>
                                 <label>Email<span>*</span></label>
-                                <input type="text" id="email" name="email" placeholder="Email">
+                                @Html.TextBoxFor(Model => Model.SenderEmailId, new { @id = "email", @name = "email", placeholder = "Email" })
                             </li>
                         </ul>
                         <ul>
                             <li>
                                 <label>Phone<span>*</span></label>
-                                <input type="text" id="phone" name="phone" placeholder="Phone">
+                                @Html.TextBoxFor(Model => Model.SenderPhone, new { @id = "phoneno", @name = "phoneno", placeholder = "Phone" })
                             </li>
                             <li>
                                 <label>Country <span>*</span></label>
-                                <select class="selectBox">
-                                    <option>India</option>
-                                    <option>USA</option>
-                                    <option>Australia</option>
-                                </select>
+                                @Html.DropDownListFor(Model => Model.Country, new SelectList(
+                                          new List<Object>{
+                                              new {Text ="Select Country", Value = ""},
+                                               new { Text ="India", Value = "India"  },
+                                               new { Text ="USA", Value = "USA" },
+                                               new { Text ="Australia", Value = "Australia" },
+                                            },
+                                          "value", "text"), new { @class = "validate[required] form-control" })
                             </li>
                         </ul>
                         <ul>
                             <li>
                                 <label>Postal Code</label>
-                                <input type="text" id="postal_code" name="postal_code" placeholder="Postal Code">
+                                @Html.TextBoxFor(Model => Model.PostalCode, new { @id = "postalcode", @name = "postalcode", placeholder = "Postal Code" })
                             </li>
                             <li>
                                 <label>Company Name<span>*</span></label>
-                                <input type="text" id="company_name" name="company_name" placeholder="Company Name">
+                                @Html.TextBoxFor(Model => Model.CompanyName, new { @id = "company", @name = "company", placeholder = "Company Name" })
                             </li>
                         </ul>
                         <ul>
                             <li class="full">
                                 <label>Message<span>*</span></label>
-                                <textarea id="message" name="message" placeholder="Message"></textarea>
+                                @Html.TextAreaFor(Model => Model.EnquiryDetails, new { @class = "validate[required] form-control" })
                             </li>
                         </ul>
                         <button type="submit" class="btn btn-green">Submit <i class="ti-angle-double-right"></i></button>
-                    </form>
+                        @*</form>*@
+                    }
                 </div>
                 <div class="rightPanel">
                     <div class="contactList">
@@ -111,8 +117,6 @@
                     </div>
                 </div>
                 <div class="clear"></div>
-
-
             </div>
             <div class="contact_map">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7613.600455475163!2d78.42730221930498!3d17.421372235802192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb96cc62a87613%3A0xa8317fa22362be49!2sJubilee+Hills%2C+Hyderabad%2C+Telangana!5e0!3m2!1sen!2sin!4v1450762809488" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -140,7 +144,7 @@
         </div>
 
     </div>
-   
+
 </section>
 
 <div class="clear"></div>

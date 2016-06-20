@@ -1,4 +1,5 @@
-﻿using MaaAahwanam.Models;
+﻿using System.Linq;
+using MaaAahwanam.Models;
 
 
 namespace MaaAahwanam.Repository.db
@@ -17,6 +18,13 @@ namespace MaaAahwanam.Repository.db
             _dbContext.UserDetail.Add(userDetails);
             _dbContext.SaveChanges();
             return userDetails;
+        }
+        public UserDetail GetLoginDetailsByUsername(int userId)
+        {
+            UserDetail list = new UserDetail();
+            if (userId != 0)
+                list = _dbContext.UserDetail.SingleOrDefault(p => p.UserLoginId == userId);
+            return list;
         }
     }
 }

@@ -7,12 +7,14 @@ using MaaAahwanam.Models;
 
 namespace MaaAahwanam.Repository.db
 {
-    public class AdminTestimonialRepository
+    public class EnquiryRepository
     {
         readonly ApiContext _dbContext = new ApiContext();
-        public List<dynamic> AdminTestimonialList()
+        public Enquiry SaveEnquiries(Enquiry enquiry)
         {
-            return _dbContext.AdminTesimonial.Join(_dbContext.Vendormaster, i => i.Id, p => p.Id, (i, p) => new { p = p, i = i }).ToList<dynamic>();
+            _dbContext.Enquiry.Add(enquiry);
+            _dbContext.SaveChanges();
+            return enquiry;
         }
     }
 }

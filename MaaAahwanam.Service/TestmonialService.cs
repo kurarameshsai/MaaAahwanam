@@ -10,10 +10,10 @@ namespace MaaAahwanam.Service
 {
     public class TestmonialService
     {
-        public List<AdminTestimonial> TestmonialServiceList()
+        public List<dynamic> TestmonialServiceList()
         {
             AdminTestimonialRepository testimonialRepository = new AdminTestimonialRepository();
-            List<AdminTestimonial> l1 = testimonialRepository.AdminTestimonialList();
+            List<dynamic> l1 = testimonialRepository.AdminTestimonialList();
             return l1;
         }
     }

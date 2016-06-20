@@ -1,9 +1,7 @@
 ﻿@model MaaAahwanam.Models.ServiceRequest
 @{
-    ViewBag.Title = "Index";
     Layout = "~/Views/SharedWeb/ServicesMaster.cshtml";
 }
-
 @section Navigation
 {
     <div class="breads">
@@ -46,21 +44,24 @@
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
 
         <p>But also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-        @using (Html.BeginForm("Index", "QuoatationSubmit", FormMethod.Post, new { @class = "form-signin", @id = "register_form", @autocomplete = "off" }))
+        @using (Html.BeginForm("Index", "ReverseBidding", FormMethod.Post, new { @class = "form-signin", @id = "register_form", @autocomplete = "off" }))
         {
             <div class="displayDiv">
                 <div class="bidding_form">
-
                     <li>
                         <label>Name</label>
-                        @*<input type="text" name="event" placeholder="Enter your budjet in rupees">*@
                         @Html.TextBoxFor(model => model.Name, new { @id = "name", @name = "name", placeholder = "Name", required = "required" })
 
                     </li>
+                    <li>
+                        <label>Vendor Id</label>
+                        @Html.TextBoxFor(model => model.VendorId, new { @id = "VendorId", @name = "VendorId", placeholder = "VendorId", required = "required" })
+
+                    </li>
                     <ul>
+
                         <li>
                             <label>Budget</label>
-                            @*<input type="text" name="event" placeholder="Enter your budjet in rupees">*@
                             @Html.TextBoxFor(model => model.Budget, new { @id = "Budget", @name = "Budget", placeholder = "Enter your budjet in rupees", required = "required" })
                         </li>
                         <li>
@@ -203,7 +204,6 @@
         </div>
     </div>
 }
-
 
 
 

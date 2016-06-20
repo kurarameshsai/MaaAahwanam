@@ -10,10 +10,10 @@ namespace MaaAahwanam.Service
 {
     public class EventsService
     {
-        public List<EventInformation> EventInformationList()
+        public int EventInformationCount()
         {
             EventInformationRepository eventInformationRepository = new EventInformationRepository();
-            List<EventInformation> l1 = eventInformationRepository.EventInformationList();
+            int l1 = eventInformationRepository.EventInformationList().Count();
             return l1;
         }
     }

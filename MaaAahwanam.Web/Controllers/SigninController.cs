@@ -31,7 +31,7 @@ namespace MaaAahwanam.Web.Controllers
         [HttpPost]
         public ActionResult Index(string command, [Bind(Prefix = "Item1")] UserLogin userLogin, [Bind(Prefix = "Item2")] UserDetail userDetail)
         {
-            if(command=="Register")
+            if (command == "Register")
             {
                 UserLoginDetailsService userLoginDetailsService = new UserLoginDetailsService();
                 userLogin.UserType = "User";
@@ -71,7 +71,17 @@ namespace MaaAahwanam.Web.Controllers
         [ChildActionOnly]
         public PartialViewResult SigninPartial()
         {
-            return PartialView("SigninPartial");
+            if (ValidUserUtility.ValidUser() != 0)
+            {
+                UserLoginDetailsService userLoginDetailsService = new UserLoginDetailsService();
+                var response = userLoginDetailsService.GetUser(ValidUserUtility.ValidUser());
+                return PartialView("SigninPartial",response);
+            }
+            else
+            {
+                UserDetail userDetail = new UserDetail();
+                return PartialView("SigninPartial", userDetail);
+            }
         }
         public JsonResult RegularExpressionPattern_Password()
         {

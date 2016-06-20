@@ -28,5 +28,13 @@ namespace MaaAahwanam.Repository.db
                 list = _dbContext.UserLogin.FirstOrDefault(p => p.UserName == userLogin.UserName);
             return list;
         }
+        //public UserLogin GetLoginDetailsByUsername(int userId)
+        //{
+        //    //UserLogin list = new UserLogin();
+        //    UserDetail list = new UserDetail();
+        //    if (userId != 0)
+        //    list = _dbContext.UserDetail.SingleOrDefault(p => p.UserLoginId==userId);
+        //    return list;
+        //}
     }
 }

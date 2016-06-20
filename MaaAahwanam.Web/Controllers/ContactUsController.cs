@@ -7,6 +7,7 @@ using MaaAahwanam.Models;
 using MaaAahwanam.Utility;
 using System.Configuration;
 using System.Web.Security;
+using MaaAahwanam.Service;
 
 namespace MaaAahwanam.Web.Controllers
 {
@@ -20,9 +21,11 @@ namespace MaaAahwanam.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(string submit)
+        public ActionResult Index(Enquiry enquiry)
         {
+            EnquiryService enquiryService = new EnquiryService();
+            string respnonse = enquiryService.SaveEnquiries(enquiry);
             return View();
         }
-	}
+    }
 }

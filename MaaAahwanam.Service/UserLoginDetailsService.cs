@@ -34,5 +34,12 @@ namespace MaaAahwanam.Service
             UserLogin = userLoginRepository.GetLoginDetailsByUsername(UserLogin);
             return UserLogin;
         }
+        public UserDetail GetUser(int userid)
+        {
+            string response = string.Empty;
+            UserDetailsRepository userDetailsRepository = new UserDetailsRepository();
+            UserDetail list = userDetailsRepository.GetLoginDetailsByUsername(userid);
+            return list;
+        }
     }
 }

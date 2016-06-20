@@ -10,10 +10,10 @@ namespace MaaAahwanam.Service
 {
     public class ticketsService
     {
-        public List<IssueTicket> EventsandTipsList()
+        public int TicketsCount()
         {
             IssueTicketRepository issueTicketRepository = new IssueTicketRepository();
-            List<IssueTicket> l1 = issueTicketRepository.IssueTicketsList();
+            int l1 = issueTicketRepository.IssueTicketsList().Count;
             return l1;
         }
     }

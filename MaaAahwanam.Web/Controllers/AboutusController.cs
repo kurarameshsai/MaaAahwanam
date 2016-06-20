@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MaaAahwanam.Models;
+using MaaAahwanam.Service;
 
 namespace MaaAahwanam.Web.Controllers
 {
@@ -13,7 +14,10 @@ namespace MaaAahwanam.Web.Controllers
         // GET: /Aboutus/
         public ActionResult Index()
         {
-            
+            EventsService eventsService = new EventsService();
+            ViewBag.EventsCount = eventsService.EventInformationCount();
+            ticketsService ticketsService = new ticketsService();
+            ViewBag.Ticketscount = ticketsService.TicketsCount();
             return View();
         }
     }
