@@ -20,8 +20,8 @@ namespace MaaAahwanam.Web.Controllers
         public ActionResult Index(ServiceRequest serviceRequest)
         {
             ServiceRequestService serviceRequestService = new ServiceRequestService();
-            serviceRequestService.SaveService(serviceRequest);
-            return View();
+            serviceRequest=serviceRequestService.SaveService(serviceRequest);
+            return RedirectToAction("Index", "BiddingConformation", serviceRequest);
         }
 	}
 }

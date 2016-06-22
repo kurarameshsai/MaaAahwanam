@@ -10,20 +10,11 @@ namespace MaaAahwanam.Service
 {
     public class ServiceRequestService
     {
-        public string SaveService(ServiceRequest serviceRequest)
+        public ServiceRequest SaveService(ServiceRequest serviceRequest)
         {
-            string Response;
-            try
-            {
             ServiceRequestRepository serviceRequestRepository = new ServiceRequestRepository();
-            serviceRequestRepository.SaveQuotation(serviceRequest);
-            Response = "Success";
-            }
-            catch
-            {
-                Response = "Failed";
-            }
-            return Response;
+            serviceRequest = serviceRequestRepository.SaveQuotation(serviceRequest);
+            return serviceRequest;
         }
     }
 }
