@@ -1,0 +1,330 @@
+﻿@{
+    ViewBag.Title = "VendorDetails";
+    Layout = "~/Areas/Admin/Views/Shared/MainMaster.cshtml";
+}
+
+@section header{
+
+
+    <!-- END PAGE LEVEL  STYLES -->
+    <!-- END PAGE LEVEL  STYLES -->
+}
+
+
+<!--PAGE CONTENT -->
+
+<div id="content">
+    <div class="inner">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2> Vendor Details</h2>
+            </div>
+        </div>
+        <hr />
+        <form method="post" action="/Admin/Vendor/VendorPhotoDet/" class="form-horizontal" id="popup-validation" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="body collapse in" id="div1"> <a href="/Admin/DashBoard/dashboard" class="btn btn-primary btn-xs">Home</a>&nbsp;&nbsp;&nbsp;<a href="/Admin/Vendor/Index" class="btn btn-primary btn-xs">Vendors List</a>&nbsp;&nbsp;&nbsp;<a href="#" class="btn btn-primary btn-xs">Vendor Details</a> </div>
+                    <br />
+
+                    <h4>
+                        <i class="icon-th-list">
+                        </i> Vendor UserBusiId | Requestdate
+
+                    </h4>
+                </div>
+                <br />
+
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <ul class="nav nav-tabs" id="mytab">
+                                <li class="active"><a href="#home" data-toggle="tab">General</a> </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class='tab-pane fade in active' id="home">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div id="collapse2" class="body collapse in">
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Vendor Name</label>
+                                                    <div class="col-lg-4">
+                                                        <input type="text" id="businame" name="name" placeholder="Business Name">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Vendor Description</label>
+                                                    <div class="col-lg-4">
+                                                       <textarea rows="4" cols="30"></textarea>
+                                                        @*<input type="text" id="busidesc" name="name" placeholder="Description">*@
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Address</label>
+                                                    <div class="col-lg-4">
+                                                        <textarea rows="4" cols="30"></textarea>
+                                                        @*<input type="text" id="addr" name="name"  placeholder="Address">*@
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Location</label>
+                                                    <div class="col-lg-4">
+                                                        <input type="text" id="loc" name="name" placeholder="Location">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">City</label>
+                                                    <div class="col-lg-4">
+                                                        <input type="text" id="city" name="name" placeholder="City">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">State</label>
+                                                    <div class="col-lg-4">
+                                                        <select class="selectBox">
+                                                            <option>Select State</option>
+                                                            <option>Telangana</option>
+                                                            <option>Andhra Pradesh</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">ZIP Code</label>
+                                                    <div class="col-lg-4">
+                                                        <input type="text" id="zipcode" name="name" placeholder="Zip Code">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" style="align-items:center">
+                                                    <label class="control-label col-lg-4">Quotation</label>
+                                                    <div class="col-lg-4">
+                                                        <input type="checkbox" id="Quotation" name="name" value="Quotation"  />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Bidding</label>
+                                                    <div class="col-lg-4">
+                                                        <input type="checkbox" id="Bidding" name="name" value="Bidding" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Reverse Bidding</label>
+                                                    <div class="col-lg-4">
+                                                        <input type="checkbox" id="ReverseBidding" name="name" value="ReverseBidding" />
+                                                    </div>
+                                                </div>
+                                               
+                                                
+                                                
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Contact Person</label>
+                                                    <div class="col-lg-4">
+                                                        <input type="text" id="contperson" name="name" placeholder="Contact Person">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Contact Number</label>
+                                                    <div class="col-lg-4">
+                                                        <input type="text" id="contno." name="name" placeholder="Contact Number">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Landline Number</label>
+                                                    <div class="col-lg-4">
+                                                        <input type="text" id="llno." name="name" placeholder="Landline Number">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">E-mail</label>
+                                                    <div class=" col-lg-4">
+                                                        <input type="text" id="email" name="name" placeholder="Email">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Url</label>
+                                                    <div class=" col-lg-4">
+                                                        <input type="text" id="url" name="name" placeholder="Url">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4" for="dp2">Date of Establishment</label>
+                                                    <div class="col-lg-4">
+                                                        <input type="text" id="estdate" name="name" placeholder="Date of Establishment">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Experience</label>
+                                                    <div class=" col-lg-4">
+                                                        <input type="text" id="exp" name="name" placeholder="Experience">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Service Type</label>
+                                                    <div class="col-lg-4">
+                                                        <select class="selectBox">
+                                                            <option>Select Service Type</option>
+                                                            <option>Venue</option>
+                                                            <option>Caterers</option>
+                                                            <option>Decorators</option>
+                                                            <option>Photographers</option>
+                                                            <option>Invitation Cards</option>
+                                                            <option>Cards Distribution</option>
+                                                            <option>Entertainment</option>
+                                                            <option>Event Organisers</option>
+                                                            <option>Beauty Services</option>
+                                                            <option>Wedding Collection</option>
+                                                            <option>Travel & Accomodation</option>
+                                                            <option>Return Gifts</option>
+                                                            <option>Others</option>
+                                                        </select>
+                                                    </div>
+                                                </div>                                               
+                                                <div class="form-group">                                                    
+                                                    <div class=" col-lg-4">                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class=" col-lg-4">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class=" col-lg-4">
+                                                    </div>
+                                                </div>
+                                                <div style="text-align:center" class="form-actions no-margin-bottom">
+                                                    <input type="submit" value="Click To Validate GeneralInformation" class="btn btn-primary btn-lg" name="Command" />
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+</div>
+<script>
+
+    function cTrig() {
+        var box = confirm("Are you sure you want to do this?");
+        if (box == true) {
+            $('input[name=Delete]').attr('checked', true);
+        }
+        else {
+            $('input[name=Delete]').attr('checked', false);
+        }
+    }
+
+    function DeleteProduct(pid) {
+        if (confirm("Do you want to delete Image: " + pid)) {
+            var data = { 'ImgId': pid }
+            $.post('/Vendor/DeleteImg', data,
+            function (data) {
+                if (data == true) {
+                    var qrStr = window.location.search;
+                    qrStr = qrStr.split("=")[1];
+                    location.href = "/Admin/Vendor/VendorPhotoDet?id=" + qrStr;
+                    viewbag.I1 = "active";
+                }
+                else
+                    alert("Could not delete");
+            });
+        }
+    }
+
+    function test() {
+        $("#Home").removeClass("tab-pane fade in active");
+        $("#Packages").addClass("tab-pane fade in active");
+    }
+</script>
+
+<!--END PAGE CONTENT -->
+@section Bottom{
+    <script src="~/Assets/plugins/jquery-2.0.3.min.js"></script>
+    <script src="~/Assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+    <script src="~/Assets/plugins/dataTables/jquery.dataTables.js"></script>
+    <script src="~/Assets/plugins/dataTables/dataTables.bootstrap.js"></script>
+
+    <!-- PAGE LEVEL SCRIPT-->
+    <script src="~/Assets/js/jquery-ui.min.js"></script>
+    <script src="~/Assets/plugins/uniform/jquery.uniform.min.js"></script>
+    <script src="~/Assets/plugins/inputlimiter/jquery.inputlimiter.1.3.1.min.js"></script>
+    <script src="~/Assets/plugins/chosen/chosen.jquery.min.js"></script>
+    <script src="~/Assets/plugins/colorpicker/js/bootstrap-colorpicker.js"></script>
+
+    <script src="~/Assets/plugins/tagsinput/jquery.tagsinput.min.js"></script>
+    <script src="~/Assets/plugins/validVal/js/jquery.validVal.min.js"></script>
+
+    <script src="~/Assets/plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="~/Assets/plugins/daterangepicker/moment.min.js"></script>
+    <script src="~/Assets/plugins/datepicker/js/bootstrap-datepicker.js"></script>
+
+    <script src="~/Assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
+    <script src="~/Assets/plugins/jquery.dualListbox-1.3/jquery.dualListBox-1.3.min.js"></script>
+    <script src="~/Assets/plugins/autosize/jquery.autosize.min.js"></script>
+    <script src="~/Assets/plugins/jasny/js/bootstrap-inputmask.js"></script>
+    <script src="~/Assets/plugins/jasny/js/bootstrap-fileupload.js"></script><!--important for gallery-->
+    <script src="~/Assets/plugins/jquery.fancybox-1.3.4/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+    <script src="~/Assets/plugins/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.js"></script>
+    @*<script src="~/Assets/js/image_gallery.js"></script>*@
+    <script src="~/Assets/js/formsInit.js"></script>
+    <script>
+        $(function () { formInit(); });
+    </script>
+    <script>
+        $(function () {
+            if (this.Model.Item1 != null)
+                document.getElementById("dp2").value = this.Model.Item1.BusinessEstDate.ToShortDateString();
+        });
+    </script>
+    <!--END PAGE LEVEL SCRIPT-->
+    <!--END PAGE LEVEL SCRIPT-->
+    <!--END PAGE LEVEL SCRIPT-->
+}
+
+<script src="~/Assets/plugins/jquery-2.0.3.min.js"></script>
+<script src="~/Assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="~/Assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+<script src="~/Assets/plugins/dataTables/jquery.dataTables.js"></script>
+<script src="~/Assets/plugins/dataTables/dataTables.bootstrap.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#dataTables-example').dataTable();
+    });
+</script>
+<script type="text/javascript">
+    function DateFormat(field, rules, i, options) {
+        var regex = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+        if (!regex.test(field.val())) {
+            return "Please enter date in dd/MM/yyyy format."
+        }
+    }
+</script>
+<script type="text/javascript">
+    function DateFormat(field, rules, i, options) {
+        var regex = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+        if (!regex.test(field.val())) {
+            return "Please enter date in dd/MM/yyyy format."
+        }
+    }
+</script>
+
+<script type="text/javascript">
+    //$(function () {
+    //$("#btnsave").validationengine('attach', { promptposition: "topright" });
+    //);
+    $('[id*=btnsave]').bind("click", function () {
+        $("#form1").validationEngine('attach', { promptPosition: "topRight" });
+    });
+</script>
