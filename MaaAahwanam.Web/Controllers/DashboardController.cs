@@ -18,7 +18,14 @@ namespace MaaAahwanam.Web.Controllers
         // GET: /Dashboard/
         public ActionResult Index()
         {
+            if (ValidUserUtility.ValidUser() != 0 && (ValidUserUtility.UserType() == "User" || ValidUserUtility.UserType() == "Vendor"))
+            {
+
+                ViewBag.Type = ValidUserUtility.UserType();
+
+            }
             return View();
+
         }
     }
 }

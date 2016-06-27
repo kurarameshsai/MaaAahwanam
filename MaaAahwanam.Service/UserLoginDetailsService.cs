@@ -6,14 +6,14 @@ namespace MaaAahwanam.Service
 {
     public class UserLoginDetailsService
     {
+        UserLoginRepository userLoginRepository = new UserLoginRepository();
+        UserDetailsRepository userDetailsRepository = new UserDetailsRepository();
         public string AddUserDetails(UserLogin userLogin, UserDetail userDetails)
         {
             string response;
             userLogin.Status = "Active";
             userLogin.RegDate = DateTime.Now;
             userLogin.UpdatedDate = DateTime.Now;
-            UserLoginRepository userLoginRepository = new UserLoginRepository();
-            UserDetailsRepository userDetailsRepository = new UserDetailsRepository();
             try
             {
                 UserLogin l1 = userLoginRepository.AddLoginCredentials(userLogin);
@@ -30,16 +30,24 @@ namespace MaaAahwanam.Service
         public UserLogin AuthenticateUser(UserLogin UserLogin)
         {
             string response = string.Empty;
-            UserLoginRepository userLoginRepository = new UserLoginRepository();
             UserLogin = userLoginRepository.GetLoginDetailsByUsername(UserLogin);
             return UserLogin;
         }
         public UserDetail GetUser(int userid)
         {
             string response = string.Empty;
-            UserDetailsRepository userDetailsRepository = new UserDetailsRepository();
             UserDetail list = userDetailsRepository.GetLoginDetailsByUsername(userid);
             return list;
+        }
+        public UserDetail UpdateUserdetails(UserDetail userDetail, Int64 UserloginID)
+        {
+            var userdetail = userDetailsRepository.UpdateUserdetails(userDetail, UserloginID);
+            return userdetail;
+        }
+        public UserLogin changepassword(UserLogin userLogin,int UserLoginId)
+        {
+            var changes = userLoginRepository.UpdatePassword(userLogin,UserLoginId);
+            return changes;
         }
     }
 }

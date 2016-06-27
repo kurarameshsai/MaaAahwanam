@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using MaaAahwanam.Models;
+using System;
 
 namespace MaaAahwanam.Repository.db
 {
@@ -28,13 +29,32 @@ namespace MaaAahwanam.Repository.db
                 list = _dbContext.UserLogin.FirstOrDefault(p => p.UserName == userLogin.UserName);
             return list;
         }
-        //public UserLogin GetLoginDetailsByUsername(int userId)
-        //{
-        //    //UserLogin list = new UserLogin();
-        //    UserDetail list = new UserDetail();
-        //    if (userId != 0)
-        //    list = _dbContext.UserDetail.SingleOrDefault(p => p.UserLoginId==userId);
-        //    return list;
-        //}
+        public UserLogin UpdatePassword(UserLogin userLogin,int UserloginID)
+        {
+            // Query the database for the row to be updated.
+            var query =
+                from ord in _dbContext.UserLogin
+                where ord.UserLoginId == UserloginID
+                select ord;
+
+            // Execute the query, and change the column values
+            // you want to change.
+            foreach (UserLogin ord in query)
+            {
+                ord.Password= userLogin.Password;
+                // Insert any additional changes to column values.
+            }
+
+            // Submit the changes to the database.
+            try
+            {
+                _dbContext.SaveChanges();
+            }
+            catch (Exception Ex)
+            {
+
+            }
+            return userLogin;
+        }
     }
 }

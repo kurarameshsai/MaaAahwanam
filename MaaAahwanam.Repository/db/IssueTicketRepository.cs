@@ -14,5 +14,11 @@ namespace MaaAahwanam.Repository.db
         {
             return _dbContext.IssueTicket.ToList();
         }
+        public IssueTicket Insertissueticket(IssueTicket issueTicket)
+        {
+            _dbContext.IssueTicket.Add(issueTicket);
+            _dbContext.SaveChanges();
+            return issueTicket;
+        }
     }
 }

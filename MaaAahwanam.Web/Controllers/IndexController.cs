@@ -19,11 +19,11 @@ namespace MaaAahwanam.Web.Controllers
             ViewBag.Decorators = allVendorsService.VendorsDecoratorList();
             ViewBag.ToursandTravels = allVendorsService.VendorsTravelandAccomodationList();
             EventsService eventsService=new EventsService();
-            @ViewBag.EventsCount = eventsService.EventInformationCount();
+            ViewBag.EventsCount = eventsService.EventInformationCount();
             ticketsService ticketsService = new ticketsService();
-            @ViewBag.Ticketscount = ticketsService.TicketsCount();
+            ViewBag.Ticketscount = ticketsService.TicketsCount();
             TestmonialService testmonialService=new TestmonialService();
-            @ViewBag.Testimonials = testmonialService.TestmonialServiceList();
+            ViewBag.Testimonials = testmonialService.TestmonialServiceList();
             return View();
         }
 

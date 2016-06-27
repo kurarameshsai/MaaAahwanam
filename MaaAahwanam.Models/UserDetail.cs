@@ -13,7 +13,11 @@ namespace MaaAahwanam.Models
         public long UserDetailId { get; set; }
         public long UserLoginId { get; set; }
         public string FirstName { get; set; }
-        public string LastName { get; set; }     
+        public string LastName { get; set; }
+        public string AlternativeEmailID { get; set; }
+        public string Country { get; set; }
+        public string Gender { get; set; }
+        public string Landmark { get; set; }
         public string UserPhone { get; set; }
         public string Url { get; set; }
         public string Address { get; set; }

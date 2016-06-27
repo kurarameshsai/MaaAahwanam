@@ -7,7 +7,7 @@ using MaaAahwanam.Models;
 using MaaAahwanam.Utility;
 using System.Configuration;
 using System.Web.Security;
-
+using MaaAahwanam.Service;
 namespace MaaAahwanam.Web.Controllers
 {
     public class ChangePasswordController : Controller
@@ -20,6 +20,13 @@ namespace MaaAahwanam.Web.Controllers
             {
                 ViewBag.Type = ValidUserUtility.UserType();
             }   
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Index(UserLogin userLogin)
+        {
+            UserLoginDetailsService userLoginDetailsService = new UserLoginDetailsService();
+            userLoginDetailsService.changepassword(userLogin, ValidUserUtility.ValidUser());
             return View();
         }
 	}

@@ -51,8 +51,8 @@
             <div class="displayDiv">
                 <div class="bidding_form">
 
-                    <li>
-                        <label>Name</label>
+                    <li style="list-style-type:none">
+                        <label style="color:#666;font-size:13px;">Name</label>
                         @*<input type="text" name="event" placeholder="Enter your budjet in rupees">*@
                         @Html.TextBoxFor(model => model.Name, new { @id = "name", @name = "name", placeholder = "Name", required = "required" })
 

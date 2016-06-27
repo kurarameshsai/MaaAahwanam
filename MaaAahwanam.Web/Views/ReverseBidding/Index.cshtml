@@ -48,13 +48,13 @@
         {
             <div class="displayDiv">
                 <div class="bidding_form">
-                    <li>
-                        <label>Name</label>
+                    <li style="list-style-type:none">
+                        <label style="color:#666;font-size:13px;">Name<span>*</span></label>
                         @Html.TextBoxFor(model => model.Name, new { @id = "name", @name = "name", placeholder = "Name", required = "required" })
 
                     </li>
-                    <li>
-                        <label>Vendor Id</label>
+                    <li style="list-style-type:none">
+                        <label style="color:#666;font-size:13px;">Vendor Id<span>*</span></label>
                         @Html.TextBoxFor(model => model.VendorId, new { @id = "VendorId", @name = "VendorId", placeholder = "VendorId", required = "required" })
 
                     </li>
@@ -62,7 +62,7 @@
 
                         <li>
                             <label>Budget</label>
-                            @Html.TextBoxFor(model => model.Budget, new { @id = "Budget", @name = "Budget", placeholder = "Enter your budjet in rupees", required = "required" })
+                            @Html.TextBoxFor(model => model.Budget, new { @id = "Budget", @name = "Budget", placeholder = "Enter your budget in rupees", required = "required" })
                         </li>
                         <li>
                             <label>Service Type <span>*</span></label>
@@ -89,12 +89,12 @@
                     </ul>
                     <ul>
                         <li>
-                            <label>Preferences<span>*</span></label>
+                            <label>Preferences<span style="color:red;">*</span></label>
                             @*<textarea name="Preferences" placeholder="Preferences"></textarea>*@
                             @Html.TextAreaFor(model => model.Preferences, new { @id = "Preferences", @name = "Preferences", placeholder = "Preferences", required = "required" })
                         </li>
                         <li>
-                            <label>Event Address  <span>*</span></label>
+                            <label>Event Address  <span style="color:red;">*</span></label>
                             @*<textarea name="Event Address" placeholder="Event Address"></textarea>*@
                             @Html.TextAreaFor(model => model.EventAddress, new { @id = "EventAddress", @name = "EventAddress", placeholder = "Event Address", required = "required" })
                         </li>

@@ -1,4 +1,4 @@
-﻿
+﻿@model MaaAahwanam.Models.IssueTicket
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/SharedWeb/DashBoardMaster.cshtml";
@@ -7,24 +7,24 @@
 @section Navigation
 {
     <div class="breads">
-    <div class="breads_inner">
-        <div class="pageWidth">
-            <div class="title">
-                <h3>Tickets</h3>
-            </div>
-            <div class="breadcrumbs">
-                <ul>
-                    @if (ViewBag.Type == "User")
-                    {
-                        <li><a href="~/index/Index">Home</a></li>
-                    }
-                    <li><i class="breads_arrow"></i></li>
-                    <li>Tickets</li>
-                </ul>
+        <div class="breads_inner">
+            <div class="pageWidth">
+                <div class="title">
+                    <h3>Tickets</h3>
+                </div>
+                <div class="breadcrumbs">
+                    <ul>
+                        @if (ViewBag.Type == "User")
+                        {
+                            <li><a href="~/index/Index">Home</a></li>
+                        }
+                        <li><i class="breads_arrow"></i></li>
+                        <li>Tickets</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
 }
 <div class="dashInner">
     <div class="tickets_header">
@@ -41,47 +41,60 @@
             <!-- /popup-head -->
             <div class="popup-space popup-desc-space">
                 <div class="dashboardList">
-                    <form id="contact_form" class="form">
+                    @*<form id="contact_form" class="form">*@
+                    @using (Html.BeginForm("Index", "Tickets", FormMethod.Post, new { @class = "form", @id = "contact_form" }))
+                    {
                         <ul>
                             <li>
                                 <label>Name</label>
-                                <input type="text" id="fname" name="name" placeholder="Name">
+                                @*<input type="text" id="fname" name="name" placeholder="Name">*@
+                                @Html.TextBoxFor(Model => Model.Name, new { @id = "fname", @name = "name", placeholder = "Name" })
                             </li>
                             <li>
                                 <label>Category</label>
-                                <select class="selectBox">
-                                    <option>Lorem ispum</option>
-                                    <option>Consectetur adipiscing</option>
-                                    <option>Integer elementum</option>
-                                </select>
+                                @Html.HiddenFor(Model => Model.UserLoginId)
+                                @Html.DropDownListFor(Model => Model.IssueType, new SelectList(
+                            new List<Object>{
+                            new  { Text ="Select Category", Value = ""},
+                            new  { Text ="Request Process", Value = "Request Process"},
+                            new  { Text ="Information On Site", Value = "Information On Site"},
+                            new  { Text ="Service Execution", Value = "Service Execution"},
+                                }, "value", "text"), new { @class = "form-control" })
+
                             </li>
                         </ul>
 
                         <ul>
                             <li>
                                 <label>Priority</label>
-                                <select class="selectBox">
-                                    <option>Low</option>
-                                    <option>Medium</option>
-                                    <option>High</option>
-                                </select>
+                                @Html.DropDownListFor(Model => Model.Severity, new SelectList(
+                            new List<Object>{
+                            new  { Text ="Select Priority", Value = ""},
+                            new  { Text ="Urgent", Value = "Urgent"},
+                            new  { Text ="High", Value = "High"},
+                            new  { Text ="Medium", Value = "Medium"},
+                            new  { Text ="Low", Value = "Low"},
+                                }, "value", "text"), new { @class = "form-control" })
                             </li>
                             <li>
                                 <label>Subject</label>
-                                <input type="text" id="subject" name="subject" placeholder="Subject">
+                                @Html.TextBoxFor(Model => Model.Subject, new { @id = "subject", @name = "subject", placeholder = "Subject" })
                             </li>
                         </ul>
-                        <ul>
-                            <li class="fullwidth">
-                                <label>Description</label>
-                                <textarea name="Description" placeholder="Description"></textarea>
-                            </li>
-                        </ul>
+                        @*<ul>
+                                <li class="fullwidth">
+                                    <label>Description</label>
+                                    @Html.TextAreaFor(Model => Model, 10, 55, new { @name = "Description", placeholder = "Description" })
+                                </li>
+                            </ul>*@
                         <ul>
                             <li>&nbsp;</li>
-                            <li><button type="submit" name="submit" class="btn btn-big btn-green float-right" value="submit">Submit <i class="ti-angle-double-right"></i></button></li>
+                            <li>
+                                <button type="submit" name="submit" class="btn btn-big btn-green float-right" value="submit">Submit <i class="ti-angle-double-right"></i></button>
+                            </li>
                         </ul>
-                    </form>
+                        @*</form>*@
+                    }
                     <div class="clear"></div>
                 </div>
             </div>
@@ -90,113 +103,37 @@
     <!-- end popup -->
     <!-- /dashDetails -->
     <div class="dashboardList dashboardList-nospace">
-        <table class="responsive">
+        <table class="responsive" id="Issuetickettable">
             <thead>
                 <tr>
                     <th style="width:10%">Sl. No.</th>
                     <th style="width:10%">ID</th>
-                    <th style="width:25%">Name</th>
-                    <th style="width:25%">Subject</th>
+                    <th style="width:30%">Name</th>
+                    <th style="width:35%">Subject</th>
                     <th style="width:18%">Date</th>
-                    <th style="width:15%">Status</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td><a href="../comments" class="green-link">SDA15678</a></td>
-                    <td>Lorem ispum dolor</td>
-                    <td>Hello</td>
-                    <td>17-12-2015</td>
-                    <td class="active">Active</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td><a href="../comments" class="green-link">SDA15679</a></td>
-                    <td>Lorem ispum</td>
-                    <td>Donec porttitor</td>
-                    <td>17-12-2015</td>
-                    <td class="pending">Pending</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td><a href="../comments" class="green-link">SDA15678</a></td>
-                    <td>Integer elementum</td>
-                    <td>Egestas</td>
-                    <td>17-12-2015</td>
-                    <td class="close">Close</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td><a href="../comments" class="green-link">SDA15678</a></td>
-                    <td>Lorem ispum dolor</td>
-                    <td>Hello</td>
-                    <td>17-12-2015</td>
-                    <td class="active">Active</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td><a href="../comments" class="green-link">SDA15679</a></td>
-                    <td>Lorem ispum</td>
-                    <td>Donec porttitor</td>
-                    <td>17-12-2015</td>
-                    <td class="pending">Pending</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td><a href="../comments" class="green-link">SDA15678</a></td>
-                    <td>Integer elementum</td>
-                    <td>Egestas</td>
-                    <td>17-12-2015</td>
-                    <td class="close">Close</td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td><a href="../comments" class="green-link">SDA15678</a></td>
-                    <td>Lorem ispum dolor</td>
-                    <td>Hello</td>
-                    <td>17-12-2015</td>
-                    <td class="active">Active</td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td><a href="../comments" class="green-link">SDA15679</a></td>
-                    <td>Lorem ispum</td>
-                    <td>Donec porttitor</td>
-                    <td>17-12-2015</td>
-                    <td class="pending">Pending</td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td><a href="../comments" class="green-link">SDA15678</a></td>
-                    <td>Integer elementum</td>
-                    <td>Egestas</td>
-                    <td>17-12-2015</td>
-                    <td class="close">Close</td>
-                </tr>
-                <tr>
-                    <td>10</td>
-                    <td><a href="../comments" class="green-link">SDA15678</a></td>
-                    <td>Integer elementum</td>
-                    <td>Egestas</td>
-                    <td>17-12-2015</td>
-                    <td class="close">Close</td>
-                </tr>
+                @foreach (MaaAahwanam.Models.IssueTicket s in ViewBag.Issueticketslist)
+                {
+                    <tr>
+                        @*<td>@s.TicketId</td>*@
+                        <td>@( ((Int32)1) + @ViewBag.Issueticketslist.IndexOf(s))</td>
+                        <td><a href="#" class="green-link">@s.TicketId</a></td>
+                        <td>@s.Name</td>
+                        <td>@s.Subject</td>
+                        <td>@s.UpdatedDate.Value.ToShortDateString()</td>
+                    </tr>
+                }
             </tbody>
         </table>
-        <div class="pagination">
-            <ul>
-                <li><a href="javascript:void(0)">Prev</a></li>
-                <li><a href="javascript:void(0)" class="active">1</a></li>
-                <li><a href="javascript:void(0)">2</a></li>
-                <li><a class="pagination-gap">...</a></li>
-                <li><a href="javascript:void(0)">24</a></li>
-                <li><a href="javascript:void(0)">25</a></li>
-                <li><a href="javascript:void(0)">Next</a></li>
-            </ul>
-        </div>
         <div class="clear"></div>
     </div>
     <!-- /dashboardList -->
 
 </div>
+<script type="text/javascript">
+    window.onload = function () {
+        $('#Issuetickettable').dataTable({ bFilter: false, ordering: true, bLengthChange: false, "pageLength": 3 });
+    };
+</script>
