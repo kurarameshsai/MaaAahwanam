@@ -16,6 +16,7 @@ namespace MaaAahwanam.Web.Controllers
         // GET: /Tickets/
         public ActionResult Index()
         {
+            ViewBag.Type = ValidUserUtility.UserType();
             var a=ticketsServices.GetIssueTicket();
             ViewBag.Issueticketslist = a;
             return View();
@@ -34,7 +35,6 @@ namespace MaaAahwanam.Web.Controllers
             {
                 return Content("<script language='javascript' type='text/javascript'>alert('Ticket Not Raised');location.href='" + @Url.Action("Index", "Tickets") + "'</script>");
             }
-            return View();
         }
 	}
 }
