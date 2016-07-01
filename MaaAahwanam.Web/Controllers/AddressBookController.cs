@@ -37,12 +37,10 @@ namespace MaaAahwanam.Web.Controllers
             if (message == "Success")
             {
                 return Content("<script language='javascript' type='text/javascript'>alert('Address Inserted successfully');location.href='" + @Url.Action("Index", "AddressBook") + "'</script>");
-
             }
             else
             {
                 return Content("<script language='javascript' type='text/javascript'>alert('Error Occured');location.href='" + @Url.Action("Index", "AddressBook") + "'</script>");
-
             }
         }
     }
