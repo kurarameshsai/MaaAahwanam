@@ -62,6 +62,5 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Login");
         }
-
     }
 }

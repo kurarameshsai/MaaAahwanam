@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace MaaAahwanam.Web.Controllers
 {
-    public class CartViewController : Controller
+    public class VendorSigninController : Controller
     {
         //
-        // GET: /CartView/
+        // GET: /VendorSignin/
         public ActionResult Index()
         {
             return View();
