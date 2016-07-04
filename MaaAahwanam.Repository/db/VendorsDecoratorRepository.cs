@@ -14,5 +14,13 @@ namespace MaaAahwanam.Repository.db
         {
             return _dbContext.VendorsDecorator.Join(_dbContext.Vendormaster, i => i.VendorMasterId, p => p.Id, (i, p) => new { p = p, i = i }).ToList<dynamic>();
         }
+
+        public VendorsDecorator AddDecorator(VendorsDecorator vendorsdecorator)
+        {
+            //VendorsDecorator vendorsdecorator = new VendorsDecorator();
+            _dbContext.VendorsDecorator.Add(vendorsdecorator);
+            _dbContext.SaveChanges();
+            return vendorsdecorator;
+        }
     }
 }

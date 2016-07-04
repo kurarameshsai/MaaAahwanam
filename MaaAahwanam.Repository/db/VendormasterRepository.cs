@@ -14,5 +14,12 @@ namespace MaaAahwanam.Repository.db
         {
             return _dbContext.Vendormaster.ToList();
         }
+
+        public Vendormaster AddVendorMaster(Vendormaster vendorMaster)
+        {
+            _dbContext.Vendormaster.Add(vendorMaster);
+            _dbContext.SaveChanges();
+            return vendorMaster;
+        }
     }
 }
