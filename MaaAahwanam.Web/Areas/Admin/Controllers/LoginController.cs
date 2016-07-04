@@ -39,7 +39,7 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             {
                 UserLoginDetailsService userLoginDetailsService = new UserLoginDetailsService();
                 var response = userLoginDetailsService.AuthenticateUser(userLogin);
-                if (response.UserLoginId != 0)
+                if (response != null)
                 {
                     ValidUserUtility.SetAuthCookie(response.UserLoginId.ToString(),response.UserType);
                     Response.Redirect("DashBoard/Dashboard");
