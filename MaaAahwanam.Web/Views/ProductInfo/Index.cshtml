@@ -33,13 +33,13 @@
             <div class="deal_info_main">
                 @*<fieldset class="address-data-inputs">
                     <ul class="steps">
-                        <li class="done"><a href="~/Invitation/Index"><i class="ti-agenda"></i> <span>Event Details</span><strong></strong></a></li>
-                        <li class="done"><a href="~/CardSelect/Index"><i class="ti-thumb-up"></i> <span>Select Card</span> <strong></strong></a></li>
-                        <li class="current"><a href="~/CardInfo/Index"><i class=" ti-receipt"></i><span>Card Info</span><strong></strong></a></li>
-                        <li><a href="~/EditCard/Index"><i class="ti-pencil"></i><span>Edit Card</span><strong></strong></a></li>
-                        <li><a href="~/Delivery/Index"><i class="ti-timer"></i><span>Delivery</span><strong></strong></a></li>
+                    <li class="done"><a href="~/Invitation/Index"><i class="ti-agenda"></i> <span>Event Details</span><strong></strong></a></li>
+                    <li class="done"><a href="~/CardSelect/Index"><i class="ti-thumb-up"></i> <span>Select Card</span> <strong></strong></a></li>
+                    <li class="current"><a href="~/CardInfo/Index"><i class=" ti-receipt"></i><span>Card Info</span><strong></strong></a></li>
+                    <li><a href="~/EditCard/Index"><i class="ti-pencil"></i><span>Edit Card</span><strong></strong></a></li>
+                    <li><a href="~/Delivery/Index"><i class="ti-timer"></i><span>Delivery</span><strong></strong></a></li>
                     </ul>
-                </fieldset>*@
+                    </fieldset>*@
                 <div class="deal-info">
                     <div class="deal-slider">
                         <div class="sp-loading">
@@ -114,12 +114,14 @@
                             <h4>Description</h4>
                             <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum egestas risus ut leo scelerisque, in tristique lacus pretium. Integer elementum egestas leo eu pretium. Donec porttitor tincidunt ligula non rutrum. Sed lobortis aliquet tellus id iaculis. Nunc aliquam turpis et nulla vehicula ullamcorper. Phasellus varius lacus sed nibh ultrices, nec pellentesque nibh tincidunt. Donec tincidunt ligula eu orci feugiat porttitor. Sed vitae libero sed lectus bibendum tincidunt. Aliquam ut placerat est. Etiam condimentum velit molestie ex fermentum eleifend. Nunc condimentum elit et ipsum sagittis ultrices. Suspendisse lacinia imperdiet lorem, ac consectetur mi facilisis a. Ut urna lorem, sodales vel urna vitae, ornare imperdiet ipsum. Curabitur nec fringilla libero. Praesent mi metus, pharetra vitae viverra ac, euismod sit amet eros. Ut ullamcorper tortor sapien, vitae mattis leo ultricies in. Fusce tempor risus vitae lobortis sodales. Quisque non commodo est. Nullam sagittis aliquam erat, ut pharetra ligula faucibus non. </p>
                         </div>
-                        <div class="deal_price">
+                        @*Calculation Div*@
+                        <div class="deal_price" id="Calcdiv">
                             <div class="price_details">
                                 <dl>
                                     <dt>Deal Price: </dt>
                                     <dd>
-                                        <h1 class="text-green">Rs. 1,299</h1>
+                                        @*<h1 class="text-green">Rs. 1,299</h1>*@
+                                        <p id="demo" style="color:#8ca436;font-size:20px"></p>
                                     </dd>
                                     <dt>Selling Price: </dt>
                                     <dd>
@@ -130,6 +132,13 @@
                                         <h2>Rs. 2,200</h2>
                                     </dd>
                                 </dl>
+                                <form name="myForm">
+                                    <label>Number of items<span>*</span></label>
+                                    <input type="hidden" id="hmin" name="Minvalue" value="10">
+                                    <input type="hidden" id="hmax" name="Maxvalue" value="50">
+                                    <input type="text" id="txtquantity" value="10"  placeholder="Enter Quantity" onchange="Onchangequantity()" /><br>
+                                    <input type="radio" id="vl" name="platetype" value="500" checked> item cost 500/-<br>
+                                </form>
                             </div>
                             <div class="deal_save">
                                 <p>You Save: <span class="text-red">Rs. 1,800</span></p>
@@ -137,7 +146,7 @@
                             </div>
                         </div>
                         <div class="deal_buttons">
-                            <a href="~/Product/Index" class="btn btn-big btn-orange"><i class="ti-arrow-left"></i> Back To Prev </a> <a href="~/CartView/Index" class="btn btn-big btn-green">Proceed to Next <i class="ti-arrow-right"></i></a>
+                            <a href="~/Product/Index" class="btn btn-big btn-orange"><i class="ti-arrow-left"></i> Back To Prev </a> <a href="~/CartView/Index" class="btn btn-big btn-green" id="lnkproceedtonext">Proceed to Next <i class="ti-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="clear"></div>
@@ -243,13 +252,13 @@
                 <div class="side-ads">
                     <div class="ad_250" style="background-color:white;">
                         <div style="border: groove; width: 75%; height:230px;">
-                            <br/>
+                            <br />
                             <label style=" font-size: 14px; line-height: 20px; display: block; color: #f38e07; position: relative; z-index: 1; text-align: center; font-family: 'aileronbold'; text-transform: uppercase;">CHECK AVAILABILITY</label>
-                            <br/>
+                            <br />
                             <center><input type="text" name="Email" placeholder="Start Date" id="datetimepicker1"></center>
-                            <br />                            
+                            <br />
                             <center><input type="text" name="Email" placeholder="End Date" id="datetimepicker2"></center>
-                            <br/>
+                            <br />
                             <center><button type="submit" class="btn btn-green">Check <i class="ti-angle-double-right"></i></button></center>
                         </div>
                     </div>
@@ -1068,4 +1077,59 @@
 @section scripts
 {
     <script type="text/javascript" src="~/CSSWeb/js/jquery.datetimepicker.js"></script>
+}
+@section scriptfunctions
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            var b;
+            var a = document.getElementById("txtquantity").value;
+            if (document.getElementById("vl").checked) {
+                document.getElementById("demo").innerHTML = document.getElementById("vl").value * a;
+            }
+        };
+        var rad = document.myForm.platetype;
+        var prev = null;
+        var rr = null;
+        for (var i = 0; i < rad.length; i++) {
+            rad[i].onclick = function () {
+                if (this !== prev) {
+                    prev = this;
+                    var a = document.getElementById("txtquantity").value;
+                    document.getElementById("demo").innerHTML = a*parseInt(this.value);
+                }
+            };
+        }
+        function Onchangequantity()
+        {
+            var b;
+            var a = document.getElementById("txtquantity").value;
+            if (document.getElementById("vl").checked) {
+                document.getElementById("demo").innerHTML = document.getElementById("vl").value * a;
+            }
+            else if (document.getElementById("nvl").checked) {
+                document.getElementById("demo").innerHTML = document.getElementById("nvl").value * a;
+            }
+            else if (document.getElementById("vd").checked) {
+                document.getElementById("demo").innerHTML = document.getElementById("vd").value * a;
+            }
+            else if (document.getElementById("nvd").checked) {
+                document.getElementById("demo").innerHTML = document.getElementById("nvd").value * a;
+            }
+        }
+        $('#lnkproceedtonext').on('click', function (e) {
+            var minvalue1 = document.getElementById("hmin").value;
+            var maxvalue1 = document.getElementById("hmax").value;
+            if (document.getElementById("txtquantity").value < minvalue1)
+            {
+                alert('Enter minimum Quantity');
+            }
+            if (document.getElementById("txtquantity").value > maxvalue1)
+            {
+                alert('Required exeeded maximum Quantity');
+            }
+            //alert(minvalue1);
+            return false;
+        });
+    </script>
 }
