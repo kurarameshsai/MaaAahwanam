@@ -31,6 +31,7 @@ namespace MaaAahwanam.Models
         public string Menuwiththenoofitems { get; set; }
         public string Distancefrommainplaceslike { get; set; }
         public string LiveCookingStation { get; set; }
+        public long ServiceCost { get; set; }
         public string Status { get; set; }
         public long UpdatedBy { get; set; }
         public DateTime? UpdatedDate { get; set; }

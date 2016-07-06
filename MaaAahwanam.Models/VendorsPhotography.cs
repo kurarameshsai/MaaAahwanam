@@ -14,6 +14,7 @@ namespace MaaAahwanam.Models
         public long VendorMasterId { get; set; }
         public string PhotographyType { get; set; }
         public string PreWeddingShoot { get; set; }
+        public string DestinationPhotography { get; set; }
         public decimal StartingPrice { get; set; }
         public string PriorBookingsDays { get; set; }
         public string Status { get; set; }

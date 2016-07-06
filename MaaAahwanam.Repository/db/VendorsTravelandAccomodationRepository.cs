@@ -15,5 +15,12 @@ namespace MaaAahwanam.Repository.db
             return _dbContext.VendorsTravelandAccomodation.Join(_dbContext.Vendormaster, i => i.VendorMasterId, p => p.Id, (i, p) => new { p = p, i = i }).ToList<dynamic>();
 
         }
+
+        public VendorsTravelandAccomodation AddTravelandAccomodation(VendorsTravelandAccomodation vendorsTravelandAccomodation)
+        {
+            _dbContext.VendorsTravelandAccomodation.Add(vendorsTravelandAccomodation);
+            _dbContext.SaveChanges();
+            return vendorsTravelandAccomodation;
+        }
     }
 }

@@ -14,5 +14,12 @@ namespace MaaAahwanam.Repository.db
         {
             return _dbContext.VendorsPhotography.Join(_dbContext.Vendormaster, i => i.VendorMasterId, p => p.Id, (i, p) => new { p,i }).Join(_dbContext.VendorImage, w => w.p.Id, x => x.VendorId, (w, x) => new { w, x }).ToList<dynamic>();
         }
+
+        public VendorsPhotography AddPhotography(VendorsPhotography vendorsPhotography)
+        {
+            _dbContext.VendorsPhotography.Add(vendorsPhotography);
+            _dbContext.SaveChanges();
+            return vendorsPhotography;
+        }
     }
 }

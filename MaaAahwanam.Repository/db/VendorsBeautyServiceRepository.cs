@@ -15,5 +15,12 @@ namespace MaaAahwanam.Repository.db
             return _dbContext.VendorsBeautyService.Join(_dbContext.Vendormaster, i => i.VendorMasterId, p => p.Id, (i, p) => new { p = p, i = i }).ToList<dynamic>();
 
         }
+
+        public VendorsBeautyService AddBeautyService(VendorsBeautyService vendorsBeautyService)
+        {
+            _dbContext.VendorsBeautyService.Add(vendorsBeautyService);
+            _dbContext.SaveChanges();
+            return vendorsBeautyService;
+        }
     }
 }

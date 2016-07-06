@@ -17,7 +17,6 @@ namespace MaaAahwanam.Repository.db
 
         public VendorsDecorator AddDecorator(VendorsDecorator vendorsdecorator)
         {
-            //VendorsDecorator vendorsdecorator = new VendorsDecorator();
             _dbContext.VendorsDecorator.Add(vendorsdecorator);
             _dbContext.SaveChanges();
             return vendorsdecorator;
