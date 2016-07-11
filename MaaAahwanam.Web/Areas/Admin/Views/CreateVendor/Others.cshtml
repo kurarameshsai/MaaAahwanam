@@ -3,7 +3,11 @@
         ViewBag.Title = "Others";
         Layout = "~/Areas/Admin/Views/Shared/MainMaster.cshtml";
     }
-
+                @section header{
+                    <!-- PAGE LEVEL STYLES -->
+                    <link href="~/Assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+                    <!-- END PAGE LEVEL  STYLES -->
+                }
     <div id="content">
         <div class="inner">
             <div class="row">
@@ -20,9 +24,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div id="collapse2" class="body collapse in">
-                                            @*<form class="form-horizontal" method="post">*@
-                                            @using (Html.BeginForm("Others", "createvendor", FormMethod.Post, new { @class = "form-horizontal" }))
-                                            { 
+                                            <form class="form-horizontal" method="post" enctype="multipart/form-data">
                                                 @*----------common---------*@
 
                                                 <div class="form-group">
@@ -67,10 +69,10 @@
                                                     <label class="control-label col-lg-4">State</label>
                                                     <div class="col-lg-4">
                                                         @*<select class="form-control" id="state" name="name">
-                    <option>Select State</option>
-                    <option>Telangana</option>
-                    <option>Andhra Pradesh</option>
-                </select>*@
+                        <option>Select State</option>
+                        <option>Telangana</option>
+                        <option>Andhra Pradesh</option>
+                    </select>*@
                                                         @Html.DropDownListFor(model => this.Model.Item1.State, new SelectList(new[] { "Select State", "Telangana", "Andhra Pradesh" }), new { @class = "form-control" })
                                                     </div>
                                                 </div>
@@ -180,38 +182,38 @@
                                                     </div>
                                                 </div>
                                                 @*<div class="form-group">
-                                                    <label class="control-label col-lg-4">Upload Design</label>
-                                                    <div class="col-lg-8">
-                                                        <div class="fileupload fileupload-new" data-provides="fileupload">
-                                                            <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img alt="" /></div>
-                                                            
-                                                            <div>
-                                                                <span class="btn btn-file btn-primary">
-                                                                    <span class="fileupload-new">Select image</span>
+                <label class="control-label col-lg-4">Upload Design</label>
+                <div class="col-lg-8">
+                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img alt="" /></div>
+
+                        <div>
+                            <span class="btn btn-file btn-primary">
+                                <span class="fileupload-new">Select image</span>
 
 
-                                                                </span> <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Remove</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>*@
+                            </span> <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Remove</a>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
 
                                                 <div class="form-group">
                                                     <label for="tags" class="control-label col-lg-4">Multiple Uploads</label>
                                                     <div class="col-lg-4">
                                                         <input type='file' multiple="multiple" accept="image/*" id='fileUpload' name="file" />
                                                     </div>
-                                                   <br/>
+                                                    <br />
                                                     <div id="dvPreview" align="center" style="padding:20px">
                                                     </div>
-                                                    
-                                                    </div>
+
+                                                </div>
                                                 <div style="text-align:center" class="form-actions no-margin-bottom">
                                                     <input type="submit" value="Save" class="btn text-muted text-center btn-success" name="Command" />
                                                     <input type="submit" value="Cancel" class="btn btn-danger" name="Command" formaction="~/Admin/dashboard/dashboard">
                                                 </div>
-                                            }
-                                            @*</form>*@
+
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -222,4 +224,17 @@
             </div>
         </div>
     </div>
+                @section Bottom{
+                    <script src="~/Assets/plugins/jquery-2.0.3.min.js"></script>
+                    <script src="~/Assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+                    <script src="~/Assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
+                    <script src="~/Assets/plugins/dataTables/jquery.dataTables.js"></script>
+                    <script src="~/Assets/plugins/dataTables/dataTables.bootstrap.js"></script>
+
+                    <script>
+                        $(document).ready(function () {
+                            $('#dataTables-example').dataTable();
+                        });
+                    </script>
+                }

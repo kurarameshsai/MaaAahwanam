@@ -23,7 +23,7 @@ namespace MaaAahwanam.Utility
             ExceptionLogs.LogType = "ExceptionLog";
             ExceptionLogs.UserID = ValidUserUtility.ValidUser();
             _Repositories.ExceptionLogs.Add(ExceptionLogs);
-            _Repositories.SaveChanges();
+            Repositories.SaveChanges();
         }
         public void LogTimings(string Type)
         {

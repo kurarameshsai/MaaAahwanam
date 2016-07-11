@@ -3,7 +3,11 @@
         ViewBag.Title = "Venue";
         Layout = "~/Areas/Admin/Views/Shared/MainMaster.cshtml";
     }
-
+    @section header{
+        <!-- PAGE LEVEL STYLES -->
+        <link href="~/Assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+        <!-- END PAGE LEVEL  STYLES -->
+    }
     <div id="content">
         <div class="inner">
             <div class="row">
@@ -20,7 +24,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div id="collapse2" class="body collapse in">
-                                            <form class="form-horizontal" method="post">
+                                            <form class="form-horizontal" method="post" enctype="multipart/form-data">
                                                 @*----------common---------*@
 
                                                 <div class="form-group">
@@ -165,10 +169,10 @@
                                                     <label class="control-label col-lg-4">Food</label>
                                                     <div class="col-lg-4">
                                                         @*<select class="form-control">
-                                                            <option>Select Type</option>
-                                                            <option>Veg</option>
-                                                            <option>Non-Veg</option>
-                                                        </select>*@
+                                                                <option>Select Type</option>
+                                                                <option>Veg</option>
+                                                                <option>Non-Veg</option>
+                                                            </select>*@
                                                         @Html.DropDownListFor(model => this.Model.Item2.Food, new SelectList(new[] { "Select Type", "Veg", "Non-Veg" }), new { @class = "form-control" })
                                                     </div>
                                                 </div>
@@ -176,10 +180,10 @@
                                                     <label class="control-label col-lg-4">CockTails </label>
                                                     <div class="col-lg-4">
                                                         @*<select class="form-control">
-                                                            <option>Select Your Choice</option>
-                                                            <option>Yes</option>
-                                                            <option>No</option>
-                                                        </select>*@
+                                                                <option>Select Your Choice</option>
+                                                                <option>Yes</option>
+                                                                <option>No</option>
+                                                            </select>*@
                                                         @Html.DropDownListFor(model => this.Model.Item2.CockTails, new SelectList(new[] { "Select Your Choice", "Yes", "No" }), new { @class = "form-control" })
                                                     </div>
                                                 </div>
@@ -188,10 +192,10 @@
 
                                                     <div class="col-lg-4">
                                                         @*<select class="form-control">
-                                                            <option>Select Choice</option>
-                                                            <option>Yes</option>
-                                                            <option>No</option>
-                                                        </select>*@
+                                                                <option>Select Choice</option>
+                                                                <option>Yes</option>
+                                                                <option>No</option>
+                                                            </select>*@
                                                         @Html.DropDownListFor(model => this.Model.Item2.Rooms, new SelectList(new[] { "Select Choice", "Yes", "No" }), new { @class = "form-control" })
                                                     </div>
                                                 </div>
@@ -262,10 +266,10 @@
                                                     <label class="control-label col-lg-4">Decoration Allwoed </label>
                                                     <div class="col-lg-4">
                                                         @*<select class="form-control">
-                                                            <option>Select Your Choice</option>
-                                                            <option>Yes</option>
-                                                            <option>No</option>
-                                                        </select>*@
+                                                                <option>Select Your Choice</option>
+                                                                <option>Yes</option>
+                                                                <option>No</option>
+                                                            </select>*@
                                                         @Html.DropDownListFor(model => this.Model.Item2.DecorationAllowed, new SelectList(new[] { "Select Your Choice", "Yes", "No" }), new { @class = "form-control" })
                                                     </div>
                                                 </div>
@@ -273,10 +277,10 @@
                                                     <label class="control-label col-lg-4">Hall Type </label>
                                                     <div class="col-lg-4">
                                                         @*<select class="form-control">
-                                                            <option>Select Choice</option>
-                                                            <option>AC</option>
-                                                            <option>Non-AC</option>
-                                                        </select>*@
+                                                                <option>Select Choice</option>
+                                                                <option>AC</option>
+                                                                <option>Non-AC</option>
+                                                            </select>*@
                                                         @Html.DropDownListFor(model => this.Model.Item2.HallType, new SelectList(new[] { "Select Choice", "AC", "Non_AC" }), new { @class = "form-control" })
                                                     </div>
                                                 </div>
@@ -285,10 +289,10 @@
 
                                                     <div class="col-lg-4">
                                                         @*<select class="form-control">
-                                                            <option>Select Availability</option>
-                                                            <option>Yes</option>
-                                                            <option>No</option>
-                                                        </select>*@
+                                                                <option>Select Availability</option>
+                                                                <option>Yes</option>
+                                                                <option>No</option>
+                                                            </select>*@
                                                         @Html.DropDownListFor(model => this.Model.Item2.Wifi, new SelectList(new[] { "Select Availability", "Yes", "No" }), new { @class = "form-control" })
                                                     </div>
                                                 </div>
@@ -313,10 +317,10 @@
 
                                                     <div class="col-lg-4">
                                                         @*<select class="form-control">
-                                                            <option>Select Availability</option>
-                                                            <option>Yes</option>
-                                                            <option>No</option>
-                                                        </select>*@
+                                                                <option>Select Availability</option>
+                                                                <option>Yes</option>
+                                                                <option>No</option>
+                                                            </select>*@
                                                         @Html.DropDownListFor(model => this.Model.Item2.LiveCookingStation, new SelectList(new[] { "Select Availability", "Yes", "No" }), new { @class = "form-control" })
                                                     </div>
                                                 </div>
@@ -331,9 +335,12 @@
                                                 <div class="form-group">
                                                     <label for="tags" class="control-label col-lg-4">Multiple Uploads</label>
                                                     <div class="col-lg-4">
-
-                                                        <input type='file' multiple id='fileUpload' name="Multifiles" />
+                                                        <input type='file' multiple="multiple" accept="image/*" id='fileUpload' name="file" />
                                                     </div>
+                                                    <br />
+                                                    <div id="dvPreview" align="center" style="padding:20px">
+                                                    </div>
+
                                                 </div>
                                                 <div style="text-align:center" class="form-actions no-margin-bottom">
                                                     <input type="submit" value="Save" class="btn text-muted text-center btn-success" name="Command" />
@@ -350,3 +357,17 @@
             </div>
         </div>
     </div>
+    @section Bottom{
+        <script src="~/Assets/plugins/jquery-2.0.3.min.js"></script>
+        <script src="~/Assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="~/Assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+        <script src="~/Assets/plugins/dataTables/jquery.dataTables.js"></script>
+        <script src="~/Assets/plugins/dataTables/dataTables.bootstrap.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $('#dataTables-example').dataTable();
+            });
+        </script>
+    }
