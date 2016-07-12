@@ -16,5 +16,15 @@ namespace MaaAahwanam.Repository.db
             _dbContext.SaveChanges();
             return serviceRequest;
         }
+
+        public List<ServiceRequest> ServiceRequestList(ServiceRequest serviceRequest)
+        {
+            return _dbContext.ServiceRequest.Where(m => m.Type == serviceRequest.Type).ToList();
+        }
+
+        public List<ServiceRequest> ServiceRequestRecord(ServiceRequest serviceRequest)
+        {
+            return _dbContext.ServiceRequest.Where(m => m.RequestId == serviceRequest.RequestId).ToList();
+        }
     }
 }

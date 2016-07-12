@@ -16,5 +16,19 @@ namespace MaaAahwanam.Service
             serviceRequest = serviceRequestRepository.SaveQuotation(serviceRequest);
             return serviceRequest;
         }
+
+        public List<ServiceRequest> GetServiceRequestList(ServiceRequest serviceRequest)
+        {
+            ServiceRequestRepository serviceRequestRepository = new ServiceRequestRepository();
+            List<ServiceRequest> l1 = serviceRequestRepository.ServiceRequestList(serviceRequest);
+            return l1;
+        }
+
+        public List<ServiceRequest> GetServiceRequestRecord(ServiceRequest serviceRequest)
+        {
+            ServiceRequestRepository serviceRequestRepository = new ServiceRequestRepository();
+            List<ServiceRequest> l1 = serviceRequestRepository.ServiceRequestRecord(serviceRequest);
+            return l1;
+        }
     }
 }
