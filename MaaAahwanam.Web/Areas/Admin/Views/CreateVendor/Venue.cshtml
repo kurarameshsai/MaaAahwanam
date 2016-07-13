@@ -232,7 +232,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label class="control-label col-lg-4">Veg Price Per Plate</label>
+                                                    <label class="control-label col-lg-4">Veg Lunch Price Per Plate</label>
 
                                                     <div class="col-lg-4">
                                                         @*<input type="text" name="name" value="" class="validate[required] form-control" placeholder="Enter Price">*@
@@ -241,10 +241,27 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label class="control-label col-lg-4">Non-Veg Price Per Plate</label>
+                                                    <label class="control-label col-lg-4">Non-Veg Lunch Price Per Plate</label>
                                                     <div class=" col-lg-4">
                                                         @*<input type="text" id="exp" name="name" class="form-control" placeholder="Enter Price">*@
                                                         @Html.TextBoxFor(model => this.Model.Item2.NonVegLunchCost, new { @class = "form-control", placeholder = "Enter Price" })
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Veg Dinner Price Per Plate</label>
+
+                                                    <div class="col-lg-4">
+                                                        @*<input type="text" name="name" value="" class="validate[required] form-control" placeholder="Enter Price">*@
+                                                        @Html.TextBoxFor(model => this.Model.Item2.VegDinnerCost, new { @class = "form-control", placeholder = "Enter Price" })
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Non-Veg Dinner Price Per Plate</label>
+                                                    <div class=" col-lg-4">
+                                                        @*<input type="text" id="exp" name="name" class="form-control" placeholder="Enter Price">*@
+                                                        @Html.TextBoxFor(model => this.Model.Item2.NonVegDinnerCost, new { @class = "form-control", placeholder = "Enter Price" })
                                                     </div>
                                                 </div>
                                                 <div class="form-group">

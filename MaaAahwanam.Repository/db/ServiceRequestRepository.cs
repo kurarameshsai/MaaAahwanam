@@ -26,5 +26,11 @@ namespace MaaAahwanam.Repository.db
         {
             return _dbContext.ServiceRequest.Where(m => m.RequestId == serviceRequest.RequestId).ToList();
         }
+
+        public ServiceRequest UpdateBidStatus(ServiceRequest serviceRequest)
+        {
+            
+            return serviceRequest;
+        }
     }
 }

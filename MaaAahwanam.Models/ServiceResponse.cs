@@ -15,9 +15,10 @@ namespace MaaAahwanam.Models
         public long RequestId { get; set; }
         public string Description { get; set; }
         public decimal Amount { get; set; }
-        public long RequestedBy { get; set; }
+        public long ResponseBy { get; set; }
         public long UpdatedBy { get; set; }
         public DateTime? UpdatedDate { get; set; }
         public string Status { get; set; }
+        public string VendorType { get; set; }
     }
 }

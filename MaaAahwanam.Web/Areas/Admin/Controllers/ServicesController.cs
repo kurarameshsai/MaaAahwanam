@@ -13,14 +13,17 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
     public class ServicesController : Controller
     {
         ServiceRequestService serviceRequestService = new ServiceRequestService();
-        public ActionResult BidRequests(ServiceRequest serviceRequest, string BidReqId,string name)
+        ServiceResponseService serviceResponseService = new ServiceResponseService();
+        public ActionResult BidRequests(ServiceRequest serviceRequest, string BidReqId, string name, ServiceResponse serviceResponse)
         {
             serviceRequest.Type = "Bidding";
             ViewBag.records = serviceRequestService.GetServiceRequestList(serviceRequest);
             if (name == "View")
             {
-                serviceRequest.RequestId = BidReqId;
-                TempData["Records"] = serviceRequestService.GetServiceRequestRecord(serviceRequest);
+                serviceRequest.RequestId = long.Parse(BidReqId);
+                serviceResponse.RequestId = long.Parse(BidReqId);
+                TempData["ServiceRequestRecords"] = serviceRequestService.GetServiceRequestRecord(serviceRequest); //Bidding
+                TempData["ServiceResponseCount"] = serviceResponseService.ServiceResponseCount(serviceResponse);
                 return RedirectToAction("BidReqView");
             }
             if (name == "Delete")
@@ -29,33 +32,69 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             }
             return View();
         }
-        public ActionResult QuotRequests()
+        public ActionResult QuotRequests(ServiceRequest serviceRequest, string BidReqId, string name, ServiceResponse serviceResponse)
         {
+            serviceRequest.Type = "Quotation";
+            ViewBag.records = serviceRequestService.GetServiceRequestList(serviceRequest);
+            if (name=="View")
+            {
+                serviceRequest.RequestId = long.Parse(BidReqId);
+                TempData["ServiceRequestRecords"] = serviceRequestService.GetServiceRequestRecord(serviceRequest); //Quotation
+                return RedirectToAction("QuotReqView");
+            }
             return View();
         }
-        public ActionResult RevBidRequests()
+        public ActionResult RevBidRequests(ServiceRequest serviceRequest, string BidReqId, string name, ServiceResponse serviceResponse)
         {
+            serviceRequest.Type = "ReverseBidding";
+            ViewBag.records = serviceRequestService.GetServiceRequestList(serviceRequest);
+            if (name == "View")
+            {
+                serviceRequest.RequestId = long.Parse(BidReqId);
+                TempData["ServiceRequestRecords"] = serviceRequestService.GetServiceRequestRecord(serviceRequest); //Quotation
+                return RedirectToAction("RevBidReqView");
+            }
             return View();
         }
         public ActionResult BidReqView()
         {
-            if (TempData["Records"]!=null)
+            //Bidding related
+            if (TempData["ServiceRequestRecords"] != null && TempData["ServiceResponseCount"] != null)
             {
-                ViewBag.vendordetails = TempData["Records"];
+                ViewBag.count = TempData["ServiceResponseCount"];
+                ViewBag.vendordetails = TempData["ServiceRequestRecords"];
                 return View();
             }
             return View();
         }
         public ActionResult QuotReqView()
         {
+            if (TempData["ServiceRequestRecords"] != null )
+            {
+                //Quotation Related
+                ViewBag.vendordetails = TempData["ServiceRequestRecords"];
+                return View();
+            }
             return View();
         }
         public ActionResult RevBidReqView()
         {
+            if (TempData["ServiceRequestRecords"] != null)
+            {
+                //Reverse Bid Related
+                ViewBag.vendordetails = TempData["ServiceRequestRecords"];
+                return View();
+            }
             return View();
         }
-        public ActionResult Biddings()
+        public ActionResult Biddings(long id, ServiceResponse serviceResponse)
         {
+            if (id!=null)
+            {
+                serviceResponse.RequestId = id;
+                ViewBag.ServiceResponseRecordsList = serviceResponseService.GetServiceResponseList(serviceResponse);
+                return View();
+            }
             return View();
         }
         public ActionResult Quotations()
