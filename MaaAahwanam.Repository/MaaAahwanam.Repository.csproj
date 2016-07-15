@@ -44,6 +44,9 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
     <Reference Include="TrackerEnabledDbContext">
       <HintPath>..\packages\TrackerEnabledDbContext.3.6.0\lib\net45\TrackerEnabledDbContext.dll</HintPath>
     </Reference>
@@ -52,24 +55,47 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="db\AdminTestimonialPathRepository.cs" />
     <Compile Include="db\ApiContext.cs" />
+    <Compile Include="db\EnquiryRepository.cs" />
+    <Compile Include="db\ReviewRepository.cs" />
+    <Compile Include="db\ServiceRequestRepository.cs" />
+    <Compile Include="db\UserAddBookRepository.cs" />
     <Compile Include="db\VendorImageRepository.cs" />
-    <Compile Include="db\VendorsBeautyServiceRepository.cs" />
     <Compile Include="db\CartItemRepoitory.cs" />
-    <Compile Include="db\VendorsDecoratorRepository.cs" />
     <Compile Include="db\EventsandTipRepository.cs" />
     <Compile Include="db\EventInformationRepository.cs" />
     <Compile Include="db\VendormasterRepository.cs" />
-    <Compile Include="db\VendorsPhotographyRepository.cs" />
+    <Compile Include="db\VendorsOthersRepository.cs" />
     <Compile Include="db\SubscribeRepository.cs" />
     <Compile Include="db\AdminTestimonialRepository.cs" />
     <Compile Include="db\IssueTicketRepository.cs" />
-    <Compile Include="db\VendorsTravelandAccomodationRepository.cs" />
     <Compile Include="db\UserDetailsRepository.cs" />
     <Compile Include="db\UserLoginRepository.cs" />
-    <Compile Include="Migrations\201606151128598_Indu_migrations_date_06152016.cs" />
-    <Compile Include="Migrations\201606151128598_Indu_migrations_date_06152016.Designer.cs">
-      <DependentUpon>201606151128598_Indu_migrations_date_06152016.cs</DependentUpon>
+    <Compile Include="GetProductsInfo_Result.cs">
+      <DependentUpon>MaaAahwanam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetProducts_Result.cs">
+      <DependentUpon>MaaAahwanam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaaAahwanam.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MaaAahwanam.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaaAahwanam.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MaaAahwanam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaaAahwanam.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MaaAahwanam.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607140556514_migrations_date_07142016.cs" />
+    <Compile Include="Migrations\201607140556514_migrations_date_07142016.Designer.cs">
+      <DependentUpon>201607140556514_migrations_date_07142016.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,13 +108,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="MaaAahwanam.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MaaAahwanam.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="MaaAahwanam.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MaaAahwanam.edmx</DependentUpon>
+      <LastGenOutput>MaaAahwanam.Context.cs</LastGenOutput>
+    </None>
+    <None Include="MaaAahwanam.edmx.diagram">
+      <DependentUpon>MaaAahwanam.edmx</DependentUpon>
+    </None>
+    <None Include="MaaAahwanam.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MaaAahwanam.edmx</DependentUpon>
+      <LastGenOutput>MaaAahwanam.cs</LastGenOutput>
+    </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201606151128598_Indu_migrations_date_06152016.resx">
-      <DependentUpon>201606151128598_Indu_migrations_date_06152016.cs</DependentUpon>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201607140556514_migrations_date_07142016.resx">
+      <DependentUpon>201607140556514_migrations_date_07142016.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

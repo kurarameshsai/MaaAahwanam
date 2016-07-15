@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<MaaAahwanam.Repository.GetProducts_Result>
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/SharedWeb/MainMaster.cshtml";
 }
@@ -74,260 +75,43 @@
                     <fieldset class="address-data-inputs">
                         <div class="displayDiv">
                             <div>
-                                <div id="PhotographersDiv" class="step2">
-                                    <div class="deals-main" id="main">
-                                        <div class="deal">
-                                            <div class="deal-thumb">
-                                                <a href="../ProductInfo/Index">
-                                                    <div class="zoomDiv">
-                                                        <img src="../CSSWeb/images/products/card-1.jpg" alt="thumb">
-                                                        <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span>  </div>
+                                @if (Model != null)
+                                {
+                                    foreach (var item in this.Model)
+                                    {
+                                        <div id="PhotographersDiv" class="step2">
+                                            <div class="deals-main" id="main">
+                                                <div class="deal">
+                                                    <div class="deal-thumb">
+                                                        <a href="../ProductInfo/Index">
+                                                            <div class="zoomDiv">
+                                                                <img src="~/vendorimages/@item.image" alt="thumb">
+                                                                <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span>  </div>
+                                                            </div>
+                                                        </a>
                                                     </div>
-                                                </a>
-                                            </div>
-                                            <div class="deal-details">
-                                                <h4 style="font-size: 15px; font-weight:bold; color: #2d3e52; font-family: Helvetica,sans-serif; ">Wedding Favors</h4>
-                                                <div class="amount">
-                                                    <span class="price">Rs. 570</span> <span class="buy">
-                                                        <a href="../ProductInfo?par=Venue&ID=101"><i class="ti-shopping-cart"></i> Add to Cart</a>
-                                                    </span>
-                                                </div>
-                                                <span style="color:#838383">Contrary to popular belief, Lorem Ipsum is not ...</span>
-                                                <div class="deal-footer">
-                                                    <ul>
-                                                        <li><div class="rate" data-rate-value=5></div></li>
-                                                        <li><i class="ti-comment-alt"></i> 1362</li>
-                                                        <li><i class="ti-eye"></i> 1500</li>
-                                                    </ul>
+                                                    <div class="deal-details">
+
+                                                        <h4 style="font-size: 15px; font-weight:bold; color: #2d3e52; font-family: Helvetica,sans-serif; ">@item.BusinessName</h4>
+                                                        <div class="amount">
+                                                            <span class="price">Rs. @item.Cost</span> <span class="buy">
+                                                                <a href="../ProductInfo?par=@item.ServicType.Trim()&VID=@item.Id"><i class="ti-shopping-cart"></i> Add to Cart</a>
+                                                            </span>
+                                                        </div>
+                                                        <span style="color:#838383">@item.Description</span>
+                                                        <div class="deal-footer">
+                                                            <ul>
+                                                                <li><div class="rate" data-rate-value=5></div></li>
+                                                                <li><i class="ti-comment-alt"></i> 1362</li>
+                                                                <li><i class="ti-eye"></i> 1500</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="deals-main">
-                                        <div class="deal">
-                                            <div class="deal-thumb">
-                                                <a href="~/DealInfo">
-                                                    <div class="zoomDiv">
-                                                        <img src="../CSSWeb/images/products/card-2.jpg" alt="thumb">
-                                                        <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span>  </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="deal-details">
-                                                <h4 style="font-size: 15px; font-weight:bold; color: #2d3e52; font-family: Helvetica,sans-serif; ">Wedding Favors</h4>
-                                                <div class="amount">
-                                                    <span class="price">Rs. 570</span> <span class="buy">
-                                                        <a href="../ProductInfo?par=Venue&ID=101"><i class="ti-shopping-cart"></i> Add to Cart</a>
-                                                    </span>
-                                                </div>
-                                                <span style="color:#838383">Contrary to popular belief, Lorem Ipsum is not ...</span>
-                                                <div class="deal-footer">
-                                                    <ul>
-                                                        <li><div class="rate" data-rate-value=5></div></li>
-                                                        <li><i class="ti-comment-alt"></i> 1362</li>
-                                                        <li><i class="ti-eye"></i> 1500</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="deals-main">
-                                        <div class="deal">
-                                            <div class="deal-thumb">
-                                                <a href="~/DealInfo">
-                                                    <div class="zoomDiv">
-                                                        <img src="../CSSWeb/images/products/card-3.jpg" alt="thumb">
-                                                        <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span>  </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="deal-details">
-                                                <h4 style="font-size: 15px; font-weight:bold; color: #2d3e52; font-family: Helvetica,sans-serif; ">Wedding Favors</h4>
-                                                <div class="amount">
-                                                    <span class="price">Rs. 570</span> <span class="buy">
-                                                        <a href="../ProductInfo?par=Venue&ID=101"><i class="ti-shopping-cart"></i> Add to Cart</a>
-                                                    </span>
-                                                </div>
-                                                <span style="color:#838383">Contrary to popular belief, Lorem Ipsum is not ...</span>
-                                                <div class="deal-footer">
-                                                    <ul>
-                                                        <li><div class="rate" data-rate-value=5></div></li>
-                                                        <li><i class="ti-comment-alt"></i> 1362</li>
-                                                        <li><i class="ti-eye"></i> 1500</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="deals-main">
-                                        <div class="deal">
-                                            <div class="deal-thumb">
-                                                <a href="~/DealInfo">
-                                                    <div class="zoomDiv">
-                                                        <img src="../CSSWeb/images/products/card-3.jpg" alt="thumb">
-                                                        <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span>  </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="deal-details">
-                                                <h4 style="font-size: 15px; font-weight:bold; color: #2d3e52; font-family: Helvetica,sans-serif; ">Wedding Favors</h4>
-                                                <div class="amount">
-                                                    <span class="price">Rs. 570</span> <span class="buy">
-                                                        <a href="../ProductInfo?par=Venue&ID=101"><i class="ti-shopping-cart"></i> Add to Cart</a>
-                                                    </span>
-                                                </div>
-                                                <span style="color:#838383">Contrary to popular belief, Lorem Ipsum is not ...</span>
-                                                <div class="deal-footer">
-                                                    <ul>
-                                                        <li><div class="rate" data-rate-value=5></div></li>
-                                                        <li><i class="ti-comment-alt"></i> 1362</li>
-                                                        <li><i class="ti-eye"></i> 1500</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="deals-main">
-                                        <div class="deal">
-                                            <div class="deal-thumb">
-                                                <a href="~/DealInfo">
-                                                    <div class="zoomDiv">
-                                                        <img src="../CSSWeb/images/products/card-3.jpg" alt="thumb">
-                                                        <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span>  </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="deal-details">
-                                                <h4 style="font-size: 15px; font-weight:bold; color: #2d3e52; font-family: Helvetica,sans-serif; ">Wedding Favors</h4>
-                                                <div class="amount">
-                                                    <span class="price">Rs. 570</span> <span class="buy">
-                                                        <a href="../ProductInfo?par=Venue&ID=101"><i class="ti-shopping-cart"></i> Add to Cart</a>
-                                                    </span>
-                                                </div>
-                                                <span style="color:#838383">Contrary to popular belief, Lorem Ipsum is not ...</span>
-                                                <div class="deal-footer">
-                                                    <ul>
-                                                        <li><div class="rate" data-rate-value=5></div></li>
-                                                        <li><i class="ti-comment-alt"></i> 1362</li>
-                                                        <li><i class="ti-eye"></i> 1500</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="deals-main">
-                                        <div class="deal">
-                                            <div class="deal-thumb">
-                                                <a href="~/DealInfo">
-                                                    <div class="zoomDiv">
-                                                        <img src="../CSSWeb/images/products/card-3.jpg" alt="thumb">
-                                                        <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span>  </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="deal-details">
-                                                <h4 style="font-size: 15px; font-weight:bold; color: #2d3e52; font-family: Helvetica,sans-serif; ">Wedding Favors</h4>
-                                                <div class="amount">
-                                                    <span class="price">Rs. 570</span> <span class="buy">
-                                                        <a href="../ProductInfo?par=Venue&ID=101"><i class="ti-shopping-cart"></i> Add to Cart</a>
-                                                    </span>
-                                                </div>
-                                                <span style="color:#838383">Contrary to popular belief, Lorem Ipsum is not ...</span>
-                                                <div class="deal-footer">
-                                                    <ul>
-                                                        <li><div class="rate" data-rate-value=5></div></li>
-                                                        <li><i class="ti-comment-alt"></i> 1362</li>
-                                                        <li><i class="ti-eye"></i> 1500</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="deals-main">
-                                        <div class="deal">
-                                            <div class="deal-thumb">
-                                                <a href="~/DealInfo">
-                                                    <div class="zoomDiv">
-                                                        <img src="../CSSWeb/images/products/card-3.jpg" alt="thumb">
-                                                        <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span>  </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="deal-details">
-                                                <h4 style="font-size: 15px; font-weight:bold; color: #2d3e52; font-family: Helvetica,sans-serif; ">Wedding Favors</h4>
-                                                <div class="amount">
-                                                    <span class="price">Rs. 570</span> <span class="buy">
-                                                        <a href="../ProductInfo?par=Venue&ID=101"><i class="ti-shopping-cart"></i> Add to Cart</a>
-                                                    </span>
-                                                </div>
-                                                <span style="color:#838383">Contrary to popular belief, Lorem Ipsum is not ...</span>
-                                                <div class="deal-footer">
-                                                    <ul>
-                                                        <li><div class="rate" data-rate-value=5></div></li>
-                                                        <li><i class="ti-comment-alt"></i> 1362</li>
-                                                        <li><i class="ti-eye"></i> 1500</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="deals-main">
-                                        <div class="deal">
-                                            <div class="deal-thumb">
-                                                <a href="~/DealInfo">
-                                                    <div class="zoomDiv">
-                                                        <img src="../CSSWeb/images/products/card-3.jpg" alt="thumb">
-                                                        <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span>  </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="deal-details">
-                                                <h4 style="font-size: 15px; font-weight:bold; color: #2d3e52; font-family: Helvetica,sans-serif; ">Wedding Favors</h4>
-                                                <div class="amount">
-                                                    <span class="price">Rs. 570</span> <span class="buy">
-                                                        <a href="../ProductInfo?par=Venue&ID=101"><i class="ti-shopping-cart"></i> Add to Cart</a>
-                                                    </span>
-                                                </div>
-                                                <span style="color:#838383">Contrary to popular belief, Lorem Ipsum is not ...</span>
-                                                <div class="deal-footer">
-                                                    <ul>
-                                                        <li><div class="rate" data-rate-value=5></div></li>
-                                                        <li><i class="ti-comment-alt"></i> 1362</li>
-                                                        <li><i class="ti-eye"></i> 1500</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="deals-main">
-                                        <div class="deal">
-                                            <div class="deal-thumb">
-                                                <a href="~/DealInfo">
-                                                    <div class="zoomDiv">
-                                                        <img src="../CSSWeb/images/products/card-3.jpg" alt="thumb">
-                                                        <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span>  </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="deal-details">
-                                                <h4 style="font-size: 15px; font-weight:bold; color: #2d3e52; font-family: Helvetica,sans-serif; ">Wedding Favors</h4>
-                                                <div class="amount">
-                                                    <span class="price">Rs. 570</span> <span class="buy">
-                                                        <a href="../ProductInfo?par=Venue&ID=101"><i class="ti-shopping-cart"></i> Add to Cart</a>
-                                                    </span>
-                                                </div>
-                                                <span style="color:#838383">Contrary to popular belief, Lorem Ipsum is not ...</span>
-                                                <div class="deal-footer">
-                                                    <ul>
-                                                        <li><div class="rate" data-rate-value=5></div></li>
-                                                        <li><i class="ti-comment-alt"></i> 1362</li>
-                                                        <li><i class="ti-eye"></i> 1500</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                    }
+                                }
                             </div>
                             <div class="loadMore">
                                 <button name="loadmore" id="LoadMore1" class="btn btn-green more-button"><i class="ti-reload"></i> Load More</button>

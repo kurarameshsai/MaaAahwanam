@@ -132,7 +132,7 @@
                     <li>Photographers</li>
                     <li>Tours & Travels </li>
                     <li>Decorators</li>
-                    <li>Beautician</li>
+                    <li>BeautyService</li>
                 </ul>
                 <div class="deals_all">
                     <a href="#">View All</a>
@@ -144,7 +144,7 @@
                                 <li><a href="~/product?par=Venue"><i class="ti-angle-right"></i> Venues</a></li>
                                 <li><a href="~/product?par=Catering"><i class="ti-angle-right"></i> Catering</a></li>
                                 <li><a href="~/product?par=Photography"><i class="ti-angle-right"></i> Photography</a></li>
-                                <li><a href="~/product?par=InvitationCard"><i class="ti-angle-right"></i> Invitation Cards</a></li>
+                                <li><a href="~/product?par=InvitationCard"><i class="ti-angle-right"></i> InvitationCards</a></li>
                                 <li><a href="~/product?par=Decorator"><i class="ti-angle-right"></i> Decorators</a></li>
                                 <li><a href="~/product?par=Entertainment"><i class="ti-angle-right"></i> Entertainment</a></li>
                                 <li><a href="~/product?par=Eventorganiser"><i class="ti-angle-right"></i> Event organisers</a></li>
@@ -173,7 +173,8 @@
                                             <div class="deal-thumb">
                                                 <a href="~/DealInfo">
                                                     <div class="zoomDiv">
-                                                        <img data-src="../Content/VendorImages/@PhDet.ImageName" alt="thumb" src="blank.gif" class="lazy">
+                                                        @*<img src="~/vendorimages/Catering_13_1.jpg" />*@
+                                                        <img data-src="../vendorimages/@PhDet.image" alt="thumb" src="blank.gif" class="lazy">
                                                         <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span>  </div>
                                                     </div>
                                                 </a>
@@ -181,7 +182,7 @@
                                             <div class="deal-details">
                                                 <h4 style="font-size: 15px; font-weight:bold; color: #2d3e52; font-family: Helvetica,sans-serif; ">@PhDet.BusinessName</h4>
                                                 <div class="amount">
-                                                    <span class="price">@PhDet.StartingPrice</span> <span class="buy">
+                                                    <span class="price">Rs. @PhDet.Cost</span> <span class="buy">
                                                         <a href="~/ProductInfo/Index"><i class="ti-shopping-cart"></i> Add to Cart</a>
                                                     </span>
                                                 </div>
@@ -212,7 +213,7 @@
                                             <div class="deal-thumb">
                                                 <a href="~/DealInfo">
                                                     <div class="zoomDiv">
-                                                        <img src="blank.gif" class="lazy" data-src="../Content/VendorImages/@tnt.ImageId" alt="thumb">
+                                                        <img src="blank.gif" class="lazy" data-src="../vendorimages/@tnt.image" alt="thumb">
                                                         <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span>  </div>
                                                     </div>
                                                 </a>
@@ -220,11 +221,11 @@
                                             <div class="deal-details">
                                                 <h4 style="font-size: 15px; font-weight:bold; color: #2d3e52; font-family: Helvetica,sans-serif; ">Wedding Favors</h4>
                                                 <div class="amount">
-                                                    <span class="price">Rs. 570</span> <span class="buy">
+                                                    <span class="price">Rs. @tnt.Cost</span> <span class="buy">
                                                         <a href="~/ProductInfo/Index"><i class="ti-shopping-cart"></i> Add to Cart</a>
                                                     </span>
                                                 </div>
-                                                <span style="color:#838383">Contrary to popular belief, Lorem Ipsum is not ...</span>
+                                                <span style="color:#838383">@tnt.Description</span>
                                                 <div class="deal-footer">
                                                     <ul>
                                                         <li><div class="rate" data-rate-value=5></div></li>
@@ -251,19 +252,19 @@
                                             <div class="deal-thumb">
                                                 <a href="~/DealInfo">
                                                     <div class="zoomDiv">
-                                                        <img src="blank.gif" class="lazy" data-src="../Content/VendorImages/@dec.ImageId" alt="thumb">
+                                                        <img src="blank.gif" class="lazy" data-src="../vendorimages/@dec.image" alt="thumb">
                                                         <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span>  </div>
                                                     </div>
                                                 </a>
                                             </div>
                                             <div class="deal-details">
-                                                <h4 style="font-size: 15px; font-weight:bold; color: #2d3e52; font-family: Helvetica,sans-serif; ">Wedding Favors</h4>
+                                                <h4 style="font-size: 15px; font-weight:bold; color: #2d3e52; font-family: Helvetica,sans-serif; ">@dec.BusinessName</h4>
                                                 <div class="amount">
-                                                    <span class="price">Rs. 570</span> <span class="buy">
+                                                    <span class="price">Rs. @dec.Cost</span> <span class="buy">
                                                         <a href="~/ProductInfo/Index"><i class="ti-shopping-cart"></i> Add to Cart</a>
                                                     </span>
                                                 </div>
-                                                <span style="color:#838383">Contrary to popular belief, Lorem Ipsum is not ...</span>
+                                                <span style="color:#838383">@dec.Description</span>
                                                 <div class="deal-footer">
                                                     <ul>
                                                         <li><div class="rate" data-rate-value=5></div></li>
@@ -278,11 +279,11 @@
                             }
                         }
                     </div>
+
                     <div>
-                        @*Beautician*@
                         @if (ViewBag.Beautician != null)
                         {
-                            foreach (var beau in ViewBag.Beautician)
+                            foreach (var dec in ViewBag.Beautician)
                             {
                                 <div class="step2">
                                     <div class="deals-main">
@@ -290,19 +291,19 @@
                                             <div class="deal-thumb">
                                                 <a href="~/DealInfo">
                                                     <div class="zoomDiv">
-                                                        <img src="blank.gif" class="lazy" data-src="../Content/VendorImages/@beau.ImageId" alt="thumb">
+                                                        <img src="blank.gif" class="lazy" data-src="../vendorimages/@dec.image" alt="thumb">
                                                         <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span>  </div>
                                                     </div>
                                                 </a>
                                             </div>
                                             <div class="deal-details">
-                                                <h4 style="font-size: 15px; font-weight:bold; color: #2d3e52; font-family: Helvetica,sans-serif; ">Wedding Favors</h4>
+                                                <h4 style="font-size: 15px; font-weight:bold; color: #2d3e52; font-family: Helvetica,sans-serif; ">@dec.BusinessName</h4>
                                                 <div class="amount">
-                                                    <span class="price">Rs. 570</span> <span class="buy">
+                                                    <span class="price">@dec.Cost</span> <span class="buy">
                                                         <a href="~/ProductInfo/Index"><i class="ti-shopping-cart"></i> Add to Cart</a>
                                                     </span>
                                                 </div>
-                                                <span style="color:#838383">Contrary to popular belief, Lorem Ipsum is not ...</span>
+                                                <span style="color:#838383">@dec.Description</span>
                                                 <div class="deal-footer">
                                                     <ul>
                                                         <li><div class="rate" data-rate-value=5></div></li>
@@ -475,4 +476,5 @@
 {
 
 }
-<script type="text/javascript" async="async" defer="defer" data-cfasync="false" src="https://mylivechat.com/chatinline.aspx?hccid=84879164"></script>
+<script type="text/javascript" async="async" defer="defer" data-cfasync="false" src="https://mylivechat.com/chatinline.aspx?hccid=84879164">
+</script>

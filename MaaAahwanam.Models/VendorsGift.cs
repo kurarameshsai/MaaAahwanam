@@ -13,8 +13,8 @@ namespace MaaAahwanam.Models
         public long Id { get; set; }
         public long VendorMasterId { get; set; }
         public string GiftType { get; set; }
-        public int MinOrder { get; set; }
-        public int MaxOrder { get; set; }
+        public string MinOrder { get; set; }
+        public string MaxOrder { get; set; }
         public decimal GiftCost { get; set; }
         public string Status { get; set; }
         public long UpdatedBy { get; set; }

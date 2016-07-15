@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Tuple<MaaAahwanam.Repository.GetProductsInfo_Result, MaaAahwanam.Models.Review>
+
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/SharedWeb/MainMaster.cshtml";
 }
@@ -46,12 +48,20 @@
                             <img src="../CSSWeb/images/sp-loading.gif" alt=""><br>
                             LOADING IMAGES
                         </div>
+                        @*<div class="zoomDiv">*@
                         <div class="sp-wrap">
-                            <a href="../CSSWeb/images/products/card-view.jpg"><img src="../CSSWeb/images/products/card-view.jpg" alt=""></a>
-                            <a href="../CSSWeb/images/products/card-view-2.jpg"><img src="../CSSWeb/images/products/card-view-2.jpg" alt=""></a>
-                            <a href="../CSSWeb/images/products/card-view-3.jpg"><img src="../CSSWeb/images/products/card-view-3.jpg" alt=""></a>
-                            <a href="../CSSWeb/images/products/card-view-4.jpg"><img src="../CSSWeb/images/products/card-view-4.jpg" alt=""></a>
+                            @foreach (var item in ViewBag.Imagelist)
+                            {
+                                @*<a href="~/vendorimages/@item"><img src="~/vendorimages/@item" alt=""></a>*@
+                                <a href="~/vendorimages/@item"> <img src="~/vendorimages/@item" alt="thumb"></a>
+                                @*<img src="~/vendorimages/@item" alt="">*@
+                                @*<a href="~/vendorimages/cam7.jpg"><img src="~/vendorimages/cam7.jpg" alt=""></a>
+                                    <a href="~/vendorimages/cam7.jpg"><img src="~/vendorimages/cam7.jpg" alt=""></a>
+                                    <a href="~/vendorimages/cam7.jpg"><img src="~/vendorimages/cam7.jpg" alt=""></a>*@
+                            }
                         </div>
+                        @*</div>*@
+
                     </div>
                     <div class="deal-desc">
                         <div class="review-area">
@@ -64,8 +74,9 @@
                                 <li class="text-red"> <a href="#writeReview" class=" text-red popup-with-move-anim"><i class="ti-pencil-alt text-red"></i> Write a Review</a></li>
                             </ul>
 
+
                             <!-- popup -->
-                            <div id="writeReview" class="zoom-anim-dialog mfp-hide small-dialog">
+                            <div data-role="popup" id="writeReview" class="zoom-anim-dialog mfp-hide small-dialog">
                                 <div class="popup-box pop-content">
                                     <div class="popup-head">
                                         <h3>Write a Review</h3>
@@ -74,29 +85,39 @@
                                     <div class="popup-space popup-desc-space">
                                         <div class="dashboardList dashboardList-nospace">
                                             <div class="bidding_form">
-                                                <ul>
-                                                    <li>
-                                                        <label>Name</label>
-                                                        <input type="text" name="name" placeholder="Name">
-                                                    </li>
-                                                    <li>
-                                                        <label>Emal ID <span>*</span></label>
-                                                        <input type="text" name="email" placeholder="Email ID">
-                                                    </li>
-                                                </ul>
-                                                <ul>
-                                                    <li class="full-width">
-                                                        <label>Review <span>*</span></label>
-                                                        <textarea name="Review" placeholder="Review"></textarea>
-                                                    </li>
-                                                </ul>
+                                                @using (Html.BeginForm("WriteaRiview", "ProductInfo", FormMethod.Post, new { @class = "form-signin", @id = "register_form", @autocomplete = "off" }))
+                                                {
+                                                    <ul>
+                                                        <li>
+                                                            <label>Name</label>
+                                                            @*<input type="text" name="name" placeholder="Name">*@
+                                                            @Html.TextBoxFor(model => model.Item2.FirstName, new { @id = "name", @name = "name", placeholder = "Name", required = "required" })
+                                                        </li>
+                                                        <li>
+                                                            <label>Emal ID <span>*</span></label>
+                                                            @*<input type="text" name="email" placeholder="Email ID">*@
+                                                            @Html.TextBoxFor(model => model.Item2.EmailId, new { @id = "EmailId", @name = "EmailId", placeholder = "EmailId", required = "required" })
+                                                        </li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li class="full-width">
+                                                            <label>Review <span>*</span></label>
+                                                            @*<textarea name="Review" placeholder="Review"></textarea>*@
+                                                            <input type="hidden" id="stvalue" name="Minvalue" value="10">
+                                                            <input type="hidden" id="hmin" name="Minvalue" value="10">
+                                                            @Html.HiddenFor(model => model.Item2.Service, new { @id = "Service", @name = "Service", required = "required", Value = @Model.Item1.ServicType})
+                                                            @Html.HiddenFor(model => model.Item2.ServiceId, new { @id = "Review", @name = "Review", required = "required", Value = @Model.Item1.Id})
+                                                            @Html.TextAreaFor(model => model.Item2.Comments, new { @id = "Review", @name = "Review", placeholder = "Review", required = "required" })
+                                                        </li>
+                                                    </ul>
 
-                                                <ul>
-                                                    <li>&nbsp;</li>
-                                                    <li>
-                                                        <button type="submit" name="submit" class="btn btn-small btn-green float-right" value="submit">Submit <i class="ti-angle-double-right"></i></button>
-                                                    </li>
-                                                </ul>
+                                                    <ul>
+                                                        <li>&nbsp;</li>
+                                                        <li>
+                                                            <button type="submit" name="submit" class="btn btn-small btn-green float-right" value="submit">Submit <i class="ti-angle-double-right"></i></button>
+                                                        </li>
+                                                    </ul>
+                                                }
                                             </div>
                                             <div class="clear"></div>
                                         </div>
@@ -108,14 +129,83 @@
                         </div>
                         <div class="product_review">
                             <h4>Location</h4>
-                            <p>Banjarahills, Road no. 12, Hyderbad, 500 027, India</p>
+                            <p>@Model.Item1.Landmark,@Model.Item1.Address,@Model.Item1.City,@Model.Item1.State</p>
                         </div>
                         <div class="product_review">
                             <h4>Description</h4>
-                            <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum egestas risus ut leo scelerisque, in tristique lacus pretium. Integer elementum egestas leo eu pretium. Donec porttitor tincidunt ligula non rutrum. Sed lobortis aliquet tellus id iaculis. Nunc aliquam turpis et nulla vehicula ullamcorper. Phasellus varius lacus sed nibh ultrices, nec pellentesque nibh tincidunt. Donec tincidunt ligula eu orci feugiat porttitor. Sed vitae libero sed lectus bibendum tincidunt. Aliquam ut placerat est. Etiam condimentum velit molestie ex fermentum eleifend. Nunc condimentum elit et ipsum sagittis ultrices. Suspendisse lacinia imperdiet lorem, ac consectetur mi facilisis a. Ut urna lorem, sodales vel urna vitae, ornare imperdiet ipsum. Curabitur nec fringilla libero. Praesent mi metus, pharetra vitae viverra ac, euismod sit amet eros. Ut ullamcorper tortor sapien, vitae mattis leo ultricies in. Fusce tempor risus vitae lobortis sodales. Quisque non commodo est. Nullam sagittis aliquam erat, ut pharetra ligula faucibus non. </p>
+                            <p class="comment">@Model.Item1.Description</p>
                         </div>
-                        @*Calculation Div*@
-                        <div class="deal_price" id="Calcdiv">
+
+                        @*Calculation other Div*@
+                        <div class="deal_price" id="Calcdiv_Other" style="display:none">
+                            <div class="price_details">
+                                <dl>
+                                    <dt>Deal Price: </dt>
+                                    <dd>
+                                        @*<h1 class="text-green">Rs. 1,299</h1>*@
+                                        <p id="demo" style="color:#8ca436;font-size:20px">@*Rs. @Model.cost*@</p>
+                                    </dd>
+                                    <dt>Selling Price: </dt>
+                                    <dd>
+                                        <h2>Rs. 1,800</h2>
+                                    </dd>
+                                    <dt>Total Price: </dt>
+                                    <dd>
+                                        <h2>Rs. 2,200</h2>
+                                    </dd>
+                                </dl>
+                                <form name="myForm">
+                                    <label>Number of items<span>*</span></label>
+                                    <input type="hidden" id="hmin" name="Minvalue" value="10">
+                                    <input type="hidden" id="hmax" name="Maxvalue" value="50">
+                                    <input type="text" id="txtquantity" value="10" placeholder="Enter Quantity" onchange="Onchangequantity()" /><br>
+                                    <input type="radio" id="vl" name="platetype" value="500" checked> item cost 500/-<br>
+                                </form>
+                            </div>
+                            <div class="deal_save">
+                                <p>You Save: <span class="text-red">Rs. 1,800</span></p>
+                                <h3>30% OFF</h3>
+                            </div>
+                        </div>
+
+                        @*Calculation venue Div*@
+                        <div class="deal_price" id="Calcdiv_venue" style="display:none">
+                            <div class="price_details">
+                                <dl>
+                                    <dt>Deal Price: </dt>
+                                    <dd>
+                                        @*<h1 class="text-green">Rs. 1,299</h1>*@
+                                        <p id="demovenue" style="color:#8ca436;font-size:20px"></p>
+                                    </dd>
+                                    <dt>Selling Price: </dt>
+                                    <dd>
+                                        <h2>Rs. 1,800</h2>
+                                    </dd>
+                                    <dt>Total Price: </dt>
+                                    <dd>
+                                        <h2>Rs. 2,200</h2>
+                                    </dd>
+                                </dl>
+                                <form name="myFormvenue">
+                                    <label>Quantity<span>*</span></label>
+                                    <input type="text" id="txtquantityvenue" value="10" placeholder="Enter Quantity" onchange="Onchangequantityvenue()" /><br>
+                                    <input type="radio" id="vlvenue" name="platetypevenue" value=@Model.Item1.cost checked> Veg lunch Per plate cost @Model.Item1.cost/-<br>
+                                    <input type="radio" id="nvlvenue" name="platetypevenue" value=@Model.Item1.cost1> Non veg lunch Per plate cost @Model.Item1.cost1/-<br>
+                                    <input type="radio" id="vdvenue" name="platetypevenue" value=@Model.Item1.cost2> Veg DinnerVeg Per plate cost @Model.Item1.cost2/-<br>
+                                    <input type="radio" id="nvdvenue" name="platetypevenue" value=@Model.Item1.cost3>Non Veg Dinner Per plate cost @Model.Item1.cost3/-<br>
+                                    @*<p id="demo"></p>*@
+                                    @*<button type="submit" id="btncal" name="submit" class="btn btn-small btn-green float-right" value="submit">Calculate <i class="ti-angle-double-right"></i></button>*@
+                                    @*<button name="btncalu" type="button" id="btncalu" class="btn btn-green more-button" style="width:250px;height:40px"><i class="ti-reload"></i> Calculate</button>*@
+                                </form>
+                            </div>
+                            <div class="deal_save">
+                                <p>You Save: <span class="text-red">Rs. 1,800</span></p>
+                                <h3>30% OFF</h3>
+                            </div>
+                        </div>
+
+                        @*Calculation Caterer Div*@
+                        <div class="deal_price" id="Calcdiv_Caterer" style="display:none">
                             <div class="price_details">
                                 <dl>
                                     <dt>Deal Price: </dt>
@@ -133,10 +223,102 @@
                                     </dd>
                                 </dl>
                                 <form name="myForm">
+                                    <label>Number of plates<span>*</span></label>
+                                    <input type="text" id="txtquantity" value="10" placeholder="Enter Quantity" onchange="Onchangequantity()" /><br>
+                                    <input type="radio" id="vl" name="platetype" value="500" checked> Veg Per plate cost 500/-<br>
+                                    <input type="radio" id="nvl" name="platetype" value="1000"> Non veg Per plate cost 1000/-<br>
+                                </form>
+                            </div>
+                            <div class="deal_save">
+                                <p>You Save: <span class="text-red">Rs. 1,800</span></p>
+                                <h3>30% OFF</h3>
+                            </div>
+                        </div>
+
+                        @*Calculation Gift Div*@
+                        <div class="deal_price" id="Calcdiv_Gift" style="display:none">
+                            <div class="price_details">
+                                <dl>
+                                    <dt>Deal Price: </dt>
+                                    <dd>
+                                        @*<h1 class="text-green">Rs. 1,299</h1>*@
+                                        <p id="demo" style="color:#8ca436;font-size:20px"></p>
+                                    </dd>
+                                    <dt>Selling Price: </dt>
+                                    <dd>
+                                        <h2>Rs. 1,800</h2>
+                                    </dd>
+                                    <dt>Total Price: </dt>
+                                    <dd>
+                                        <h2>Rs. 2,200</h2>
+                                    </dd>
+                                </dl>
+                                <form name="myForm">
+                                    <label>Number of gifts<span>*</span></label>
+                                    <input type="text" id="txtquantity" value="10" placeholder="Enter Quantity" onchange="Onchangequantity()" /><br>
+                                    <input type="radio" id="vl" name="platetype" value="500" checked> Gift cost 500/-<br>
+                                </form>
+                            </div>
+                            <div class="deal_save">
+                                <p>You Save: <span class="text-red">Rs. 1,800</span></p>
+                                <h3>30% OFF</h3>
+                            </div>
+                        </div>
+
+                        @*Calculation invitation Div*@
+                        <div class="deal_price" id="Calcdiv_invitation" style="display:none">
+                            <div class="price_details">
+                                <dl>
+                                    <dt>Deal Price: </dt>
+                                    <dd>
+                                        @*<h1 class="text-green">Rs. 1,299</h1>*@
+                                        <p id="demo" style="color:#8ca436;font-size:20px"></p>
+                                    </dd>
+                                    <dt>Selling Price: </dt>
+                                    <dd>
+                                        <h2>Rs. 1,800</h2>
+                                    </dd>
+                                    <dt>Total Price: </dt>
+                                    <dd>
+                                        <h2>Rs. 2,200</h2>
+                                    </dd>
+                                </dl>
+                                <form name="myForm">
+                                    <label>Number of cards<span>*</span></label>
+                                    <input type="text" id="txtquantity" value="10" placeholder="Enter Quantity" onchange="Onchangequantity()" /><br>
+                                    <input type="radio" id="vl" name="platetype" value="500" checked> Card cost 500/-<br>
+                                    <input type="radio" id="nvl" name="platetype" value="1000"> Carrd cost with print 1000/-<br>
+                                </form>
+                            </div>
+                            <div class="deal_save">
+                                <p>You Save: <span class="text-red">Rs. 1,800</span></p>
+                                <h3>30% OFF</h3>
+                            </div>
+                        </div>
+
+                        @*Calculation General Div*@
+                        <div class="deal_price" id="Calcdiv_General" style="display:none">
+                            <div class="price_details">
+                                <dl>
+                                    <dt>(General)Deal Price: </dt>
+                                    <dd>
+                                        @*<h1 class="text-green">Rs. 1,299</h1>*@
+                                        <p id="demo" style="color:#8ca436;font-size:20px">Rs. @Model.Item1.cost</p>
+                                    </dd>
+                                    <dt>Selling Price: </dt>
+                                    <dd>
+                                        <h2>Rs. 1,800</h2>
+                                    </dd>
+                                    <dt>Total Price: </dt>
+                                    <dd>
+                                        <h2>Rs. 2,200</h2>
+                                    </dd>
+                                </dl>
+                                <form name="myForm">
                                     <label>Number of items<span>*</span></label>
                                     <input type="hidden" id="hmin" name="Minvalue" value="10">
                                     <input type="hidden" id="hmax" name="Maxvalue" value="50">
-                                    <input type="text" id="txtquantity" value="10"  placeholder="Enter Quantity" onchange="Onchangequantity()" /><br>
+                                    <input type="text" id="txtquantity" value="10" placeholder="Enter Quantity" onchange="Onchangequantity()" /><br>
                                     <input type="radio" id="vl" name="platetype" value="500" checked> item cost 500/-<br>
                                 </form>
                             </div>
@@ -145,8 +327,10 @@
                                 <h3>30% OFF</h3>
                             </div>
                         </div>
+
+                        <input type="hidden" id="stype" name="Minvalue" value=@ViewBag.servicetype>
                         <div class="deal_buttons">
-                            <a href="~/Product/Index" class="btn btn-big btn-orange"><i class="ti-arrow-left"></i> Back To Prev </a> <a href="~/CartView/Index" class="btn btn-big btn-green" id="lnkproceedtonext">Proceed to Next <i class="ti-arrow-right"></i></a>
+                            <a href="~/Product/Index" class="btn btn-big btn-orange">Add To Cart </a> <a href="~/CartView/Index" class="btn btn-big btn-green" id="lnkproceedtonext">Buy Now </a>
                         </div>
                     </div>
                     <div class="clear"></div>
@@ -200,48 +384,23 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="review_title">
-                                                <h5>Lorem ipsum dolor sit amet</h5>
-                                                <small>Dec 03, 2015</small>
-                                            </div>
-                                            <div class="review_rate">
-                                                <div class="rate" data-rate-value=3></div>
-                                            </div>
-                                            <div class="clear"></div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sapien nunc, condimentum iaculis bibendum ac, elementum aliquam lectus. Vestibulum interdum ullamcorper eros, id semper urna elementum ut. In hac habitasse platea dictumst. </p>
-                                            <p>Was this review helpful to you? <a href="#" class="text-green"><i class="ti-thumb-up text-green"></i> Yes</a> &nbsp; <a href="#" class="text-red"><i class="ti-thumb-down text-red"></i> No</a></p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="review_title">
-                                                <h5>Lorem ipsum dolor sit amet</h5>
-                                                <small>Dec 03, 2015</small>
-                                            </div>
-                                            <div class="review_rate">
-                                                <div class="rate" data-rate-value=4></div>
-                                            </div>
-                                            <div class="clear"></div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sapien nunc, condimentum iaculis bibendum ac, elementum aliquam lectus. Vestibulum interdum ullamcorper eros, id semper urna elementum ut. In hac habitasse platea dictumst. </p>
-                                            <p>Was this review helpful to you? <a href="#" class="text-green"><i class="ti-thumb-up text-green"></i> Yes</a> &nbsp; <a href="#" class="text-red"><i class="ti-thumb-down text-red"></i> No</a></p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="review_title">
-                                                <h5>Lorem ipsum dolor sit amet</h5>
-                                                <small>Dec 03, 2015</small>
-                                            </div>
-                                            <div class="review_rate">
-                                                <div class="rate" data-rate-value=2></div>
-                                            </div>
-                                            <div class="clear"></div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sapien nunc, condimentum iaculis bibendum ac, elementum aliquam lectus. Vestibulum interdum ullamcorper eros, id semper urna elementum ut. In hac habitasse platea dictumst. </p>
-                                            <p>Was this review helpful to you? <a href="#" class="text-green"><i class="ti-thumb-up text-green"></i> Yes</a> &nbsp; <a href="#" class="text-red"><i class="ti-thumb-down text-red"></i> No</a></p>
-                                        </td>
-                                    </tr>
+                                    @foreach (var reviewitem in ViewBag.Reviewlist)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <div class="review_title">
+                                                    <h5>@reviewitem.FirstName</h5>
+                                                    <small>@reviewitem.UpdatedDate</small>
+                                                </div>
+                                                <div class="review_rate">
+                                                    <div class="rate" data-rate-value=3></div>
+                                                </div>
+                                                <div class="clear"></div>
+                                                <p>@reviewitem.Comments</p>
+                                                <p>Was this review helpful to you? <a href="#" class="text-green"><i class="ti-thumb-up text-green"></i> Yes</a> &nbsp; <a href="#" class="text-red"><i class="ti-thumb-down text-red"></i> No</a></p>
+                                            </td>
+                                        </tr>
+                                    }
                                 </tbody>
                             </table>
                             <div class="clear"></div>
@@ -265,14 +424,14 @@
                     <div class="ad_250"> </div>
                 </div>
             </div>
-            <div class="ad margin_bottom_20">
+            @*<div class="ad margin_bottom_20">
                 <div class="ad_728"> <img src="../CSSWeb/images/ad_728.jpg" alt="advertisement"> </div>
-            </div>
+            </div>*@
             <div class="clear"></div>
-            <div class="heading-title">
+            @*<div class="heading-title">
                 <h2>More Top Deals Based On Your Search</h2>
-            </div>
-            <div id="parentHorizontalTab">
+            </div>*@
+            @*<div id="parentHorizontalTab">
                 <ul class="resp-tabs-list hor_1">
                     <li>Wedding Cards</li>
                     <li>Birth Day </li>
@@ -1069,7 +1228,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>*@
         </div>
     </div>
 </section>
@@ -1083,49 +1242,92 @@
     <script type="text/javascript">
         window.onload = function () {
             var b;
-            var a = document.getElementById("txtquantity").value;
-            if (document.getElementById("vl").checked) {
-                document.getElementById("demo").innerHTML = document.getElementById("vl").value * a;
+            var a = document.getElementById("txtquantityvenue").value;
+            if (document.getElementById("vlvenue").checked) {
+                document.getElementById("demovenue").innerHTML = document.getElementById("vl").value * a;
             }
+            var servicetype = document.getElementById("stype").value;
+
+            if (servicetype == "Other") {
+                $('#Calcdiv_Other').removeAttr("style");
+                $('#Calcdiv_Other').css({ "display": "block" });
+            }
+            else if (servicetype == "Venue") {
+                $('#Calcdiv_venue').removeAttr("style");
+                $('#Calcdiv_venue').css({ "display": "block" });
+            }
+            else if (servicetype == "InvitationCard") {
+                $('#Calcdiv_invitation').removeAttr("style");
+                $('#Calcdiv_invitation').css({ "display": "block" });
+            }
+            else if (servicetype == "Catering") {
+                $('#Calcdiv_Caterer').removeAttr("style");
+                $('#Calcdiv_Caterer').css({ "display": "block" });
+            }
+            else if (servicetype == "Gift") {
+                $('#Calcdiv_Gift').removeAttr("style");
+                $('#Calcdiv_Gift').css({ "display": "block" });
+            }
+            else {
+                $('#Calcdiv_General').removeAttr("style");
+                $('#Calcdiv_General').css({ "display": "block" });
+            }
+
         };
-        var rad = document.myForm.platetype;
-        var prev = null;
-        var rr = null;
-        for (var i = 0; i < rad.length; i++) {
-            rad[i].onclick = function () {
-                if (this !== prev) {
-                    prev = this;
-                    var a = document.getElementById("txtquantity").value;
-                    document.getElementById("demo").innerHTML = a*parseInt(this.value);
+
+        //var rad = document.myForm.platetype;
+        //var prev = null;
+        //var rr = null;
+        //for (var i = 0; i < rad.length; i++) {
+        //    rad[i].onclick = function () {
+        //        if (this !== prev) {
+        //            prev = this;
+        //            var a = document.getElementById("txtquantity").value;
+        //            document.getElementById("demo").innerHTML = a * parseInt(this.value);
+        //        }
+        //    };
+        //}
+
+        //for venues
+        var radvenue = document.myFormvenue.platetypevenue;
+        var prevvenue = null;
+        var rrvenue = null;
+        for (var i = 0; i < radvenue.length; i++) {
+            radvenue[i].onclick = function () {
+                if (this !== prevvenue) {
+                    prevvenue = this;
+                    var a = document.getElementById("txtquantityvenue").value;
+                    document.getElementById("demovenue").innerHTML = a * parseInt(this.value);
                 }
             };
         }
-        function Onchangequantity()
-        {
+
+
+
+
+        function Onchangequantityvenue() {
             var b;
-            var a = document.getElementById("txtquantity").value;
-            if (document.getElementById("vl").checked) {
-                document.getElementById("demo").innerHTML = document.getElementById("vl").value * a;
+            var a = document.getElementById("txtquantityvenue").value;
+            if (document.getElementById("vlvenue").checked) {
+                document.getElementById("demovenue").innerHTML = document.getElementById("vl").value * a;
             }
-            else if (document.getElementById("nvl").checked) {
-                document.getElementById("demo").innerHTML = document.getElementById("nvl").value * a;
+            else if (document.getElementById("nvlvenue").checked) {
+                document.getElementById("demovenue").innerHTML = document.getElementById("nvl").value * a;
             }
-            else if (document.getElementById("vd").checked) {
-                document.getElementById("demo").innerHTML = document.getElementById("vd").value * a;
+            else if (document.getElementById("vdvenue").checked) {
+                document.getElementById("demovenue").innerHTML = document.getElementById("vd").value * a;
             }
-            else if (document.getElementById("nvd").checked) {
-                document.getElementById("demo").innerHTML = document.getElementById("nvd").value * a;
+            else if (document.getElementById("nvdvenue").checked) {
+                document.getElementById("demovenue").innerHTML = document.getElementById("nvd").value * a;
             }
         }
         $('#lnkproceedtonext').on('click', function (e) {
             var minvalue1 = document.getElementById("hmin").value;
             var maxvalue1 = document.getElementById("hmax").value;
-            if (document.getElementById("txtquantity").value < minvalue1)
-            {
+            if (document.getElementById("txtquantity").value < minvalue1) {
                 alert('Enter minimum Quantity');
             }
-            if (document.getElementById("txtquantity").value > maxvalue1)
-            {
+            if (document.getElementById("txtquantity").value > maxvalue1) {
                 alert('Required exeeded maximum Quantity');
             }
             //alert(minvalue1);

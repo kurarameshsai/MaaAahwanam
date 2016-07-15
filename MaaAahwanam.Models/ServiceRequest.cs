@@ -32,5 +32,6 @@ namespace MaaAahwanam.Models
         public long UpdatedBy { get; set; }
         public DateTime? UpdatedTime { get; set; }
         public string Status { get; set; }
+        public string Type { get; set; }
     }
 }
