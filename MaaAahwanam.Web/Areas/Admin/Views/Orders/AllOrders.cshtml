@@ -34,51 +34,42 @@
                                     <tr>
                                         <th>Order Id</th>
                                         <th>Order Date</th>
-                                        <th>Service Type</th>
-                                        <th>AdvPaid Date</th>
-                                        <th>AdvAmt Recevied</th>
+                                        
                                         <th>Status</th>
-                                        <th>Balance Amt</th>
+                                        <th>Amount</th>
                                         <th>DueDate</th>
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="even gradeX">
+                                    @foreach (var item in ViewBag.OrdersList)
+                                    {
+                                         <tr class="even gradeX">
                                         <td>
-                                            <h5>101</h5>
+                                            <h5>@item.OrderId</h5>
                                         </td>
                                         <td>
-                                            <h5>11-12-2015</h5>
+                                            <h5>@item.OrderDate</h5>
                                         </td>
                                         <td>
-                                            <h5>Designer</h5>
-                                        </td>
-
-                                        <td>
-                                            <h5>15-12-2015</h5>
+                                            <h5>@item.Status</h5>
                                         </td>
                                         <td>
-                                            <h5>30000</h5>
+                                            <h5>@item.TotalPrice</h5>
                                         </td>
                                         <td>
-                                            <h5>Approved</h5>
+                                            <h5>@item.UpdatedDate</h5>
                                         </td>
                                         <td>
-                                            <h5>3000</h5>
-                                        </td>
-                                        <td>
-                                            <h5>25-08-2015</h5>
-                                        </td>
-                                        <td>
-                                            <a href="/Admin/Orders/OrderDetails" class="btn btn-default btn-xs"> View </a>
-                                            <a href="#" class="btn btn-default btn-xs">Edit</a>
+                                            <a href="/Admin/Orders/OrderDetails?id=@item.OrderId" class="btn btn-default btn-xs"> View </a>
                                             <a href="#" class="btn btn-default btn-xs">Delete</a>
                                         </td>
-                                    </tr>
+                                    </tr>   
+                                    }
+                                    
 
 
-                                    <tr class="even gradeX">
+                                    @*<tr class="even gradeX">
                                         <td>
                                             <h5>102</h5>
                                         </td>
@@ -109,7 +100,7 @@
                                             <a href="#" class="btn btn-default btn-xs">Edit</a>
                                             <a href="#" class="btn btn-default btn-xs">Delete</a>
                                         </td>
-                                    </tr>
+                                    </tr>*@
 
 
                                 </tbody>

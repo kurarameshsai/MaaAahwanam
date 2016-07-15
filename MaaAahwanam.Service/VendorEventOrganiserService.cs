@@ -18,7 +18,7 @@ namespace MaaAahwanam.Service
             vendorEventOrganiser.UpdatedDate = DateTime.Now;
             vendorMaster.Status = "Active";
             vendorMaster.UpdatedDate = DateTime.Now;
-            vendorMaster.ServicType = "Event Organiser";
+            vendorMaster.ServicType = "EventOrganiser";
             vendorMaster = vendorMasterRepository.AddVendorMaster(vendorMaster);
             vendorEventOrganiser.VendorMasterId = vendorMaster.Id;
             vendorEventOrganiser = vendorEventOrganiserRepository.AddEventOrganiser(vendorEventOrganiser);

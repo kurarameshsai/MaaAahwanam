@@ -37,26 +37,29 @@
                                             <th></th>
                                         </tr>
                                     </thead>
-                                    <tbody>                                      
-                                        <tr class="even gradeX">
+                                    <tbody>
+                                        @foreach (var item in ViewBag.CommentList)
+                                        {
+                                            <tr class="even gradeX">
                                             <td>
-                                                <h5>101</h5>
+                                                <h5>@item.CommentId</h5>
                                             </td>
                                             <td>
-                                                <h5>1056</h5>
+                                                <h5>@item.ServiceId</h5>
                                             </td>
                                             <td>
-                                                <h5>Designer</h5>
+                                                <h5>@item.ServiceType</h5>
                                             </td>
                                             <td>
-                                                <a href="/Admin/Others/CommentDetails" class="btn btn-default btn-xs"> View </a>
-                                                <a href="#" class="btn btn-default btn-xs">Edit</a>
+                                                <a href="/Admin/Others/CommentDetails?id=@item.CommentId" class="btn btn-default btn-xs"> View </a>
                                                 <a href="#" class="btn btn-default btn-xs">Delete</a>
                                             </td>
-                                        </tr>
+                                        </tr>    
+                                        }                                      
+                                        
 
 
-                                        <tr class="even gradeX">
+                                        @*<tr class="even gradeX">
                                             <td>
                                                 <h5>102</h5>
                                             </td>
@@ -71,7 +74,7 @@
                                                 <a href="#" class="btn btn-default btn-xs">Edit</a>
                                                 <a href="#" class="btn btn-default btn-xs">Delete</a>
                                             </td>
-                                        </tr>          
+                                        </tr>*@          
                                     </tbody>
                                 </table>
                             </div>

@@ -39,7 +39,9 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             if (name=="View")
             {
                 serviceRequest.RequestId = long.Parse(BidReqId);
+                serviceResponse.RequestId = long.Parse(BidReqId);
                 TempData["ServiceRequestRecords"] = serviceRequestService.GetServiceRequestRecord(serviceRequest); //Quotation
+                TempData["ServiceResponseCount"] = serviceResponseService.ServiceResponseCount(serviceResponse);
                 return RedirectToAction("QuotReqView");
             }
             return View();
@@ -69,9 +71,10 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
         }
         public ActionResult QuotReqView()
         {
-            if (TempData["ServiceRequestRecords"] != null )
+            if (TempData["ServiceRequestRecords"] != null && TempData["ServiceResponseCount"] != null)
             {
                 //Quotation Related
+                ViewBag.count = TempData["ServiceResponseCount"];
                 ViewBag.vendordetails = TempData["ServiceRequestRecords"];
                 return View();
             }
@@ -87,18 +90,23 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             }
             return View();
         }
-        public ActionResult Biddings(long id, ServiceResponse serviceResponse)
+        public ActionResult Biddings(long id)
         {
             if (id!=null)
             {
-                serviceResponse.RequestId = id;
-                ViewBag.ServiceResponseRecordsList = serviceResponseService.GetServiceResponseList(serviceResponse);
+                ViewBag.ServiceResponseRecordsList = serviceResponseService.GetServiceResponseList(id);
                 return View();
             }
             return View();
         }
-        public ActionResult Quotations()
+        public ActionResult Quotations(long id, ServiceResponse serviceResponse)
         {
+            if (id!=null)
+            {
+                serviceResponse.RequestId = id;
+                ViewBag.QuotationRecordsList = serviceResponseService.GetQuotationList(serviceResponse);
+                return View();
+            }
             return View();
         }
         public ActionResult ReverseBiddings()

@@ -18,7 +18,7 @@ namespace MaaAahwanam.Service
            vendorInvitationCard.UpdatedDate = DateTime.Now;
            vendorMaster.Status = "Active";
            vendorMaster.UpdatedDate = DateTime.Now;
-           vendorMaster.ServicType = "Invitation Card";
+           vendorMaster.ServicType = "InvitationCard";
            vendorMaster = vendorMasterRepository.AddVendorMaster(vendorMaster);
            vendorInvitationCard.VendorMasterId = vendorMaster.Id;
            vendorInvitationCard = vendorInvitationCardsRepository.AddInvitationCards(vendorInvitationCard);

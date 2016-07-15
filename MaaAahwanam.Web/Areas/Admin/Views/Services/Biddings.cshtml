@@ -1,4 +1,4 @@
-﻿@model Dynamic
+﻿
 @{
     ViewBag.Title = "Biddings";
     Layout = "~/Areas/Admin/Views/Shared/MainMaster.cshtml";
@@ -19,11 +19,10 @@
             </div>
         </div>
         <hr />
-        @foreach (var item in (List<dynamic>)ViewBag.ServiceResponseRecordsList)
-        {
+        
             <div class="row">
             <div class="col-lg-12">
-                <h4>Bid RequestId: @this.i</h4>
+                <h4>Bid RequestId: RequestId</h4>
                 <div class="panel panel-default">
 
                     <div class="panel-heading">
@@ -52,6 +51,8 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+@foreach (var item in ViewBag.ServiceResponseRecordsList)    //(List<dynamic>)ViewBag.ServiceResponseRecordsList
+        {
                                     <tr class="even gradeX">
                                         <td>@item.Id</td>
                                         <td>@item.BusinessName,<br/> @item.Address</td>
@@ -60,6 +61,7 @@
                                         <td>@item.Amount</td>
                                         <td>@item.UpdatedDate</td>
                                     </tr>
+}
                                     @*<tr class="even gradeX">
         <td>11</td>
         <td>Taj Krishna,<br/> RoadNo.1 <br/> BanjaraHills,<br/> Hyderabad</td>
@@ -75,7 +77,7 @@
                 </div>
             </div>
         </div>   
-        }
+      
     </div>
 </div>
 <!--END PAGE CONTENT -->

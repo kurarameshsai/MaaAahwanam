@@ -48,20 +48,24 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="even gradeX">
+                                    @foreach (var item in ViewBag.OrderDetailsList)
+                                    {
+                                        <tr class="even gradeX">
+                                        <td>@item.OrderId</td>
+                                        <td>@item.ServiceType,<br />Quantity:@item.Quantity<br /></td>
+                                        <td>@item.BusinessName,<br />@item.Address,@item.Landmark<br />@item.City</td>
+                                        <td>@item.UpdatedDate</td>
+                                        <td>@item.TotalPrice</td>
+                                    </tr>
+                                    }
+                                    @*<tr class="even gradeX">
                                         <td>1</td>
                                         <td>Birthday Cards,<br />Quantity:80,<br />Cardtype:Card with Print,<br />Design ID:1090</td>
                                         <td>Sai Printers,<br />Yousufguda,<br />Hyderabad,<br />Vendor Rating:4/5</td>
                                         <td>1/09/2015</td>
                                         <td>10,000</td>
-                                    </tr>
-                                    <tr class="even gradeX">
-                                        <td>2</td>
-                                        <td>Birthday Photography<br />Amenities:<br />Mega Pixel:22.5MP<br />Pics:100</td>
-                                        <td>Vivka Nagar, Hyderabad</td>
-                                        <td>1/09/2015</td>
-                                        <td>50,000</td>
-                                    </tr>
+                                    </tr>*@
+                                   
                                 </tbody>
                             </table>
                         </div>

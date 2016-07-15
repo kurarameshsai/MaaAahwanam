@@ -18,7 +18,7 @@ namespace MaaAahwanam.Service
            vendorsTravelandAccomodation.UpdatedDate = DateTime.Now;
            vendorMaster.Status = "Active";
            vendorMaster.UpdatedDate = DateTime.Now;
-           vendorMaster.ServicType = "Travel & Accomadation";
+           vendorMaster.ServicType = "Travel&Accomadation";
            vendorMaster = vendorMasterRepository.AddVendorMaster(vendorMaster);
            vendorsTravelandAccomodation.VendorMasterId = vendorMaster.Id;
            vendorsTravelandAccomodation = vendorsTravelandAccomodationRepository.AddTravelandAccomodation(vendorsTravelandAccomodation);

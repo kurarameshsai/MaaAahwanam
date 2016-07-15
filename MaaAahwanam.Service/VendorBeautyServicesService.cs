@@ -19,7 +19,7 @@ namespace MaaAahwanam.Service
             vendorBeautyService.Status = "Active";
             vendorMaster.UpdatedDate = DateTime.Now;
             vendorMaster.Status = "Active";
-            vendorMaster.ServicType = "Beauty Services";
+            vendorMaster.ServicType = "BeautyServices";
             vendorMaster = vendorMasterRepository.AddVendorMaster(vendorMaster);
             vendorBeautyService.VendorMasterId = vendorMaster.Id;
             vendorBeautyService = vendorBeautyServiceRespository.AddBeautyService(vendorBeautyService);

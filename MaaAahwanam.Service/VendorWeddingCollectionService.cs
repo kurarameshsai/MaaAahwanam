@@ -18,7 +18,7 @@ namespace MaaAahwanam.Service
            vendorsWeddingCollection.UpdatedDate = DateTime.Now;
            vendorMaster.Status = "Active";
            vendorMaster.UpdatedDate = DateTime.Now;
-           vendorMaster.ServicType = "Wedding Collection";
+           vendorMaster.ServicType = "WeddingCollection";
            vendorMaster = vendorMasterRepository.AddVendorMaster(vendorMaster);
            vendorsWeddingCollection.VendorMasterId = vendorMaster.Id;
            vendorsWeddingCollection = vendorsWeddingCollectionsRepository.AddWeddingCollections(vendorsWeddingCollection);
