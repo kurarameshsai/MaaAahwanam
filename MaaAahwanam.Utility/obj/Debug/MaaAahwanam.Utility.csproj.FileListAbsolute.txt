@@ -86,3 +86,11 @@ D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Models.
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.csprojResolveAssemblyReference.cache
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.dll
 D:\Maa-Backup 2.0\Maa-Aahwanam\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.pdb
+E:\Project\Maa-Aahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Utility.dll.config
+E:\Project\Maa-Aahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Utility.dll
+E:\Project\Maa-Aahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Utility.pdb
+E:\Project\Maa-Aahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Models.dll
+E:\Project\Maa-Aahwanam\MaaAahwanam.Utility\bin\Debug\MaaAahwanam.Models.pdb
+E:\Project\Maa-Aahwanam\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.csprojResolveAssemblyReference.cache
+E:\Project\Maa-Aahwanam\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.dll
+E:\Project\Maa-Aahwanam\MaaAahwanam.Utility\obj\Debug\MaaAahwanam.Utility.pdb
