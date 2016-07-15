@@ -20,6 +20,7 @@ namespace MaaAahwanam.Web.Controllers
         public ActionResult Index(ServiceRequest serviceRequest)
         {
             ServiceRequestService serviceRequestService = new ServiceRequestService();
+            serviceRequest.Type = "ReverseBidding";
             serviceRequest=serviceRequestService.SaveService(serviceRequest);
             return RedirectToAction("Index", "BiddingConformation",serviceRequest);
         }

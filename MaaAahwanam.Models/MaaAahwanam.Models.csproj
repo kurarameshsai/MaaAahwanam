@@ -77,6 +77,7 @@
     <Compile Include="EventDate.cs" />
     <Compile Include="EventInformation.cs" />
     <Compile Include="EventsandTip.cs" />
+    <Compile Include="GetProducts_Results.cs" />
     <Compile Include="IssueDetail.cs" />
     <Compile Include="IssueTicket.cs" />
     <Compile Include="Order.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="VendorsGift.cs" />
     <Compile Include="VendorsInvitationCard.cs" />
     <Compile Include="VendorsOther.cs" />
+    <Compile Include="VendorsOtherRequest.cs" />
     <Compile Include="VendorsPhotography.cs" />
     <Compile Include="VendorsTravelandAccomodation.cs" />
     <Compile Include="VendorsWeddingCollection.cs" />

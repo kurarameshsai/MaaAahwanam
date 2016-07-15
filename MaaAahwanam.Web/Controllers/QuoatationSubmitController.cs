@@ -20,6 +20,7 @@ namespace MaaAahwanam.Web.Controllers
         public ActionResult Index(ServiceRequest serviceRequest)
         {
             ServiceRequestService serviceRequestService = new ServiceRequestService();
+            serviceRequest.Type = "Quoatation";
             serviceRequest=serviceRequestService.SaveService(serviceRequest);
             return RedirectToAction("Index","QuoatationConfirm", serviceRequest);
         }

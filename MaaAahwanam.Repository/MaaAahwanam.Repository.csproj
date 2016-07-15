@@ -58,8 +58,7 @@
     <Compile Include="db\AdminTestimonialPathRepository.cs" />
     <Compile Include="db\ApiContext.cs" />
     <Compile Include="db\EnquiryRepository.cs" />
-    <Compile Include="db\OrderRepository.cs" />
-    <Compile Include="db\OthersRepository.cs" />
+    <Compile Include="db\ReviewRepository.cs" />
     <Compile Include="db\ServiceRequestRepository.cs" />
     <Compile Include="db\ServiceResponseRepository.cs" />
     <Compile Include="db\UserAddBookRepository.cs" />
@@ -68,23 +67,30 @@
     <Compile Include="db\VendorEventOrganiserRepository.cs" />
     <Compile Include="db\VendorGiftsRepository.cs" />
     <Compile Include="db\VendorImageRepository.cs" />
-    <Compile Include="db\VendorInvitationCardsRepository.cs" />
-    <Compile Include="db\VendorOthersRepository.cs" />
-    <Compile Include="db\VendorsBeautyServiceRepository.cs" />
     <Compile Include="db\CartItemRepoitory.cs" />
-    <Compile Include="db\VendorsDecoratorRepository.cs" />
     <Compile Include="db\EventsandTipRepository.cs" />
     <Compile Include="db\EventInformationRepository.cs" />
+    <Compile Include="db\VendorInvitationCardsRepository.cs" />
     <Compile Include="db\VendormasterRepository.cs" />
-    <Compile Include="db\VendorsPhotographyRepository.cs" />
+    <Compile Include="db\VendorOthersRepository.cs" />
+    <Compile Include="db\VendorsBeautyServiceRepository.cs" />
+    <Compile Include="db\VendorsDecoratorRepository.cs" />
+    <Compile Include="db\VendorsOthersRepository.cs" />
     <Compile Include="db\SubscribeRepository.cs" />
     <Compile Include="db\AdminTestimonialRepository.cs" />
     <Compile Include="db\IssueTicketRepository.cs" />
-    <Compile Include="db\VendorsTravelandAccomodationRepository.cs" />
     <Compile Include="db\UserDetailsRepository.cs" />
     <Compile Include="db\UserLoginRepository.cs" />
+    <Compile Include="db\VendorsPhotographyRepository.cs" />
+    <Compile Include="db\VendorsTravelandAccomodationRepository.cs" />
     <Compile Include="db\VendorVenueRepository.cs" />
     <Compile Include="db\VendorWeddingCollectionsRepository.cs" />
+    <Compile Include="GetProductsInfo_Result.cs">
+      <DependentUpon>MaaAahwanam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetProducts_Result.cs">
+      <DependentUpon>MaaAahwanam.tt</DependentUpon>
+    </Compile>
     <Compile Include="MaaAahwanam.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -100,40 +106,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MaaAahwanam.edmx</DependentUpon>
     </Compile>
-    <Compile Include="MaaAahwanam_Orders_OrderDetails1_Result.cs">
-      <DependentUpon>MaaAahwanam.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MaaAahwanam_Orders_OrderDetails2_Result.cs">
-      <DependentUpon>MaaAahwanam.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MaaAahwanam_Orders_OrderDetails_Result.cs">
-      <DependentUpon>MaaAahwanam.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MaaAahwanam_Others_Comments_Result.cs">
-      <DependentUpon>MaaAahwanam.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MaaAahwanam_Services_Bidding1_Result.cs">
-      <DependentUpon>MaaAahwanam.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MaaAahwanam_Services_Bidding_Result.cs">
-      <DependentUpon>MaaAahwanam.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201607130804418_migrations_date_07132016.cs" />
-    <Compile Include="Migrations\201607130804418_migrations_date_07132016.Designer.cs">
-      <DependentUpon>201607130804418_migrations_date_07132016.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201607141004200_migrations_date_07142016.cs" />
-    <Compile Include="Migrations\201607141004200_migrations_date_07142016.Designer.cs">
-      <DependentUpon>201607141004200_migrations_date_07142016.cs</DependentUpon>
+    <Compile Include="Migrations\201607140556514_migrations_date_07142016.cs" />
+    <Compile Include="Migrations\201607140556514_migrations_date_07142016.Designer.cs">
+      <DependentUpon>201607140556514_migrations_date_07142016.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>MaaAahwanam.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagrams_Result.cs">
-      <DependentUpon>MaaAahwanam.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MaaAahwanam.Models\MaaAahwanam.Models.csproj">
@@ -165,23 +143,18 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201607130804418_migrations_date_07132016.resx">
-      <DependentUpon>201607130804418_migrations_date_07132016.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607141004200_migrations_date_07142016.resx">
-      <DependentUpon>201607141004200_migrations_date_07142016.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DBScript\StoredProcedures\MaaAahwanam_Others_Comments.sql" />
-    <Content Include="DBScript\StoredProcedures\MaaAahwanam_Services_Bidding.sql" />
-    <Content Include="DBScript\StoredProcedures\MaaAahwanam_Orders_OrderDetails.sql" />
-    <Content Include="DBScript\TableScript\script.sql" />
+    <EmbeddedResource Include="Migrations\201607140556514_migrations_date_07142016.resx">
+      <DependentUpon>201607140556514_migrations_date_07142016.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DBScript\StoredProcedures\GetProducts.sql" />
+    <Content Include="DBScript\StoredProcedures\GetProductsInfo.sql" />
+    <Content Include="DBScript\TableScript\ScriptSaikrishna.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

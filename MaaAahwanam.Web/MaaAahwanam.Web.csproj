@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -169,7 +170,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
@@ -220,16 +220,21 @@
     <Compile Include="Controllers\QuoatationSubmitController.cs" />
     <Compile Include="Controllers\RetunGiftViewCartController.cs" />
     <Compile Include="Controllers\ReturnPolicyController.cs" />
+    <Compile Include="Controllers\ReverseBiddingConfirmationController.cs" />
+    <Compile Include="Controllers\ReverseBiddingController.cs" />
+    <Compile Include="Controllers\ReverseBiddingsController.cs" />
     <Compile Include="Controllers\SecurityController.cs" />
     <Compile Include="Controllers\SigninController.cs" />
     <Compile Include="Controllers\SliderController.cs" />
     <Compile Include="Controllers\TermsController.cs" />
     <Compile Include="Controllers\TermsofUseController.cs" />
     <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\TestimonialformController.cs" />
     <Compile Include="Controllers\TestimonialsController.cs" />
     <Compile Include="Controllers\TicketsController.cs" />
     <Compile Include="Controllers\UserTestimonialsController.cs" />
-    <Compile Include="data.cs" />
+    <Compile Include="Controllers\VendorDashboardController.cs" />
+    <Compile Include="Controllers\VendorSigninController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2084,12 +2089,7 @@
     <Content Include="CSSWeb\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="CSSWeb\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="CSSWeb\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Areas\Admin\Views\DashBoard\ChangePassword.cshtml" />
-    <Content Include="Areas\Admin\Views\DashBoard\Lock.cshtml" />
-    <Content Include="Areas\Admin\Views\DashBoard\Masterdata.cshtml" />
-    <Content Include="Areas\Admin\Views\DashBoard\UserProfile.cshtml" />
     <Content Include="Areas\Admin\Views\EventsTips\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Login\ResetPassword.cshtml" />
     <Content Include="Areas\Admin\Views\Orders\AllOrders.cshtml" />
     <Content Include="Areas\Admin\Views\Orders\OrderDetails.cshtml" />
     <Content Include="Areas\Admin\Views\Others\CommentDetails.cshtml" />
@@ -2109,29 +2109,27 @@
     <Content Include="Areas\Admin\Views\Services\RevBidRequests.cshtml" />
     <Content Include="Areas\Admin\Views\Services\RevBidReqView.cshtml" />
     <Content Include="Areas\Admin\Views\Services\ReverseBiddings.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\MainMaster.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\Master.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\Masterdata.cshtml" />
     <Content Include="Areas\Admin\Views\Vendors\ActiveVendors.cshtml" />
     <Content Include="Areas\Admin\Views\Vendors\AllVendors.cshtml" />
     <Content Include="Areas\Admin\Views\Vendors\PendingVendors.cshtml" />
     <Content Include="Areas\Admin\Views\Vendors\SuspendedVendors.cshtml" />
     <Content Include="Areas\Admin\Views\Vendors\VendorDetails.cshtml" />
-    <Content Include="Areas\Admin\Views\CreateVendor\Venue.cshtml" />
+    <Content Include="Areas\Admin\Views\CreateVendor\BeautyServices.cshtml" />
     <Content Include="Areas\Admin\Views\CreateVendor\Catering.cshtml" />
-    <Content Include="Areas\Admin\Views\CreateVendor\Photography.cshtml" />
-    <Content Include="Areas\Admin\Views\CreateVendor\InvitationCards.cshtml" />
     <Content Include="Areas\Admin\Views\CreateVendor\Decorator.cshtml" />
     <Content Include="Areas\Admin\Views\CreateVendor\Entertainment.cshtml" />
     <Content Include="Areas\Admin\Views\CreateVendor\EventOrganisers.cshtml" />
-    <Content Include="Areas\Admin\Views\CreateVendor\BeautyServices.cshtml" />
-    <Content Include="Areas\Admin\Views\CreateVendor\TravelAccomodation.cshtml" />
     <Content Include="Areas\Admin\Views\CreateVendor\Gifts.cshtml" />
-    <Content Include="Areas\Admin\Views\CreateVendor\WeddingCollection.cshtml" />
+    <Content Include="Areas\Admin\Views\CreateVendor\InvitationCards.cshtml" />
     <Content Include="Areas\Admin\Views\CreateVendor\Others.cshtml" />
+    <Content Include="Areas\Admin\Views\CreateVendor\Photography.cshtml" />
     <Content Include="Areas\Admin\Views\CreateVendor\temp.cshtml" />
+    <Content Include="Areas\Admin\Views\CreateVendor\TravelAccomodation.cshtml" />
+    <Content Include="Areas\Admin\Views\CreateVendor\Venue.cshtml" />
+    <Content Include="Areas\Admin\Views\CreateVendor\WeddingCollection.cshtml" />
     <None Include="Properties\PublishProfiles\MaaAahwanam.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="MaaAahwanam.Web.csproj.DotSettings.user" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery.min.js" />
@@ -2142,6 +2140,132 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\jquery.validationEngine-en.js" />
     <Content Include="Scripts\jquery.validationEngine.js" />
+    <Content Include="vendorimages\BeautyService_17_1.jpg" />
+    <Content Include="vendorimages\BeautyService_17_2.jpg" />
+    <Content Include="vendorimages\BeautyService_17_3.jpg" />
+    <Content Include="vendorimages\BeautyService_17_4.jpg" />
+    <Content Include="vendorimages\BeautyService_18_1.jpg" />
+    <Content Include="vendorimages\BeautyService_18_2.jpg" />
+    <Content Include="vendorimages\BeautyService_18_3.jpg" />
+    <Content Include="vendorimages\BeautyService_18_4.jpg" />
+    <Content Include="vendorimages\Catering_13_1.jpg" />
+    <Content Include="vendorimages\Catering_13_2.jpg" />
+    <Content Include="vendorimages\Catering_13_3.jpg" />
+    <Content Include="vendorimages\Catering_13_4.jpg" />
+    <Content Include="vendorimages\Catering_13_5.jpg" />
+    <Content Include="vendorimages\Catering_13_6.jpg" />
+    <Content Include="vendorimages\Catering_13_7.jpg" />
+    <Content Include="vendorimages\Catering_13_8.jpg" />
+    <Content Include="vendorimages\Catering_19_1.jpg" />
+    <Content Include="vendorimages\Catering_19_2.jpg" />
+    <Content Include="vendorimages\Catering_19_3.jpg" />
+    <Content Include="vendorimages\Decorator_12_1.jpg" />
+    <Content Include="vendorimages\Decorator_12_2.jpg" />
+    <Content Include="vendorimages\Decorator_12_3.jpg" />
+    <Content Include="vendorimages\Decorator_12_4.jpg" />
+    <Content Include="vendorimages\Decorator_12_5.jpg" />
+    <Content Include="vendorimages\Decorator_20_1.jpg" />
+    <Content Include="vendorimages\Decorator_20_2.jpg" />
+    <Content Include="vendorimages\Decorator_20_3.jpg" />
+    <Content Include="vendorimages\Decorator_20_4.jpg" />
+    <Content Include="vendorimages\Entertainment_11_1.jpg" />
+    <Content Include="vendorimages\Entertainment_11_2.jpg" />
+    <Content Include="vendorimages\Entertainment_11_3.jpg" />
+    <Content Include="vendorimages\Entertainment_11_4.jpg" />
+    <Content Include="vendorimages\Entertainment_21_1.jpg" />
+    <Content Include="vendorimages\Entertainment_21_2.jpg" />
+    <Content Include="vendorimages\Entertainment_21_3.jpg" />
+    <Content Include="vendorimages\EventOrganisers_10_1.jpg" />
+    <Content Include="vendorimages\EventOrganisers_10_2.jpg" />
+    <Content Include="vendorimages\EventOrganisers_10_3.jpg" />
+    <Content Include="vendorimages\EventOrganisers_10_4.jpg" />
+    <Content Include="vendorimages\EventOrganisers_10_5.jpg" />
+    <Content Include="vendorimages\EventOrganisers_10_6.jpg" />
+    <Content Include="vendorimages\EventOrganisers_22_1.jpg" />
+    <Content Include="vendorimages\EventOrganisers_22_2.jpg" />
+    <Content Include="vendorimages\EventOrganisers_22_3.jpg" />
+    <Content Include="vendorimages\EventOrganisers_22_4.jpg" />
+    <Content Include="vendorimages\Gift_23_1.jpg" />
+    <Content Include="vendorimages\Gift_23_2.jpg" />
+    <Content Include="vendorimages\Gift_23_3.jpg" />
+    <Content Include="vendorimages\Gift_23_4.jpg" />
+    <Content Include="vendorimages\Gift_23_5.jpg" />
+    <Content Include="vendorimages\Gift_23_6.jpg" />
+    <Content Include="vendorimages\Gift_23_7.jpg" />
+    <Content Include="vendorimages\Gift_23_8.jpg" />
+    <Content Include="vendorimages\Gift_9_1.jpg" />
+    <Content Include="vendorimages\Gift_9_2.jpg" />
+    <Content Include="vendorimages\Gift_9_3.jpg" />
+    <Content Include="vendorimages\Gift_9_4.jpg" />
+    <Content Include="vendorimages\InvitationCard8_1.jpg" />
+    <Content Include="vendorimages\InvitationCard8_2.jpg" />
+    <Content Include="vendorimages\InvitationCard_24_1.jpg" />
+    <Content Include="vendorimages\InvitationCard_24_2.jpg" />
+    <Content Include="vendorimages\InvitationCard_24_3.jpg" />
+    <Content Include="vendorimages\InvitationCard_24_4.jpg" />
+    <Content Include="vendorimages\Others_1_1.jpg" />
+    <Content Include="vendorimages\Others_1_2.jpg" />
+    <Content Include="vendorimages\Others_1_3.jpg" />
+    <Content Include="vendorimages\Others_1_4.jpg" />
+    <Content Include="vendorimages\Others_29_1.jpg" />
+    <Content Include="vendorimages\Others_29_2.jpg" />
+    <Content Include="vendorimages\Others_29_3.jpg" />
+    <Content Include="vendorimages\Others_29_4.jpg" />
+    <Content Include="vendorimages\Others_30_1.jpg" />
+    <Content Include="vendorimages\Others_30_2.jpg" />
+    <Content Include="vendorimages\Others_30_3.jpg" />
+    <Content Include="vendorimages\Others_30_4.jpg" />
+    <Content Include="vendorimages\Others_37_0.jpg" />
+    <Content Include="vendorimages\Others_38_0.jpg" />
+    <Content Include="vendorimages\Others_38_1.jpg" />
+    <Content Include="vendorimages\Others_38_2.jpg" />
+    <Content Include="vendorimages\Others_38_3.jpg" />
+    <Content Include="vendorimages\Others_39_1.jpg" />
+    <Content Include="vendorimages\Others_39_2.jpg" />
+    <Content Include="vendorimages\Others_39_3.jpg" />
+    <Content Include="vendorimages\Others_4_1.jpg" />
+    <Content Include="vendorimages\Others_4_2.jpg" />
+    <Content Include="vendorimages\Others_4_3.jpg" />
+    <Content Include="vendorimages\Others_4_4.jpg" />
+    <Content Include="vendorimages\Photography7_0.jpg" />
+    <Content Include="vendorimages\Photography7_1.jpg" />
+    <Content Include="vendorimages\Photography7_2.jpg" />
+    <Content Include="vendorimages\Photography_25_1.jpg" />
+    <Content Include="vendorimages\Photography_25_2.jpg" />
+    <Content Include="vendorimages\Photography_25_3.jpg" />
+    <Content Include="vendorimages\Photography_25_4.jpg" />
+    <Content Include="vendorimages\Photography_25_5.jpg" />
+    <Content Include="vendorimages\Photography_25_6.jpg" />
+    <Content Include="vendorimages\Screenshot %2817%29.png" />
+    <Content Include="vendorimages\tour4.jpg" />
+    <Content Include="vendorimages\TravelandAccomodation6_1.jpg" />
+    <Content Include="vendorimages\TravelandAccomodation_26_1.jpg" />
+    <Content Include="vendorimages\TravelandAccomodation_26_10.jpg" />
+    <Content Include="vendorimages\TravelandAccomodation_26_2.jpg" />
+    <Content Include="vendorimages\TravelandAccomodation_26_3.jpg" />
+    <Content Include="vendorimages\TravelandAccomodation_26_4.jpg" />
+    <Content Include="vendorimages\TravelandAccomodation_26_5.jpg" />
+    <Content Include="vendorimages\TravelandAccomodation_26_6.jpg" />
+    <Content Include="vendorimages\TravelandAccomodation_26_7.jpg" />
+    <Content Include="vendorimages\TravelandAccomodation_26_8.jpg" />
+    <Content Include="vendorimages\TravelandAccomodation_26_9.jpg" />
+    <Content Include="vendorimages\Venue_28_1.jpg" />
+    <Content Include="vendorimages\Venue_28_2.jpg" />
+    <Content Include="vendorimages\Venue_28_3.jpg" />
+    <Content Include="vendorimages\Venue_28_4.jpg" />
+    <Content Include="vendorimages\Venue_3_1.jpg" />
+    <Content Include="vendorimages\Venue_3_1.png" />
+    <Content Include="vendorimages\Venue_3_2.jpg" />
+    <Content Include="vendorimages\Venue_3_3.jpg" />
+    <Content Include="vendorimages\WeddingCollection_27_1.jpg" />
+    <Content Include="vendorimages\WeddingCollection_27_2.jpg" />
+    <Content Include="vendorimages\WeddingCollection_27_3.jpg" />
+    <Content Include="vendorimages\WeddingCollection_27_4.jpg" />
+    <Content Include="vendorimages\WeddingCollection_27_5.jpg" />
+    <Content Include="vendorimages\WeddingCollection_27_6.jpg" />
+    <Content Include="vendorimages\WeddingCollection_27_7.jpg" />
+    <Content Include="vendorimages\WeddingCollection_27_8.jpg" />
+    <Content Include="vendorimages\WeddingCollection_5_1.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -2210,13 +2334,18 @@
     <Content Include="Views\Index\TestimonialsBindingLayout.cshtml" />
     <Content Include="Views\SharedWeb\MainMaster.cshtml" />
     <Content Include="Views\Index\Index.cshtml" />
+    <Content Include="Views\ReverseBiddingConfirmation\Index.cshtml" />
+    <Content Include="Views\ReverseBiddings\Index.cshtml" />
+    <Content Include="Views\ReverseBidding\Index.cshtml" />
+    <Content Include="Views\Testimonialform\Index.cshtml" />
+    <Content Include="Views\VendorSignin\Index.cshtml" />
+    <Content Include="Views\SharedWeb\VendorMaster.cshtml" />
+    <Content Include="Views\VendorDashboard\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\Comments\" />
-    <Folder Include="EventsAndTipsimages\" />
-    <Folder Include="vendorimages\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

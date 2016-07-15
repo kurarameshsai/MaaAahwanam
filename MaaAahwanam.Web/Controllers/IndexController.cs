@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using MaaAahwanam.Utility;
 using MaaAahwanam.Models;
 using MaaAahwanam.Service;
+using MaaAahwanam.Repository;
 
 namespace MaaAahwanam.Web.Controllers
 {
@@ -13,20 +14,25 @@ namespace MaaAahwanam.Web.Controllers
     {
         public ActionResult Index()
         {
-            AllVendorsService allVendorsService = new AllVendorsService();
-            ViewBag.PhotographersDetails = allVendorsService.VendorsPhotographyList();
-            ViewBag.Beautician = allVendorsService.VendorsBeautyList();
-            ViewBag.Decorators = allVendorsService.VendorsDecoratorList();
-            ViewBag.ToursandTravels = allVendorsService.VendorsTravelandAccomodationList();
             EventsService eventsService=new EventsService();
-            ViewBag.EventsCount = eventsService.EventInformationCount();
+            ViewBag.EventsCount = eventsService.EventInformationCount();//Successful Events Count
             ticketsService ticketsService = new ticketsService();
-            ViewBag.Ticketscount = ticketsService.TicketsCount();
+            ViewBag.Ticketscount = ticketsService.TicketsCount();//Raised Tickets COunt
             TestmonialService testmonialService=new TestmonialService();
-            ViewBag.Testimonials = testmonialService.TestmonialServiceList();
+            ViewBag.Testimonials = testmonialService.TestmonialServiceList();//Testimonials List
+            //Products List Index(4 Services Photography,Beautition,Decorators,Travels)
+            ProductService productService = new ProductService();
+            List<GetProducts_Result> Productlist_Photography = productService.GetProducts_Results("Photography");
+            List<GetProducts_Result> Productlist_BeautyService = productService.GetProducts_Results("BeautyService");
+            List<GetProducts_Result> Productlist_Decorator = productService.GetProducts_Results("Decorator");
+            List<GetProducts_Result> Productlist_Travel = productService.GetProducts_Results("Travel");
+            ViewBag.PhotographersDetails = Productlist_Photography;
+            ViewBag.Beautician = Productlist_BeautyService;
+            ViewBag.Decorators = Productlist_Decorator;
+            ViewBag.ToursandTravels = Productlist_Travel;
+
             return View();
         }
-
 
         [ChildActionOnly]
         public PartialViewResult ItemsCartViewBindingLayout()

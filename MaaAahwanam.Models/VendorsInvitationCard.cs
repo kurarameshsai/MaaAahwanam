@@ -14,8 +14,8 @@ namespace MaaAahwanam.Models
         public long VendorMasterId { get; set; }
         public string CardType { get; set; }
         public string DesignName { get; set; }
-        public string CardCost { get; set; }
-        public string CardCostWithPrint { get; set; }
+        public decimal CardCost { get; set; }
+        public decimal CardCostWithPrint { get; set; }
         public string MinOrder { get; set; }
         public string Status { get; set; }
         public long UpdatedBy { get; set; }

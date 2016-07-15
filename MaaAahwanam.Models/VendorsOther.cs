@@ -18,5 +18,7 @@ namespace MaaAahwanam.Models
         public string Status { get; set; }
         public long UpdatedBy { get; set; }
         public DateTime? UpdatedDate { get; set; }
+        public string MinOrder { get; set; }
+        public string MaxOrder { get; set; }
     }
 }

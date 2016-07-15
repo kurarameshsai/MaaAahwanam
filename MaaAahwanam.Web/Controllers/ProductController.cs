@@ -1,4 +1,7 @@
-﻿using System;
+﻿using MaaAahwanam.Models;
+using MaaAahwanam.Repository;
+using MaaAahwanam.Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,7 +15,10 @@ namespace MaaAahwanam.Web.Controllers
         // GET: /CardSelect/
         public ActionResult Index()
         {
-            return View();
+            ProductService productService=new ProductService();
+            string servicetypeQuerystring = Request.QueryString["par"];
+            List<GetProducts_Result> Productlist = productService.GetProducts_Results(servicetypeQuerystring);
+            return View(Productlist);
         }
 	}
 }
