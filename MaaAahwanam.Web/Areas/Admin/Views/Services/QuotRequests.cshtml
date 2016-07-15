@@ -75,379 +75,73 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach (var item in ViewBag.records)
+                                    {
+                                        <tr class="even gradeX">
+                                        <td>
+                                            @item.RequestId
+                                        </td>
+                                        <td>
+                                            @item.UpdatedTime
+                                        </td>
+                                        <td>
+                                            @item.Name
+                                        </td>
+                                        <td>
+                                            @item.ServiceType
+                                        </td>
+                                        <td>
+                                            @item.Budget
+                                        </td>
+                                        <td>
+                                            @item.EventStartDate
+                                        </td>
+                                        <td>
+                                            @item.EventLocation
+                                        </td>
+                                        <td>
+                                            <a href="#" class="btn btn-primary btn-xs btn-rect"> @item.Status</a>
+                                        </td>
+                                        <td>
+                                            <a href="/Admin/Services/QuotRequests?BidReqId=@item.RequestId&name=View" class="btn btn-default btn-xs"> View </a>
+                                            <a href="#" class="btn btn-default btn-xs">Delete</a>
+                                        </td>
+                                    </tr>
+                                    }
+                                    
 
-                                    <tr class="even gradeX">
-                                        <td>
-                                            QuotReqId
-                                        </td>
-                                        <td>
-                                            Requestdate
-                                        </td>
-                                        <td>
-                                            CustomerName
-                                        </td>
-                                        <td>
-                                            ServiceType
-                                        </td>
-                                        <td>
-                                            Budget
-                                        </td>
-                                        <td>
-                                            EventDate
-                                        </td>
-                                        <td>
-                                            Location
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-primary btn-xs btn-rect"> Status</a>
-                                        </td>
-                                        <td>
-                                            <a href="/Admin/Services/QuotReqView" class="btn btn-default btn-xs"> View </a>
-                                            <a href="#" class="btn btn-default btn-xs">Edit</a>
-                                            <a href="#" class="btn btn-default btn-xs">Delete</a>
-                                        </td>
-                                    </tr>
-                                    <tr class="even gradeX">
-                                        <td>
-                                            QuotReqId
-                                        </td>
-                                        <td>
-                                            Requestdate
-                                        </td>
-                                        <td>
-                                            CustomerName
-                                        </td>
-                                        <td>
-                                            ServiceType
-                                        </td>
-                                        <td>
-                                            Budget
-                                        </td>
-                                        <td>
-                                            EventDate
-                                        </td>
-                                        <td>
-                                            Location
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-primary btn-xs btn-rect"> Status</a>
-                                        </td>
-                                        <td>
-                                            <a href="/Admin/Services/QuotReqView" class="btn btn-default btn-xs"> View </a>
-                                            <a href="#" class="btn btn-default btn-xs">Edit</a>
-                                            <a href="#" class="btn btn-default btn-xs">Delete</a>
-                                        </td>
-                                    </tr>
-                                    <tr class="even gradeX">
-                                        <td>
-                                            QuotReqId
-                                        </td>
-                                        <td>
-                                            Requestdate
-                                        </td>
-                                        <td>
-                                            CustomerName
-                                        </td>
-                                        <td>
-                                            ServiceType
-                                        </td>
-                                        <td>
-                                            Budget
-                                        </td>
-                                        <td>
-                                            EventDate
-                                        </td>
-                                        <td>
-                                            Location
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-primary btn-xs btn-rect"> Status</a>
-                                        </td>
-                                        <td>
-                                            <a href="/Admin/Services/QuotReqView" class="btn btn-default btn-xs"> View </a>
-                                            <a href="#" class="btn btn-default btn-xs">Edit</a>
-                                            <a href="#" class="btn btn-default btn-xs">Delete</a>
-                                        </td>
-                                    </tr>
-                                    <tr class="even gradeX">
-                                        <td>
-                                            QuotReqId
-                                        </td>
-                                        <td>
-                                            Requestdate
-                                        </td>
-                                        <td>
-                                            CustomerName
-                                        </td>
-                                        <td>
-                                            ServiceType
-                                        </td>
-                                        <td>
-                                            Budget
-                                        </td>
-                                        <td>
-                                            EventDate
-                                        </td>
-                                        <td>
-                                            Location
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-primary btn-xs btn-rect"> Status</a>
-                                        </td>
-                                        <td>
-                                            <a href="/Admin/Services/QuotReqView" class="btn btn-default btn-xs"> View </a>
-                                            <a href="#" class="btn btn-default btn-xs">Edit</a>
-                                            <a href="#" class="btn btn-default btn-xs">Delete</a>
-                                        </td>
-                                    </tr>
-                                    <tr class="even gradeX">
-                                        <td>
-                                            QuotReqId
-                                        </td>
-                                        <td>
-                                            Requestdate
-                                        </td>
-                                        <td>
-                                            CustomerName
-                                        </td>
-                                        <td>
-                                            ServiceType
-                                        </td>
-                                        <td>
-                                            Budget
-                                        </td>
-                                        <td>
-                                            EventDate
-                                        </td>
-                                        <td>
-                                            Location
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-primary btn-xs btn-rect"> Status</a>
-                                        </td>
-                                        <td>
-                                            <a href="/Admin/Services/QuotReqView" class="btn btn-default btn-xs"> View </a>
-                                            <a href="#" class="btn btn-default btn-xs">Edit</a>
-                                            <a href="#" class="btn btn-default btn-xs">Delete</a>
-                                        </td>
-                                    </tr>
-                                    <tr class="even gradeX">
-                                        <td>
-                                            QuotReqId
-                                        </td>
-                                        <td>
-                                            Requestdate
-                                        </td>
-                                        <td>
-                                            CustomerName
-                                        </td>
-                                        <td>
-                                            ServiceType
-                                        </td>
-                                        <td>
-                                            Budget
-                                        </td>
-                                        <td>
-                                            EventDate
-                                        </td>
-                                        <td>
-                                            Location
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-primary btn-xs btn-rect"> Status</a>
-                                        </td>
-                                        <td>
-                                            <a href="/Admin/Services/QuotReqView" class="btn btn-default btn-xs"> View </a>
-                                            <a href="#" class="btn btn-default btn-xs">Edit</a>
-                                            <a href="#" class="btn btn-default btn-xs">Delete</a>
-                                        </td>
-                                    </tr>
-                                    <tr class="even gradeX">
-                                        <td>
-                                            QuotReqId
-                                        </td>
-                                        <td>
-                                            Requestdate
-                                        </td>
-                                        <td>
-                                            CustomerName
-                                        </td>
-                                        <td>
-                                            ServiceType
-                                        </td>
-                                        <td>
-                                            Budget
-                                        </td>
-                                        <td>
-                                            EventDate
-                                        </td>
-                                        <td>
-                                            Location
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-primary btn-xs btn-rect"> Status</a>
-                                        </td>
-                                        <td>
-                                            <a href="/Admin/Services/QuotReqView" class="btn btn-default btn-xs"> View </a>
-                                            <a href="#" class="btn btn-default btn-xs">Edit</a>
-                                            <a href="#" class="btn btn-default btn-xs">Delete</a>
-                                        </td>
-                                    </tr>
-                                    <tr class="even gradeX">
-                                        <td>
-                                            QuotReqId
-                                        </td>
-                                        <td>
-                                            Requestdate
-                                        </td>
-                                        <td>
-                                            CustomerName
-                                        </td>
-                                        <td>
-                                            ServiceType
-                                        </td>
-                                        <td>
-                                            Budget
-                                        </td>
-                                        <td>
-                                            EventDate
-                                        </td>
-                                        <td>
-                                            Location
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-primary btn-xs btn-rect"> Status</a>
-                                        </td>
-                                        <td>
-                                            <a href="/Admin/Services/QuotReqView" class="btn btn-default btn-xs"> View </a>
-                                            <a href="#" class="btn btn-default btn-xs">Edit</a>
-                                            <a href="#" class="btn btn-default btn-xs">Delete</a>
-                                        </td>
-                                    </tr>
-                                    <tr class="even gradeX">
-                                        <td>
-                                            QuotReqId
-                                        </td>
-                                        <td>
-                                            Requestdate
-                                        </td>
-                                        <td>
-                                            CustomerName
-                                        </td>
-                                        <td>
-                                            ServiceType
-                                        </td>
-                                        <td>
-                                            Budget
-                                        </td>
-                                        <td>
-                                            EventDate
-                                        </td>
-                                        <td>
-                                            Location
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-primary btn-xs btn-rect"> Status</a>
-                                        </td>
-                                        <td>
-                                            <a href="/Admin/Services/QuotReqView" class="btn btn-default btn-xs"> View </a>
-                                            <a href="#" class="btn btn-default btn-xs">Edit</a>
-                                            <a href="#" class="btn btn-default btn-xs">Delete</a>
-                                        </td>
-                                    </tr>
-                                    <tr class="even gradeX">
-                                        <td>
-                                            QuotReqId
-                                        </td>
-                                        <td>
-                                            Requestdate
-                                        </td>
-                                        <td>
-                                            CustomerName
-                                        </td>
-                                        <td>
-                                            ServiceType
-                                        </td>
-                                        <td>
-                                            Budget
-                                        </td>
-                                        <td>
-                                            EventDate
-                                        </td>
-                                        <td>
-                                            Location
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-primary btn-xs btn-rect"> Status</a>
-                                        </td>
-                                        <td>
-                                            <a href="/Admin/Services/QuotReqView" class="btn btn-default btn-xs"> View </a>
-                                            <a href="#" class="btn btn-default btn-xs">Edit</a>
-                                            <a href="#" class="btn btn-default btn-xs">Delete</a>
-                                        </td>
-                                    </tr>
-                                    <tr class="even gradeX">
-                                        <td>
-                                            QuotReqId
-                                        </td>
-                                        <td>
-                                            Requestdate
-                                        </td>
-                                        <td>
-                                            CustomerName
-                                        </td>
-                                        <td>
-                                            ServiceType
-                                        </td>
-                                        <td>
-                                            Budget
-                                        </td>
-                                        <td>
-                                            EventDate
-                                        </td>
-                                        <td>
-                                            Location
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-primary btn-xs btn-rect"> Status</a>
-                                        </td>
-                                        <td>
-                                            <a href="/Admin/Services/QuotReqView" class="btn btn-default btn-xs"> View </a>
-                                            <a href="#" class="btn btn-default btn-xs">Edit</a>
-                                            <a href="#" class="btn btn-default btn-xs">Delete</a>
-                                        </td>
-                                    </tr>
-                                    <tr class="even gradeX">
-                                        <td>
-                                            QuotReqId
-                                        </td>
-                                        <td>
-                                            Requestdate
-                                        </td>
-                                        <td>
-                                            CustomerName
-                                        </td>
-                                        <td>
-                                            ServiceType
-                                        </td>
-                                        <td>
-                                            Budget
-                                        </td>
-                                        <td>
-                                            EventDate
-                                        </td>
-                                        <td>
-                                            Location
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-primary btn-xs btn-rect"> Status</a>
-                                        </td>
-                                        <td>
-                                            <a href="/Admin/Services/QuotReqView" class="btn btn-default btn-xs"> View </a>
-                                            <a href="#" class="btn btn-default btn-xs">Edit</a>
-                                            <a href="#" class="btn btn-default btn-xs">Delete</a>
-                                        </td>
-                                    </tr>
+
+                                    @*<tr class="even gradeX">
+        <td>
+            QuotReqId
+        </td>
+        <td>
+            Requestdate
+        </td>
+        <td>
+            CustomerName
+        </td>
+        <td>
+            ServiceType
+        </td>
+        <td>
+            Budget
+        </td>
+        <td>
+            EventDate
+        </td>
+        <td>
+            Location
+        </td>
+        <td>
+            <a href="#" class="btn btn-primary btn-xs btn-rect"> Status</a>
+        </td>
+        <td>
+            <a href="/Admin/Services/QuotReqView" class="btn btn-default btn-xs"> View </a>
+            <a href="#" class="btn btn-default btn-xs">Edit</a>
+            <a href="#" class="btn btn-default btn-xs">Delete</a>
+        </td>
+    </tr>*@
                                 </tbody>
                             </table>
                         </div>

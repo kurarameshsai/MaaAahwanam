@@ -16,5 +16,20 @@ namespace MaaAahwanam.Service
             List<EventsandTip> l1 = eventsandTipRepository.EventsandTipList();
             return l1;
         }
+
+        public EventsandTip AddEventandTip(EventsandTip eventAndTip)
+        {
+            EventsandTipRepository eventsandTipRepository = new EventsandTipRepository();
+            eventAndTip.UpdatedDate = DateTime.Now;
+            eventAndTip.Status = "Active";
+            eventsandTipRepository.AddEventsAndTip(eventAndTip);
+            return eventAndTip;
+        }
+
+        public long EventIDCount()
+        {
+            EventsandTipRepository eventsandTipRepository = new EventsandTipRepository();
+            return eventsandTipRepository.EventIdCount();
+        }
     }
 }

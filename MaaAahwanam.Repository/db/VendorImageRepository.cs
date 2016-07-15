@@ -14,5 +14,12 @@ namespace MaaAahwanam.Repository.db
         {
             return _dbContext.VendorImage.ToList();
         }
+
+        public VendorImage AddVendorImage(VendorImage vendorImage)
+        {
+            _dbContext.VendorImage.Add(vendorImage);
+            _dbContext.SaveChanges();
+            return vendorImage;
+        }
     }
 }

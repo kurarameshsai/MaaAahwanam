@@ -1,0 +1,390 @@
+﻿@model Tuple<MaaAahwanam.Models.Vendormaster,MaaAahwanam.Models.VendorVenue>
+    @{
+        ViewBag.Title = "Venue";
+        Layout = "~/Areas/Admin/Views/Shared/MainMaster.cshtml";
+    }
+    @section header{
+        <!-- PAGE LEVEL STYLES -->
+        <link href="~/Assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+        <!-- END PAGE LEVEL  STYLES -->
+    }
+    <div id="content">
+        <div class="inner">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 style="text-align:center"> Venue </h2>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="tab-content" id="images">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div id="collapse2" class="body collapse in">
+                                            <form class="form-horizontal" method="post" enctype="multipart/form-data">
+                                                @*----------common---------*@
+
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Vendor Name</label>
+                                                    <div class="col-lg-4">
+                                                        @*<input type="text" id="businame" name="name" placeholder="Business Name" class="form-control">*@
+
+                                                        @Html.TextBoxFor(model => this.Model.Item1.BusinessName, new { @class = "form-control", placeholder = "Enter Business Name" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Vendor Description</label>
+                                                    <div class="col-lg-4">
+                                                        @*<textarea rows="4" id="busidesc" name="name" cols="30" class="form-control"></textarea>*@
+                                                        @*<input type="text" id="busidesc" name="name" placeholder="Description">*@
+                                                        @Html.TextAreaFor(model => this.Model.Item1.Description, new { @class = "form-control", placeholder = "Enter Description", @rows = "3" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Address</label>
+                                                    <div class="col-lg-4">
+                                                        @*<textarea rows="4" id="addr" name="name" cols="30" class="form-control"></textarea>*@
+                                                        @*<input type="text" id="addr" name="name"  placeholder="Address">*@
+                                                        @Html.TextAreaFor(model => this.Model.Item1.Address, new { @class = "form-control", placeholder = "Enter Address", @rows = "3" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Location</label>
+                                                    <div class="col-lg-4">
+                                                        @*<input type="text" id="loc" name="name" placeholder="Location" class="form-control">*@
+                                                        @Html.TextBoxFor(model => this.Model.Item1.Landmark, new { @class = "form-control", placeholder = "Enter Location" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">City</label>
+                                                    <div class="col-lg-4">
+                                                        @*<input type="text" id="city" name="name" placeholder="City" class="form-control">*@
+                                                        @Html.TextBoxFor(model => this.Model.Item1.City, new { @class = "form-control", placeholder = "Enter City" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">State</label>
+                                                    <div class="col-lg-4">
+                                                        @*<select class="form-control" id="state" name="name">
+                                                                <option>Select State</option>
+                                                                <option>Telangana</option>
+                                                                <option>Andhra Pradesh</option>
+                                                            </select>*@
+                                                        @Html.DropDownListFor(model => this.Model.Item1.State, new SelectList(new[] { "Select State", "Telangana", "Andhra Pradesh" }), new { @class = "form-control" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">ZIP Code</label>
+                                                    <div class="col-lg-4">
+                                                        @*<input type="text" id="zipcode" name="name" placeholder="Zip Code" class="form-control">*@
+                                                        @Html.TextBoxFor(model => this.Model.Item1.ZipCode, new { @class = "form-control", placeholder = "Enter Zip Code" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" style="align-items:center">
+                                                    <label class="control-label col-lg-4">Quotation</label>
+                                                    <div class="col-lg-4">
+                                                        <input type="checkbox" id="Quotation" name="name" value="Quotation" class="uniform" />
+
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Bidding</label>
+                                                    <div class="col-lg-4">
+                                                        <input type="checkbox" id="Bidding" name="name" value="Bidding" class="uniform" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Reverse Bidding</label>
+                                                    <div class="col-lg-4">
+                                                        <input type="checkbox" id="ReverseBidding" name="name" value="ReverseBidding" class="uniform" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Contact Person</label>
+                                                    <div class="col-lg-4">
+                                                        @*<input type="text" id="contperson" name="name" placeholder="Contact Person" class="form-control">*@
+                                                        @Html.TextBoxFor(model => this.Model.Item1.ContactPerson, new { @class = "form-control", placeholder = "Enter Contact Person" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Contact Number</label>
+                                                    <div class="col-lg-4">
+                                                        @*<input type="text" id="contno." name="name" placeholder="Contact Number" class="form-control">*@
+                                                        @Html.TextBoxFor(model => this.Model.Item1.ContactNumber, new { @class = "form-control", placeholder = "Enter Contact Number" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Landline Number</label>
+                                                    <div class="col-lg-4">
+                                                        @*<input type="text" id="llno." name="name" placeholder="Landline Number" class="form-control">*@
+                                                        @Html.TextBoxFor(model => this.Model.Item1.LandlineNumber, new { @class = "form-control", placeholder = "Enter Landline Number" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">E-mail</label>
+                                                    <div class=" col-lg-4">
+                                                        @*<input type="text" id="email" name="name" placeholder="Email" class="form-control">*@
+                                                        @Html.TextBoxFor(model => this.Model.Item1.EmailId, new { @class = "form-control", placeholder = "Enter Email ID" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Url</label>
+                                                    <div class=" col-lg-4">
+                                                        @*<input type="text" id="url" name="name" placeholder="Url" class="form-control">*@
+                                                        @Html.TextBoxFor(model => this.Model.Item1.Url, new { @class = "form-control", placeholder = "Enter Url" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4" for="dp2">Date of Establishment</label>
+                                                    <div class="col-lg-4">
+                                                        @*<input type="text" id="estdate" name="name" placeholder="Date of Establishment" class="form-control">*@
+                                                        @Html.TextBoxFor(model => this.Model.Item1.EstablishedYear, new { @class = "form-control", placeholder = "Enter Date of Establishment" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Experience</label>
+                                                    <div class=" col-lg-4">
+                                                        @*<input type="text" id="exp" name="name" placeholder="Experience" class="form-control">*@
+                                                        @Html.TextBoxFor(model => this.Model.Item1.Experience, new { @class = "form-control", placeholder = "Enter Experience" })
+                                                    </div>
+                                                </div>
+
+
+                                                @*-------common----------*@
+
+
+
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Venue Type</label>
+
+                                                    <div class="col-lg-4">
+                                                        @*<input type="text" name="name" value="" class="validate[required] form-control" placeholder="Eg:Banquet Hall,Function Hall,..">*@
+                                                        @Html.TextBoxFor(model => this.Model.Item2.VenueType, new { @class = "form-control", placeholder = "Eg:Banquet Hall,Function Hall,.." })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Food</label>
+                                                    <div class="col-lg-4">
+                                                        @*<select class="form-control">
+                                                                <option>Select Type</option>
+                                                                <option>Veg</option>
+                                                                <option>Non-Veg</option>
+                                                            </select>*@
+                                                        @Html.DropDownListFor(model => this.Model.Item2.Food, new SelectList(new[] { "Select Type", "Veg", "Non-Veg" }), new { @class = "form-control" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">CockTails </label>
+                                                    <div class="col-lg-4">
+                                                        @*<select class="form-control">
+                                                                <option>Select Your Choice</option>
+                                                                <option>Yes</option>
+                                                                <option>No</option>
+                                                            </select>*@
+                                                        @Html.DropDownListFor(model => this.Model.Item2.CockTails, new SelectList(new[] { "Select Your Choice", "Yes", "No" }), new { @class = "form-control" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Rooms </label>
+
+                                                    <div class="col-lg-4">
+                                                        @*<select class="form-control">
+                                                                <option>Select Choice</option>
+                                                                <option>Yes</option>
+                                                                <option>No</option>
+                                                            </select>*@
+                                                        @Html.DropDownListFor(model => this.Model.Item2.Rooms, new SelectList(new[] { "Select Choice", "Yes", "No" }), new { @class = "form-control" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Seating Capacity</label>
+
+                                                    <div class="col-lg-4">
+                                                        @*<input type="text" name="name" value="" class="validate[required] form-control" placeholder="Enter Seating Capacity">*@
+                                                        @Html.TextBoxFor(model => this.Model.Item2.SeatingCapacity, new { @class = "form-control", placeholder = "Enter Seating Capacity" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Dining Capacity</label>
+
+                                                    <div class="col-lg-4">
+                                                        @*<input type="text" name="name" value="" class="validate[required] form-control" placeholder="Enter Dining Capacity">*@
+                                                        @Html.TextBoxFor(model => this.Model.Item2.DiningCapacity, new { @class = "form-control", placeholder = "Enter Dining Capacity" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Minimum seating capacity</label>
+
+                                                    <div class="col-lg-4">
+                                                        @*<input type="text" name="name" value="" class="validate[required] form-control" placeholder="Enter Minimum seating Capacity">*@
+                                                        @Html.TextBoxFor(model => this.Model.Item2.Minimumseatingcapacity, new { @class = "form-control", placeholder = "Enter Minimum seating capacity" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Maximum capacity</label>
+
+                                                    <div class="col-lg-4">
+                                                        @*<input type="text" name="name" value="" class="validate[required] form-control" placeholder="Enter Maximum Capacity">*@
+                                                        @Html.TextBoxFor(model => this.Model.Item2.Maximumcapacity, new { @class = "form-control", placeholder = "Enter Maximum capacity" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Veg Lunch Price Per Plate</label>
+
+                                                    <div class="col-lg-4">
+                                                        @*<input type="text" name="name" value="" class="validate[required] form-control" placeholder="Enter Price">*@
+                                                        @Html.TextBoxFor(model => this.Model.Item2.VegLunchCost, new { @class = "form-control", placeholder = "Enter Price" })
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Non-Veg Lunch Price Per Plate</label>
+                                                    <div class=" col-lg-4">
+                                                        @*<input type="text" id="exp" name="name" class="form-control" placeholder="Enter Price">*@
+                                                        @Html.TextBoxFor(model => this.Model.Item2.NonVegLunchCost, new { @class = "form-control", placeholder = "Enter Price" })
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Veg Dinner Price Per Plate</label>
+
+                                                    <div class="col-lg-4">
+                                                        @*<input type="text" name="name" value="" class="validate[required] form-control" placeholder="Enter Price">*@
+                                                        @Html.TextBoxFor(model => this.Model.Item2.VegDinnerCost, new { @class = "form-control", placeholder = "Enter Price" })
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Non-Veg Dinner Price Per Plate</label>
+                                                    <div class=" col-lg-4">
+                                                        @*<input type="text" id="exp" name="name" class="form-control" placeholder="Enter Price">*@
+                                                        @Html.TextBoxFor(model => this.Model.Item2.NonVegDinnerCost, new { @class = "form-control", placeholder = "Enter Price" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Minimum Order</label>
+
+                                                    <div class="col-lg-4">
+                                                        @*<input type="text" name="name" value="" class="validate[required] form-control" placeholder="Enter Minimum Order">*@
+                                                        @Html.TextBoxFor(model => this.Model.Item2.MinOrder, new { @class = "form-control", placeholder = "Enter Minimum Order" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Maximum Order</label>
+                                                    <div class="col-lg-4">
+                                                        @*<input type="text" name="name" value="" class="validate[required] form-control" placeholder="Enter Maximum Order" />*@
+                                                        @Html.TextBoxFor(model => this.Model.Item2.MaxOrder, new { @class = "form-control", placeholder = "Enter Maximum Order" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Decoration Allwoed </label>
+                                                    <div class="col-lg-4">
+                                                        @*<select class="form-control">
+                                                                <option>Select Your Choice</option>
+                                                                <option>Yes</option>
+                                                                <option>No</option>
+                                                            </select>*@
+                                                        @Html.DropDownListFor(model => this.Model.Item2.DecorationAllowed, new SelectList(new[] { "Select Your Choice", "Yes", "No" }), new { @class = "form-control" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Hall Type </label>
+                                                    <div class="col-lg-4">
+                                                        @*<select class="form-control">
+                                                                <option>Select Choice</option>
+                                                                <option>AC</option>
+                                                                <option>Non-AC</option>
+                                                            </select>*@
+                                                        @Html.DropDownListFor(model => this.Model.Item2.HallType, new SelectList(new[] { "Select Choice", "AC", "Non_AC" }), new { @class = "form-control" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Wi-Fi</label>
+
+                                                    <div class="col-lg-4">
+                                                        @*<select class="form-control">
+                                                                <option>Select Availability</option>
+                                                                <option>Yes</option>
+                                                                <option>No</option>
+                                                            </select>*@
+                                                        @Html.DropDownListFor(model => this.Model.Item2.Wifi, new SelectList(new[] { "Select Availability", "Yes", "No" }), new { @class = "form-control" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Menu with the no. of items</label>
+
+                                                    <div class="col-lg-4">
+                                                        @*<input type="text" name="name" value="" class="validate[required] form-control" placeholder="Enter Menu Items Count">*@
+                                                        @Html.TextBoxFor(model => this.Model.Item2.Menuwiththenoofitems, new { @class = "form-control", placeholder = "Enter Menu Items Count" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Distance from main places like</label>
+
+                                                    <div class="col-lg-4">
+                                                        @*<input type="text" name="name" value="" class="validate[required] form-control" placeholder="Enter Distance">*@
+                                                        @Html.TextBoxFor(model => this.Model.Item2.Distancefrommainplaceslike, new { @class = "form-control", placeholder = "Enter Distance" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">LiveCooking Station</label>
+
+                                                    <div class="col-lg-4">
+                                                        @*<select class="form-control">
+                                                                <option>Select Availability</option>
+                                                                <option>Yes</option>
+                                                                <option>No</option>
+                                                            </select>*@
+                                                        @Html.DropDownListFor(model => this.Model.Item2.LiveCookingStation, new SelectList(new[] { "Select Availability", "Yes", "No" }), new { @class = "form-control" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-4">Service Cost</label>
+
+                                                    <div class="col-lg-4">
+                                                        @*<input type="text" name="name" value="" class="validate[required] form-control" placeholder="Enter Service Cost">*@
+                                                        @Html.TextBoxFor(model => this.Model.Item2.ServiceCost, new { @class = "form-control", placeholder = "Enter Service Cost" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="tags" class="control-label col-lg-4">Multiple Uploads</label>
+                                                    <div class="col-lg-4">
+                                                        <input type='file' multiple="multiple" accept="image/*" id='fileUpload' name="file" />
+                                                    </div>
+                                                    <br />
+                                                    <div id="dvPreview" align="center" style="padding:20px">
+                                                    </div>
+
+                                                </div>
+                                                <div style="text-align:center" class="form-actions no-margin-bottom">
+                                                    <input type="submit" value="Save" class="btn text-muted text-center btn-success" name="Command" />
+                                                    <input type="submit" value="Cancel" class="btn btn-danger" formaction="~/Admin/dashboard/dashboard">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @section Bottom{
+        <script src="~/Assets/plugins/jquery-2.0.3.min.js"></script>
+        <script src="~/Assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="~/Assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+        <script src="~/Assets/plugins/dataTables/jquery.dataTables.js"></script>
+        <script src="~/Assets/plugins/dataTables/dataTables.bootstrap.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $('#dataTables-example').dataTable();
+            });
+        </script>
+    }

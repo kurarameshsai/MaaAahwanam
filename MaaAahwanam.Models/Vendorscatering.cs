@@ -19,6 +19,7 @@ namespace MaaAahwanam.Models
         public string MinOrder { get; set; }
         public string MaxOrder { get; set; }
         public string MineralWaterIncluded { get; set; }
+        public string TransportIncluded { get; set; }
         public string Menuitems { get; set; }
         public string LiveCookingStation { get; set; }
         public string Status { get; set; }

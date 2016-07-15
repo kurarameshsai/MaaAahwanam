@@ -14,5 +14,22 @@ namespace MaaAahwanam.Repository.db
         {
             return _dbContext.EventsandTip.ToList();
         }
+
+        public EventsandTip AddEventsAndTip(EventsandTip eventAndTip)
+        {
+            _dbContext.EventsandTip.Add(eventAndTip);
+            _dbContext.SaveChanges();
+            return eventAndTip;
+        }
+
+        public long EventIdCount()
+        {
+            var EventIdCount = _dbContext.EventsandTip.DefaultIfEmpty().Max(r => r == null ? 0 : r.EventId);
+            if (EventIdCount == 0)
+            {
+                return EventIdCount + 1;
+            }
+            return EventIdCount + 1;
+        }
     }
 }

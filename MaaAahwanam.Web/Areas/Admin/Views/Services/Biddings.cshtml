@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Dynamic
+@{
     ViewBag.Title = "Biddings";
     Layout = "~/Areas/Admin/Views/Shared/MainMaster.cshtml";
 }
@@ -18,9 +19,11 @@
             </div>
         </div>
         <hr />
-        <div class="row">
+        @foreach (var item in (List<dynamic>)ViewBag.ServiceResponseRecordsList)
+        {
+            <div class="row">
             <div class="col-lg-12">
-                <h4>Bid RequestId: aaaa</h4>
+                <h4>Bid RequestId: @this.i</h4>
                 <div class="panel panel-default">
 
                     <div class="panel-heading">
@@ -50,45 +53,29 @@
                                 </thead>
                                 <tbody>
                                     <tr class="even gradeX">
-                                        <td>11</td>
-                                        <td>Taj Krishna,<br/> RoadNo.1 <br/> BanjaraHills,<br/> Hyderabad</td>
-                                        <td>Banquet Hall</td>
-                                        <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum </td>
-                                        <td>950/pax</td>
-                                        <td>06/24/2016</td>
+                                        <td>@item.Id</td>
+                                        <td>@item.BusinessName,<br/> @item.Address</td>
+                                        <td>@item.VendorType</td>
+                                        <td>@item.Description</td>
+                                        <td>@item.Amount</td>
+                                        <td>@item.UpdatedDate</td>
                                     </tr>
-                                    <tr class="even gradeX">
-                                        <td>12</td>
-                                        <td>MecuryOne,<br /> Somajiguda,  <br /> MainRoad,<br /> Hyderabad</td>
-                                        <td>Banquet Hall</td>
-                                        <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum </td>
-                                        <td>1150/pax</td>
-                                        <td>06/24/2016</td>
-                                    </tr>
-                                    <tr class="even gradeX">
-                                        <td>24</td>
-                                        <td>KKM Grand,<br /> RoadNo.1 <br /> BanjaraHills,<br /> Hyderabad</td>
-                                        <td>Banquet Hall</td>
-                                        <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum </td>
-                                        <td>800/pax</td>
-                                        <td>06/24/2016</td>
-                                    </tr>
-                                    <tr class="even gradeX">
-                                        <td>30</td>
-                                        <td>Hotal Urvasi,<br /> Opp. Nims Hospital <br /> Panjagutta,<br /> Hyderabad</td>
-                                        <td>Banquet Hall</td>
-                                        <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum </td>
-                                        <td>900/pax</td>
-                                        <td>06/24/2016</td>
-                                    </tr>
-                                    
-                                </tbody>
+                                    @*<tr class="even gradeX">
+        <td>11</td>
+        <td>Taj Krishna,<br/> RoadNo.1 <br/> BanjaraHills,<br/> Hyderabad</td>
+        <td>Banquet Hall</td>
+        <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum </td>
+        <td>950/pax</td>
+        <td>06/24/2016</td>
+    </tr>*@
+                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>   
+        }
     </div>
 </div>
 <!--END PAGE CONTENT -->
