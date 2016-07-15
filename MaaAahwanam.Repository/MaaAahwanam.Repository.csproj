@@ -60,18 +60,31 @@
     <Compile Include="db\EnquiryRepository.cs" />
     <Compile Include="db\ReviewRepository.cs" />
     <Compile Include="db\ServiceRequestRepository.cs" />
+    <Compile Include="db\ServiceResponseRepository.cs" />
     <Compile Include="db\UserAddBookRepository.cs" />
+    <Compile Include="db\VendorCateringRepository.cs" />
+    <Compile Include="db\VendorEntertainmentRepository.cs" />
+    <Compile Include="db\VendorEventOrganiserRepository.cs" />
+    <Compile Include="db\VendorGiftsRepository.cs" />
     <Compile Include="db\VendorImageRepository.cs" />
     <Compile Include="db\CartItemRepoitory.cs" />
     <Compile Include="db\EventsandTipRepository.cs" />
     <Compile Include="db\EventInformationRepository.cs" />
+    <Compile Include="db\VendorInvitationCardsRepository.cs" />
     <Compile Include="db\VendormasterRepository.cs" />
+    <Compile Include="db\VendorOthersRepository.cs" />
+    <Compile Include="db\VendorsBeautyServiceRepository.cs" />
+    <Compile Include="db\VendorsDecoratorRepository.cs" />
     <Compile Include="db\VendorsOthersRepository.cs" />
     <Compile Include="db\SubscribeRepository.cs" />
     <Compile Include="db\AdminTestimonialRepository.cs" />
     <Compile Include="db\IssueTicketRepository.cs" />
     <Compile Include="db\UserDetailsRepository.cs" />
     <Compile Include="db\UserLoginRepository.cs" />
+    <Compile Include="db\VendorsPhotographyRepository.cs" />
+    <Compile Include="db\VendorsTravelandAccomodationRepository.cs" />
+    <Compile Include="db\VendorVenueRepository.cs" />
+    <Compile Include="db\VendorWeddingCollectionsRepository.cs" />
     <Compile Include="GetProductsInfo_Result.cs">
       <DependentUpon>MaaAahwanam.tt</DependentUpon>
     </Compile>
@@ -136,6 +149,11 @@
     <EmbeddedResource Include="Migrations\201607140556514_migrations_date_07142016.resx">
       <DependentUpon>201607140556514_migrations_date_07142016.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DBScript\StoredProcedures\GetProducts.sql" />
+    <Content Include="DBScript\StoredProcedures\GetProductsInfo.sql" />
+    <Content Include="DBScript\TableScript\ScriptSaikrishna.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

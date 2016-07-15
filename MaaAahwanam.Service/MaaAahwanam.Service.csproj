@@ -44,14 +44,30 @@
     <Compile Include="EnquiryService.cs" />
     <Compile Include="EventsandtipsService.cs" />
     <Compile Include="EventsService.cs" />
+    <Compile Include="ProductInfoService.cs" />
+    <Compile Include="ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReviewService.cs" />
     <Compile Include="ServiceRequestService.cs" />
+    <Compile Include="ServiceResponseService.cs" />
     <Compile Include="SubscriptionService.cs" />
     <Compile Include="TestmonialService.cs" />
     <Compile Include="ticketsService.cs" />
     <Compile Include="UserAddBookService.cs" />
     <Compile Include="UserLoginDetailsService.cs" />
+    <Compile Include="VendorBeautyServicesService.cs" />
+    <Compile Include="VendorCateringService.cs" />
     <Compile Include="VendorDecoratorService.cs" />
+    <Compile Include="VendorEntertainmentService.cs" />
+    <Compile Include="VendorEventOrganiserService.cs" />
+    <Compile Include="VendorGiftService.cs" />
+    <Compile Include="VendorImageService.cs" />
+    <Compile Include="VendorInvitationCardsService.cs" />
+    <Compile Include="VendorOthersService.cs" />
+    <Compile Include="VendorPhotographyService.cs" />
+    <Compile Include="VendorTravelAndAccomadationService.cs" />
+    <Compile Include="VendorVenueService.cs" />
+    <Compile Include="VendorWeddingCollectionService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MaaAahwanam.Models\MaaAahwanam.Models.csproj">
