@@ -58,6 +58,8 @@
     <Compile Include="db\AdminTestimonialPathRepository.cs" />
     <Compile Include="db\ApiContext.cs" />
     <Compile Include="db\EnquiryRepository.cs" />
+    <Compile Include="db\OrderRepository.cs" />
+    <Compile Include="db\OthersRepository.cs" />
     <Compile Include="db\ReviewRepository.cs" />
     <Compile Include="db\ServiceRequestRepository.cs" />
     <Compile Include="db\ServiceResponseRepository.cs" />
@@ -106,12 +108,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MaaAahwanam.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201607140556514_migrations_date_07142016.cs" />
-    <Compile Include="Migrations\201607140556514_migrations_date_07142016.Designer.cs">
-      <DependentUpon>201607140556514_migrations_date_07142016.cs</DependentUpon>
+    <Compile Include="MaaAahwanam_Orders_OrderDetails_Result.cs">
+      <DependentUpon>MaaAahwanam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaaAahwanam_Others_Comments_Result.cs">
+      <DependentUpon>MaaAahwanam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaaAahwanam_Services_Bidding_Result.cs">
+      <DependentUpon>MaaAahwanam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607180651539_migrations_date_07182016.cs" />
+    <Compile Include="Migrations\201607180651539_migrations_date_07182016.Designer.cs">
+      <DependentUpon>201607180651539_migrations_date_07182016.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>MaaAahwanam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>MaaAahwanam.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MaaAahwanam.Models\MaaAahwanam.Models.csproj">
@@ -125,18 +142,8 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>MaaAahwanam.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="MaaAahwanam.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MaaAahwanam.edmx</DependentUpon>
-      <LastGenOutput>MaaAahwanam.Context.cs</LastGenOutput>
-    </None>
     <None Include="MaaAahwanam.edmx.diagram">
       <DependentUpon>MaaAahwanam.edmx</DependentUpon>
-    </None>
-    <None Include="MaaAahwanam.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MaaAahwanam.edmx</DependentUpon>
-      <LastGenOutput>MaaAahwanam.cs</LastGenOutput>
     </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
@@ -146,14 +153,28 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201607140556514_migrations_date_07142016.resx">
-      <DependentUpon>201607140556514_migrations_date_07142016.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="DBScript\StoredProcedures\GetProducts.sql" />
     <Content Include="DBScript\StoredProcedures\GetProductsInfo.sql" />
+    <Content Include="DBScript\StoredProcedures\MaaAahwanam_Orders_OrderDetails.sql" />
+    <Content Include="DBScript\StoredProcedures\MaaAahwanam_Others_Comments.sql" />
+    <Content Include="DBScript\StoredProcedures\MaaAahwanam_Services_Bidding.sql" />
+    <Content Include="DBScript\TableScript\script.sql" />
     <Content Include="DBScript\TableScript\ScriptSaikrishna.sql" />
+    <Content Include="MaaAahwanam.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MaaAahwanam.edmx</DependentUpon>
+      <LastGenOutput>MaaAahwanam.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="MaaAahwanam.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MaaAahwanam.edmx</DependentUpon>
+      <LastGenOutput>MaaAahwanam.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201607180651539_migrations_date_07182016.resx">
+      <DependentUpon>201607180651539_migrations_date_07182016.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

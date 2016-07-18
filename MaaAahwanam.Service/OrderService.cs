@@ -16,7 +16,7 @@ namespace MaaAahwanam.Service
             OrderRepository orderRepository = new OrderRepository();
             return orderRepository.OrderList();
         }
-        public List<MaaAahwanam_Orders_OrderDetails2_Result> OrderDetailServivce(long id)
+        public List<MaaAahwanam_Orders_OrderDetails_Result> OrderDetailServivce(long id)
         {
             OrderRepository orderRepository = new OrderRepository();
             return orderRepository.GetOrderDetailsList(id);

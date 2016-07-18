@@ -23,7 +23,7 @@ namespace MaaAahwanam.Service
         //    ServiceResponseRepository serviceResponseRepository = new ServiceResponseRepository();
         //    return serviceResponseRepository.ServiceResponseList(serviceResponse);
         //}
-        public List<MaaAahwanam_Services_Bidding1_Result> GetServiceResponseList(long id)
+        public List<MaaAahwanam_Services_Bidding_Result> GetServiceResponseList(long id)
         {
             ServiceResponseRepository serviceResponseRepository = new ServiceResponseRepository();
             return serviceResponseRepository.ServiceResponseList(id);

@@ -17,9 +17,9 @@ namespace MaaAahwanam.Repository.db
            return _dbContext.Order.ToList();
        }
        
-       public List<MaaAahwanam_Orders_OrderDetails2_Result> GetOrderDetailsList(long id)
+       public List<MaaAahwanam_Orders_OrderDetails_Result> GetOrderDetailsList(long id)
        {
-           return maaAahwanamEntities.MaaAahwanam_Orders_OrderDetails2(id).ToList();
+           return maaAahwanamEntities.MaaAahwanam_Orders_OrderDetails(id).ToList();
        }
     }
 }

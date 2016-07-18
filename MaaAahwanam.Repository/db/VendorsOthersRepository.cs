@@ -11,9 +11,10 @@ namespace MaaAahwanam.Repository.db
     public class VendorsOthersRepository
     {
         readonly ApiContext _dbContext = new ApiContext();
-        MaaAahwanamEntities3 maaAahwanamEntities = new MaaAahwanamEntities3();
+        MaaAahwanamEntities maaAahwanamEntities = new MaaAahwanamEntities();
         public List<GetProducts_Result> GetProducts_Results(string parameters)
         {
+            //maaAahwanamEntities.get
             return maaAahwanamEntities.GetProducts(parameters).ToList();
         }
 

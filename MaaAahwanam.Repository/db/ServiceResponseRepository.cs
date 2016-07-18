@@ -18,9 +18,9 @@ namespace MaaAahwanam.Repository.db
             return _dbContext.ServiceResponse.Where(m => m.RequestId == serviceResponse.RequestId).Count();
         }
 
-        public List<MaaAahwanam_Services_Bidding1_Result> ServiceResponseList(long id)
+        public List<MaaAahwanam_Services_Bidding_Result> ServiceResponseList(long id)
         {
-            return maaAahwanamEntities.MaaAahwanam_Services_Bidding1(id).ToList();
+            return maaAahwanamEntities.MaaAahwanam_Services_Bidding(id).ToList();
             //return _dbContext.ServiceResponse.Where(m => m.RequestId == serviceResponse.RequestId).Join(_dbContext.Vendormaster, i => i.ResponseBy, p => p.Id, (i, p) => new { p = p, i = i }).ToList<ServiceResponse>();
             //return _dbContext.ServiceResponse.Where(m => m.RequestId == serviceResponse.RequestId).ToList();
             //List<dynamic> records = (from data1 in _dbContext.ServiceResponse 

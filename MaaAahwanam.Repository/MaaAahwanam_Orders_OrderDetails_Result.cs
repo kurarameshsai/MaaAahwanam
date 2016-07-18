@@ -17,6 +17,9 @@ namespace MaaAahwanam.Repository
         public string ServiceType { get; set; }
         public int Quantity { get; set; }
         public string BusinessName { get; set; }
+        public string Address { get; set; }
+        public string Landmark { get; set; }
+        public string City { get; set; }
         public Nullable<System.DateTime> UpdatedDate { get; set; }
         public decimal TotalPrice { get; set; }
     }
