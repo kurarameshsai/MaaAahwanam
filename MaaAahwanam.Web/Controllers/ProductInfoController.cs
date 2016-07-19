@@ -26,14 +26,16 @@ namespace MaaAahwanam.Web.Controllers
             ViewBag.Imagelist = imagenameslist;
             ViewBag.servicetype = Servicetype;
             ViewBag.Reviewlist = reviewService.GetReview(vid);
+
             var tupleModel = new Tuple<GetProductsInfo_Result, Review>(Productinfo, review);
             return View(tupleModel);
         }
         public ActionResult WriteaRiview([Bind(Prefix = "Item2")] Review review)
         {
+            int a= ValidUserUtility.ValidUser();
             if (ValidUserUtility.ValidUser() != 0 && (ValidUserUtility.UserType() == "User"))
             {
-                review.UpdatedBy=ValidUserUtility.ValidUser();
+                review.UpdatedBy= ValidUserUtility.ValidUser();
                 review.Status = "Active";
                 review.UpdatedDate = DateTime.Now;
                 reviewService.InsertReview(review);

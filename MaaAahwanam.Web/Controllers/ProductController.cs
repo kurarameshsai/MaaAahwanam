@@ -18,6 +18,7 @@ namespace MaaAahwanam.Web.Controllers
             ProductService productService=new ProductService();
             string servicetypeQuerystring = Request.QueryString["par"];
             List<GetProducts_Result> Productlist = productService.GetProducts_Results(servicetypeQuerystring);
+            ViewBag.ServiceType = servicetypeQuerystring;
             return View(Productlist);
         }
 	}

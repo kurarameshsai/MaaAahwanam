@@ -1,6 +1,6 @@
 ﻿USE [MaaAahwanam]
 GO
-/****** Object:  StoredProcedure [dbo].[GetProductsInfo]    Script Date: 15/07/2016 13:45:15 ******/
+/****** Object:  StoredProcedure [dbo].[GetProductsInfo]    Script Date: 19/07/2016 11:19:19 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -19,7 +19,7 @@ begin
 	  VendorVenues.NonVegLunchCost as cost1,
 	  VendorVenues.VegDinnerCost as cost2,
 	  VendorVenues.NonVegDinnerCost as cost3,
-	  VendorVenues.MaxOrder,VendorVenues.MinOrder,(case when VendorVenues.Id is not null then STUFF((SELECT ', ' + ImageName FROM VendorImages WHERE Vendorimages.VendorId  =VendorVenues.Id FOR XML PATH(''), TYPE).value('.','NVARCHAR(MAX)'),1,2,' ') end) as image from [dbo].[VendorVenues] inner join [dbo].[Vendormasters] on VendorVenues.VendorMasterId=Vendormasters.Id where Vendormasters.Id=@vid
+	  VendorVenues.MaxOrder,VendorVenues.MinOrder,(case when VendorVenues.Id is not null then STUFF((SELECT ', ' + ImageName FROM VendorImages WHERE Vendorimages.VendorMasterId  =VendorVenues.Id FOR XML PATH(''), TYPE).value('.','NVARCHAR(MAX)'),1,2,' ') end) as image from [dbo].[VendorVenues] inner join [dbo].[Vendormasters] on VendorVenues.VendorMasterId=Vendormasters.Id where Vendormasters.Id=@vid
 	end
 	if(@nType='Catering')
 	begin
@@ -28,7 +28,7 @@ begin
 	 VendorsCaterings.NonVeg as cost1,
 	 0.00 as cost2,
 	 0.00 as cost3,
-	 VendorsCaterings.MaxOrder,VendorsCaterings.MinOrder,(case when  VendorsCaterings.Id is not null then STUFF((SELECT ', ' + ImageName FROM VendorImages WHERE Vendorimages.VendorId  =VendorsCaterings.Id FOR XML PATH(''), TYPE).value('.','NVARCHAR(MAX)'),1,2,' ') end) as image from [dbo].[VendorsCaterings] inner join [dbo].[Vendormasters] on VendorsCaterings.VendorMasterId=Vendormasters.Id where Vendormasters.Id=@vid
+	 VendorsCaterings.MaxOrder,VendorsCaterings.MinOrder,(case when  VendorsCaterings.Id is not null then STUFF((SELECT ', ' + ImageName FROM VendorImages WHERE Vendorimages.VendorMasterId  =VendorsCaterings.Id FOR XML PATH(''), TYPE).value('.','NVARCHAR(MAX)'),1,2,' ') end) as image from [dbo].[VendorsCaterings] inner join [dbo].[Vendormasters] on VendorsCaterings.VendorMasterId=Vendormasters.Id where Vendormasters.Id=@vid
 	end
 		if(@nType='Photography')
 	begin
@@ -37,7 +37,7 @@ begin
 	  0.00 as cost1,
 	  0.00 as cost2,
 	  0.00 as cost3,
-	  '0' as MaxOrder,'10' as MinOrder,(case when VendorsPhotographies.Id is not null then STUFF((SELECT ', ' + ImageName FROM VendorImages WHERE Vendorimages.VendorId  =VendorsPhotographies.Id FOR XML PATH(''), TYPE).value('.','NVARCHAR(MAX)'),1,2,' ') end) as image from [dbo].[VendorsPhotographies] inner join [dbo].[Vendormasters] on VendorsPhotographies.VendorMasterId=Vendormasters.Id where Vendormasters.Id=@vid
+	  '0' as MaxOrder,'10' as MinOrder,(case when VendorsPhotographies.Id is not null then STUFF((SELECT ', ' + ImageName FROM VendorImages WHERE Vendorimages.VendorMasterId  =VendorsPhotographies.Id FOR XML PATH(''), TYPE).value('.','NVARCHAR(MAX)'),1,2,' ') end) as image from [dbo].[VendorsPhotographies] inner join [dbo].[Vendormasters] on VendorsPhotographies.VendorMasterId=Vendormasters.Id where Vendormasters.Id=@vid
 	end
 		if(@nType='InvitationCard')
 	begin
@@ -46,7 +46,7 @@ begin
 	  VendorsInvitationCards.CardCostWithPrint as cost1,
 	  0.00 as cost2,
 	  0.00 as cost3,
-	  VendorsInvitationCards.MinOrder,'10' as MaxOrder,(case when VendorsInvitationCards.Id is not null then STUFF((SELECT ', ' + ImageName FROM VendorImages WHERE Vendorimages.VendorId  =VendorsInvitationCards.Id FOR XML PATH(''), TYPE).value('.','NVARCHAR(MAX)'),1,2,' ') end) as image from [dbo].[VendorsInvitationCards] inner join [dbo].[Vendormasters] on VendorsInvitationCards.VendorMasterId=Vendormasters.Id where Vendormasters.Id=@vid
+	  VendorsInvitationCards.MinOrder,'10' as MaxOrder,(case when VendorsInvitationCards.Id is not null then STUFF((SELECT ', ' + ImageName FROM VendorImages WHERE Vendorimages.VendorMasterId  =VendorsInvitationCards.Id FOR XML PATH(''), TYPE).value('.','NVARCHAR(MAX)'),1,2,' ') end) as image from [dbo].[VendorsInvitationCards] inner join [dbo].[Vendormasters] on VendorsInvitationCards.VendorMasterId=Vendormasters.Id where Vendormasters.Id=@vid
 	end
 		if(@nType='Decorator')
 	begin
@@ -55,7 +55,7 @@ begin
 	  0.00 as cost1,
 	  0.00 as cost2,
 	  0.00 as cost3,
-	  '0' as MaxOrder,'10' as MinOrder,(case when VendorsDecorators.Id is not null then STUFF((SELECT ', ' + ImageName FROM VendorImages WHERE Vendorimages.VendorId  =VendorsDecorators.Id FOR XML PATH(''), TYPE).value('.','NVARCHAR(MAX)'),1,2,' ') end) as image from [dbo].[VendorsDecorators] inner join [dbo].[Vendormasters] on VendorsDecorators.VendorMasterId=Vendormasters.Id where Vendormasters.Id=@vid
+	  '0' as MaxOrder,'10' as MinOrder,(case when VendorsDecorators.Id is not null then STUFF((SELECT ', ' + ImageName FROM VendorImages WHERE Vendorimages.VendorMasterId  =VendorsDecorators.Id FOR XML PATH(''), TYPE).value('.','NVARCHAR(MAX)'),1,2,' ') end) as image from [dbo].[VendorsDecorators] inner join [dbo].[Vendormasters] on VendorsDecorators.VendorMasterId=Vendormasters.Id where Vendormasters.Id=@vid
 	end
 		if(@nType='Entertainment')
 	begin
@@ -64,7 +64,7 @@ begin
 	  0.00 as cost1,
 	  0.00 as cost2,
 	  0.00 as cost3,
-	  '0' as MaxOrder,'10' as MinOrder,(case when VendorsEntertainments.Id is not null then STUFF((SELECT ', ' + ImageName FROM VendorImages WHERE Vendorimages.VendorId  =VendorsEntertainments.Id FOR XML PATH(''), TYPE).value('.','NVARCHAR(MAX)'),1,2,' ') end) as image from [dbo].[VendorsEntertainments] inner join [dbo].[Vendormasters] on VendorsEntertainments.VendorMasterId=Vendormasters.Id where Vendormasters.Id=@vid
+	  '0' as MaxOrder,'10' as MinOrder,(case when VendorsEntertainments.Id is not null then STUFF((SELECT ', ' + ImageName FROM VendorImages WHERE Vendorimages.VendorMasterId  =VendorsEntertainments.Id FOR XML PATH(''), TYPE).value('.','NVARCHAR(MAX)'),1,2,' ') end) as image from [dbo].[VendorsEntertainments] inner join [dbo].[Vendormasters] on VendorsEntertainments.VendorMasterId=Vendormasters.Id where Vendormasters.Id=@vid
 	end
 		if(@nType='Eventorganiser')
 	begin
@@ -73,7 +73,7 @@ begin
 	  0.00 as cost1,
 	  0.00 as cost2,
 	  0.00 as cost3,
-	  '0' as MaxOrder,'10' as MinOrder,(case when VendorsEventOrganisers.Id is not null then STUFF((SELECT ', ' + ImageName FROM VendorImages WHERE Vendorimages.VendorId  =VendorsEventOrganisers.Id FOR XML PATH(''), TYPE).value('.','NVARCHAR(MAX)'),1,2,' ') end) as image from [dbo].[VendorsEventOrganisers] inner join [dbo].[Vendormasters] on VendorsEventOrganisers.VendorMasterId=Vendormasters.Id where Vendormasters.Id=@vid
+	  '0' as MaxOrder,'10' as MinOrder,(case when VendorsEventOrganisers.Id is not null then STUFF((SELECT ', ' + ImageName FROM VendorImages WHERE Vendorimages.VendorMasterId  =VendorsEventOrganisers.Id FOR XML PATH(''), TYPE).value('.','NVARCHAR(MAX)'),1,2,' ') end) as image from [dbo].[VendorsEventOrganisers] inner join [dbo].[Vendormasters] on VendorsEventOrganisers.VendorMasterId=Vendormasters.Id where Vendormasters.Id=@vid
 	end
 		if(@nType='BeautyService')
 	begin
@@ -82,7 +82,7 @@ begin
 	  0.00 as cost1,
 	  0.00 as cost2,
 	  0.00 as cost3,
-	  '0' as MaxOrder,'10' as MinOrder,(case when VendorsBeautyServices.Id is not null then STUFF((SELECT ', ' + ImageName FROM VendorImages WHERE Vendorimages.VendorId  =VendorsBeautyServices.Id FOR XML PATH(''), TYPE).value('.','NVARCHAR(MAX)'),1,2,' ') end) as image from [dbo].[VendorsBeautyServices] inner join [dbo].[Vendormasters] on VendorsBeautyServices.VendorMasterId=Vendormasters.Id where Vendormasters.Id=@vid
+	  '0' as MaxOrder,'10' as MinOrder,(case when VendorsBeautyServices.Id is not null then STUFF((SELECT ', ' + ImageName FROM VendorImages WHERE Vendorimages.VendorMasterId  =VendorsBeautyServices.Id FOR XML PATH(''), TYPE).value('.','NVARCHAR(MAX)'),1,2,' ') end) as image from [dbo].[VendorsBeautyServices] inner join [dbo].[Vendormasters] on VendorsBeautyServices.VendorMasterId=Vendormasters.Id where Vendormasters.Id=@vid
 	end
 	--	if(@nType='WeddingFavor')
 	--begin
@@ -95,7 +95,7 @@ begin
 	  0.00 as cost1,
 	  0.00 as cost2,
 	  0.00 as cost3,
-	  '0' as MaxOrder,'10' as MinOrder,(case when VendorsTravelandAccomodations.Id is not null then STUFF((SELECT ', ' + ImageName FROM VendorImages WHERE Vendorimages.VendorId  =VendorsTravelandAccomodations.Id FOR XML PATH(''), TYPE).value('.','NVARCHAR(MAX)'),1,2,' ') end) as image from [dbo].[VendorsTravelandAccomodations] inner join [dbo].[Vendormasters] on VendorsTravelandAccomodations.VendorMasterId=Vendormasters.Id where Vendormasters.Id=@vid
+	  '0' as MaxOrder,'10' as MinOrder,(case when VendorsTravelandAccomodations.Id is not null then STUFF((SELECT ', ' + ImageName FROM VendorImages WHERE Vendorimages.VendorMasterId  =VendorsTravelandAccomodations.Id FOR XML PATH(''), TYPE).value('.','NVARCHAR(MAX)'),1,2,' ') end) as image from [dbo].[VendorsTravelandAccomodations] inner join [dbo].[Vendormasters] on VendorsTravelandAccomodations.VendorMasterId=Vendormasters.Id where Vendormasters.Id=@vid
 	end
 		if(@nType='Gift')
 	begin
@@ -104,7 +104,7 @@ begin
 	  0.00 as cost1,
 	  0.00 as cost2,
 	  0.00 as cost3,
-	  VendorsGifts.MinOrder,VendorsGifts.MaxOrder,(case when VendorsGifts.Id is not null then STUFF((SELECT ', ' + ImageName FROM VendorImages WHERE Vendorimages.VendorId  =VendorsGifts.Id FOR XML PATH(''), TYPE).value('.','NVARCHAR(MAX)'),1,2,' ') end) as image from [dbo].[VendorsGifts] inner join [dbo].[Vendormasters] on VendorsGifts.VendorMasterId=Vendormasters.Id where Vendormasters.Id=@vid
+	  VendorsGifts.MinOrder,VendorsGifts.MaxOrder,(case when VendorsGifts.Id is not null then STUFF((SELECT ', ' + ImageName FROM VendorImages WHERE Vendorimages.VendorMasterId  =VendorsGifts.Id FOR XML PATH(''), TYPE).value('.','NVARCHAR(MAX)'),1,2,' ') end) as image from [dbo].[VendorsGifts] inner join [dbo].[Vendormasters] on VendorsGifts.VendorMasterId=Vendormasters.Id where Vendormasters.Id=@vid
 	end
 		if(@nType='WeddingCollection')
 	begin
@@ -113,7 +113,7 @@ begin
 	  0.00 as cost1,
 	  0.00 as cost2,
 	  0.00 as cost3,
-	  '0' as MaxOrder,'10' as MinOrder,(case when VendorsWeddingCollections.Id is not null then STUFF((SELECT ', ' + ImageName FROM VendorImages WHERE Vendorimages.VendorId  =VendorsWeddingCollections.Id FOR XML PATH(''), TYPE).value('.','NVARCHAR(MAX)'),1,2,' ') end) as image from [dbo].[VendorsWeddingCollections] inner join [dbo].[Vendormasters] on VendorsWeddingCollections.VendorMasterId=Vendormasters.Id where Vendormasters.Id=@vid
+	  '0' as MaxOrder,'10' as MinOrder,(case when VendorsWeddingCollections.Id is not null then STUFF((SELECT ', ' + ImageName FROM VendorImages WHERE Vendorimages.VendorMasterId  =VendorsWeddingCollections.Id FOR XML PATH(''), TYPE).value('.','NVARCHAR(MAX)'),1,2,' ') end) as image from [dbo].[VendorsWeddingCollections] inner join [dbo].[Vendormasters] on VendorsWeddingCollections.VendorMasterId=Vendormasters.Id where Vendormasters.Id=@vid
 	end
 		if(@nType='Other')
 	begin
@@ -122,7 +122,7 @@ begin
 	  0.00 as cost1,
 	  0.00 as cost2,
 	  0.00 as cost3,
-	  VendorsOthers.MaxOrder,VendorsOthers.MinOrder,(case when VendorsOthers.Id is not null then STUFF((SELECT ', ' + ImageName FROM VendorImages WHERE Vendorimages.VendorId  =VendorsOthers.Id FOR XML PATH(''), TYPE).value('.','NVARCHAR(MAX)'),1,2,' ') end) as image from [dbo].[VendorsOthers] inner join [dbo].[Vendormasters] on VendorsOthers.VendorMasterId=Vendormasters.Id where Vendormasters.Id=@vid
+	  VendorsOthers.MaxOrder,VendorsOthers.MinOrder,(case when VendorsOthers.Id is not null then STUFF((SELECT ', ' + ImageName FROM VendorImages WHERE Vendorimages.VendorMasterId  =VendorsOthers.Id FOR XML PATH(''), TYPE).value('.','NVARCHAR(MAX)'),1,2,' ') end) as image from [dbo].[VendorsOthers] inner join [dbo].[Vendormasters] on VendorsOthers.VendorMasterId=Vendormasters.Id where Vendormasters.Id=@vid
 	end
 end
 
