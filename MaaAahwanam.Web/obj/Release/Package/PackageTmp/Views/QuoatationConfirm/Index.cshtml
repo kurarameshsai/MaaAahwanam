@@ -1,9 +1,9 @@
-﻿
+﻿@model MaaAahwanam.Models.ServiceRequest
 @{
     ViewBag.Title = "Index";  
     Layout = "~/Views/SharedWeb/ServicesMaster.cshtml";
 }
-}
+
 
 @section Navigation
 {
@@ -57,36 +57,36 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Budget  :  15000</td>
-                            <td>Service Type  : Designer, Photographers, Entertainment, Event Organizers</td>
+                            <td>Budget  :  @Model.Budget</td>
+                            <td>Service Type  : @Model.ServiceType</td>
                         </tr>
                         <tr>
-                            <td>Event Name  :  Designer</td>
-                            <td>Preferences  : Parking Capacity 100, Power Backup, Air Conditioner, etc..</td>
+                            <td>Name  : @Model.Name</td>
+                            <td>Preferences  : @Model.Preferences</td>
                         </tr>
                         <tr>
-                            <td>Event Address  :  #311/A</td>
-                            <td>Event Location  : Banjara Hills</td>
+                            <td>Event Address  : @Model.EventAddress</td>
+                            <td>Event Location  : @Model.EventLocation</td>
                         </tr>
                         <tr>
-                            <td>State  :  AP</td>
-                            <td>City  : Hyd</td>
+                            <td>State  :  @Model.State</td>
+                            <td>City  : @Model.State</td>
                         </tr>
                         <tr>
-                            <td>Postal Code  :  15000</td>
-                            <td>Email  : satyamganta@gmail.com</td>
+                            <td>Postal Code  :  @Model.PostalCode</td>
+                            <td>Email  : @Model.EmailId</td>
                         </tr>
                         <tr>
-                            <td>Phone :   +91 989898 965</td>
+                            <td>Phone :   @Model.PhoneNo</td>
                             <td>&nbsp;</td>
                         </tr>
                         <tr>
-                            <td>Event Start Date  :  11-12-2015</td>
-                            <td>Event Start Time  : 10:35 AM</td>
+                            <td>Event Start Date  :  @Model.EventStartDate</td>
+                            <td>Event Start Time  : @Model.EventStartTime</td>
                         </tr>
                         <tr>
-                            <td>Event End Date  :  15-12-2015</td>
-                            <td>Event End Time  : 4:50 PM</td>
+                            <td>Event End Date  :@Model.EventEnddate</td>
+                            <td>Event End Time  : @Model.EventEndtime</td>
                         </tr>
                     </tbody>
                 </table>

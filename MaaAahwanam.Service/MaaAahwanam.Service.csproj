@@ -44,6 +44,8 @@
     <Compile Include="EnquiryService.cs" />
     <Compile Include="EventsandtipsService.cs" />
     <Compile Include="EventsService.cs" />
+    <Compile Include="OrderService.cs" />
+    <Compile Include="OthersService.cs" />
     <Compile Include="ProductInfoService.cs" />
     <Compile Include="ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

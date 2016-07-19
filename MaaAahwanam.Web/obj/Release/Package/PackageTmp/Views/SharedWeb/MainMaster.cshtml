@@ -16,11 +16,12 @@
     <link rel="stylesheet" href="~/CSSWeb/css/maa-aahwanam.css" />
     <link rel="stylesheet" href="~/CSSWeb/css/responsive.css" />
     <link rel="stylesheet" href="~/CSSWeb/css/AutocompleteStyle.css" />
+
     @RenderSection("css", required: false)
 </head>
 <body class="homepage">
     <div class="overlay" style="display: block;">
-        <div style="left:50%;top:50%; position:fixed; text-align:center;">
+        <div style="left: 50%; top: 50%; position: fixed; transform: translate(-50%, -50%); text-align: center;">
             <img src="../CSSWeb/images/Loader.gif" /><br>
             <p style="color: white; font-style: italic; font-family:serif;">&nbsp; Just a second...</p>
         </div>
@@ -82,13 +83,12 @@
                                     <li>
                                         <a href="javascript:void(0);" class="hvr-sweep-to-bottom">Services <i class="ti-angle-down"></i></a>
                                         <ul class="submenu">
-                                            <li><a href="~/BookNow">Book Now</a></li>
-                                            <li><a href="~/Invitations">Invitation</a></li>
                                             <li><a href="~/Quatation">Quatation</a></li>
                                             <li><a href="~/Biddings">Bidding</a></li>
-                                            <li><a href="~/ReturnGifts">Return Gifts</a></li>
+                                            <li><a href="~/ReverseBiddings">Reverse Bidding</a></li>
                                         </ul>
                                     </li>
+                                    <li><a href="~/Product" class="hvr-sweep-to-bottom">Return Gifts</a></li>
                                     <li><a href="~/Testimonials" class="hvr-sweep-to-bottom">Testimonials</a></li>
                                     <li><a href="~/ContactUs" class="hvr-sweep-to-bottom">Contact Us</a></li>
                                 </ul>
@@ -139,6 +139,8 @@
                 <p>Praesent vel libero id dui pretium maximus in non velit. Donec ipsum ante, volutpat ut aliquet et</p>
                 <input type="text" id="emailid" name="emailid" placeholder="email@yourdomain.com" class="subscribe">
                 <input type="submit" value="Subscribe" class="subscribe_button" onclick="SaveSubscriber()">
+
+
             </div>
             <div class="clear"></div>
         </div>
@@ -166,6 +168,7 @@
             height: 100%;
             z-index: 9999999;
             background-color: rgba(0,0,0,0.8);
+            /* END EXTERNAL S */
         }
     </style>
 
@@ -245,6 +248,10 @@
     <script type="text/javascript" src="~/CSSWeb/js/alert.js" async></script>
     <script type="text/javascript" src="~/CSSWeb/js/Lazyload.js"></script>
 
+    <script type="text/javascript" src="~/CSSWeb/js/jquery-ui.js"></script>
+    <script type="text/javascript" src="~/CSSWeb/js/masterslider.min.js"></script>
+    <script type="text/javascript" src="~/CSSWeb/js/tabs.js"></script>
+    <script type="text/javascript" src="~/CSSWeb/js/owl.carousel.min.js"></script>
     @RenderSection("scripts", required: false)
 
     <script>
@@ -304,8 +311,8 @@
         /* ------------------ To save the subscriber -----------------------------  */
         function SaveSubscriber() {
             var Subscription = {};
-            Subscription.emailid = $('#emailid').val();
-            Subscription.status = null;
+            Subscription.EmailId = $('#emailid').val();
+            Subscription.Status = null;
             $.ajax({
                 type: "POST",
                 url: "/Index/SubmittingSubscriber",
@@ -315,10 +322,11 @@
                 //data: JSON.stringify(Subscription),
                 data: Subscription,
                 success: function (data) {
-                    if (data == 'success')
-                        alert('subscribed successfully');
-                    if (data == 'failed')
-                        alert('subscription failed');
+                    alert(data);
+                    //if (data == 'success')
+                    //    alert('subscribed successfully');
+                    //if (data == 'failed')
+                    //    alert('subscription failed');
                 },
                 error: function (data) {
                     alert("Exception as occured");
@@ -346,7 +354,7 @@
                     }
                 },
                 error: function (result) {
-                    alert("Error");
+                    //alert("Error");
                 }
             });
             $("#txt_Location_Top").autocomplete({
@@ -714,5 +722,5 @@
     </script>
     @RenderSection("scriptfunctions", required: false)
 </body>
-</html>
+</html>  
 @Html.Raw(TempData["Alert"])

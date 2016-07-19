@@ -68,38 +68,45 @@
             <!-- /popup-head -->
             <div class="popup-space popup-desc-space">
                 <div class="dashboardList">
-                    @using (Html.BeginForm("Index", "AddressBook", FormMethod.Post, new { @class = "form", @id = "contact_form" }))
+
+                    @*<form id="contact_form" class="form">*@
+                    @using (Html.BeginForm("Index", "AddressBook", FormMethod.Post, new { @class = "form", @id = "contact_form", @autocomplete = "off" }))
                     {
-                        @*<form id="contact_form" class="form">*@
                         <ul>
                             <li>
                                 <label>Name</label>
-                                @Html.TextBoxFor(Model => Model.PersonName, new { @id = "name", @name = "name", placeholder = "Name" })
+                                @*<input id="Text1" type="text" />*@
+                                @Html.TextBoxFor(model => model.PersonName, new { @id = "name", @name = "name", placeholder = "Name", required = "required" })
                             </li>
                             <li>
                                 <label>Phone</label>
-                                @Html.TextBoxFor(Model => Model.PersonPhone, new { @id = "phone", @name = "phone", placeholder = "Phone" })
+                                @*<input id="Text2" type="text" />*@
+                                @Html.TextBoxFor(model => model.PersonPhone, new { @id = "Phone", @name = "Phone", placeholder = "Phone", required = "required" })
                             </li>
                         </ul>
                         <ul>
                             <li>
                                 <label>Email ID</label>
-                                @Html.TextBoxFor(Model => Model.PersonEmail, new { @id = "emailid", @name = "emailid", placeholder = "Email Id" })
+                                @*<input id="Text3" type="text" />*@
+                                @Html.TextBoxFor(model => model.PersonEmail, new { @id = "EmailID", @name = "EmailID", placeholder = "Email ID", required = "required" })
                             </li>
                             <li>
                                 <label>City</label>
-                                @Html.TextBoxFor(Model => Model.PersonCity, new { @id = "city", @name = "city", placeholder = "City" })
+                                @*<input id="Text4" type="text" />*@
+                                @Html.TextBoxFor(model => model.PersonCity, new { @id = "PersonCity", @name = "PersonCity", placeholder = "City", required = "required" })
                             </li>
                         </ul>
 
                         <ul>
                             <li>
                                 <label>Address</label>
-                                @Html.TextBoxFor(Model => Model.PersonAddress, new { @id = "address", @name = "address", placeholder = "Address" })
+                                @*<input id="Text5" type="text" />*@
+                                @Html.TextBoxFor(model => model.PersonAddress, new { @id = "Address", @name = "Address", placeholder = "Address", required = "required" })
                             </li>
                             <li>
                                 <label>Location</label>
-                                @Html.TextBoxFor(Model => Model.PersonLocation, new { @id = "loc", @name = "loc", placeholder = "Location" })
+                                @*<input id="Text6" type="text" />*@
+                                @Html.TextBoxFor(model => model.PersonLocation, new { @id = "Location", @name = "Location", placeholder = "Location", required = "required" })
                             </li>
                         </ul>
                         <ul>
@@ -115,39 +122,39 @@
     <!-- end popup -->
     <!-- /dashDetails -->
     <div class="dashboardList dashboardList-nospace">
-        @using (Html.BeginForm(FormMethod.Post))
-        {
-            <table class="responsive" id="AddressBookList">
-                <thead>
-                    <tr>
-                        <th style="width: 10%; cursor: pointer;"><a href="#" class="selectall"><a href="#" title="Delete Record"><i class="ti-trash close"></i></a></a></th>
-                        <th style="width: 20%; cursor: pointer;">Name</th>
-                        <th style="width: 34%; cursor: pointer;">Address</th>
-                        <th style="width: 15%; cursor: pointer;">Phone</th>
-                        <th style="width: 21%; cursor: pointer;">Email</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model.sp_AddressBook1)
-                    {
-                        <tr>
-                            <td><input type="checkbox" /></td>
-                            <td>@item.PersonName</td>
-                            <td>
-                                <table>
-                                    <tr>
-                                        <td>@item.PersonAddress<br />@item.PersonLocation<br />@item.PersonCity</td>
-                                    </tr>
-                                </table>
-                            </td>
-                            <td>@item.PersonPhone</td>
-                            <td>@item.PersonEmail</td>
-                        </tr>
-                    }
-                </tbody>
 
-            </table>
-        }
+        <table class="responsive" id="AddressBookList">
+            <thead>
+                <tr>
+                    <th style="width: 10%; cursor: pointer;"><a href="#" class="selectall"><a href="#" title="Delete Record"><i class="ti-trash close"></i></a></a></th>
+                    <th style="width: 20%; cursor: pointer;">Name</th>
+                    <th style="width: 34%; cursor: pointer;">Address</th>
+                    <th style="width: 15%; cursor: pointer;">Phone</th>
+                    <th style="width: 21%; cursor: pointer;">Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (MaaAahwanam.Models.UserAddBook item in ViewBag.Addressbooklist)
+                {
+                    <tr>
+                        <td><input type="checkbox" /></td>
+                        <td>@item.PersonName</td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>@item.PersonAddress<br />@item.PersonLocation<br />@item.PersonCity</td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>@item.PersonPhone</td>
+                        <td>@item.PersonEmail</td>
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+
         <div class="clear"></div>
 
     </div>

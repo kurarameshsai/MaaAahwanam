@@ -1,4 +1,4 @@
-﻿
+﻿@model MaaAahwanam.Models.UserDetail
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/SharedWeb/DashBoardMaster.cshtml";
@@ -31,32 +31,28 @@
 <div class="my-profile">
     <div class="profileInfo">
         <ul>
-            <li><strong>First Name:</strong> Satyam</li>
-            <li><strong>Last Name:</strong> Ganta</li>
+            <li><strong>First Name:</strong> @Model.FirstName</li>
+            <li><strong>Last Name:</strong> @Model.LastName</li>
         </ul>
         <ul>
-            <li><strong>Email ID:</strong> satyam.g@siriinnovations.com</li>
-            <li><strong>Gender:</strong> Male</li>
+            <li><strong>Alternative EmailID:</strong> @Model.AlternativeEmailID</li>
+            <li><strong>Mobile Number:</strong> @Model.UserPhone</li>
         </ul>
         <ul>
-            <li><strong>Mobile Number:</strong> 96525 44441</li>
-            <li><strong>Alternative Mobile Number:</strong> 96525 44441</li>
+            <li><strong>Gender:</strong> @Model.Gender</li>
+            <li><strong>Address:</strong>@Model.Address</li>
         </ul>
         <ul>
-            <li><strong>Street 1:</strong> Lorem ipsum dolor</li>
-            <li><strong>Street 2:</strong> Consectetur adipiscing elit</li>
+            <li><strong>Landmark:</strong> @Model.Landmark</li>
+            <li><strong>City:</strong> @Model.City</li>
         </ul>
         <ul>
-            <li><strong>Country:</strong> India</li>
-            <li><strong>State:</strong> Telangana</li>
+            <li><strong>State:</strong> @Model.State</li>
+            <li><strong>Country:</strong> @Model.Country</li>
         </ul>
         <ul>
-            <li><strong>City:</strong> Hyderabad</li>
-            <li><strong>Location:</strong> Banjarahills</li>
-        </ul>
-        <ul>
-            <li><strong>Landmark:</strong> Near HDFC Bank</li>
-            <li><strong>Zip:</strong> 500084</li>
+            <li><strong>URL:</strong> @Model.Url</li>
+            <li><strong>Zip:</strong> @Model.ZipCode</li>
         </ul>
 
         <ul>
