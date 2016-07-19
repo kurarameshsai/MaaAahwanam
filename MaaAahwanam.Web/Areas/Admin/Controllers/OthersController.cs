@@ -17,6 +17,7 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
         // GET: /Admin/Others/
         public ActionResult Tickets()
         {
+            ViewBag.Tickets = othersService.TicketList();
             return View();
         }
         public ActionResult Comments()
@@ -28,25 +29,41 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
         {
             return View();
         }
-        public ActionResult TicketDetails()
+        public ActionResult TicketDetails(string id)
         {
+            if (id!=null)
+            {
+                ViewBag.record = othersService.TicketRecordService(long.Parse(id));
+            }
             return View();
         }
         public ActionResult TestimonialDetails()
         {
             return View();
         }
-        public ActionResult CommentDetails(long id, CommentDetail commentDetail,string Command)
+        public ActionResult CommentDetails(string id,string uid,string date, CommentDetail commentDetail,string Command)
         {
             if (id!=null)
             {
-               ViewBag.record = othersService.CommentRecordService(id);
-               return View();
+               ViewBag.record = othersService.CommentRecordService(long.Parse(id));
+               ViewBag.comment = othersService.CommentDetail(long.Parse(uid));
+               //return View();
             }
             if (Command == "Submit")
             {
-                commentDetail.CommentId = id;
-                //othersService.AddComment(commentDetail);
+                commentDetail.CommentId = long.Parse(id);
+                commentDetail.UserLoginId = int.Parse(uid);
+                commentDetail.CommentDate = Convert.ToDateTime(date);
+                commentDetail.UpdatedBy = ValidUserUtility.ValidUser();
+                othersService.AddComment(commentDetail);
+                if (commentDetail.CommentDetId != 0)
+                {
+                    return Content("<script language='javascript' type='text/javascript'>alert('Replied Successfully');location.href='" + @Url.Action("comments", "others") + "'</script>");
+                }
+                else
+                {
+                    return Content("<script language='javascript' type='text/javascript'>alert('Failed');location.href='" + @Url.Action("comments", "others") + "'</script>");
+                }
             }
             return View();
         }

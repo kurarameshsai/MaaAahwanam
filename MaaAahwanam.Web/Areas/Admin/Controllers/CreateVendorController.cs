@@ -316,7 +316,7 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             VendorImage vendorImage = new VendorImage();
             vendorImage.VendorId = vendorsInvitationCard.Id;
             vendorImage.UpdatedBy = ValidUserUtility.ValidUser();
-            const string imagepath = @"/vendorimages";
+            //const string imagepath = @"/vendorimages";
             if (Request.Files.Count <= 10)
             {
                 for (int i = 0; i < Request.Files.Count; i++)

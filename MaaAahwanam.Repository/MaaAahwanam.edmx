@@ -19,6 +19,9 @@
         <Function Name="MaaAahwanam_Others_Comments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CommentId" Type="bigint" Mode="In" />
         </Function>
+        <Function Name="MaaAahwanam_Others_Tickets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TicketId" Type="bigint" Mode="In" />
+        </Function>
         <Function Name="MaaAahwanam_Services_Bidding" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="RequestId" Type="bigint" Mode="In" />
         </Function>
@@ -71,6 +74,9 @@
           </FunctionImport>
           <FunctionImport Name="MaaAahwanam_Others_Comments" ReturnType="Collection(MaaAahwanamModel.MaaAahwanam_Others_Comments_Result)">
             <Parameter Name="CommentId" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="MaaAahwanam_Others_Tickets" ReturnType="Collection(MaaAahwanamModel.MaaAahwanam_Others_Tickets_Result)">
+            <Parameter Name="TicketId" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="MaaAahwanam_Services_Bidding" ReturnType="Collection(MaaAahwanamModel.MaaAahwanam_Services_Bidding_Result)">
             <Parameter Name="RequestId" Mode="In" Type="Int64" />
@@ -150,6 +156,13 @@
           <Property Type="String" Name="Status" Nullable="true" />
           <Property Type="String" Name="BusinessName" Nullable="true" />
           <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="MaaAahwanam_Others_Tickets_Result">
+          <Property Type="Int64" Name="TicketId" Nullable="false" />
+          <Property Type="String" Name="Status" Nullable="true" />
+          <Property Type="String" Name="BusinessName" Nullable="true" />
+          <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="ServicType" Nullable="true" />
         </ComplexType>
         <ComplexType Name="MaaAahwanam_Services_Bidding_Result">
           <Property Type="Int64" Name="Id" Nullable="false" />
@@ -236,6 +249,17 @@
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="BusinessName" ColumnName="BusinessName" />
                 <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="MaaAahwanam_Others_Tickets" FunctionName="MaaAahwanamModel.Store.MaaAahwanam_Others_Tickets">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MaaAahwanamModel.MaaAahwanam_Others_Tickets_Result">
+                <ScalarProperty Name="TicketId" ColumnName="TicketId" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="BusinessName" ColumnName="BusinessName" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="ServicType" ColumnName="ServicType" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
