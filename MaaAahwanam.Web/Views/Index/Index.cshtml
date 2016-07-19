@@ -149,7 +149,7 @@
                                 <li><a href="~/product?par=Entertainment"><i class="ti-angle-right"></i> Entertainment</a></li>
                                 <li><a href="~/product?par=Eventorganiser"><i class="ti-angle-right"></i> Event organisers</a></li>
                                 <li><a href="~/product?par=BeautyService"><i class="ti-angle-right"></i> Beauty Services</a></li>
-                                <li><a href="~/product?par=WeddingFavor"><i class="ti-angle-right"></i> Wedding Favors</a></li>
+                                @*<li><a href="~/product?par=WeddingFavor"><i class="ti-angle-right"></i> Wedding Favors</a></li>*@
                                 <li><a href="~/product?par=Travel"><i class="ti-angle-right"></i> Travel&Accomodation</a></li>
                                 <li><a href="~/product?par=Gift"><i class="ti-angle-right"></i> Gifts</a></li>
                                 <li><a href="~/product?par=WeddingCollection"><i class="ti-angle-right"></i> Wedding Collection </a></li>
@@ -171,7 +171,7 @@
                                     <div class="deals-main">
                                         <div class="deal">
                                             <div class="deal-thumb">
-                                                <a href="~/DealInfo">
+                                                <a href="../ProductInfo?par=@PhDet.ServicType.Trim()&VID=@PhDet.Id">
                                                     <div class="zoomDiv">
                                                         @*<img src="~/vendorimages/Catering_13_1.jpg" />*@
                                                         <img data-src="../vendorimages/@PhDet.image" alt="thumb" src="blank.gif" class="lazy">
@@ -183,7 +183,7 @@
                                                 <h4 style="font-size: 15px; font-weight:bold; color: #2d3e52; font-family: Helvetica,sans-serif; ">@PhDet.BusinessName</h4>
                                                 <div class="amount">
                                                     <span class="price">Rs. @PhDet.Cost</span> <span class="buy">
-                                                        <a href="~/ProductInfo/Index"><i class="ti-shopping-cart"></i> Add to Cart</a>
+                                                        <a href="../ProductInfo?par=@PhDet.ServicType.Trim()&VID=@PhDet.Id"><i class="ti-shopping-cart"></i> Add to Cart</a>
                                                     </span>
                                                 </div>
                                                 <span style="color:#838383">@PhDet.Description</span>
@@ -211,7 +211,7 @@
                                     <div class="deals-main">
                                         <div class="deal">
                                             <div class="deal-thumb">
-                                                <a href="~/DealInfo">
+                                                <a href="../ProductInfo?par=@tnt.ServicType.Trim()&VID=@tnt.Id">
                                                     <div class="zoomDiv">
                                                         <img src="blank.gif" class="lazy" data-src="../vendorimages/@tnt.image" alt="thumb">
                                                         <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span>  </div>
@@ -222,7 +222,7 @@
                                                 <h4 style="font-size: 15px; font-weight:bold; color: #2d3e52; font-family: Helvetica,sans-serif; ">Wedding Favors</h4>
                                                 <div class="amount">
                                                     <span class="price">Rs. @tnt.Cost</span> <span class="buy">
-                                                        <a href="~/ProductInfo/Index"><i class="ti-shopping-cart"></i> Add to Cart</a>
+                                                        <a href="../ProductInfo?par=@tnt.ServicType.Trim()&VID=@tnt.Id"><i class="ti-shopping-cart"></i> Add to Cart</a>
                                                     </span>
                                                 </div>
                                                 <span style="color:#838383">@tnt.Description</span>
@@ -250,7 +250,7 @@
                                     <div class="deals-main">
                                         <div class="deal">
                                             <div class="deal-thumb">
-                                                <a href="~/DealInfo">
+                                                <a href="../ProductInfo?par=@dec.ServicType.Trim()&VID=@dec.Id">
                                                     <div class="zoomDiv">
                                                         <img src="blank.gif" class="lazy" data-src="../vendorimages/@dec.image" alt="thumb">
                                                         <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span>  </div>
@@ -261,7 +261,7 @@
                                                 <h4 style="font-size: 15px; font-weight:bold; color: #2d3e52; font-family: Helvetica,sans-serif; ">@dec.BusinessName</h4>
                                                 <div class="amount">
                                                     <span class="price">Rs. @dec.Cost</span> <span class="buy">
-                                                        <a href="~/ProductInfo/Index"><i class="ti-shopping-cart"></i> Add to Cart</a>
+                                                        <a href="../ProductInfo?par=@dec.ServicType.Trim()&VID=@dec.Id"><i class="ti-shopping-cart"></i> Add to Cart</a>
                                                     </span>
                                                 </div>
                                                 <span style="color:#838383">@dec.Description</span>
@@ -283,27 +283,27 @@
                     <div>
                         @if (ViewBag.Beautician != null)
                         {
-                            foreach (var dec in ViewBag.Beautician)
+                            foreach (var dec1 in ViewBag.Beautician)
                             {
                                 <div class="step2">
                                     <div class="deals-main">
                                         <div class="deal">
                                             <div class="deal-thumb">
-                                                <a href="~/DealInfo">
+                                                <a href="../ProductInfo?par=@dec1.ServicType.Trim()&VID=@dec1.Id">
                                                     <div class="zoomDiv">
-                                                        <img src="blank.gif" class="lazy" data-src="../vendorimages/@dec.image" alt="thumb">
+                                                        <img src="blank.gif" class="lazy" data-src="../vendorimages/@dec1.image" alt="thumb">
                                                         <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span>  </div>
                                                     </div>
                                                 </a>
                                             </div>
                                             <div class="deal-details">
-                                                <h4 style="font-size: 15px; font-weight:bold; color: #2d3e52; font-family: Helvetica,sans-serif; ">@dec.BusinessName</h4>
+                                                <h4 style="font-size: 15px; font-weight:bold; color: #2d3e52; font-family: Helvetica,sans-serif; ">@dec1.BusinessName</h4>
                                                 <div class="amount">
-                                                    <span class="price">@dec.Cost</span> <span class="buy">
-                                                        <a href="~/ProductInfo/Index"><i class="ti-shopping-cart"></i> Add to Cart</a>
+                                                    <span class="price">@dec1.Cost</span> <span class="buy">
+                                                        <a  href="../ProductInfo?par=@dec1.ServicType.Trim()&VID=@dec1.Id"><i class="ti-shopping-cart"></i> Add to Cart</a>
                                                     </span>
                                                 </div>
-                                                <span style="color:#838383">@dec.Description</span>
+                                                <span style="color:#838383">@dec1.Description</span>
                                                 <div class="deal-footer">
                                                     <ul>
                                                         <li><div class="rate" data-rate-value=5></div></li>

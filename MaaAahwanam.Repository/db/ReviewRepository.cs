@@ -21,5 +21,11 @@ namespace MaaAahwanam.Repository.db
             var a= _Dbcontext.Review.Where(i=>i.ServiceId==serviceId).ToList();
             return a;
         }
+        //public int Reviewscount(int serviceId)
+        //{
+        //    int Rcount =0;
+        //    Rcount= _Dbcontext.Review.Where(i => i.ServiceId == serviceId).Count;
+        //    return Rcount;
+        //}
     }
 }
