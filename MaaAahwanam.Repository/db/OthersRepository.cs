@@ -43,5 +43,35 @@ namespace MaaAahwanam.Repository.db
         {
             return maaAahwanamEntities.MaaAahwanam_Others_Tickets(id).ToList();
         }
+        public IssueDetail AddTicket(IssueDetail issueDetail)
+        {
+            _dbContext.IssueDetail.Add(issueDetail);
+            _dbContext.SaveChanges();
+            return issueDetail;
+        }
+        public List<IssueDetail> TicketDetail(long id)
+        {
+            return _dbContext.IssueDetail.Where(m => m.TicketId == id).ToList();
+        }
+
+        //Registered Users Module
+        public List<MaaAahwanam_Others_RegisteredUsers_Result> RegisteredUsersList()
+        {
+            return maaAahwanamEntities.MaaAahwanam_Others_RegisteredUsers().ToList();
+        }
+        public List<MaaAahwanam_Others_RegisteredUsersDetails_Result> RegisteredUserDetails(long id)
+        {
+            return maaAahwanamEntities.MaaAahwanam_Others_RegisteredUsersDetails(id).ToList();
+        }
+
+        //Testimonals Module
+        public List<MaaAahwanam_Others_Testimonials_Result> TestimonalsList()
+        {
+            return maaAahwanamEntities.MaaAahwanam_Others_Testimonials().ToList();
+        }
+        public List<MaaAahwanam_Others_TestimonialDetail_Result> TestimonalDetail(long id)
+        {
+            return maaAahwanamEntities.MaaAahwanam_Others_TestimonialDetail(id).ToList();
+        }
     }
 }

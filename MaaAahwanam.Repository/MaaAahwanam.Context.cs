@@ -188,5 +188,33 @@ namespace MaaAahwanam.Repository
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
+    
+        public virtual ObjectResult<MaaAahwanam_Others_RegisteredUsers_Result> MaaAahwanam_Others_RegisteredUsers()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MaaAahwanam_Others_RegisteredUsers_Result>("MaaAahwanam_Others_RegisteredUsers");
+        }
+    
+        public virtual ObjectResult<MaaAahwanam_Others_RegisteredUsersDetails_Result> MaaAahwanam_Others_RegisteredUsersDetails(Nullable<long> userLoginId)
+        {
+            var userLoginIdParameter = userLoginId.HasValue ?
+                new ObjectParameter("UserLoginId", userLoginId) :
+                new ObjectParameter("UserLoginId", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MaaAahwanam_Others_RegisteredUsersDetails_Result>("MaaAahwanam_Others_RegisteredUsersDetails", userLoginIdParameter);
+        }
+    
+        public virtual ObjectResult<MaaAahwanam_Others_Testimonials_Result> MaaAahwanam_Others_Testimonials()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MaaAahwanam_Others_Testimonials_Result>("MaaAahwanam_Others_Testimonials");
+        }
+    
+        public virtual ObjectResult<MaaAahwanam_Others_TestimonialDetail_Result> MaaAahwanam_Others_TestimonialDetail(Nullable<long> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("Id", id) :
+                new ObjectParameter("Id", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MaaAahwanam_Others_TestimonialDetail_Result>("MaaAahwanam_Others_TestimonialDetail", idParameter);
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿@model MaaAahwanam.Models.IssueDetail
 @{
-    ViewBag.Title = "Testimonial Details";
+    ViewBag.Title = "Ticket Details";
     Layout = "~/Areas/Admin/Views/Shared/MainMaster.cshtml";
 }
 @section header{
@@ -9,11 +9,13 @@
     <!-- END PAGE LEVEL  STYLES -->
 }
 <!--PAGE CONTENT -->
+@using (Html.BeginForm())
+{
 <div id="content">
     <div class="inner">
         <div class="row">
             <div class="col-lg-12">
-                <h2> Comment Details View</h2>
+                <h2> Ticket Details View</h2>
             </div>
         </div>
         <hr />
@@ -22,7 +24,7 @@
                 <div class="body collapse in" id="div1"> <a href="/Admin/Dashboard/dashboard" class="btn btn-primary btn-xs">Home</a>&nbsp;&nbsp;&nbsp;<a href="/Admin/Others/Comments" class="btn btn-primary btn-xs">Comments</a>&nbsp;&nbsp;&nbsp;<a href="#" class="btn btn-primary btn-xs">Comment Details</a> </div>
 
             </div>
-            </br>
+            <br />
             @foreach (var item in ViewBag.record)
             {
                 <div class="col-lg-6">
@@ -41,11 +43,7 @@
                     </p>
                 </div>
             }
-            @*<div class="row">*@
-            
-          
         </div>
-
         <div class="row">
             <div class="col-lg-12">
                 <div align="right">
@@ -56,13 +54,14 @@
                                 <label class="control-label col-lg-4" for="reservation"></label>
                                 <div class="col-lg-12">
                                     @*<textarea id="autosize" class="validate[required] form-control" name="req" id="req"></textarea>*@
-                                    @Html.TextAreaFor(model => model.Msg,new { @class = "form-control", @id = "autosize" })
+                                    @Html.TextAreaFor(model => model.Msg, new { @class = "form-control", @id = "autosize" })
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-lg-4" for="reservation"></label>
                                 <div class="col-lg-12">
-                                    <button class="btn text-muted text-center btn-danger" name="Command" type="submit">Submit</button>
+                                    @*<button class="btn text-muted text-center btn-danger" name="Command" type="submit">Submit</button>*@
+                                    <input type="submit" class="btn text-muted text-center btn-danger" name="Command" value="Submit" />
                                 </div>
                             </div>
                         </div>
@@ -74,23 +73,35 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-primary">
-                    <div class=" panel-heading" style="height:35px">
-                        <div id="div-left" style="float:left">Msg By:Admin</div>
-                        <div id="div-right" style="float:right">Date:11-02-2016</div>
-                    </div>
-                    <div class="panel-body">
-                        <p align="left"><b>aasfsf dgdfghjjfkh fghfhjkfhfhg</b></p>
+                    @if (ViewBag.ticket.Count != 0)
+                    {
+                        foreach (var item in ViewBag.ticket)
+                        {
+                            <div class="panel-heading" style="height:35px">
+                                <div id="div-left" style="float:left">Msg By:Admin</div>
+                                <div id="div-right" style="float:right">Date:@item.UpdatedDate</div>
+                            </div>
+                            <div class="panel-body">
+                                <p align="left"><b>@item.Msg</b></p>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="panel-heading" style="height:35px">
+                            <div id="div-left" style="float:left">Reply</div>
+                        </div>
+                        <div class="panel-body">
+                            <p align="left"><b>Not Replied Yet </b></p>
+                        </div>
+                    }
                     </div>
                 </div>
-
             </div>
-        </div>
-
+        
     </div>
-
 </div>
-
-
+}
 
 <!--END PAGE CONTENT -->
 @section Bottom{

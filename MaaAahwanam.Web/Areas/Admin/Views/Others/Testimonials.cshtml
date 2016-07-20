@@ -42,34 +42,37 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="even gradeX">
-                                        <td>
-                                            101
-                                        </td>
-                                        <td>
-                                            11-02-2016
-                                        </td>
-                                        <td>
-                                            Sai Krishna
-                                        </td>
-                                        <td>
-                                            Karimnagar
-                                        </td>
-                                        <td>
-                                            Well,satisfied with the service provided
-                                        </td>
-                                        <td>
-                                            saikrishna@xsilica.com
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-primary btn-xs btn-rect"> Pending</a>
-                                        </td>
-                                        <td>
-                                            <a href="/Admin/Others/TestimonialDetails" class="btn btn-default btn-xs"> View </a>
-                                            </br>  <a href="#" class="btn btn-default btn-xs">Edit</a>
-                                            </br>  <a href="#" class="btn btn-default btn-xs">Delete</a>
-                                        </td>
-                                    </tr>
+                                    @foreach (var item in ViewBag.TestimonalsList)
+                                    {
+                                        <tr class="even gradeX">
+                                            <td>
+                                                @item.Id
+                                            </td>
+                                            <td>
+                                                @item.UpdatedDate
+                                            </td>
+                                            <td>
+                                                @item.FirstName @item.LastName
+                                            </td>
+                                            <td>
+                                                @item.Address
+                                            </td>
+                                            <td>
+                                                @item.Description
+                                            </td>
+                                            <td>
+                                                @item.Email
+                                            </td>
+                                            <td>
+                                                <a href="#" class="btn btn-primary btn-xs btn-rect"> @item.Status</a>
+                                            </td>
+                                            <td>
+                                                <a href="/Admin/Others/TestimonialDetails?id=@item.Id" class="btn btn-default btn-xs"> View </a>
+                                           <br/><a href="#" class="btn btn-default btn-xs">Delete</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                    
                                 </tbody>
                             </table>
                         </div>

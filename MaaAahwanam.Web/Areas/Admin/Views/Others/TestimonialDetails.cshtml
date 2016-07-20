@@ -16,15 +16,15 @@
             </div>
         </div>
         <hr />
-
+        @foreach (var item in ViewBag.Testimonal)
+        {
         <div class="row">
             <div class="col-lg-12">
                 <div class="body collapse in" id="div1"> <a href="/Admin/Dashboard/dashboard" class="btn btn-primary btn-xs">Home</a>&nbsp;&nbsp;&nbsp;<a href="/Admin/Others/Testimonials" class="btn btn-primary btn-xs">Testimonials</a>&nbsp;&nbsp;&nbsp;<a href="#" class="btn btn-primary btn-xs"> Testimonials Details</a> </div>
-                </br>
-                <h4><i class="icon-th-list"></i> Id #: 101 | Received Date: 11-02-2016 </h4>
-
+                <br/>
+                <h4><i class="icon-th-list"></i> Id #: @item.Id | Received Date: @item.UpdatedDate </h4>
             </div>
-            </br>
+            <br/>
         </div>
             <!-- Tabls Starts here -->
 
@@ -32,11 +32,11 @@
                 <div class="panel panel-primary">
                     <div class="panel-heading"> Customer Information </div>
                     <div class="panel-body">
-                        <p><b>Customer Id :</b> 2 </p>
-                        <p><b>Customer Name :</b> Sai Krishna </p>
-                        <p><b>Email:</b> saikrishna@xsilica.com  @*<a href="#" class="btn btn-primary btn-sm">Verified</a>*@</p>
-                        <p><b>Phone:</b> 7911123890 @*<a href="#" class="btn btn-primary btn-sm">Not Verified</a>*@</p>
-                        <p><b>Address:</b> 1/12A,Kavya Nivas,Karimnagar</p>
+                        <p><b>Customer Id :</b> @item.UpdatedBy </p>
+                        <p><b>Customer Name :</b> @item.FirstName @item.LastName </p>
+                        <p><b>Email:</b> @item.Email  @*<a href="#" class="btn btn-primary btn-sm">Verified</a>*@</p>
+                        <p><b>Phone:</b> @item.UserPhone @*<a href="#" class="btn btn-primary btn-sm">Not Verified</a>*@</p>
+                        <p><b>Address:</b> @item.Address</p>
                     </div>
                 </div>
             </div>
@@ -46,13 +46,18 @@
             <div class="panel panel-primary">
                 <div class="panel-heading"> FeedBack </div>
                 <div class="panel-body">
-                    <p><b>Description:</b> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries. </p>
+                    <p><b>Description:</b> @item.Description </p>
                     <p><b>Rating:</b> 4 </p>
-                    <p><b>Images:</b> a1.jpg, a2.jpg, a3.jpg, a4.jpg </p>
+                    <p><b>Images:</b> 
+                        <div class="studentPic-inner">
+                            <div> <img src="blank.gif" class="lazy" data-src="../Content/AdminUserfiles/@item.ImagePath" alt="student"> </div>
+                        </div>
+                    </p>
                     <p><b>Videos:</b> https://i1.ytimg.com/vi/8jKYP24uhzI/maxresdefault.jpg </p>
                 </div>
             </div>
         </div>
+        }
         @*<div class="col-lg-6">
                 <div class="panel panel-primary">
                     <div class="panel-heading"> Actions - <a href="/Admin/Services/Biddings" class="btn btn-default btn-xs">View Biddings</a></div>
