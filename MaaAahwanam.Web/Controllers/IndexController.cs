@@ -69,6 +69,7 @@ namespace MaaAahwanam.Web.Controllers
         {
             AllVendorsService allVendorsService=new AllVendorsService();
             var Listoflocations = allVendorsService.VendorsList();
+            var builder = new TagBuilder("<br/>");
             string[] ListofEvents = {"Photographer", "Travels" };
             return Json(new { Listoflocations, ListofEvents }, JsonRequestBehavior.AllowGet);
         }
