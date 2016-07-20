@@ -43,7 +43,7 @@
         }
         <div class="master-slider ms-skin-black-2 round-skin" id="masterslider">
             <div class="ms-slide slide-1" style="z-index: 10" data-delay="6">
-                <img data-src="../CSSWeb/images/slider/slider-1.jpg" alt="slider-1"  />
+                <img data-src="../CSSWeb/images/slider/slider-1.jpg" alt="slider-1" />
                 <div class="mask"></div>
                 <h3 class="ms-layer light-title" style="left:0; right:0;top:120px"
                     data-effect="back(1000)"
@@ -75,7 +75,7 @@
                    data-ease="easeOutQuint">Mirum est notare quam littera gothica, quam nunc putamus parum claram</p>
             </div>
             <div class="ms-slide slide-1" style="z-index: 10" data-delay="6">
-                <img data-src="../CSSWeb/images/slider/slider-3.jpg" alt="slider-1"  />
+                <img data-src="../CSSWeb/images/slider/slider-3.jpg" alt="slider-1" />
                 <div class="mask"></div>
                 <h3 class="ms-layer light-title" style="left:0; right:0;top:120px"
                     data-effect="fade(400)"
@@ -163,7 +163,7 @@
                 <div class="resp-tabs-container hor_1">
                     <div>
                         @*Photographer Details*@
-                        @if (ViewBag.PhotographersDetails != null)
+                        @if (ViewBag.PhotographersDetails.Count != 0)
                         {
                             foreach (var PhDet in ViewBag.PhotographersDetails)
                             {
@@ -200,10 +200,14 @@
                                 </div>
                             }
                         }
+                        else
+                        {
+                            <p>No photographers Yet</p>
+                        }
                     </div>
                     <div>
                         @*Tours and Travells*@
-                        @if (ViewBag.ToursandTravels != null)
+                        @if (ViewBag.ToursandTravels.Count != 0)
                         {
                             foreach (var tnt in ViewBag.ToursandTravels)
                             {
@@ -239,10 +243,14 @@
                                 </div>
                             }
                         }
+                        else
+                        {
+                            <p>No Travels Yet</p>
+                        }
                     </div>
                     <div>
                         @*Decorators*@
-                        @if (ViewBag.Decorators != null)
+                        @if (ViewBag.Decorators.Count != 0)
                         {
                             foreach (var dec in ViewBag.Decorators)
                             {
@@ -278,10 +286,14 @@
                                 </div>
                             }
                         }
+                        else
+                        {
+                            <p>No Decorators Yet</p>
+                        }
                     </div>
 
                     <div>
-                        @if (ViewBag.Beautician != null)
+                        @if (ViewBag.Beautician.Count != 0)
                         {
                             foreach (var dec1 in ViewBag.Beautician)
                             {
@@ -300,7 +312,7 @@
                                                 <h4 style="font-size: 15px; font-weight:bold; color: #2d3e52; font-family: Helvetica,sans-serif; ">@dec1.BusinessName</h4>
                                                 <div class="amount">
                                                     <span class="price">@dec1.Cost</span> <span class="buy">
-                                                        <a  href="../ProductInfo?par=@dec1.ServicType.Trim()&VID=@dec1.Id"><i class="ti-shopping-cart"></i> Add to Cart</a>
+                                                        <a href="../ProductInfo?par=@dec1.ServicType.Trim()&VID=@dec1.Id"><i class="ti-shopping-cart"></i> Add to Cart</a>
                                                     </span>
                                                 </div>
                                                 <span style="color:#838383">@dec1.Description</span>
@@ -317,6 +329,10 @@
                                 </div>
                             }
                         }
+                        else
+                        {
+                            <p>No Beauticians Yet</p>
+                        }
                     </div>
                 </div>
             </div>
@@ -325,34 +341,45 @@
 </section>
 <!-- testimonials -->
 
-    <section>
+<section>
     <div class="pageWidth">
         <div class="testimonials">
             <div class="heading-title">
                 <h2>What Our Customers Say!</h2>
             </div>
-            <div id="testimonials" class="owl-carousel owl-theme">
-                @foreach (var item in @ViewBag.Testimonials)
+
+            @if (ViewBag.Testimonials.Count != 0)
+            {
+                foreach (var item in @ViewBag.Testimonials)
                 {
-                    <div class="item">
-                        <div class="studentPic">
-                            <div class="studentPic-inner">
-                                <div> <img src="blank.gif" class="lazy" data-src="../Content/AdminUserfiles/@item.ImagePath" alt="student"> </div>
+                    <div id="testimonials" class="owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="studentPic">
+                                <div class="studentPic-inner">
+                                    <div> <img src="blank.gif" class="lazy" data-src="../Content/AdminUserfiles/@item.ImagePath" alt="student"> </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="studentTest">
-                            <p>
-                                @item.Description.ToString().Substring(0, 200)
-                                <a href="~/Testimonials">......More</a>
-                            </p>
-                            <div class="stuTitle">
-                                @item.Name
+                            <div class="studentTest">
+                                <p>
+                                    @item.Description.ToString().Substring(0, 200)
+                                    <a href="~/Testimonials">......More</a>
+                                </p>
+                                <div class="stuTitle">
+                                    @item.Name
+                                </div>
+                                <small>@*@item.City*@</small>
                             </div>
-                            <small>@*@item.City*@</small>
                         </div>
                     </div>
+
                 }
-            </div>
+            }
+            else
+            {
+                <div class="stuTitle">
+                    No customers feelings yet..!!
+                </div>
+            }
         </div>
     </div>
 </section>
@@ -394,8 +421,8 @@
             <div id="parentHorizontalTab2">
                 <ul class="resp-tabs-list hor_1">
                     <li>Upcoming Events</li>
-                    <li>Beauty Tips</li>
                     <li>Health Tips</li>
+                    <li>Beauty Tips</li>
                 </ul>
                 <div class="resp-tabs-container hor_1">
                     <!-- UpcomingEvents -->
@@ -420,6 +447,14 @@
                                 </a>
                             }
                         }
+                        else
+                        {
+                            <div class="home_events_main no-margin">
+                                <div class="event-details">
+                                    <h2>No UpcomingEvents found</h2>
+                                </div>
+                            </div>
+                        }
                     </div>
                     <!-- HealthTips -->
                     <div>
@@ -442,6 +477,14 @@
                                     </div>
                                 </a>
                             }
+                        }
+                        else
+                        {
+                            <div class="home_events_main no-margin">
+                                <div class="event-details">
+                                    <h2>No HealthTips Found</h2>
+                                </div>
+                            </div>
                         }
                     </div>
                     <!-- BeautyTips -->
@@ -466,10 +509,19 @@
                                 </a>
                             }
                         }
+                        else
+                        {
+                            <div class="home_events_main no-margin">
+                                <div class="event-details">
+                                    <h2>No BeautyTips found</h2>
+                                </div>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
         </div>
+        </div> 
 </section>
 <!-- // Events -->
 @section scripts
