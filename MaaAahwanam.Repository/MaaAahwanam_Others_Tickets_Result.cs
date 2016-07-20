@@ -11,16 +11,12 @@ namespace MaaAahwanam.Repository
 {
     using System;
     
-    public partial class MaaAahwanam_Orders_OrderDetails2_Result
+    public partial class MaaAahwanam_Others_Tickets_Result
     {
-        public long OrderId { get; set; }
-        public string ServiceType { get; set; }
-        public int Quantity { get; set; }
+        public long TicketId { get; set; }
+        public string Status { get; set; }
         public string BusinessName { get; set; }
-        public string Address { get; set; }
-        public string Landmark { get; set; }
-        public string City { get; set; }
         public Nullable<System.DateTime> UpdatedDate { get; set; }
-        public decimal TotalPrice { get; set; }
+        public string ServicType { get; set; }
     }
 }

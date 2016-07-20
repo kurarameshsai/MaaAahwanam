@@ -115,6 +115,9 @@
     <Compile Include="MaaAahwanam_Others_Comments_Result.cs">
       <DependentUpon>MaaAahwanam.tt</DependentUpon>
     </Compile>
+    <Compile Include="MaaAahwanam_Others_Tickets_Result.cs">
+      <DependentUpon>MaaAahwanam.tt</DependentUpon>
+    </Compile>
     <Compile Include="MaaAahwanam_Services_Bidding_Result.cs">
       <DependentUpon>MaaAahwanam.tt</DependentUpon>
     </Compile>
@@ -154,6 +157,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DBScript\StoredProcedures\MaaAahwanam_Others_Tickets.sql" />
     <Content Include="DBScript\StoredProcedures\GetProducts.sql" />
     <Content Include="DBScript\StoredProcedures\GetProductsInfo.sql" />
     <Content Include="DBScript\StoredProcedures\MaaAahwanam_Orders_OrderDetails.sql" />

@@ -1,4 +1,4 @@
-﻿@model MaaAahwanam.Models.ContactUs
+﻿@model MaaAahwanam.Models.Enquiry
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/SharedWeb/MainMaster.cshtml";
@@ -47,7 +47,7 @@
                         <ul>
                             <li>
                                 <label>Name<span>*</span></label>
-                                @Html.TextBoxFor(Model => Model.PersonName, new { @id = "name", @name = "name", placeholder = "Name" })
+                                @Html.TextBoxFor(Model => Model.PersonName, new { @id = "firstname", @name = "firstname", placeholder = "First Name", required = "required" })
                             </li>
                             <li>
                                 <label>Email<span>*</span></label>
@@ -68,7 +68,7 @@
                                                new { Text ="USA", Value = "USA" },
                                                new { Text ="Australia", Value = "Australia" },
                                             },
-                                          "value", "text"), new { @class = "validate[required] form-control" })                                                  
+                                          "value", "text"), new { @class = "validate[required] form-control" })
                             </li>
                         </ul>
                         <ul>
@@ -84,7 +84,7 @@
                         <ul>
                             <li class="full">
                                 <label>Message<span>*</span></label>
-                                @Html.TextAreaFor(Model =>Model.EnquiryDetails, new { @class = "validate[required] form-control" })
+                                @Html.TextAreaFor(Model => Model.EnquiryDetails, new { @class = "validate[required] form-control" })
                             </li>
                         </ul>
                         <button type="submit" class="btn btn-green">Submit <i class="ti-angle-double-right"></i></button>
@@ -117,8 +117,6 @@
                     </div>
                 </div>
                 <div class="clear"></div>
-
-
             </div>
             <div class="contact_map">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7613.600455475163!2d78.42730221930498!3d17.421372235802192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb96cc62a87613%3A0xa8317fa22362be49!2sJubilee+Hills%2C+Hyderabad%2C+Telangana!5e0!3m2!1sen!2sin!4v1450762809488" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -146,7 +144,7 @@
         </div>
 
     </div>
-   
+
 </section>
 
 <div class="clear"></div>
