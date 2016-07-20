@@ -2140,6 +2140,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\jquery.validationEngine-en.js" />
     <Content Include="Scripts\jquery.validationEngine.js" />
+    <Content Include="vendorimages\723.gif" />
     <Content Include="vendorimages\BeautyService_17_1.jpg" />
     <Content Include="vendorimages\BeautyService_17_2.jpg" />
     <Content Include="vendorimages\BeautyService_17_3.jpg" />
