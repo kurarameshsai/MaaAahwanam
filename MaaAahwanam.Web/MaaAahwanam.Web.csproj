@@ -2199,6 +2199,16 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\jquery.validationEngine-en.js" />
     <Content Include="Scripts\jquery.validationEngine.js" />
+    <Content Include="Testimonial\Testimonial_1.jpg" />
+    <Content Include="Testimonial\Testimonial_10.jpg" />
+    <Content Include="Testimonial\Testimonial_2.jpg" />
+    <Content Include="Testimonial\Testimonial_3.jpg" />
+    <Content Include="Testimonial\Testimonial_4.jpg" />
+    <Content Include="Testimonial\Testimonial_5.jpg" />
+    <Content Include="Testimonial\Testimonial_6.jpg" />
+    <Content Include="Testimonial\Testimonial_7.jpg" />
+    <Content Include="Testimonial\Testimonial_8.jpg" />
+    <Content Include="Testimonial\Testimonial_9.jpg" />
     <Content Include="vendorimages\BeautyService_17_1.jpg" />
     <Content Include="vendorimages\BeautyService_17_2.jpg" />
     <Content Include="vendorimages\BeautyService_17_3.jpg" />
