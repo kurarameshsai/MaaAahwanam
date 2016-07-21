@@ -23,6 +23,7 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             if (id!=null)
             {
                 ViewBag.OrderDetailsList = orderservice.OrderDetailServivce(long.Parse(id));
+                ViewBag.orderid = id;
                 return View();
             }
             return View();

@@ -90,21 +90,24 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             }
             return View();
         }
-        public ActionResult Biddings(long id)
+        public ActionResult Biddings(string id)
         {
             if (id!=null)
             {
-                ViewBag.ServiceResponseRecordsList = serviceResponseService.GetServiceResponseList(id);
+                ViewBag.ServiceResponseRecordsList = serviceResponseService.GetServiceResponseList(long.Parse(id));
+                ViewBag.bidid = id;
                 return View();
             }
             return View();
         }
-        public ActionResult Quotations(long id, ServiceResponse serviceResponse)
+        public ActionResult Quotations(string id, ServiceResponse serviceResponse,string date)
         {
             if (id!=null)
             {
-                serviceResponse.RequestId = id;
+                serviceResponse.RequestId = long.Parse(id);
                 ViewBag.QuotationRecordsList = serviceResponseService.GetQuotationList(serviceResponse);
+                ViewBag.quotdate = date;
+                ViewBag.quotid = id;
                 return View();
             }
             return View();

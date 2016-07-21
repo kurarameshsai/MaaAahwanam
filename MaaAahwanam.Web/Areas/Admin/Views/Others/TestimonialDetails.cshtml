@@ -50,10 +50,15 @@
                     <p><b>Rating:</b> 4 </p>
                     <p><b>Images:</b> 
                         <div class="studentPic-inner">
-                            <div> <img src="blank.gif" class="lazy" data-src="../Content/AdminUserfiles/@item.ImagePath" alt="student"> </div>
+                            <div>
+                                @foreach (var item1 in ViewBag.images)
+                                {
+                                    <img class="lazy" src="~/Testimonial/@item1" alt="student" style="height:100px;width:150px;border:double">
+                                }
+                            </div>
                         </div>
                     </p>
-                    <p><b>Videos:</b> https://i1.ytimg.com/vi/8jKYP24uhzI/maxresdefault.jpg </p>
+                    @*<p><b>Videos:</b> https://i1.ytimg.com/vi/8jKYP24uhzI/maxresdefault.jpg </p>*@
                 </div>
             </div>
         </div>
