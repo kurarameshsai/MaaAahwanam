@@ -133,10 +133,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/19/2015 17:53:56</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Others/CommentDetails.cshtml">
-      <publishTime>07/15/2016 16:10:06</publishTime>
+      <publishTime>07/19/2016 17:13:21</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Others/Comments.cshtml">
-      <publishTime>07/18/2016 16:45:39</publishTime>
+      <publishTime>07/19/2016 15:16:21</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Others/RegisteredUsers.cshtml">
       <publishTime>07/01/2016 12:29:20</publishTime>
@@ -151,10 +151,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/01/2016 12:29:20</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Others/TicketDetails.cshtml">
-      <publishTime>07/01/2016 12:29:20</publishTime>
+      <publishTime>07/19/2016 18:11:59</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Others/Tickets.cshtml">
-      <publishTime>07/01/2016 12:29:20</publishTime>
+      <publishTime>07/19/2016 18:02:38</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Reports/Index.cshtml">
       <publishTime>01/28/2016 18:15:30</publishTime>
@@ -7063,16 +7063,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/18/2016 14:18:17</publishTime>
     </File>
     <File Include="bin/MaaAahwanam.Repository.dll">
-      <publishTime>07/18/2016 14:18:18</publishTime>
+      <publishTime>07/19/2016 18:50:32</publishTime>
     </File>
     <File Include="bin/MaaAahwanam.Service.dll">
-      <publishTime>07/18/2016 14:18:19</publishTime>
+      <publishTime>07/19/2016 18:50:33</publishTime>
     </File>
     <File Include="bin/MaaAahwanam.Utility.dll">
       <publishTime>07/18/2016 14:18:19</publishTime>
     </File>
     <File Include="bin/MaaAahwanam.Web.dll">
-      <publishTime>07/19/2016 13:21:01</publishTime>
+      <publishTime>07/19/2016 18:50:35</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>07/01/2016 12:29:48</publishTime>
@@ -8734,7 +8734,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/23/2016 16:15:00</publishTime>
     </File>
     <File Include="Views/Index/Index.cshtml">
-      <publishTime>07/15/2016 17:54:49</publishTime>
+      <publishTime>07/19/2016 18:41:27</publishTime>
     </File>
     <File Include="Views/Index/ItemsCartViewBindingLayout.cshtml">
       <publishTime>07/01/2016 12:29:45</publishTime>
@@ -8818,10 +8818,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/15/2016 17:54:49</publishTime>
     </File>
     <File Include="Views/Product/Index.cshtml">
-      <publishTime>07/15/2016 17:54:49</publishTime>
+      <publishTime>07/19/2016 18:41:27</publishTime>
     </File>
     <File Include="Views/ProductInfo/Index.cshtml">
-      <publishTime>07/15/2016 17:54:49</publishTime>
+      <publishTime>07/19/2016 18:41:27</publishTime>
     </File>
     <File Include="Views/Quatation/Index.cshtml">
       <publishTime>07/01/2016 12:29:45</publishTime>
@@ -8929,7 +8929,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/15/2016 17:54:49</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/18/2016 14:18:38</publishTime>
+      <publishTime>07/19/2016 18:50:51</publishTime>
     </File>
   </ItemGroup>
 </Project>

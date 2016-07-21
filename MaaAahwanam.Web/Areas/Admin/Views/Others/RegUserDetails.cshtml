@@ -16,30 +16,33 @@
             </div>
         </div>
         <hr />
+        @foreach (var item in ViewBag.userdetail)
+        {
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="body collapse in" id="div1"> <a href="/Admin/Dashboard/dashboard" class="btn btn-primary btn-xs">Home</a>&nbsp;&nbsp;&nbsp;<a href="/Admin/Others/RegisteredUsers" class="btn btn-primary btn-xs">Registered Users</a>&nbsp;&nbsp;&nbsp;<a href="#" class="btn btn-primary btn-xs"> User Details</a> </div>
+                    <br />
+                    <h4><i class="icon-th-list"></i> Id #: @item.UserLoginId | Registered Date: @item.RegDate </h4>
 
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="body collapse in" id="div1"> <a href="/Admin/Dashboard/dashboard" class="btn btn-primary btn-xs">Home</a>&nbsp;&nbsp;&nbsp;<a href="/Admin/Others/RegisteredUsers" class="btn btn-primary btn-xs">Registered Users</a>&nbsp;&nbsp;&nbsp;<a href="#" class="btn btn-primary btn-xs"> User Details</a> </div>
-                </br>
-                <h4><i class="icon-th-list"></i> Id #: 1 | Registered Date: 11-02-2016 </h4>
-
+                </div>
+                <br />
             </div>
-            </br>
-        </div>
         <!-- Tabls Starts here -->
 
-        <div class="col-lg-10">
-            <div class="panel panel-primary">
-                <div class="panel-heading"> Customer Information </div>
-                <div class="panel-body">
-                    <p><b>Customer Id :</b> 2 </p>
-                    <p><b>Customer Name :</b> Sai Krishna </p>
-                    <p><b>Email:</b> saikrishna@xsilica.com  @*<a href="#" class="btn btn-primary btn-sm">Verified</a>*@</p>
-                    <p><b>Phone:</b> 7911123890 @*<a href="#" class="btn btn-primary btn-sm">Not Verified</a>*@</p>
-                    <p><b>Address:</b> 1/12A,Kavya Nivas,Karimnagar</p>
+            <div class="col-lg-10">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"> Customer Information </div>
+                    <div class="panel-body">
+                        <p><b>Customer Id :</b> @item.UserDetailId </p>
+                        <p><b>Customer Name :</b> @item.FirstName @item.LastName </p>
+                        <p><b>Email:</b> @item.UserName  @*<a href="#" class="btn btn-primary btn-sm">Verified</a>*@</p>
+                        <p><b>Phone:</b> @item.UserPhone @*<a href="#" class="btn btn-primary btn-sm">Not Verified</a>*@</p>
+                        <p><b>Address:</b> @item.Address,@item.City</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        }
+        
         <!-- Tabs Ends here -->
 
         @*<div class="col-lg-10">

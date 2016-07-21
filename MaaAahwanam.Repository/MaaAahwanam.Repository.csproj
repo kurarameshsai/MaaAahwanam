@@ -119,6 +119,18 @@
     <Compile Include="MaaAahwanam_Others_Comments_Result.cs">
       <DependentUpon>MaaAahwanam.tt</DependentUpon>
     </Compile>
+    <Compile Include="MaaAahwanam_Others_RegisteredUsersDetails_Result.cs">
+      <DependentUpon>MaaAahwanam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaaAahwanam_Others_RegisteredUsers_Result.cs">
+      <DependentUpon>MaaAahwanam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaaAahwanam_Others_TestimonialDetail_Result.cs">
+      <DependentUpon>MaaAahwanam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaaAahwanam_Others_Testimonials_Result.cs">
+      <DependentUpon>MaaAahwanam.tt</DependentUpon>
+    </Compile>
     <Compile Include="MaaAahwanam_Others_Tickets_Result.cs">
       <DependentUpon>MaaAahwanam.tt</DependentUpon>
     </Compile>
@@ -161,6 +173,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DBScript\StoredProcedures\MaaAahwanam_Others_TestimonialDetail.sql" />
+    <Content Include="DBScript\StoredProcedures\MaaAahwanam_Others_Testimonials.sql" />
+    <Content Include="DBScript\StoredProcedures\MaaAahwanam_Others_RegisteredUsersDetails.sql" />
+    <Content Include="DBScript\StoredProcedures\MaaAahwanam_Others_RegisteredUsers.sql" />
     <Content Include="DBScript\StoredProcedures\MaaAahwanam_Others_Tickets.sql" />
     <Content Include="DBScript\StoredProcedures\GetProducts.sql" />
     <Content Include="DBScript\StoredProcedures\GetProductsInfo.sql" />

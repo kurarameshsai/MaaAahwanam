@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MaaAahwanamModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MaaAahwanamModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
         <Function Name="GetProducts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="nType" Type="nvarchar" Mode="In" />
@@ -19,6 +19,14 @@
         <Function Name="MaaAahwanam_Others_Comments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CommentId" Type="bigint" Mode="In" />
         </Function>
+        <Function Name="MaaAahwanam_Others_RegisteredUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="MaaAahwanam_Others_RegisteredUsersDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserLoginId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="MaaAahwanam_Others_TestimonialDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="MaaAahwanam_Others_Testimonials" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="MaaAahwanam_Others_Tickets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="TicketId" Type="bigint" Mode="In" />
         </Function>
@@ -56,30 +64,29 @@
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="MaaAahwanamModelStoreContainer" />
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MaaAahwanamModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="MaaAahwanamEntities" annotation:LazyLoadingEnabled="true" >
           <FunctionImport Name="GetProducts" ReturnType="Collection(MaaAahwanamModel.GetProducts_Result)">
-            <Parameter Name="nType" Mode="In" Type="String" />
+          <Parameter Name="nType" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetProductsInfo" ReturnType="Collection(MaaAahwanamModel.GetProductsInfo_Result)">
             <Parameter Name="vid" Mode="In" Type="Int32" />
             <Parameter Name="nType" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="MaaAahwanam_Orders_OrderDetails" ReturnType="Collection(MaaAahwanamModel.MaaAahwanam_Orders_OrderDetails_Result)">
-            <Parameter Name="OrderNo" Mode="In" Type="Int64" />
+          <Parameter Name="OrderNo" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="MaaAahwanam_Others_Comments" ReturnType="Collection(MaaAahwanamModel.MaaAahwanam_Others_Comments_Result)">
-            <Parameter Name="CommentId" Mode="In" Type="Int64" />
+          <Parameter Name="CommentId" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="MaaAahwanam_Others_Tickets" ReturnType="Collection(MaaAahwanamModel.MaaAahwanam_Others_Tickets_Result)">
-            <Parameter Name="TicketId" Mode="In" Type="Int64" />
+          <Parameter Name="TicketId" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="MaaAahwanam_Services_Bidding" ReturnType="Collection(MaaAahwanamModel.MaaAahwanam_Services_Bidding_Result)">
-            <Parameter Name="RequestId" Mode="In" Type="Int64" />
+          <Parameter Name="RequestId" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sp_alterdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -111,6 +118,14 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="MaaAahwanam_Others_RegisteredUsers" ReturnType="Collection(MaaAahwanamModel.MaaAahwanam_Others_RegisteredUsers_Result)" />
+          <FunctionImport Name="MaaAahwanam_Others_RegisteredUsersDetails" ReturnType="Collection(MaaAahwanamModel.MaaAahwanam_Others_RegisteredUsersDetails_Result)">
+          <Parameter Name="UserLoginId" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="MaaAahwanam_Others_Testimonials" ReturnType="Collection(MaaAahwanamModel.MaaAahwanam_Others_Testimonials_Result)" />
+          <FunctionImport Name="MaaAahwanam_Others_TestimonialDetail" ReturnType="Collection(MaaAahwanamModel.MaaAahwanam_Others_TestimonialDetail_Result)">
+            <Parameter Name="Id" Mode="In" Type="Int64" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="GetProducts_Result">
           <Property Type="Int64" Name="Id" Nullable="false" />
@@ -184,6 +199,49 @@
           <Property Type="Int32" Name="ID" Nullable="false" />
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="MaaAahwanam_Others_RegisteredUsers_Result">
+          <Property Type="Int64" Name="UserLoginId" Nullable="false" />
+          <Property Type="String" Name="FirstName" Nullable="true" />
+          <Property Type="String" Name="LastName" Nullable="true" />
+          <Property Type="DateTime" Name="RegDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Address" Nullable="true" />
+          <Property Type="String" Name="Status" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="MaaAahwanam_Others_RegisteredUsersDetails_Result">
+          <Property Type="Int64" Name="UserLoginId" Nullable="false" />
+          <Property Type="String" Name="FirstName" Nullable="true" />
+          <Property Type="String" Name="LastName" Nullable="true" />
+          <Property Type="DateTime" Name="RegDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Address" Nullable="true" />
+          <Property Type="String" Name="City" Nullable="true" />
+          <Property Type="String" Name="State" Nullable="true" />
+          <Property Type="String" Name="Status" Nullable="true" />
+          <Property Type="String" Name="UserName" Nullable="true" />
+          <Property Type="Int64" Name="UserDetailId" Nullable="false" />
+          <Property Type="String" Name="UserPhone" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="MaaAahwanam_Others_Testimonials_Result">
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="FirstName" Nullable="true" />
+          <Property Type="String" Name="LastName" Nullable="true" />
+          <Property Type="String" Name="Address" Nullable="true" />
+          <Property Type="String" Name="Description" Nullable="true" />
+          <Property Type="String" Name="Email" Nullable="true" />
+          <Property Type="String" Name="Status" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="MaaAahwanam_Others_TestimonialDetail_Result">
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="UpdatedBy" Nullable="false" />
+          <Property Type="String" Name="FirstName" Nullable="true" />
+          <Property Type="String" Name="LastName" Nullable="true" />
+          <Property Type="String" Name="Email" Nullable="true" />
+          <Property Type="String" Name="UserPhone" Nullable="true" />
+          <Property Type="String" Name="Address" Nullable="true" />
+          <Property Type="String" Name="Description" Nullable="true" />
+          <Property Type="String" Name="ImagePath" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -301,6 +359,65 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="MaaAahwanamModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="MaaAahwanamModel.Store.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="MaaAahwanam_Others_RegisteredUsers" FunctionName="MaaAahwanamModel.Store.MaaAahwanam_Others_RegisteredUsers">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MaaAahwanamModel.MaaAahwanam_Others_RegisteredUsers_Result">
+                <ScalarProperty Name="UserLoginId" ColumnName="UserLoginId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="RegDate" ColumnName="RegDate" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="MaaAahwanam_Others_RegisteredUsersDetails" FunctionName="MaaAahwanamModel.Store.MaaAahwanam_Others_RegisteredUsersDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MaaAahwanamModel.MaaAahwanam_Others_RegisteredUsersDetails_Result">
+                <ScalarProperty Name="UserLoginId" ColumnName="UserLoginId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="RegDate" ColumnName="RegDate" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserDetailId" ColumnName="UserDetailId" />
+                <ScalarProperty Name="UserPhone" ColumnName="UserPhone" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="MaaAahwanam_Others_Testimonials" FunctionName="MaaAahwanamModel.Store.MaaAahwanam_Others_Testimonials">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MaaAahwanamModel.MaaAahwanam_Others_Testimonials_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="MaaAahwanam_Others_TestimonialDetail" FunctionName="MaaAahwanamModel.Store.MaaAahwanam_Others_TestimonialDetail">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MaaAahwanamModel.MaaAahwanam_Others_TestimonialDetail_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserPhone" ColumnName="UserPhone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

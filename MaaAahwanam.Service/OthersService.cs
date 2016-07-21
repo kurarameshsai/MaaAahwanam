@@ -44,5 +44,35 @@ namespace MaaAahwanam.Service
         {
             return othersRepository.TicketRecord(id);
         }
+        public IssueDetail AddTicket(IssueDetail issueDetail)
+        {
+            issueDetail.Status = "Active";
+            issueDetail.UpdatedDate = DateTime.Now;
+            return othersRepository.AddTicket(issueDetail);
+        }
+        public List<IssueDetail> TicketDetail(long id)
+        {
+            return othersRepository.TicketDetail(id);
+        }
+
+        //Registered Users Module
+        public List<MaaAahwanam_Others_RegisteredUsers_Result> RegisteredUsersList()
+        {
+            return othersRepository.RegisteredUsersList();
+        }
+        public List<MaaAahwanam_Others_RegisteredUsersDetails_Result> RegisteredUsersDetails(long id)
+        {
+            return othersRepository.RegisteredUserDetails(id);
+        }
+
+        //Testimonals Module
+        public List<MaaAahwanam_Others_Testimonials_Result> TestimonalsList()
+        {
+            return othersRepository.TestimonalsList();
+        }
+        public List<MaaAahwanam_Others_TestimonialDetail_Result> TestimonalDetail(long id)
+        {
+            return othersRepository.TestimonalDetail(id);
+        }
     }
 }

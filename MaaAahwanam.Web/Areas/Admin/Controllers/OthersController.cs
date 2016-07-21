@@ -7,6 +7,7 @@ using MaaAahwanam.Service;
 using MaaAahwanam.Models;
 using MaaAahwanam.Utility;
 using System.IO;
+using MaaAahwanam.Repository;
 
 namespace MaaAahwanam.Web.Areas.Admin.Controllers
 {
@@ -27,18 +28,39 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
         }
         public ActionResult Testimonials()
         {
+            ViewBag.TestimonalsList = othersService.TestimonalsList();
             return View();
         }
-        public ActionResult TicketDetails(string id)
+        public ActionResult TicketDetails(string id,string Command,IssueDetail issueDetail)
         {
             if (id!=null)
             {
                 ViewBag.record = othersService.TicketRecordService(long.Parse(id));
+                ViewBag.ticket = othersService.TicketDetail(long.Parse(id));
+            }
+            if (Command == "Submit")
+            {
+                issueDetail.TicketId = long.Parse(id);
+                issueDetail.RepliedBy = ValidUserUtility.ValidUser();
+                issueDetail.ReplayedDate = DateTime.Now;
+                issueDetail.UpdatedBy = ValidUserUtility.ValidUser();
+                issueDetail = othersService.AddTicket(issueDetail);
+                if (issueDetail.TicketCommuId != 0)
+                {
+                    return Content("<script language='javascript' type='text/javascript'>alert('Replied Successfully');location.href='" + @Url.Action("tickets", "others") + "'</script>");
+                }
+                else
+                {
+                    return Content("<script language='javascript' type='text/javascript'>alert('Failed');location.href='" + @Url.Action("tickets", "others") + "'</script>");
+                }
             }
             return View();
         }
-        public ActionResult TestimonialDetails()
+        public ActionResult TestimonialDetails(string id)
         {
+            //List<MaaAahwanam_Others_TestimonialDetail_Result> testimonal = othersService.TestimonalDetail(long.Parse(id));
+            //string[] imagenameslist = testimonal.im.Replace(" ", "").Split(',');
+            ViewBag.Testimonal = othersService.TestimonalDetail(long.Parse(id));
             return View();
         }
         public ActionResult CommentDetails(string id,string uid,string date, CommentDetail commentDetail,string Command)
@@ -69,10 +91,15 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
         }
         public ActionResult RegisteredUsers()
         {
+            ViewBag.users = othersService.RegisteredUsersList();
             return View();
         }
-        public ActionResult RegUserDetails()
+        public ActionResult RegUserDetails(string id)
         {
+            if (id != null)
+            {
+                ViewBag.userdetail = othersService.RegisteredUsersDetails(long.Parse(id));
+            }
             return View();
         }
 	}
