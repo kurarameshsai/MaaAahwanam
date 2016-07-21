@@ -5,16 +5,31 @@ using System.Text;
 using System.Threading.Tasks;
 using MaaAahwanam.Repository.db;
 using MaaAahwanam.Models;
+using AutoMapper;
 
 namespace MaaAahwanam.Service
 {
     public class TestmonialService
     {
-        public List<dynamic> TestmonialServiceList()
+        AdminTestimonialRepository testimonialRepository = new AdminTestimonialRepository();
+        AdminTestimonialPathRepository testimonialpathRepository = new AdminTestimonialPathRepository();
+
+        public List<GetTestimonials> TestmonialServiceList()
         {
-            AdminTestimonialRepository testimonialRepository = new AdminTestimonialRepository();
             List<dynamic> l1 = testimonialRepository.AdminTestimonialList();
-            return l1;
+            //Mapper.CreateMap<l1, GetTestimonials>();
+            //Mapper.Map<l1, GetTestimonials>(l1);
+            var testFile = Mapper.Map<GetTestimonials>(l1.First());
+            return testFile;
+        }
+        public AdminTestimonial Savetestimonial(AdminTestimonial adminTestimonial)
+        {
+            testimonialRepository.SaveAdminTestimonial(adminTestimonial);
+            return adminTestimonial;
+        }
+        public void Savetestimonialpath(AdminTestimonialPath adminTestimonialPath)
+        {
+            testimonialpathRepository.SaveAdminTestimonial(adminTestimonialPath);
         }
     }
 }

@@ -14,5 +14,11 @@ namespace MaaAahwanam.Repository.db
         {
             return _dbContext.AdminTestimonialPath.ToList();
         }
+        public string SaveAdminTestimonial(AdminTestimonialPath adminTestimonialPath)
+        {
+            _dbContext.AdminTestimonialPath.Add(adminTestimonialPath);
+            _dbContext.SaveChanges();
+            return "Success";
+        }
     }
 }

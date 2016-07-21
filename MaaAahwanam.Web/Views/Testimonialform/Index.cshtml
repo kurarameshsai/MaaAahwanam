@@ -1,4 +1,6 @@
-﻿@{
+﻿@model MaaAahwanam.Models.AdminTestimonial
+
+@{
     Layout = null;
 }
 
@@ -26,13 +28,6 @@
 </head>
 
 <body class="homepage">
-    <div class="overlay" style="display: block;">
-        <div style="left: 50%; top: 50%; position: fixed; transform: translate(-50%, -50%); text-align: center;">
-            <img src="../CSSWeb/images/Loader.gif" />
-            <br>
-            <p style="color: white; font-style: italic; font-family:serif;">&nbsp; Just a second...</p>
-        </div>
-    </div>
     <header>
         <div class="sticky-navigation">
             <div class="top-bar">
@@ -61,7 +56,7 @@
                             </div>
                         </div>
                     </div>
-                    @{Html.RenderAction("SigninPartial", "signin");}
+                    @*@{Html.RenderAction("SigninPartial", "signin");}*@
                 </div>
             </div>
             <div class="menu">
@@ -69,29 +64,6 @@
                     <div class="headLeft">
                         <a href="../Index"><img src="../CSSWeb/images/logo.png" alt="logo" title="Maa Aahwanam" /></a>
                     </div>
-                    @*@if (ViewBag.Type == "User" || ViewBag.Type == null)
-                        {*@
-                    <div class="headRight">
-                        <nav>
-                            <ul>
-                                <li><a href="../Index" class="active hvr-sweep-to-bottom">Home</a></li>
-                                <li><a href="../Aboutus" class="hvr-sweep-to-bottom">About Us</a></li>
-                                <li>
-                                    <a href="javascript:void(0);" class="hvr-sweep-to-bottom">Services <i class="ti-angle-down"></i></a>
-                                    <ul class="submenu">
-                                        <li><a href="~/Quatation">Quatation</a></li>
-                                        <li><a href="~/Biddings">Bidding</a></li>
-                                        <li><a href="~/ReverseBiddings">Reverse Bidding</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="~/Product" class="hvr-sweep-to-bottom">Return Gifts</a></li>
-                                <li><a href="~/Testimonials" class="hvr-sweep-to-bottom">Testimonials</a></li>
-                                <li><a href="~/ContactUs" class="hvr-sweep-to-bottom">Contact Us</a></li>
-                            </ul>
-                        </nav>
-                        @{Html.RenderAction("ItemsCartViewBindingLayout", "Index");}
-                    </div>
-                    @*}*@
                 </div>
             </div>
 
@@ -104,7 +76,7 @@
             <h2>Testimonial Form</h2>
         </div>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
-        @using (Html.BeginForm("Index", "Testimonialform", FormMethod.Post, new { @class = "form-signin", @id = "register_form", @autocomplete = "off" }))
+        @using (Html.BeginForm("Saveform", "Testimonialform", FormMethod.Post, new { @class = "form-signin", @id = "register_form", @autocomplete = "off", @enctype = "multipart/form-data" }))
         {
             <div class="displayDiv">
                 <div class="bidding_form">
@@ -114,7 +86,7 @@
                                 <label>FullName : </label>
                             </td>
                             <td>
-                                <input type="text" name="FullName" placeholder="FullName">
+                                @Html.TextBoxFor(model => model.Name, new { @id = "FullName", @name = "FullName", placeholder = "FullName", required = "required" })
                             </td>
                         </tr>
                         <tr>
@@ -122,8 +94,7 @@
                                 <label>Email : </label>
                             </td>
                             <td>
-                                <input type="text" name="Email" placeholder="Email">
-                                @*<textarea name="Preferences" placeholder="Preferences"></textarea>*@
+                                @Html.TextBoxFor(model => model.Email, new { @id = "Email", @name = "Email", placeholder = "Email", required = "required" })
                             </td>
                         </tr>
                         <tr>
@@ -131,7 +102,7 @@
                                 <label>Your Testimonial : </label>
                             </td>
                             <td>
-                                <textarea name="Testimonial" placeholder="Testimonial"></textarea>
+                                @Html.TextAreaFor(model => model.Description, new { @id = "Testimonial", @name = "Testimonial", placeholder = "Testimonial", required = "required" })
                             </td>
                         </tr>
                         <tr>
@@ -139,7 +110,14 @@
                                 <label>Images : </label>
                             </td>
                             <td>
-                                <input type="file" name="Preferences" placeholder="Preferences"></input>
+                                @*<input type="file" name="Preferences" placeholder="Preferences"/>*@
+                                <input type='file' multiple="multiple" accept="image/*" id='fileUpload' name="file" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <div id="dvPreview"></div>
                             </td>
                         </tr>
                         <tr>
@@ -148,6 +126,8 @@
                             </td>
                             <td>
                                 <button type="submit" class="btn btn-big btn-green float-right">Submit <i class="ti-angle-double-right"></i></button>
+                                @*<button type="submit" class="btn btn-big btn-green float-right">Submit <i class="ti-angle-double-right"></i></button>*@
+                                @*<input type="submit" value="Save" class="btn text-muted text-center btn-success" name="Command" />*@
                             </td>
                         </tr>
 
@@ -269,472 +249,39 @@
     <script type="text/javascript" src="~/CSSWeb/js/tabs.js"></script>
     <script type="text/javascript" src="~/CSSWeb/js/owl.carousel.min.js"></script>
 
-    <script>
-        //Jump Top_sai
-        $('#btn-scrollup').click(function () {
-            $('html, body').animate({ scrollTop: 0 }, 'fast');
-            //return false;
-            //e.preventDefault();
-        });
-    </script>
-    <script>
-        /* ---------------------- To signup validation for password field ------------------ */
-        $(document).ready(function () {
-            $.ajax({
-                type: "POST",
-                url: window.location.href.split("/")[0] + '//' + window.location.href.split("/")[2] + '/Login/RegularExpressionPattern_Password',
-                data: {},
-                dataType: "json",
-                contentType: "application/json; charset=utf-8",
-                success: function (result) {
-                    document.getElementById("PasswordValue_Login").pattern = result;
-                    document.getElementById("PasswordValue_Reg").pattern = result;
-                },
-                error: function (data) {
-                },
-            });
-        });
-        function check() {
-            if (document.getElementById("PasswordValue_Reg").value == document.getElementById("ConfirmPassword").value) {
-                ConfirmPassword.setCustomValidity("");
-            }
-            else {
-                ConfirmPassword.setCustomValidity("Passwords Don't Match");
-            }
-        }
-        function Clear() {
-            document.getElementById("LoginForm").reset();
-            document.getElementById("ForgotpasswordForm").reset();
-            document.getElementById("RegistrationForm").reset();
-        }
-    </script>
-    <script type="text/javascript">
-        /* ---------------------- After clicking on search button ------------------ */
-        function GetSearchValue_Top() {
-            var selectedText = e1.options[e1.selectedIndex].innerHTML;
-            var Searchlocation = document.getElementById('txt_Location_Top');
-            alert(Searchlocation.value + "," + selectedText);
-        }
-        function GetSearchValue_Bottom() {
-            var selectedText = e2.options[e2.selectedIndex].innerHTML;
-            var Searchlocation = document.getElementById('txt_Location_Bottom');
-            alert(Searchlocation.value + "," + selectedText);
-        }
-    </script>
 
-    <script>
-        /* ------------------ To save the subscriber -----------------------------  */
-        function SaveSubscriber() {
-            var Subscription = {};
-            Subscription.EmailId = $('#emailid').val();
-            Subscription.Status = null;
-            $.ajax({
-                type: "POST",
-                url: "/Index/SubmittingSubscriber",
-                content: "application/json; charset=utf-8",
-                dataType: "json",
-                data: {},
-                //data: JSON.stringify(Subscription),
-                data: Subscription,
-                success: function (data) {
-                    alert(data);
-                    //if (data == 'success')
-                    //    alert('subscribed successfully');
-                    //if (data == 'failed')
-                    //    alert('subscription failed');
-                },
-                error: function (data) {
-                    alert("Exception as occured");
-                }
-            });
-        }
-    </script>
-    <script>
-        /* --------------- To bind auto complete location details to the search ------------------ */
-        $(document).ready(function () {
-            var LocationList = [];
-            var EventsList = [];
-            $.ajax({
-                type: "POST",
-                contentType: "application/json; charset=utf-8",
-                url: window.location.href.split("/")[0] + '//' + window.location.href.split("/")[2] + '/Index/AutoCompleteCountry',
-                data: {},
-                dataType: "json",
-                success: function (result) {
-                    LocationList = $.map(result.Listoflocations, function (item) { return item });
-                    EventsList = $.map(result.ListofEvents, function (item) { return item });
-                    for (var i = 0; i < EventsList.length; i++) {
-                        $("#e1").append($("<option></option>").val(EventsList[i]).html(EventsList[i]))
-                        $("#e2").append($("<option></option>").val(EventsList[i]).html(EventsList[i]))
-                    }
-                },
-                error: function (result) {
-                    //alert("Error");
-                }
-            });
-            $("#txt_Location_Top").autocomplete({
-                delay: 0,
-                source: function (request, response) {
-                    var results = $.ui.autocomplete.filter(LocationList, request.term);
-                    if (!results.length) {
-                        response([{ label: 'No results found...', val: -1 }]);
-                    } else {
-                        response(results);
-                    }
-                },
-                select: function (e, u) {
-                    if (u.item.val == -1) {
-                        return false;
-                    }
-                }
-            });
-            $("#txt_Location_Bottom").autocomplete({
-                delay: 0,
-                source: function (request, response) {
-                    var results = $.ui.autocomplete.filter(LocationList, request.term);
-                    if (!results.length) {
-                        response([{ label: 'No results found...', val: -1 }]);
-                    } else {
-                        response(results);
-                    }
-                },
-                select: function (e, u) {
-                    if (u.item.val == -1) {
-                        return false;
-                    }
-                }
-            });
-        });
-
-    </script>
-    <script type="text/javascript">
-        /* -------------------------------  wait for images to load ------------------------ */
-        $(window).load(function () {
-            $('.sp-wrap').smoothproducts();
-            $(".overlay").hide();
-        });
-    </script>
-    <script>
-        $(document).ready(function () {
-            $(".comment").shorten();
-            $(".comment-small").shorten({ showChars: 10 });
-        });
-    </script>
-    <script>
-        //toparrow
-        $('a.move_review').click(function () {
-            $('html,body').animate({ scrollTop: $(this.hash).offset().top - 225 }, 1000);
-            return false;
-            e.preventDefault();
-
-        });
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            jQuery('.sidebar').meanmenu({
-                shrinkTarget: '#SecondMenu',
-                meanShowChildren: false, meanScreenWidth: "767"
-            });
-        });
-
-        //--------------- dropdown -----------------//
-        $(document).ready(function () {
-            $('.dropdown-toggle').click(function (e) {
-                $(".loginForm").toggle();
-                $(".dropdown-toggle").toggleClass('open');
-                e.stopPropagation();
-            });
-        });
-        $(document).click(function (e) {
-            if (!$(e.target).is('.loginForm, .loginForm *')) {
-                $(".loginForm").hide();
-                $(".dropdown-toggle").removeClass('open');
-            }
-        });
-    </script>
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            var owl = $("#edit_card");
-            owl.owlCarousel({
-                items: 1, //10 items above 1000px browser width
-                itemsDesktop: [1000, 1], //5 items between 1000px and 901px
-                itemsDesktopSmall: [900, 1], // betweem 900px and 601px
-                itemsTablet: [600, 1], //2 items between 600 and 0
-                itemsMobile: false, // itemsMobile disabled - inherit from itemsTablet option
-                loop: true
-            });
-
-            // Custom Navigation Events
-            $(".next").click(function () {
-                owl.trigger('next');
-            })
-            $(".prev").click(function () {
-                owl.trigger('prev');
-            })
-        });
-    </script>
-    <!--Tabs Plugin Initialisation-->
-    <script type="text/javascript">
-        $(document).ready(function () {
-            //Horizontal Tab
-            $('#parentHorizontalTab').easyResponsiveTabs({
-                type: 'default', //Types: default, vertical, accordion
-                width: 'auto', //auto or any width like 600px
-                fit: true, // 100% fit in a container
-                tabidentify: 'hor_1', // The tab groups identifier
-                activate: function (event) { // Callback function if tab is switched
-                    var $tab = $(this);
-                    var $info = $('#nested-tabInfo');
-                    var $name = $('span', $info);
-                    $name.text($tab.text());
-                    $info.show();
-                }
-            });
-
-            $('#parentHorizontalTab2').easyResponsiveTabs({
-                type: 'default', //Types: default, vertical, accordion
-                width: 'auto', //auto or any width like 600px
-                fit: true, // 100% fit in a container
-                tabidentify: 'hor_1', // The tab groups identifier
-                activate: function (event) { // Callback function if tab is switched
-                    var $tab = $(this);
-                    var $info = $('#nested-tabInfo');
-                    var $name = $('span', $info);
-                    $name.text($tab.text());
-                    $info.show();
-                }
-            });
-        });
-
-
-        var results;
-        results = $('.select2-drop-active > .select2-results');
-        results.niceScroll({
-            autohidemode: false,
-            cursorcolor: "#4A4A4A",
-            cursorwidth: 6
-        });
-
-        //select box
+ <script language="javascript" type="text/javascript">
         $(function () {
-            // turn the element to select2 select style
-            $('#e1').select2();
-            $('#e2').select2();
-        });
-
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#testimonials").owlCarousel({
-                items: 2,
-                pagination: true,
-                autoPlay: true,
-                autoPlayTimeout: 400,
-                nav: true,
-                loop: true,
-                autoplayHoverPause: true,
-                responsive: {
-                    0: {
-                        items: 1,
-                        nav: true
-                    },
-                    540: {
-                        items: 1,
-                        nav: true
-                    },
-                    640: {
-                        items: 1,
-                        nav: true
-                    },
-                    720: {
-                        items: 2,
-                        nav: true
-                    },
-                    768: {
-                        items: 2,
-                        nav: true
-                    },
-                    1000: {
-                        items: 2,
-                        nav: true,
-                        loop: true
-                    }
+            $("#fileUpload").change(function () {
+                if (typeof (FileReader) != "undefined") {
+                    var dvPreview = $("#dvPreview");
+                    dvPreview.html("");
+                    var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
+                    $($(this)[0].files).each(function () {
+                        var file = $(this);
+                        if (regex.test(file[0].name.toLowerCase())) {
+                            var reader = new FileReader();
+                            reader.onload = function (e) {
+                                var img = $("<img />");
+                                img.attr("style", "height:100px;width: 100px max-height: 75px;border: 2px solid;margin: 10px 10px 0 0;padding: 1px;");
+                                img.attr("src", e.target.result);
+                                img.addClass();
+                                dvPreview.append(img);
+                            }
+                            reader.readAsDataURL(file[0]);
+                        } else {
+                            alert(file[0].name + " is not a valid image file.");
+                            dvPreview.html("");
+                            return false;
+                        }
+                    });
+                } else {
+                    alert("This browser does not support HTML5 FileReader.");
                 }
             });
         });
-    </script>
-
-    <!-- Master slider -->
-    <script type="text/javascript">
-        // Master slider
-        jQuery(document).ready(function () {
-            var slider = new MasterSlider();
-            slider.setup('masterslider', {
-                width: 1600,
-                height: 500,
-                //space:100,
-                fullwidth: true,
-                centerControls: true,
-                speed: 30,
-                autoplay: false,
-                swipe: true,
-                mouse: true,
-            });
-            //slider.control('arrows');
-            slider.control('arrows', { autohide: true });
-            //slider.control('bullets');
-        });
-
-        // Show div on the scroll
-        $(document).scroll(function () {
-            var y = $(this).scrollTop();
-            if (y > 100) {
-                $('.searchDiv').fadeIn();
-            } else {
-                $('.searchDiv').fadeOut();
-            }
-        });
-
-
-        // Show div on the scroll
-        $(document).scroll(function () {
-            var y = $(this).scrollTop();
-            if (y > 100) {
-                $('.search-box, #select2-drop').fadeOut();
-                $('.ui-autocomplete').hide();
-                //$("#txt_Location_Bottom").Clear();
-            } else {
-                $('.search-box').fadeIn();
-                //$("#txt_Location_Top").Clear();
-            }
-        });
-    </script>
-    <script>
-        // Show / Hide div
-        $(document).ready(function () {
-            $(".slidingDiv").hide();
-            $(".show_hide").show();
-            $("body").not(".show_hide,.slidingDiv").click(function () {
-                $(".slidingDiv").fadeOut("slow");
-            });
-
-            $(".show_hide").click(function (e) {
-                $(".slidingDiv").fadeIn('slow');
-                e.stopPropagation();
-            });
-
-        });
-    </script>
-    <script>
-        /*
-        window.onerror = function(errorMsg) {
-            $('#console').html($('#console').html()+'<br>'+errorMsg)
-        }*/
-        //$.datetimepicker.setLocale('en');
-
-        $('#datetimepicker_format').datetimepicker({ value: '2015/12/12 05:03', format: $("#datetimepicker_format_value").val() });
-        $("#datetimepicker_format_change").on("click", function (e) {
-            $("#datetimepicker_format").data('xdsoft_datetimepicker').setOptions({ format: $("#datetimepicker_format_value").val() });
-        });
-        $("#datetimepicker_format_locale").on("change", function (e) {
-            $.datetimepicker.setLocale($(e.currentTarget).val());
-        });
-
-        // event start date
-        $('#datetimepicker1').datetimepicker({
-            lang: 'en',
-            timepicker: false,
-            format: 'd/m/Y',
-            formatDate: 'Y/m/d',
-        });
-        // event end date
-        $('#datetimepicker2').datetimepicker({
-            lang: 'en',
-            timepicker: false,
-            format: 'd/m/Y',
-            formatDate: 'Y/m/d',
-        });
-        // event start time
-        $('#datetimepicker3').datetimepicker({
-            datepicker: false,
-            format: 'H:i',
-            step: 5
-        });
-        // event end time
-        $('#datetimepicker4').datetimepicker({
-            datepicker: false,
-            format: 'H:i',
-            step: 5
-        });
-    </script>
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-
-            $("#contact_form").validate({
-                rules: {
-                    name: {
-                        required: true
-                    },
-                    email: {
-                        required: true,
-                        email: true
-                    },
-                    phone: {
-                        required: true,
-                        number: true,
-                        minlength: 10,
-                        maxlength: 12
-                    },
-                    country: {
-                        required: true
-                    },
-                    postal_code: {
-                        required: true
-                    },
-                    company_name: {
-                        required: true
-                    },
-
-                    message: {
-                        required: true
-                    }
-
-                },
-                messages: {
-                    name: {
-                        required: "Please enter your name"
-                    },
-                    email: {
-                        required: "Please enter your email Id "
-                    },
-                    phone: {
-                        required: "Please enter your phone number"
-                    },
-                    country: {
-                        required: "Please select country"
-                    },
-                    postal_code: {
-                        required: "Please enter your Postal Code"
-                    },
-                    company_name: {
-                        required: "Please enter your company name"
-                    },
-                    message: {
-                        required: "Please enter your Message"
-                    },
-
-
-
-                },
-            });
-        });
-        function citychange() {
-            //var x = document.getElementById("selectcity").value;
-            //window.location.assign("../Index")
-        }
-    </script>
+</script>
+    
 </body>
 
 </html>

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model dynamic
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/SharedWeb/MainMaster.cshtml";
 }
@@ -356,16 +357,16 @@
                         <div class="item">
                             <div class="studentPic">
                                 <div class="studentPic-inner">
-                                    <div> <img src="blank.gif" class="lazy" data-src="../Content/AdminUserfiles/@item.ImagePath" alt="student"> </div>
+                                    @*<div> <img src="blank.gif" class="lazy" data-src="../Content/AdminUserfiles/@item.ImagePath" alt="student"> </div>*@
                                 </div>
                             </div>
                             <div class="studentTest">
                                 <p>
-                                    @item.Description.ToString().Substring(0, 200)
+                                    @*@item.Description*@
                                     <a href="~/Testimonials">......More</a>
                                 </p>
                                 <div class="stuTitle">
-                                    @item.Name
+                                    @*@item.Name*@
                                 </div>
                                 <small>@*@item.City*@</small>
                             </div>
