@@ -596,6 +596,7 @@ D:\Maa 2.0\MaaAahwanam.Web\bin\System.Web.WebPages.dll
 D:\Maa 2.0\MaaAahwanam.Web\bin\System.Web.WebPages.Razor.dll
 D:\Maa 2.0\MaaAahwanam.Web\bin\WebGrease.dll
 D:\Maa 2.0\MaaAahwanam.Web\bin\TrackerEnabledDbContext.dll
+D:\Maa 2.0\MaaAahwanam.Web\bin\AutoMapper.dll
 D:\Maa 2.0\MaaAahwanam.Web\bin\TrackerEnabledDbContext.Common.dll
 D:\Maa 2.0\MaaAahwanam.Web\bin\EntityFramework.MappingAPI.dll
 D:\Maa 2.0\MaaAahwanam.Web\bin\MaaAahwanam.Models.pdb
@@ -628,6 +629,7 @@ D:\Maa 2.0\MaaAahwanam.Web\bin\Microsoft.Owin.Security.OAuth.xml
 D:\Maa 2.0\MaaAahwanam.Web\bin\Microsoft.Owin.Security.Google.xml
 D:\Maa 2.0\MaaAahwanam.Web\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Maa 2.0\MaaAahwanam.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Maa 2.0\MaaAahwanam.Web\bin\AutoMapper.xml
 D:\Maa 2.0\MaaAahwanam.Web\bin\EntityFramework.MappingAPI.pdb
 D:\Maa 2.0\MaaAahwanam.Web\obj\Debug\MaaAahwanam.Web.csprojResolveAssemblyReference.cache
 D:\Maa 2.0\MaaAahwanam.Web\obj\Debug\MaaAahwanam.Web.dll
