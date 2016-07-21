@@ -12,7 +12,31 @@ namespace MaaAahwanam.Repository.db
         readonly ApiContext _dbContext = new ApiContext();
         public List<dynamic> AdminTestimonialList()
         {
-            return _dbContext.AdminTesimonial.Join(_dbContext.Vendormaster, i => i.Id, p => p.Id, (i, p) => new { p = p, i = i }).ToList<dynamic>();
+            var list = (from p in _dbContext.AdminTesimonial
+                        join r in _dbContext.AdminTestimonialPath
+                         on p.Id equals r.Id
+                        select new
+                        {
+                            id = p.Id,
+                            name = p.Name,
+                            email = p.Email,
+                            Description = p.Description,
+                            image = r.ImagePath
+                        }).Take(1).ToList<dynamic>();
+            //List<GetTestimonials> list1 = new List<GetTestimonials>();
+            //foreach (var item in list)
+            //{
+                //list1 = item.Id;
+            //}
+            return list;
+
+            //return _dbContext.AdminTesimonial.ToList<dynamic>();
+        }
+        public AdminTestimonial SaveAdminTestimonial(AdminTestimonial adminTestimonial)
+        {
+            _dbContext.AdminTesimonial.Add(adminTestimonial);
+            _dbContext.SaveChanges();
+            return adminTestimonial;
         }
     }
 }
