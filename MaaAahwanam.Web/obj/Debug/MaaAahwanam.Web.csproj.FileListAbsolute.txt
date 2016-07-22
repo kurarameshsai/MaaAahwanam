@@ -671,6 +671,7 @@ E:\Project\Maa-Aahwanam\MaaAahwanam.Web\bin\System.Web.WebPages.dll
 E:\Project\Maa-Aahwanam\MaaAahwanam.Web\bin\System.Web.WebPages.Razor.dll
 E:\Project\Maa-Aahwanam\MaaAahwanam.Web\bin\WebGrease.dll
 E:\Project\Maa-Aahwanam\MaaAahwanam.Web\bin\TrackerEnabledDbContext.dll
+E:\Project\Maa-Aahwanam\MaaAahwanam.Web\bin\AutoMapper.dll
 E:\Project\Maa-Aahwanam\MaaAahwanam.Web\bin\TrackerEnabledDbContext.Common.dll
 E:\Project\Maa-Aahwanam\MaaAahwanam.Web\bin\EntityFramework.MappingAPI.dll
 E:\Project\Maa-Aahwanam\MaaAahwanam.Web\bin\MaaAahwanam.Models.pdb
@@ -703,6 +704,7 @@ E:\Project\Maa-Aahwanam\MaaAahwanam.Web\bin\Microsoft.Owin.Security.OAuth.xml
 E:\Project\Maa-Aahwanam\MaaAahwanam.Web\bin\Microsoft.Owin.Security.Google.xml
 E:\Project\Maa-Aahwanam\MaaAahwanam.Web\bin\Microsoft.Owin.Security.Twitter.xml
 E:\Project\Maa-Aahwanam\MaaAahwanam.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Project\Maa-Aahwanam\MaaAahwanam.Web\bin\AutoMapper.xml
 E:\Project\Maa-Aahwanam\MaaAahwanam.Web\bin\EntityFramework.MappingAPI.pdb
 E:\Project\Maa-Aahwanam\MaaAahwanam.Web\obj\Debug\MaaAahwanam.Web.csprojResolveAssemblyReference.cache
 E:\Project\Maa-Aahwanam\MaaAahwanam.Web\obj\Debug\MaaAahwanam.Web.dll

@@ -1847,8 +1847,6 @@
     <Content Include="Assets\test\jquery-ui.css" />
     <Content Include="Assets\test\jquery-ui.min.js" />
     <Content Include="Assets\test\jquery.min.js" />
-    <Content Include="BeautyService_17_1.jpg" />
-    <Content Include="BeautyService_17_2.jpg" />
     <Content Include="BeautyService_17_3.jpg" />
     <Content Include="BeautyService_17_4.jpg" />
     <Content Include="BeautyService_18_1.jpg" />

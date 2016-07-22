@@ -161,6 +161,7 @@ D:\Maa 2.0\MaaAahwanam.Models\obj\Debug\MaaAahwanam.Models.dll
 D:\Maa 2.0\MaaAahwanam.Models\obj\Debug\MaaAahwanam.Models.pdb
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Debug\MaaAahwanam.Models.dll
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Debug\MaaAahwanam.Models.pdb
+E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Debug\AutoMapper.dll
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Debug\Microsoft.Web.Infrastructure.dll
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Debug\System.Web.Helpers.dll
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Debug\System.Web.Mvc.dll
@@ -168,11 +169,13 @@ E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Debug\System.Web.Razor.dll
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Debug\System.Web.WebPages.Deployment.dll
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Debug\System.Web.WebPages.dll
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Debug\System.Web.WebPages.Razor.dll
+E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Debug\AutoMapper.xml
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Debug\System.Web.Helpers.xml
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Debug\System.Web.Mvc.xml
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Debug\System.Web.Razor.xml
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Debug\System.Web.WebPages.xml
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Debug\System.Web.WebPages.Deployment.xml
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Debug\System.Web.WebPages.Razor.xml
+E:\Project\Maa-Aahwanam\MaaAahwanam.Models\obj\Debug\MaaAahwanam.Models.csprojResolveAssemblyReference.cache
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\obj\Debug\MaaAahwanam.Models.dll
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\obj\Debug\MaaAahwanam.Models.pdb

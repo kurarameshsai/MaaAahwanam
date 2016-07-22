@@ -38,3 +38,5 @@ E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Release\System.Web.WebPages.Razor
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\obj\Release\MaaAahwanam.Models.csprojResolveAssemblyReference.cache
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\obj\Release\MaaAahwanam.Models.dll
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\obj\Release\MaaAahwanam.Models.pdb
+E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Release\AutoMapper.dll
+E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Release\AutoMapper.xml

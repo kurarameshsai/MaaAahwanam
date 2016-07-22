@@ -94,6 +94,7 @@
     <Compile Include="ServiceResponse.cs" />
     <Compile Include="SiteFaq.cs" />
     <Compile Include="Subscription.cs" />
+    <Compile Include="TempVenueDetail.cs" />
     <Compile Include="UserAddBook.cs" />
     <Compile Include="UserDetail.cs" />
     <Compile Include="UserLogin.cs" />

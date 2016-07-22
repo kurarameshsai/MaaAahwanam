@@ -141,9 +141,9 @@
     <Compile Include="MaaAahwanam_Services_Bidding_Result.cs">
       <DependentUpon>MaaAahwanam.tt</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201607211050182_migrations_date_07212016.cs" />
-    <Compile Include="Migrations\201607211050182_migrations_date_07212016.Designer.cs">
-      <DependentUpon>201607211050182_migrations_date_07212016.cs</DependentUpon>
+    <Compile Include="Migrations\201607221112310_migrations_date_07222016.cs" />
+    <Compile Include="Migrations\201607221112310_migrations_date_07222016.Designer.cs">
+      <DependentUpon>201607221112310_migrations_date_07222016.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -177,6 +177,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DBScript\StoredProcedures\SP_GetTestimonials.sql" />
     <Content Include="DBScript\StoredProcedures\MaaAahwanam_Others_TestimonialDetail.sql" />
     <Content Include="DBScript\StoredProcedures\MaaAahwanam_Others_Testimonials.sql" />
     <Content Include="DBScript\StoredProcedures\MaaAahwanam_Others_RegisteredUsersDetails.sql" />
@@ -201,8 +202,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201607211050182_migrations_date_07212016.resx">
-      <DependentUpon>201607211050182_migrations_date_07212016.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201607221112310_migrations_date_07222016.resx">
+      <DependentUpon>201607221112310_migrations_date_07222016.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -127,13 +127,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/14/2016 18:01:39</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Orders/OrderDetails.cshtml">
-      <publishTime>07/15/2016 13:07:55</publishTime>
+      <publishTime>07/21/2016 13:21:49</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Other/Index.cshtml">
       <publishTime>11/19/2015 17:53:56</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Others/CommentDetails.cshtml">
-      <publishTime>07/20/2016 13:08:08</publishTime>
+      <publishTime>07/21/2016 13:07:29</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Others/Comments.cshtml">
       <publishTime>07/19/2016 15:16:21</publishTime>
@@ -145,13 +145,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/20/2016 15:51:27</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Others/TestimonialDetails.cshtml">
-      <publishTime>07/20/2016 18:03:42</publishTime>
+      <publishTime>07/21/2016 13:02:44</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Others/Testimonials.cshtml">
       <publishTime>07/20/2016 17:06:53</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Others/TicketDetails.cshtml">
-      <publishTime>07/20/2016 13:17:47</publishTime>
+      <publishTime>07/21/2016 13:05:55</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Others/Tickets.cshtml">
       <publishTime>07/20/2016 12:59:07</publishTime>
@@ -214,7 +214,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/19/2016 16:15:50</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Services/Biddings.cshtml">
-      <publishTime>07/15/2016 11:48:58</publishTime>
+      <publishTime>07/21/2016 13:26:04</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Services/BidRequests.cshtml">
       <publishTime>07/12/2016 17:42:49</publishTime>
@@ -223,13 +223,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/13/2016 18:47:51</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Services/Quotations.cshtml">
-      <publishTime>07/14/2016 13:54:52</publishTime>
+      <publishTime>07/21/2016 13:34:42</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Services/QuotRequests.cshtml">
       <publishTime>07/13/2016 17:05:30</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Services/QuotReqView.cshtml">
-      <publishTime>07/14/2016 12:42:38</publishTime>
+      <publishTime>07/21/2016 13:37:36</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Services/RevBidRequests.cshtml">
       <publishTime>07/13/2016 17:26:25</publishTime>
@@ -283,7 +283,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/01/2016 12:29:20</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Vendors/AllVendors.cshtml">
-      <publishTime>07/01/2016 12:29:20</publishTime>
+      <publishTime>07/21/2016 18:06:37</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Vendors/PendingVendors.cshtml">
       <publishTime>07/01/2016 12:29:20</publishTime>
@@ -292,7 +292,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/01/2016 12:29:20</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Vendors/VendorDetails.cshtml">
-      <publishTime>07/04/2016 13:30:32</publishTime>
+      <publishTime>07/21/2016 15:38:01</publishTime>
     </File>
     <File Include="Areas/Admin/Views/web.config">
       <publishTime>07/01/2016 12:29:20</publishTime>
@@ -7044,6 +7044,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>07/01/2016 12:29:46</publishTime>
     </File>
+    <File Include="bin/AutoMapper.dll">
+      <publishTime>07/07/2016 18:53:02</publishTime>
+    </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>07/01/2016 12:29:47</publishTime>
     </File>
@@ -7060,19 +7063,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/10/2016 16:36:17</publishTime>
     </File>
     <File Include="bin/MaaAahwanam.Models.dll">
-      <publishTime>07/18/2016 14:18:17</publishTime>
+      <publishTime>07/21/2016 18:23:10</publishTime>
     </File>
     <File Include="bin/MaaAahwanam.Repository.dll">
-      <publishTime>07/20/2016 18:45:14</publishTime>
+      <publishTime>07/21/2016 18:23:10</publishTime>
     </File>
     <File Include="bin/MaaAahwanam.Service.dll">
-      <publishTime>07/20/2016 18:45:15</publishTime>
+      <publishTime>07/21/2016 18:23:10</publishTime>
     </File>
     <File Include="bin/MaaAahwanam.Utility.dll">
-      <publishTime>07/18/2016 14:18:19</publishTime>
+      <publishTime>07/21/2016 18:23:11</publishTime>
     </File>
     <File Include="bin/MaaAahwanam.Web.dll">
-      <publishTime>07/20/2016 18:45:15</publishTime>
+      <publishTime>07/21/2016 18:24:47</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>07/01/2016 12:29:48</publishTime>
@@ -8764,7 +8767,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/23/2016 16:15:00</publishTime>
     </File>
     <File Include="Views/Index/Index.cshtml">
-      <publishTime>07/20/2016 18:37:56</publishTime>
+      <publishTime>07/21/2016 18:12:27</publishTime>
     </File>
     <File Include="Views/Index/ItemsCartViewBindingLayout.cshtml">
       <publishTime>07/01/2016 12:29:45</publishTime>
@@ -8938,7 +8941,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/15/2016 17:54:49</publishTime>
     </File>
     <File Include="Views/Testimonialform/Index.cshtml">
-      <publishTime>07/15/2016 17:54:49</publishTime>
+      <publishTime>07/21/2016 18:12:27</publishTime>
     </File>
     <File Include="Views/Testimonials/Index.cshtml">
       <publishTime>07/01/2016 12:29:45</publishTime>
