@@ -28,7 +28,7 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
         }
         public ActionResult Testimonials()
         {
-            //ViewBag.TestimonalsList = othersService.TestimonalsList();
+            ViewBag.TestimonalsList = othersService.TestimonalsList();
             return View();
         }
         public ActionResult TicketDetails(string id,string Command,IssueDetail issueDetail)
@@ -58,9 +58,15 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
         }
         public ActionResult TestimonialDetails(string id)
         {
-            //List<MaaAahwanam_Others_TestimonialDetail_Result> testimonal = othersService.TestimonalDetail(long.Parse(id));
-            //string[] imagenameslist = testimonal.im.Replace(" ", "").Split(',');
-            //ViewBag.Testimonal = othersService.TestimonalDetail(long.Parse(id));
+            List<MaaAahwanam_Others_TestimonialDetail_Result> testimonal = othersService.TestimonalDetail(long.Parse(id));
+            string[] imagenameslist = testimonal[0].ImagePath.Replace(" ", "").Split(',');
+            ViewBag.Testimonal = othersService.TestimonalDetail(long.Parse(id));
+            List<string> testimonialimages = new List<string>();
+            for (int i = 0; i < imagenameslist.Length; i++)
+            {
+                testimonialimages.Add(imagenameslist[i]);
+            }
+            ViewBag.images = testimonialimages;
             return View();
         }
         public ActionResult CommentDetails(string id,string uid,string date, CommentDetail commentDetail,string Command)

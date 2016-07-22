@@ -101,9 +101,9 @@
         </div>
         <div class="col-lg-6">
             <div class="panel panel-primary">
-                <div class="panel-heading"> Actions - <a href="/Admin/Services/Quotations?id=@item.RequestId" class="btn btn-default btn-xs">Add Quotations</a></div>
+                <div class="panel-heading"> Actions - <a href="/Admin/Services/Quotations?id=@item.RequestId&&date=@item.UpdatedTime" class="btn btn-default btn-xs">Add Quotations</a></div>
                 <div class="panel-body">
-                    <p><b>Prepared quotations :</b> <a href="/Admin/Services/Quotations?id=@item.RequestId">@ViewBag.count</a> </p>
+                    <p><b>Prepared quotations :</b> <a href="/Admin/Services/Quotations?id=@item.RequestId&&date=@item.UpdatedTime">@ViewBag.count</a> </p>
                     <p><b>Quot Sent Date:</b> Aug 27, 2015 7:16:25 PM </p>
                     <p><b>Quot updatd date:</b> Aug 28, 2015 7:16:25 PM</p>
                     <p><b>Quot expiry date:</b> Aug 30, 2015 7:16:25 PM</p>

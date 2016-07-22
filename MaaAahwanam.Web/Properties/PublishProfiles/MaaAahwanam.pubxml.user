@@ -133,28 +133,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/19/2015 17:53:56</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Others/CommentDetails.cshtml">
-      <publishTime>07/19/2016 17:13:21</publishTime>
+      <publishTime>07/20/2016 13:08:08</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Others/Comments.cshtml">
       <publishTime>07/19/2016 15:16:21</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Others/RegisteredUsers.cshtml">
-      <publishTime>07/01/2016 12:29:20</publishTime>
+      <publishTime>07/20/2016 15:46:34</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Others/RegUserDetails.cshtml">
-      <publishTime>07/01/2016 12:29:20</publishTime>
+      <publishTime>07/20/2016 15:51:27</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Others/TestimonialDetails.cshtml">
-      <publishTime>07/01/2016 12:29:20</publishTime>
+      <publishTime>07/20/2016 18:03:42</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Others/Testimonials.cshtml">
-      <publishTime>07/01/2016 12:29:20</publishTime>
+      <publishTime>07/20/2016 17:06:53</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Others/TicketDetails.cshtml">
-      <publishTime>07/19/2016 18:11:59</publishTime>
+      <publishTime>07/20/2016 13:17:47</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Others/Tickets.cshtml">
-      <publishTime>07/19/2016 18:02:38</publishTime>
+      <publishTime>07/20/2016 12:59:07</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Reports/Index.cshtml">
       <publishTime>01/28/2016 18:15:30</publishTime>
@@ -7063,16 +7063,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/18/2016 14:18:17</publishTime>
     </File>
     <File Include="bin/MaaAahwanam.Repository.dll">
-      <publishTime>07/19/2016 18:50:32</publishTime>
+      <publishTime>07/20/2016 18:45:14</publishTime>
     </File>
     <File Include="bin/MaaAahwanam.Service.dll">
-      <publishTime>07/19/2016 18:50:33</publishTime>
+      <publishTime>07/20/2016 18:45:15</publishTime>
     </File>
     <File Include="bin/MaaAahwanam.Utility.dll">
       <publishTime>07/18/2016 14:18:19</publishTime>
     </File>
     <File Include="bin/MaaAahwanam.Web.dll">
-      <publishTime>07/19/2016 18:50:35</publishTime>
+      <publishTime>07/20/2016 18:45:15</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>07/01/2016 12:29:48</publishTime>
@@ -8247,6 +8247,36 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Scripts/jquery.validationEngine.js">
       <publishTime>07/15/2016 17:54:49</publishTime>
     </File>
+    <File Include="Testimonial/Testimonial_1.jpg">
+      <publishTime>07/20/2016 17:18:19</publishTime>
+    </File>
+    <File Include="Testimonial/Testimonial_10.jpg">
+      <publishTime>07/20/2016 17:18:19</publishTime>
+    </File>
+    <File Include="Testimonial/Testimonial_2.jpg">
+      <publishTime>07/20/2016 17:18:19</publishTime>
+    </File>
+    <File Include="Testimonial/Testimonial_3.jpg">
+      <publishTime>07/20/2016 17:18:19</publishTime>
+    </File>
+    <File Include="Testimonial/Testimonial_4.jpg">
+      <publishTime>07/20/2016 17:18:19</publishTime>
+    </File>
+    <File Include="Testimonial/Testimonial_5.jpg">
+      <publishTime>07/20/2016 17:18:19</publishTime>
+    </File>
+    <File Include="Testimonial/Testimonial_6.jpg">
+      <publishTime>07/20/2016 17:18:19</publishTime>
+    </File>
+    <File Include="Testimonial/Testimonial_7.jpg">
+      <publishTime>07/20/2016 17:18:19</publishTime>
+    </File>
+    <File Include="Testimonial/Testimonial_8.jpg">
+      <publishTime>07/20/2016 17:18:19</publishTime>
+    </File>
+    <File Include="Testimonial/Testimonial_9.jpg">
+      <publishTime>07/20/2016 17:18:19</publishTime>
+    </File>
     <File Include="vendorimages/BeautyService_17_1.jpg">
       <publishTime>07/15/2016 17:54:49</publishTime>
     </File>
@@ -8734,7 +8764,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/23/2016 16:15:00</publishTime>
     </File>
     <File Include="Views/Index/Index.cshtml">
-      <publishTime>07/19/2016 18:41:27</publishTime>
+      <publishTime>07/20/2016 18:37:56</publishTime>
     </File>
     <File Include="Views/Index/ItemsCartViewBindingLayout.cshtml">
       <publishTime>07/01/2016 12:29:45</publishTime>
@@ -8821,7 +8851,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/19/2016 18:41:27</publishTime>
     </File>
     <File Include="Views/ProductInfo/Index.cshtml">
-      <publishTime>07/19/2016 18:41:27</publishTime>
+      <publishTime>07/20/2016 18:37:56</publishTime>
     </File>
     <File Include="Views/Quatation/Index.cshtml">
       <publishTime>07/01/2016 12:29:45</publishTime>
@@ -8875,7 +8905,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/01/2016 12:29:45</publishTime>
     </File>
     <File Include="Views/SharedWeb/MainMaster.cshtml">
-      <publishTime>07/01/2016 12:29:45</publishTime>
+      <publishTime>07/20/2016 18:37:56</publishTime>
     </File>
     <File Include="Views/SharedWeb/ServicesMaster.cshtml">
       <publishTime>07/01/2016 12:29:45</publishTime>

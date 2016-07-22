@@ -9,6 +9,8 @@
 }
 
 <!--PAGE CONTENT -->
+@using (Html.BeginForm())
+{
 <div id="content">
     <div class="inner">     
         <div class="row">
@@ -59,8 +61,32 @@
                             <i class="icon-link"></i>
                         </button>
                     </div>
+                    <br/>
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Service Type</label>
+                        <div class="col-lg-4">
+                            <select class="form-control" id="dropstatus" name="dropstatus" onchange="this.form.submit()">
+                                <option>Select Service Type</option>
+                                <option value="Venue" @Request.Form["dropstatus"]>Venue</option>
+                                <option value="Catering" @Request.Form["dropstatus"]>Caterers</option>
+                                <option value="Decorator" @Request.Form["dropstatus"]>Decorators</option>
+                                <option value="Photography" @Request.Form["dropstatus"]>Photographers</option>
+                                <option value="InvitationCards" @Request.Form["dropstatus"]>Invitation Cards</option>
+                                <option value="Entertainment" @Request.Form["dropstatus"]>Entertainment</option>
+                                <option value="EventOrganisers" @Request.Form["dropstatus"]>Event Organisers</option>
+                                <option value="BeautyServices" @Request.Form["dropstatus"]>Beauty Services</option>
+                                <option value="WeddingCollection" @Request.Form["dropstatus"]>Wedding Collection</option>
+                                <option value="TravelAccomodation" @Request.Form["dropstatus"]>Travel & Accomodation</option>
+                                <option value="Gifts" @Request.Form["dropstatus"]>Gifts</option>
+                                <option value="Others" @Request.Form["dropstatus"]>Others</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br/>
                      <div class="panel-body">
                             <div class="table-responsive">
+                                @if (ViewBag.VendorList != null)
+                                {
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
@@ -75,345 +101,42 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                       
+                                        @foreach (var item in ViewBag.VendorList)
+                                        {
                                             <tr class="even gradeX">
                                                 <td>
-                                                    UserBusiId
+                                                    @item.Id
                                                 </td>
                                                 <td>
-                                                   Requestdate
+                                                    @item.UpdatedDate
                                                 </td>
                                                 <td>
-                                                   BusinessName
+                                                    @item.BusinessName
                                                 </td>
                                                 <td>
-                                                   ServiceType
+                                                    @item.ServicType
                                                 </td>
                                                 <td>
-                                                   BusinessPhone
+                                                    @item.ContactNumber
                                                 </td>
                                                 <td>
-                                                   BusinessLocation
+                                                    @item.Address,@item.Landmark
                                                 </td>
                                                 <td>
-                                                    <a href="#" class="btn btn-primary btn-xs btn-rect"> BusinessStatus</a>
+                                                    <a href="#" class="btn btn-primary btn-xs btn-rect"> @item.Status</a>
                                                 </td>
                                                 <td>
-                                                    <a href="/Admin/Vendors/VendorDetails" class="btn btn-default btn-xs"> View </a>
-                                                    <a href="#" class="btn btn-default btn-xs">Edit</a>
-                                                    <a href="#" class="btn btn-default btn-xs">Delete</a>
+                                                    <input type="submit" class="btn btn-default btn-xs" value="View" name="command" formaction="/Admin/Vendors/VendorDetails" />
+                                                    <input type="submit" class="btn btn-default btn-xs" value="Edit" name="command" formaction="/Admin/Vendors/AllVendors?id=@item.Id" />
+                                                    <input type="submit" class="btn btn-default btn-xs" value="Delete" name="command" />
+                                                    @*<a href="/Admin/Vendors/AllVendors" class="btn btn-default btn-xs">Edit</a>
+                                                    <a href="#" class="btn btn-default btn-xs">Delete</a>*@
                                                 </td>
-                                            </tr>     
-                                        <tr class="even gradeX">
-                                            <td>
-                                                UserBusiId
-                                            </td>
-                                            <td>
-                                                Requestdate
-                                            </td>
-                                            <td>
-                                                BusinessName
-                                            </td>
-                                            <td>
-                                                ServiceType
-                                            </td>
-                                            <td>
-                                                BusinessPhone
-                                            </td>
-                                            <td>
-                                                BusinessLocation
-                                            </td>
-                                            <td>
-                                                <a href="#" class="btn btn-primary btn-xs btn-rect"> BusinessStatus</a>
-                                            </td>
-                                            <td>
-                                                <a href="/Admin/Vendors/VendorDetails" class="btn btn-default btn-xs"> View </a>
-                                                <a href="#" class="btn btn-default btn-xs">Edit</a>
-                                                <a href="#" class="btn btn-default btn-xs">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr class="even gradeX">
-                                            <td>
-                                                UserBusiId
-                                            </td>
-                                            <td>
-                                                Requestdate
-                                            </td>
-                                            <td>
-                                                BusinessName
-                                            </td>
-                                            <td>
-                                                ServiceType
-                                            </td>
-                                            <td>
-                                                BusinessPhone
-                                            </td>
-                                            <td>
-                                                BusinessLocation
-                                            </td>
-                                            <td>
-                                                <a href="#" class="btn btn-primary btn-xs btn-rect"> BusinessStatus</a>
-                                            </td>
-                                            <td>
-                                                <a href="/Admin/Vendors/VendorDetails" class="btn btn-default btn-xs"> View </a>
-                                                <a href="#" class="btn btn-default btn-xs">Edit</a>
-                                                <a href="#" class="btn btn-default btn-xs">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr class="even gradeX">
-                                            <td>
-                                                UserBusiId
-                                            </td>
-                                            <td>
-                                                Requestdate
-                                            </td>
-                                            <td>
-                                                BusinessName
-                                            </td>
-                                            <td>
-                                                ServiceType
-                                            </td>
-                                            <td>
-                                                BusinessPhone
-                                            </td>
-                                            <td>
-                                                BusinessLocation
-                                            </td>
-                                            <td>
-                                                <a href="#" class="btn btn-primary btn-xs btn-rect"> BusinessStatus</a>
-                                            </td>
-                                            <td>
-                                                <a href="/Admin/Vendors/VendorDetails" class="btn btn-default btn-xs"> View </a>
-                                                <a href="#" class="btn btn-default btn-xs">Edit</a>
-                                                <a href="#" class="btn btn-default btn-xs">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr class="even gradeX">
-                                            <td>
-                                                UserBusiId
-                                            </td>
-                                            <td>
-                                                Requestdate
-                                            </td>
-                                            <td>
-                                                BusinessName
-                                            </td>
-                                            <td>
-                                                ServiceType
-                                            </td>
-                                            <td>
-                                                BusinessPhone
-                                            </td>
-                                            <td>
-                                                BusinessLocation
-                                            </td>
-                                            <td>
-                                                <a href="#" class="btn btn-primary btn-xs btn-rect"> BusinessStatus</a>
-                                            </td>
-                                            <td>
-                                                <a href="/Admin/Vendors/VendorDetails" class="btn btn-default btn-xs"> View </a>
-                                                <a href="#" class="btn btn-default btn-xs">Edit</a>
-                                                <a href="#" class="btn btn-default btn-xs">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr class="even gradeX">
-                                            <td>
-                                                UserBusiId
-                                            </td>
-                                            <td>
-                                                Requestdate
-                                            </td>
-                                            <td>
-                                                BusinessName
-                                            </td>
-                                            <td>
-                                                ServiceType
-                                            </td>
-                                            <td>
-                                                BusinessPhone
-                                            </td>
-                                            <td>
-                                                BusinessLocation
-                                            </td>
-                                            <td>
-                                                <a href="#" class="btn btn-primary btn-xs btn-rect"> BusinessStatus</a>
-                                            </td>
-                                            <td>
-                                                <a href="/Admin/Vendors/VendorDetails" class="btn btn-default btn-xs"> View </a>
-                                                <a href="#" class="btn btn-default btn-xs">Edit</a>
-                                                <a href="#" class="btn btn-default btn-xs">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr class="even gradeX">
-                                            <td>
-                                                UserBusiId
-                                            </td>
-                                            <td>
-                                                Requestdate
-                                            </td>
-                                            <td>
-                                                BusinessName
-                                            </td>
-                                            <td>
-                                                ServiceType
-                                            </td>
-                                            <td>
-                                                BusinessPhone
-                                            </td>
-                                            <td>
-                                                BusinessLocation
-                                            </td>
-                                            <td>
-                                                <a href="#" class="btn btn-primary btn-xs btn-rect"> BusinessStatus</a>
-                                            </td>
-                                            <td>
-                                                <a href="/Admin/Vendors/VendorDetails" class="btn btn-default btn-xs"> View </a>
-                                                <a href="#" class="btn btn-default btn-xs">Edit</a>
-                                                <a href="#" class="btn btn-default btn-xs">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr class="even gradeX">
-                                            <td>
-                                                UserBusiId
-                                            </td>
-                                            <td>
-                                                Requestdate
-                                            </td>
-                                            <td>
-                                                BusinessName
-                                            </td>
-                                            <td>
-                                                ServiceType
-                                            </td>
-                                            <td>
-                                                BusinessPhone
-                                            </td>
-                                            <td>
-                                                BusinessLocation
-                                            </td>
-                                            <td>
-                                                <a href="#" class="btn btn-primary btn-xs btn-rect"> BusinessStatus</a>
-                                            </td>
-                                            <td>
-                                                <a href="/Admin/Vendors/VendorDetails" class="btn btn-default btn-xs"> View </a>
-                                                <a href="#" class="btn btn-default btn-xs">Edit</a>
-                                                <a href="#" class="btn btn-default btn-xs">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr class="even gradeX">
-                                            <td>
-                                                UserBusiId
-                                            </td>
-                                            <td>
-                                                Requestdate
-                                            </td>
-                                            <td>
-                                                BusinessName
-                                            </td>
-                                            <td>
-                                                ServiceType
-                                            </td>
-                                            <td>
-                                                BusinessPhone
-                                            </td>
-                                            <td>
-                                                BusinessLocation
-                                            </td>
-                                            <td>
-                                                <a href="#" class="btn btn-primary btn-xs btn-rect"> BusinessStatus</a>
-                                            </td>
-                                            <td>
-                                                <a href="/Admin/Vendors/VendorDetails" class="btn btn-default btn-xs"> View </a>
-                                                <a href="#" class="btn btn-default btn-xs">Edit</a>
-                                                <a href="#" class="btn btn-default btn-xs">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr class="even gradeX">
-                                            <td>
-                                                UserBusiId
-                                            </td>
-                                            <td>
-                                                Requestdate
-                                            </td>
-                                            <td>
-                                                BusinessName
-                                            </td>
-                                            <td>
-                                                ServiceType
-                                            </td>
-                                            <td>
-                                                BusinessPhone
-                                            </td>
-                                            <td>
-                                                BusinessLocation
-                                            </td>
-                                            <td>
-                                                <a href="#" class="btn btn-primary btn-xs btn-rect"> BusinessStatus</a>
-                                            </td>
-                                            <td>
-                                                <a href="/Admin/Vendors/VendorDetails" class="btn btn-default btn-xs"> View </a>
-                                                <a href="#" class="btn btn-default btn-xs">Edit</a>
-                                                <a href="#" class="btn btn-default btn-xs">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr class="even gradeX">
-                                            <td>
-                                                UserBusiId
-                                            </td>
-                                            <td>
-                                                Requestdate
-                                            </td>
-                                            <td>
-                                                BusinessName
-                                            </td>
-                                            <td>
-                                                ServiceType
-                                            </td>
-                                            <td>
-                                                BusinessPhone
-                                            </td>
-                                            <td>
-                                                BusinessLocation
-                                            </td>
-                                            <td>
-                                                <a href="#" class="btn btn-primary btn-xs btn-rect"> BusinessStatus</a>
-                                            </td>
-                                            <td>
-                                                <a href="/Admin/Vendors/VendorDetails" class="btn btn-default btn-xs"> View </a>
-                                                <a href="#" class="btn btn-default btn-xs">Edit</a>
-                                                <a href="#" class="btn btn-default btn-xs">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr class="even gradeX">
-                                            <td>
-                                                UserBusiId
-                                            </td>
-                                            <td>
-                                                Requestdate
-                                            </td>
-                                            <td>
-                                                BusinessName
-                                            </td>
-                                            <td>
-                                                ServiceType
-                                            </td>
-                                            <td>
-                                                BusinessPhone
-                                            </td>
-                                            <td>
-                                                BusinessLocation
-                                            </td>
-                                            <td>
-                                                <a href="#" class="btn btn-primary btn-xs btn-rect"> BusinessStatus</a>
-                                            </td>
-                                            <td>
-                                                <a href="/Admin/Vendors/VendorDetails" class="btn btn-default btn-xs"> View </a>
-                                                <a href="#" class="btn btn-default btn-xs">Edit</a>
-                                                <a href="#" class="btn btn-default btn-xs">Delete</a>
-                                            </td>
-                                        </tr>
+                                            </tr>
+                                        }
                                     </tbody>
                                 </table>
+                                }
                             </div>
                         </div>                    
                 </div>
@@ -421,6 +144,7 @@
         </div>
     </div>
 </div>
+}
 <!--END PAGE CONTENT -->
 @section Bottom{
     <script src="~/Assets/plugins/jquery-2.0.3.min.js"></script>
