@@ -66,13 +66,13 @@ namespace MaaAahwanam.Service
         }
 
         //Testimonals Module
-        public List<MaaAahwanam_Others_Testimonials_Result> TestimonalsList()
-        {
-            return othersRepository.TestimonalsList();
-        }
-        public List<MaaAahwanam_Others_TestimonialDetail_Result> TestimonalDetail(long id)
-        {
-            return othersRepository.TestimonalDetail(id);
-        }
+        //public List<MaaAahwanam_Others_Testimonials_Result> TestimonalsList()
+        //{
+        //    return othersRepository.TestimonalsList();
+        //}
+        //public List<MaaAahwanam_Others_TestimonialDetail_Result> TestimonalDetail(long id)
+        //{
+        //    return othersRepository.TestimonalDetail(id);
+        //}
     }
 }

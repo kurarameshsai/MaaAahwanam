@@ -28,7 +28,7 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
         }
         public ActionResult Testimonials()
         {
-            ViewBag.TestimonalsList = othersService.TestimonalsList();
+            //ViewBag.TestimonalsList = othersService.TestimonalsList();
             return View();
         }
         public ActionResult TicketDetails(string id,string Command,IssueDetail issueDetail)
@@ -60,7 +60,7 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
         {
             //List<MaaAahwanam_Others_TestimonialDetail_Result> testimonal = othersService.TestimonalDetail(long.Parse(id));
             //string[] imagenameslist = testimonal.im.Replace(" ", "").Split(',');
-            ViewBag.Testimonal = othersService.TestimonalDetail(long.Parse(id));
+            //ViewBag.Testimonal = othersService.TestimonalDetail(long.Parse(id));
             return View();
         }
         public ActionResult CommentDetails(string id,string uid,string date, CommentDetail commentDetail,string Command)

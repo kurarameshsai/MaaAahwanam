@@ -23,10 +23,17 @@ namespace MaaAahwanam.Web.Controllers
             TestmonialService testmonialService = new TestmonialService();
             testmonialService.Savetestimonial(adminTestimonial);
             adminTestimonialPath.Id = adminTestimonial.Id;
-
+            string fileName1 = "";
+            string imagepath = @"/Testimonial/";
             for (int i = 0; i < Request.Files.Count; i++)
             {
-                adminTestimonialPath.ImagePath = Request.Files[i].FileName;
+                int j = i + 1;
+                var file1 = Request.Files[i];
+                string path = System.IO.Path.GetExtension(file.FileName);
+                var filename = "Testimonial_" + adminTestimonial.Id + "_" + j + path;
+                fileName1 = System.IO.Path.Combine(System.Web.HttpContext.Current.Server.MapPath(imagepath+filename));
+                file1.SaveAs(fileName1);
+                adminTestimonialPath.ImagePath = filename;
                 testmonialService.Savetestimonialpath(adminTestimonialPath);
             }
             return RedirectToAction("Index");

@@ -65,13 +65,13 @@ namespace MaaAahwanam.Repository.db
         }
 
         //Testimonals Module
-        public List<MaaAahwanam_Others_Testimonials_Result> TestimonalsList()
-        {
-            return maaAahwanamEntities.MaaAahwanam_Others_Testimonials().ToList();
-        }
-        public List<MaaAahwanam_Others_TestimonialDetail_Result> TestimonalDetail(long id)
-        {
-            return maaAahwanamEntities.MaaAahwanam_Others_TestimonialDetail(id).ToList();
-        }
+        //public List<MaaAahwanam_Others_Testimonials_Result> TestimonalsList()
+        //{
+        //    return maaAahwanamEntities.MaaAahwanam_Others_Testimonials().ToList();
+        //}
+        //public List<MaaAahwanam_Others_TestimonialDetail_Result> TestimonalDetail(long id)
+        //{
+        //    return maaAahwanamEntities.MaaAahwanam_Others_TestimonialDetail(id).ToList();
+        //}
     }
 }

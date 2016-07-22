@@ -16,7 +16,7 @@
                     <ul>
                         <li><a href="~/Index/Index">Home</a></li>
                         @*<li><i class="breads_arrow"></i></li>
-                        <li><a href="index.html">Services</a></li>*@
+                            <li><a href="index.html">Services</a></li>*@
                         <li><i class="breads_arrow"></i></li>
                         @if (ViewBag.ServiceType == "InvitationCard")
                         {
@@ -129,18 +129,22 @@
                             <div>
                                 @if (Model != null)
                                 {
-                                    foreach (var item in this.Model)
-                                    {
+                                    //for (int i = 1; i <= 2; i++)
+                                    //{
+                                     foreach (var item in this.Model.Skip(Model.Count-2))
+                                        {
+
                                         <div id="PhotographersDiv" class="step2">
                                             <div class="deals-main" id="main">
                                                 <div class="deal">
                                                     <div class="deal-thumb">
                                                         <a href="../ProductInfo?par=@item.ServicType.Trim()&VID=@item.Id">
                                                             <div class="zoomDiv">
-                                                               @* <a href="../ProductInfo?par=@item.ServicType.Trim()&VID=@item.Id">*@
-                                                                    <img src="~/vendorimages/@item.image" alt="thumb">
+                                                                @* <a href="../ProductInfo?par=@item.ServicType.Trim()&VID=@item.Id">*@
+                                                                <img src="~/vendorimages/@item.image" alt="thumb">
                                                                 @*</a>*@
                                                                 <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span>  </div>
+                                                                
                                                             </div>
                                                         </a>
                                                     </div>
@@ -163,9 +167,12 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        }
                                     }
-                                }
+                                @*}*@
                             </div>
+                            <input type="hidden" id="hiddenlastrecord" value="@Model.Last().Id" />
+                            <div id="sss"></div>
                             <div class="loadMore">
                                 <button name="loadmore" id="LoadMore1" class="btn btn-green more-button"><i class="ti-reload"></i> Load More</button>
                                 <div id="abc"><h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1></div>
@@ -200,6 +207,7 @@
         window.onload = function () {
             $("#abc").hide();
             $("#imgloadergifdiv").hide();
+            alert(document.getElementById("hiddenlastrecord").value)
         };
         /* -------------------------------  Loadmore functionality ------------------------ */
         $('#LoadMore1').on('click', function (e) {

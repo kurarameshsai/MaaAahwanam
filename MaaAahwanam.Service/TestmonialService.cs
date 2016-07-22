@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MaaAahwanam.Repository.db;
 using MaaAahwanam.Models;
 using AutoMapper;
+using MaaAahwanam.Repository;
 
 namespace MaaAahwanam.Service
 {
@@ -14,13 +15,10 @@ namespace MaaAahwanam.Service
         AdminTestimonialRepository testimonialRepository = new AdminTestimonialRepository();
         AdminTestimonialPathRepository testimonialpathRepository = new AdminTestimonialPathRepository();
 
-        public List<GetTestimonials> TestmonialServiceList()
+        public List<SP_GetTestimonials_Result> TestmonialServiceList()
         {
-            List<dynamic> l1 = testimonialRepository.AdminTestimonialList();
-            //Mapper.CreateMap<l1, GetTestimonials>();
-            //Mapper.Map<l1, GetTestimonials>(l1);
-            var testFile = Mapper.Map<GetTestimonials>(l1.First());
-            return testFile;
+            List<SP_GetTestimonials_Result> l1 = testimonialRepository.AdminTestimonialList();
+            return l1;
         }
         public AdminTestimonial Savetestimonial(AdminTestimonial adminTestimonial)
         {
