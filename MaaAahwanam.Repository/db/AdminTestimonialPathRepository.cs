@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MaaAahwanam.Models;
+using MaaAahwanam.Repository;
 
 namespace MaaAahwanam.Repository.db
 {

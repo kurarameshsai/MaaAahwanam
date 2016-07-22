@@ -225,5 +225,10 @@ namespace MaaAahwanam.Repository
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AllVendorList_Result>("AllVendorList", servicTypeParameter);
         }
+    
+        public virtual ObjectResult<SP_GetTestimonials_Result> SP_GetTestimonials()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_GetTestimonials_Result>("SP_GetTestimonials");
+        }
     }
 }
