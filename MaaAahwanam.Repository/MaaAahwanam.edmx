@@ -130,7 +130,7 @@
           <Parameter Name="Id" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="AllVendorList" ReturnType="Collection(MaaAahwanamModel.AllVendorList_Result)">
-            <Parameter Name="ServicType" Mode="In" Type="String" />
+          <Parameter Name="ServicType" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="GetProducts_Result">

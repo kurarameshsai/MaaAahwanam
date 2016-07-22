@@ -10,10 +10,10 @@ namespace MaaAahwanam.Service
 {
    public class VendorVenueService
     {
-       public VendorVenue AddVenue(VendorVenue vendorVenue, Vendormaster vendorMaster)
+        VendormasterRepository vendorMasterRepository = new VendormasterRepository();
+        VendorVenueRepository vendorVenueRepository = new VendorVenueRepository();
+        public VendorVenue AddVenue(VendorVenue vendorVenue, Vendormaster vendorMaster)
        {
-           VendormasterRepository vendorMasterRepository = new VendormasterRepository();
-           VendorVenueRepository vendorVenueRepository = new VendorVenueRepository();
            vendorVenue.Status = "Active";
            vendorVenue.UpdatedDate = DateTime.Now;
            vendorMaster.Status = "Active";
@@ -24,5 +24,10 @@ namespace MaaAahwanam.Service
            vendorVenue = vendorVenueRepository.AddVenue(vendorVenue);
            return vendorVenue;
        }
+
+        public VendorVenue GetVendorVenue(long id)
+        {
+            return vendorVenueRepository.GetVendorVenue(id);
+        }
     }
 }

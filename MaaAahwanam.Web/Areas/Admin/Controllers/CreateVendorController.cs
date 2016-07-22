@@ -12,6 +12,7 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
 {
     public class CreateVendorController : Controller
     {
+        VendorMasterService vendorMasterService = new VendorMasterService();
         const string imagepath = @"/vendorimages/";
         //public CreateVendorController(IAccommodationService accommodationService)
         //{ }
@@ -485,8 +486,16 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             }
             return View();
         }
-        public ActionResult Venue()
+        public ActionResult Venue(string id, [Bind(Prefix = "Item2")] VendorVenue vendorVenue, [Bind(Prefix = "Item1")] Vendormaster vendorMaster)
         {
+            VendorVenueService vendorVenueService = new VendorVenueService();
+            if (id!=null)
+            {
+                vendorVenue = vendorVenueService.GetVendorVenue(long.Parse(id)); 
+                vendorMaster = vendorMasterService.GetVendor(long.Parse(id)); 
+                var a = new Tuple<Vendormaster, VendorVenue>(vendorMaster, vendorVenue);
+                return View(a);
+            }
             return View();
         }
         [HttpPost]

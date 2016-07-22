@@ -65,7 +65,7 @@
                     <div class="form-group">
                         <label class="control-label col-lg-4">Service Type</label>
                         <div class="col-lg-4">
-                            <select class="form-control" id="dropstatus" name="dropstatus" onchange="this.form.submit()">
+                            @*<select class="form-control" id="dropstatus" name="dropstatus" onchange="this.form.submit()">
                                 <option>Select Service Type</option>
                                 <option value="Venue" @Request.Form["dropstatus"]>Venue</option>
                                 <option value="Catering" @Request.Form["dropstatus"]>Caterers</option>
@@ -79,7 +79,24 @@
                                 <option value="TravelAccomodation" @Request.Form["dropstatus"]>Travel & Accomodation</option>
                                 <option value="Gifts" @Request.Form["dropstatus"]>Gifts</option>
                                 <option value="Others" @Request.Form["dropstatus"]>Others</option>
-                            </select>
+                            </select>*@
+                            @Html.DropDownList("dropstatus",new List<SelectListItem>()
+                            {
+                           new SelectListItem() {Text="Select Service Type" },
+                           new SelectListItem() {Text="Venue",Value="Venue" },
+                           new SelectListItem() {Text="Caterers",Value="Catering" },
+                           new SelectListItem() {Text="Decorators",Value="Decorator" },
+                           new SelectListItem() {Text="Photographers",Value="Photography" },
+                           new SelectListItem() {Text="Invitation Cards",Value="InvitationCards" },
+                           new SelectListItem() {Text="Entertainment",Value="Entertainment" },
+                           new SelectListItem() {Text="Event Organisers",Value="EventOrganisers" },
+                           new SelectListItem() {Text="Beauty Services",Value="BeautyServices" },
+                           new SelectListItem() {Text="Wedding Collection",Value="WeddingCollection" },
+                           new SelectListItem() {Text="Travel & Accomodation",Value="TravelAccomodation" },
+                           new SelectListItem() {Text="Gifts",Value="Gifts" },
+                           new SelectListItem() {Text="Others",Value="Others" }
+                       },
+                       new { onchange="this.form.submit();",@class="form-control"})
                         </div>
                     </div>
                     <br/>

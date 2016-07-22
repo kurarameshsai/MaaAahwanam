@@ -69,6 +69,7 @@
     <Compile Include="VendorGiftService.cs" />
     <Compile Include="VendorImageService.cs" />
     <Compile Include="VendorInvitationCardsService.cs" />
+    <Compile Include="VendorMasterService.cs" />
     <Compile Include="VendorOthersService.cs" />
     <Compile Include="VendorPhotographyService.cs" />
     <Compile Include="VendorSetupService.cs" />

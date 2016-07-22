@@ -22,5 +22,10 @@ namespace MaaAahwanam.Repository.db
             _dbContext.SaveChanges();
             return vendorsVenue;
         }
+
+        public VendorVenue GetVendorVenue(long id)
+        {
+            return _dbContext.VendorVenue.Where(m => m.VendorMasterId == id).FirstOrDefault();
+        }
     }
 }

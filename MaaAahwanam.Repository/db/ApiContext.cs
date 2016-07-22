@@ -48,6 +48,6 @@ namespace MaaAahwanam.Repository.db
         public DbSet<VendorsTravelandAccomodation> VendorsTravelandAccomodation { get; set; }
         public DbSet<VendorsWeddingCollection> VendorsWeddingCollection { get; set; }
         public DbSet<VendorVenue> VendorVenue { get; set; }
-
+        public DbSet<TempVenueDetail> TempVenueDetail { get; set; }
     }
 }
