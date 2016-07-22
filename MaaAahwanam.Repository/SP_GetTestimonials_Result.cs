@@ -11,12 +11,12 @@ namespace MaaAahwanam.Repository
 {
     using System;
     
-    public partial class sp_helpdiagrams_Result
+    public partial class SP_GetTestimonials_Result
     {
-        public string Database { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
-        public int ID { get; set; }
-        public string Owner { get; set; }
-        public int OwnerID { get; set; }
+        public string Email { get; set; }
+        public string Description { get; set; }
+        public string ImagePath { get; set; }
     }
 }
