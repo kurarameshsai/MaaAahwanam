@@ -12,6 +12,7 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
 {
     public class CreateVendorController : Controller
     {
+        VendorImageService vendorImageService = new VendorImageService();
         VendorMasterService vendorMasterService = new VendorMasterService();
         const string imagepath = @"/vendorimages/";
         //public CreateVendorController(IAccommodationService accommodationService)
@@ -51,7 +52,6 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
                             var filename =  "BeautyService_" + vendorsBeautyService.VendorMasterId + "_" + j + path;
                             fileName = System.IO.Path.Combine(System.Web.HttpContext.Current.Server.MapPath(imagepath + filename));
                             file1.SaveAs(fileName);
-                            VendorImageService vendorImageService = new VendorImageService();
                             vendorImage.ImageName = filename;
                             vendorImage = vendorImageService.AddVendorImage(vendorImage, vendorMaster);
                         }
@@ -98,7 +98,6 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
                             var filename =  "Catering_" + vendorsCatering.VendorMasterId + "_" + j + path;
                             fileName = System.IO.Path.Combine(System.Web.HttpContext.Current.Server.MapPath(imagepath + filename));
                             file1.SaveAs(fileName);
-                            VendorImageService vendorImageService = new VendorImageService();
                             vendorImage.ImageName = filename;
                             vendorImage = vendorImageService.AddVendorImage(vendorImage, vendorMaster);
                         }
@@ -145,7 +144,6 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
                             var filename =  "Decorator_" + vendorsDecorator.VendorMasterId + "_" + j + path;
                             fileName = System.IO.Path.Combine(System.Web.HttpContext.Current.Server.MapPath(imagepath + filename));
                             file1.SaveAs(fileName);
-                            VendorImageService vendorImageService = new VendorImageService();
                             vendorImage.ImageName = filename;
                             vendorImage = vendorImageService.AddVendorImage(vendorImage, vendorMaster);
                         }
@@ -193,7 +191,6 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
                             var filename =  "Entertainment_" + vendorsEntertainment.VendorMasterId + "_" + j + path;
                             fileName = System.IO.Path.Combine(System.Web.HttpContext.Current.Server.MapPath(imagepath + filename));
                             file1.SaveAs(fileName);
-                            VendorImageService vendorImageService = new VendorImageService();
                             vendorImage.ImageName = filename;
                             vendorImage = vendorImageService.AddVendorImage(vendorImage, vendorMaster);
                         }
@@ -239,7 +236,6 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
                             var filename =  "EventOrganisers_" + vendorsEventOrganisers.VendorMasterId + "_" + j + path;
                             fileName = System.IO.Path.Combine(System.Web.HttpContext.Current.Server.MapPath(imagepath + filename));
                             file1.SaveAs(fileName);
-                            VendorImageService vendorImageService = new VendorImageService();
                             vendorImage.ImageName = filename;
                             vendorImage = vendorImageService.AddVendorImage(vendorImage, vendorMaster);
                         }
@@ -285,7 +281,6 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
                             var filename =  "Gift_" + vendorsGift.VendorMasterId + "_" + j + path;
                             fileName = System.IO.Path.Combine(System.Web.HttpContext.Current.Server.MapPath(imagepath + filename));
                             file1.SaveAs(fileName);
-                            VendorImageService vendorImageService = new VendorImageService();
                             vendorImage.ImageName = filename;
                             vendorImage = vendorImageService.AddVendorImage(vendorImage, vendorMaster);
                         }
@@ -331,7 +326,6 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
                             var filename =  "InvitationCard_" + vendorsInvitationCard.VendorMasterId + "_" + j + path;
                             fileName = System.IO.Path.Combine(System.Web.HttpContext.Current.Server.MapPath(imagepath + filename));
                             file1.SaveAs(fileName);
-                            VendorImageService vendorImageService = new VendorImageService();
                             vendorImage.ImageName = filename;
                             vendorImage = vendorImageService.AddVendorImage(vendorImage, vendorMaster);
                         }
@@ -377,7 +371,6 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
                             var filename =  "Photography_" + vendorsPhotography.VendorMasterId + "_" + j + path;
                             fileName = System.IO.Path.Combine(System.Web.HttpContext.Current.Server.MapPath(imagepath + filename));
                             file1.SaveAs(fileName);
-                            VendorImageService vendorImageService = new VendorImageService();
                             vendorImage.ImageName = filename;
                             vendorImage = vendorImageService.AddVendorImage(vendorImage, vendorMaster);
                         }
@@ -423,7 +416,6 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
                             var filename = "TravelandAccomodation_" + vendorsTravelandAccomodation.VendorMasterId + "_" + j + path;
                             fileName = System.IO.Path.Combine(System.Web.HttpContext.Current.Server.MapPath(imagepath + filename));
                             file1.SaveAs(fileName);
-                            VendorImageService vendorImageService = new VendorImageService();
                             vendorImage.ImageName = filename;
                             vendorImage = vendorImageService.AddVendorImage(vendorImage, vendorMaster);
                         }
@@ -469,7 +461,6 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
                             var filename =  "WeddingCollection_" + vendorsWeddingCollection.VendorMasterId + "_" + j + path;
                             fileName = System.IO.Path.Combine(System.Web.HttpContext.Current.Server.MapPath(imagepath + filename));
                             file1.SaveAs(fileName);
-                            VendorImageService vendorImageService = new VendorImageService();
                             vendorImage.ImageName = filename;
                             vendorImage = vendorImageService.AddVendorImage(vendorImage, vendorMaster);
                         }
@@ -494,6 +485,8 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
                 vendorVenue = vendorVenueService.GetVendorVenue(long.Parse(id)); 
                 vendorMaster = vendorMasterService.GetVendor(long.Parse(id)); 
                 var a = new Tuple<Vendormaster, VendorVenue>(vendorMaster, vendorVenue);
+                ViewBag.images = vendorImageService.GetVendorImagesService(long.Parse(id));
+                ViewBag.masterid = id;
                 return View(a);
             }
             return View();
@@ -523,7 +516,6 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
                             var filename =  "Venue_" + vendorVenue.VendorMasterId + "_" + j + path;
                             fileName = System.IO.Path.Combine(System.Web.HttpContext.Current.Server.MapPath(imagepath + filename));
                             file1.SaveAs(fileName);
-                            VendorImageService vendorImageService = new VendorImageService();
                             vendorImage.ImageName = filename;
                             vendorImage = vendorImageService.AddVendorImage(vendorImage, vendorMaster);
                         }
@@ -571,7 +563,6 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
                             var filename =  "Others_" + vendorsOther.VendorMasterId + "_" + j + path;
                             fileName = System.IO.Path.Combine(System.Web.HttpContext.Current.Server.MapPath(imagepath + filename));
                             file1.SaveAs(fileName);
-                            VendorImageService vendorImageService = new VendorImageService();
                             vendorImage.ImageName = filename;
                             vendorImage = vendorImageService.AddVendorImage(vendorImage, vendorMaster);
                         }
@@ -588,5 +579,23 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             }
             return View();
         }
-	}
+        //public JsonResult images(string ids)
+        //{
+        //    var images = vendorImageService.GetVendorImagesService(long.Parse(ids));
+        //    return Json(images);
+        //}
+
+        public JsonResult DeleteImage(string imgsrc, string ids)
+        {
+            //var images = entities.TempVenueDetails.Where(s => s.ID == id).SingleOrDefault();
+            //string path = images.Images.ToString().TrimEnd(',') + ",";
+            //images.Images = path.Replace(imgsrc + ",", "");
+            //System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(Server.MapPath(@"~/CSSWeb/Uploadedimages"));
+            //FileInfo oFileInfo = new FileInfo(Server.MapPath(@"~/CSSWeb/Uploadedimages/" + imgsrc));
+            //oFileInfo.Delete();
+            //oFileInfo.Refresh();
+            //entities.SaveChanges();
+            return Json("success");
+        }
+    }
 }

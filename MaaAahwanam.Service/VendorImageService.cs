@@ -10,14 +10,23 @@ namespace MaaAahwanam.Service
 {
    public class VendorImageService
     {
-       public VendorImage AddVendorImage(VendorImage vendorImage, Vendormaster vendorMaster)
+        VendorImageRepository vendorImageRepository = new VendorImageRepository();
+        public VendorImage AddVendorImage(VendorImage vendorImage, Vendormaster vendorMaster)
        {
-           VendorImageRepository vendorImageRepository = new VendorImageRepository();
            vendorImage.Status = "Active";
            vendorImage.UpdatedDate = DateTime.Now;
            vendorImage.VendorMasterId = vendorMaster.Id;
            vendorImage = vendorImageRepository.AddVendorImage(vendorImage);
            return vendorImage;
        }
+
+        public List<string> GetVendorImagesService(long id)
+        {
+            return vendorImageRepository.GetVendorImages(id);
+        }
+        public string DeleteImage(VendorImage vendorImage)
+        {
+            return vendorImageRepository.DeleteImage(vendorImage);
+        }
     }
 }

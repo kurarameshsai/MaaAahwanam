@@ -21,5 +21,16 @@ namespace MaaAahwanam.Repository.db
             _dbContext.SaveChanges();
             return vendorImage;
         }
+
+        public List<string> GetVendorImages(long id)
+        {
+            return _dbContext.VendorImage.Where(m => m.VendorMasterId == id).Select(p => p.ImageName).ToList();
+        }
+        public string DeleteImage(VendorImage vendorImage)
+        {
+            _dbContext.VendorImage.Remove(vendorImage);
+            _dbContext.SaveChanges();
+            return "success";
+        }
     }
 }

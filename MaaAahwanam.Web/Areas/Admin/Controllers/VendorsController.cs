@@ -26,7 +26,6 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             }
             if (command == "Edit")
             {
-
                 return RedirectToAction(dropstatus, "CreateVendor", new { id = id});
             }
             return View();

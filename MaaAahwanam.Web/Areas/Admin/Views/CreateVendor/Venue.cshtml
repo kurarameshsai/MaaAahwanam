@@ -8,6 +8,22 @@
         <link href="~/Assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
         <!-- END PAGE LEVEL  STYLES -->
     }
+<style>
+    #imgbox {
+            vertical-align: middle;
+            position: absolute;
+            border: 1px solid #999;
+            background-color: rgba(0,0,0,0.8);
+            filter: Alpha(Opacity=100);
+            visibility: hidden;
+            height: 300px;
+            width: 300px;
+            z-index: 50;
+            overflow: hidden;
+            text-align: center;
+        }
+    </style>
+<div id="imgbox"></div>
     <div id="content">
         <div class="inner">
             <div class="row">
@@ -16,6 +32,7 @@
                 </div>
             </div>
             <hr />
+            <div id="imgbox"></div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
@@ -355,6 +372,27 @@
                                                         <input type='file' multiple="multiple" accept="image/*" id='fileUpload' name="file" />
                                                     </div>
                                                     <br />
+                                                    
+                                                    <br/>
+                                                    @*<script>
+                                                        for ( i = 0; i < ViewBag.images.Count; i++)
+                                                        {
+
+                                                            var res = @ViewBag.images;
+                                                            var img = $("<img id=" + 'a' + i + " src='~/vendorimages/"+res[i]+"' onmouseover='Large(this)'/><a href='#' id=" + 'b' + i + "  onclick=deleteimage('" + res[i] +"','" + @ViewBag.masterid + "','" + i + "')>X</a>");
+                                                            img.attr("style", "height:50px;width:50px max-height: 75px;border: 2px solid;margin: 10px 10px 0 0;padding: 1px;");
+                                                            img.addClass();
+                                                            editimage.append(img);
+                                                        }
+                                                    </script>*@
+                                                        @foreach (var item in ViewBag.images)
+                                                    	{
+		                                                    <img id="img" src="~/vendorimages/@item" alt="student" style="height:100px;width:150px;border:double" onmouseover='return Large(this);'><a id="img" href="#" onclick="deleteimage()">X</a>
+	                                                    }
+
+                                                    
+                                                    <div id="editimage" style="min-height: 10px;min-width: 10px; "></div>
+
                                                     <div id="dvPreview" align="center" style="padding:20px">
                                                     </div>
 
@@ -374,6 +412,49 @@
             </div>
         </div>
     </div>
+<script>
+    function Large(obj) {
+        var imgbox = document.getElementById("imgbox");
+        imgbox.style.visibility = 'visible';
+        var img = document.createElement("img");
+
+        img.src = obj.src;
+        img.style.width = '400px';
+        img.style.height = '400px';
+
+        if (img.addEventListener) {
+            img.addEventListener('mouseout', Out, false);
+        } else {
+            img.attachEvent('onmouseout', Out);
+        }
+        imgbox.innerHTML = '';
+        imgbox.appendChild(img);
+        imgbox.style.left = (getElementLeft(obj) - 50) + 'px';
+        imgbox.style.top = (getElementTop(obj) - 50) + 'px';
+    } function Out() {
+        document.getElementById("imgbox").style.visibility = 'hidden';
+    }
+
+    function deleteimage(src, id, i) {
+        var img = document.getElementById("a" + i + "").style.visibility = 'hidden';
+        var img = document.getElementById("b" + i + "").style.visibility = 'hidden';
+        var obj = {}
+        obj.ids = id;
+        obj.imgsrc = src;
+        $.ajax({
+            type: "POST",
+            url: window.location.href.split("/")[0] + '//' + window.location.href.split("/")[2] + '/Venue/DeleteImage',
+            data: {},
+            data: JSON.stringify(obj),
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                alert('Image deleted successfully');
+                location.reload();
+            },
+        });
+    }
+</script>
     @section Bottom{
         <script src="~/Assets/plugins/jquery-2.0.3.min.js"></script>
         <script src="~/Assets/plugins/bootstrap/js/bootstrap.min.js"></script>
