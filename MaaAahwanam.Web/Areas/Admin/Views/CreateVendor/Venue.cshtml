@@ -23,6 +23,7 @@
             text-align: center;
         }
     </style>
+
 <div id="imgbox"></div>
     <div id="content">
         <div class="inner">
@@ -142,14 +143,14 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="control-label col-lg-4">E-mail</label>
-                                                    <div class=" col-lg-4">
+                                                    <div class="col-lg-4">
                                                         @*<input type="text" id="email" name="name" placeholder="Email" class="form-control">*@
                                                         @Html.TextBoxFor(model => this.Model.Item1.EmailId, new { @class = "form-control", placeholder = "Enter Email ID" })
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="control-label col-lg-4">Url</label>
-                                                    <div class=" col-lg-4">
+                                                    <div class="col-lg-4">
                                                         @*<input type="text" id="url" name="name" placeholder="Url" class="form-control">*@
                                                         @Html.TextBoxFor(model => this.Model.Item1.Url, new { @class = "form-control", placeholder = "Enter Url" })
                                                     </div>
@@ -163,7 +164,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="control-label col-lg-4">Experience</label>
-                                                    <div class=" col-lg-4">
+                                                    <div class="col-lg-4">
                                                         @*<input type="text" id="exp" name="name" placeholder="Experience" class="form-control">*@
                                                         @Html.TextBoxFor(model => this.Model.Item1.Experience, new { @class = "form-control", placeholder = "Enter Experience" })
                                                     </div>
@@ -259,7 +260,7 @@
 
                                                 <div class="form-group">
                                                     <label class="control-label col-lg-4">Non-Veg Lunch Price Per Plate</label>
-                                                    <div class=" col-lg-4">
+                                                    <div class="col-lg-4">
                                                         @*<input type="text" id="exp" name="name" class="form-control" placeholder="Enter Price">*@
                                                         @Html.TextBoxFor(model => this.Model.Item2.NonVegLunchCost, new { @class = "form-control", placeholder = "Enter Price" })
                                                     </div>
@@ -276,7 +277,7 @@
 
                                                 <div class="form-group">
                                                     <label class="control-label col-lg-4">Non-Veg Dinner Price Per Plate</label>
-                                                    <div class=" col-lg-4">
+                                                    <div class="col-lg-4">
                                                         @*<input type="text" id="exp" name="name" class="form-control" placeholder="Enter Price">*@
                                                         @Html.TextBoxFor(model => this.Model.Item2.NonVegDinnerCost, new { @class = "form-control", placeholder = "Enter Price" })
                                                     </div>
@@ -374,31 +375,22 @@
                                                     <br />
                                                     
                                                     <br/>
-                                                    @*<script>
-                                                        for ( i = 0; i < ViewBag.images.Count; i++)
+                                                    @if (@ViewBag.images!= null)
+                                                    {
+                                                        foreach (var item in ViewBag.images)
                                                         {
-
-                                                            var res = @ViewBag.images;
-                                                            var img = $("<img id=" + 'a' + i + " src='~/vendorimages/"+res[i]+"' onmouseover='Large(this)'/><a href='#' id=" + 'b' + i + "  onclick=deleteimage('" + res[i] +"','" + @ViewBag.masterid + "','" + i + "')>X</a>");
-                                                            img.attr("style", "height:50px;width:50px max-height: 75px;border: 2px solid;margin: 10px 10px 0 0;padding: 1px;");
-                                                            img.addClass();
-                                                            editimage.append(img);
+                                                                <img id="img" src="~/vendorimages/@item" alt="student" style="height:100px;width:150px;border:double" onmouseover='return Large(this);' />
+                                                                @Html.ActionLink("delete","venue",new { src=@item})
                                                         }
-                                                    </script>*@
-                                                        @foreach (var item in ViewBag.images)
-                                                    	{
-		                                                    <img id="img" src="~/vendorimages/@item" alt="student" style="height:100px;width:150px;border:double" onmouseover='return Large(this);'><a id="img" href="#" onclick="deleteimage()">X</a>
-	                                                    }
-
-                                                    
+                                                    }
                                                     <div id="editimage" style="min-height: 10px;min-width: 10px; "></div>
 
                                                     <div id="dvPreview" align="center" style="padding:20px">
                                                     </div>
-
                                                 </div>
                                                 <div style="text-align:center" class="form-actions no-margin-bottom">
                                                     <input type="submit" value="Save" class="btn text-muted text-center btn-success" name="Command" />
+                                                    <input type="submit" value="update" class="btn text-muted text-center btn-success" name="Command" />
                                                     <input type="submit" value="Cancel" class="btn btn-danger" formaction="~/Admin/dashboard/dashboard">
                                                 </div>
                                             </form>
@@ -431,30 +423,11 @@
         imgbox.appendChild(img);
         imgbox.style.left = (getElementLeft(obj) - 50) + 'px';
         imgbox.style.top = (getElementTop(obj) - 50) + 'px';
-    } function Out() {
+    } 
+    function Out() {
         document.getElementById("imgbox").style.visibility = 'hidden';
     }
-
-    function deleteimage(src, id, i) {
-        var img = document.getElementById("a" + i + "").style.visibility = 'hidden';
-        var img = document.getElementById("b" + i + "").style.visibility = 'hidden';
-        var obj = {}
-        obj.ids = id;
-        obj.imgsrc = src;
-        $.ajax({
-            type: "POST",
-            url: window.location.href.split("/")[0] + '//' + window.location.href.split("/")[2] + '/Venue/DeleteImage',
-            data: {},
-            data: JSON.stringify(obj),
-            dataType: "json",
-            contentType: "application/json; charset=utf-8",
-            success: function (result) {
-                alert('Image deleted successfully');
-                location.reload();
-            },
-        });
-    }
-</script>
+    </script>
     @section Bottom{
         <script src="~/Assets/plugins/jquery-2.0.3.min.js"></script>
         <script src="~/Assets/plugins/bootstrap/js/bootstrap.min.js"></script>

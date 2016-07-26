@@ -28,5 +28,13 @@ namespace MaaAahwanam.Service
         {
             return vendorImageRepository.DeleteImage(vendorImage);
         }
+        public VendorImage GetImageId(string name)
+        {
+            return vendorImageRepository.GetImageId(name);
+        }
+        public string UpdateVendorVenue(VendorImage vendorImage)
+        {
+            return vendorImageRepository.UpdateVendorVenue(vendorImage);
+        }
     }
 }

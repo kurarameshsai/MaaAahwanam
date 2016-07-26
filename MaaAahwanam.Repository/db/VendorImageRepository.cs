@@ -32,5 +32,17 @@ namespace MaaAahwanam.Repository.db
             _dbContext.SaveChanges();
             return "success";
         }
+
+        public VendorImage GetImageId(string name)
+        {
+            return _dbContext.VendorImage.Where(m => m.ImageName == name).SingleOrDefault();
+        }
+
+        public string UpdateVendorVenue(VendorImage vendorImage)
+        {
+            _dbContext.Entry(vendorImage).CurrentValues.SetValues(vendorImage);
+            _dbContext.SaveChanges();
+            return "updated";
+        }
     }
 }
