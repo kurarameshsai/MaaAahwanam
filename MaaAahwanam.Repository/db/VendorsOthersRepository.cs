@@ -12,10 +12,10 @@ namespace MaaAahwanam.Repository.db
     {
         readonly ApiContext _dbContext = new ApiContext();
         MaaAahwanamEntities maaAahwanamEntities = new MaaAahwanamEntities();
-        public List<GetProducts_Result> GetProducts_Results(string parameters)
+        public List<GetProducts_Result> GetProducts_Results(string parameters, int VID)
         {
             //maaAahwanamEntities.get
-            return maaAahwanamEntities.GetProducts(parameters).ToList();
+            return maaAahwanamEntities.GetProducts(parameters,VID).ToList();
         }
 
         //Product info page

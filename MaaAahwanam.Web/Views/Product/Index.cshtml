@@ -131,8 +131,8 @@
                                 {
                                     //for (int i = 1; i <= 2; i++)
                                     //{
-                                     foreach (var item in this.Model.Skip(Model.Count-2))
-                                        {
+                                    foreach (var item in this.Model.Skip(Model.Count - 2))
+                                    {
 
                                         <div id="PhotographersDiv" class="step2">
                                             <div class="deals-main" id="main">
@@ -144,7 +144,7 @@
                                                                 <img src="~/vendorimages/@item.image" alt="thumb">
                                                                 @*</a>*@
                                                                 <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span>  </div>
-                                                                
+
                                                             </div>
                                                         </a>
                                                     </div>
@@ -167,17 +167,14 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        }
                                     }
+                                }
                                 @*}*@
                             </div>
                             <input type="hidden" id="hiddenlastrecord" value="@Model.Last().Id" />
+                            <input type="hidden" id="hiddenlastrecord2" value="@Model.Last().ServicType" />
                             <div id="sss"></div>
-                            <div class="loadMore">
-                                <button name="loadmore" id="LoadMore1" class="btn btn-green more-button"><i class="ti-reload"></i> Load More</button>
-                                <div id="abc"><h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1></div>
-                                <div id="imgloadergifdiv"> <img src="~/CSSWeb/ajax-loader.gif" id="imgloadergif" /></div>
-                            </div>
+
 
                             <!--<div class="pagination2">
                                 <div class="prev">
@@ -190,7 +187,11 @@
                         </div>
                         <!-- displayDiv -->
                     </fieldset>
-
+                    <div class="loadMore">
+                        <button name="loadmore" id="LoadMore1" class="btn btn-green more-button"><i class="ti-reload"></i> Load More</button>
+                        <div id="abc"><h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1></div>
+                        <div id="imgloadergifdiv"> <img src="~/CSSWeb/ajax-loader.gif" id="imgloadergif" /></div>
+                    </div>
                 </div>
             </article>
 
@@ -207,18 +208,46 @@
         window.onload = function () {
             $("#abc").hide();
             $("#imgloadergifdiv").hide();
-            alert(document.getElementById("hiddenlastrecord").value)
+            //alert(document.getElementById("hiddenlastrecord").value)
         };
         /* -------------------------------  Loadmore functionality ------------------------ */
         $('#LoadMore1').on('click', function (e) {
-            //$("#LoadMore1").hide();
-            //$("#abc").show();
-            //$("#imgloadergifdiv").show();
-            var designDate = '<div class="deals-main"> <div class="deal"> <div class="deal-thumb"> <a href="~/DealInfo"> <div class="zoomDiv"> <img src="../CSSWeb/images/products/card-1.jpg" alt="thumb"> <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span> </div> </div> </a> </div> <div class="deal-details"> <h4 style="font-size: 15px; font-weight:bold; color: #2d3e52; font-family: Helvetica,sans-serif; ">Wedding Favors</h4> <div class="amount"> <span class="price">Rs. 570</span> <span class="buy"> <a href="../ProductInfo?par=Venue&ID=101"><i class="ti-shopping-cart"></i> Add to Cart</a> </span> </div> <span style="color:#838383">Contrary to popular belief, Lorem Ipsum is not ...</span> <div class="deal-footer"> <ul> <li><div class="rate" data-rate-value=5></div></li> <li><i class="ti-comment-alt"></i> 1362</li> <li><i class="ti-eye"></i> 1500</li> </ul> </div> </div> </div> </div>';
-            for (var i = 0; i < 9; i++) {
-                $("#PhotographersDiv").append(designDate);
-            }
-            $(".rate").rate();
+            var VID = document.getElementById("hiddenlastrecord").value;
+            var servicetypeQuerystring = document.getElementById("hiddenlastrecord2").value;
+
+            var obj = {};
+            obj.VID = VID;
+            obj.servicetypeQuerystring = servicetypeQuerystring;
+            $.ajax({
+                type: "POST",
+                url: window.location.href.split("/")[0] + '//' + window.location.href.split("/")[2] + '/Product/Loadmore',
+                data: {},
+                data: JSON.stringify(obj),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    if (data.length != 0) {
+                        $.each(data, function (key, value) {
+                            $("#PhotographersDiv").append('<div class="deals-main"> <div class="deal"> <div class="deal-thumb"> <a href="~/DealInfo"> <div class="zoomDiv"> <img src="/vendorimages/' + value.image + '" alt="thumb"> <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span> </div> </div> </a> </div> <div class="deal-details"> <h4 style="font-size: 15px; font-weight:bold; color: #2d3e52; font-family: Helvetica,sans-serif; ">' + value.BusinessName + '</h4> <div class="amount"> <span class="price">Rs. 570</span> <span class="buy"> <a href="../ProductInfo?par=Venue&ID=101"><i class="ti-shopping-cart"></i> Add to Cart</a> </span> </div> <span style="color:#838383">' + value.Description + '</span> <div class="deal-footer"> <ul> <li><div class="rate" data-rate-value=5></div></li> <li><i class="ti-comment-alt"></i> 1362</li> <li><i class="ti-eye"></i> 1500</li> </ul> </div> </div> </div> </div>');
+                            document.getElementById("hiddenlastrecord").value = value.Id;
+                        });
+                    }
+                    else
+                    {
+                        $("#LoadMore1").hide();
+                    }
+                    $(".rate").rate();
+                },
+                error: function (data) {
+                    alert('error')
+                }
+            });
+
+
+            //var designDate = '<div class="deals-main"> <div class="deal"> <div class="deal-thumb"> <a href="~/DealInfo"> <div class="zoomDiv"> <img src="../CSSWeb/images/products/card-1.jpg" alt="thumb"> <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span> </div> </div> </a> </div> <div class="deal-details"> <h4 style="font-size: 15px; font-weight:bold; color: #2d3e52; font-family: Helvetica,sans-serif; ">Wedding Favors</h4> <div class="amount"> <span class="price">Rs. 570</span> <span class="buy"> <a href="../ProductInfo?par=Venue&ID=101"><i class="ti-shopping-cart"></i> Add to Cart</a> </span> </div> <span style="color:#838383">Contrary to popular belief, Lorem Ipsum is not ...</span> <div class="deal-footer"> <ul> <li><div class="rate" data-rate-value=5></div></li> <li><i class="ti-comment-alt"></i> 1362</li> <li><i class="ti-eye"></i> 1500</li> </ul> </div> </div> </div> </div>';
+            //for (var i = 0; i < 9; i++) {
+            //    $("#PhotographersDiv").append(designDate);
+            //}
             $("#imgloadergifdiv").hide();
             $("#LoadMore1").show();
         });
