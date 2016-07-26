@@ -28,13 +28,17 @@ namespace MaaAahwanam.Repository
         }
     
     
-        public virtual ObjectResult<GetProducts_Result> GetProducts(string nType)
+        public virtual ObjectResult<GetProducts_Result> GetProducts(string nType, Nullable<int> vID)
         {
             var nTypeParameter = nType != null ?
                 new ObjectParameter("nType", nType) :
                 new ObjectParameter("nType", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetProducts_Result>("GetProducts", nTypeParameter);
+            var vIDParameter = vID.HasValue ?
+                new ObjectParameter("VID", vID) :
+                new ObjectParameter("VID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetProducts_Result>("GetProducts", nTypeParameter, vIDParameter);
         }
     
         public virtual ObjectResult<GetProductsInfo_Result> GetProductsInfo(Nullable<int> vid, string nType)

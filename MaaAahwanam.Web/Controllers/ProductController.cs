@@ -17,9 +17,16 @@ namespace MaaAahwanam.Web.Controllers
         {
             ProductService productService=new ProductService();
             string servicetypeQuerystring = Request.QueryString["par"];
-            List<GetProducts_Result> Productlist = productService.GetProducts_Results(servicetypeQuerystring);
+            List<GetProducts_Result> Productlist = productService.GetProducts_Results(servicetypeQuerystring,0);
             ViewBag.ServiceType = servicetypeQuerystring;
             return View(Productlist);
         }
-	}
+        public JsonResult Loadmore(string VID, string servicetypeQuerystring)
+        {
+            ProductService productService = new ProductService();
+            List<GetProducts_Result> Productlist = productService.GetProducts_Results(servicetypeQuerystring, int.Parse(VID));
+            ViewBag.ServiceType = servicetypeQuerystring;
+            return Json(Productlist);
+        }
+    }
 }
