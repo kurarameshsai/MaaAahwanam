@@ -49,7 +49,7 @@
                                                     <label class="control-label col-lg-4">Vendor Name</label>
                                                     <div class="col-lg-4">
                                                         @*<input type="text" id="businame" name="name" placeholder="Business Name" class="form-control">*@
-
+                                                        
                                                         @Html.TextBoxFor(model => this.Model.Item1.BusinessName, new { @class = "form-control", placeholder = "Enter Business Name" })
                                                     </div>
                                                 </div>
@@ -370,10 +370,10 @@
                                                 <div class="form-group">
                                                     <label for="tags" class="control-label col-lg-4">Multiple Uploads</label>
                                                     <div class="col-lg-4">
-                                                        <input type='file' multiple="multiple" accept="image/*" id='fileUpload' name="file" />
+                                                        <input type='file' multiple="multiple" accept="image/*" id='fileUpload' name="file" /> <p style="color:red">You can Upload images upto @ViewBag.imagescount Only</p>
                                                     </div>
                                                     <br />
-                                                    
+                                                    <br/>
                                                     <br/>
                                                     @if (@ViewBag.images!= null)
                                                     {
@@ -404,6 +404,12 @@
             </div>
         </div>
     </div>
+@if (ViewData["error"]!=null)
+{
+    <script>
+        alert("You have crossed images limit");
+    </script>
+}
 <script>
     function Large(obj) {
         var imgbox = document.getElementById("imgbox");

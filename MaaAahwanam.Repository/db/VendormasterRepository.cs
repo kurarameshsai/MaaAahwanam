@@ -27,8 +27,9 @@ namespace MaaAahwanam.Repository.db
             return _dbContext.Vendormaster.Where(m => m.Id == id).FirstOrDefault();
         }
 
-        public Vendormaster UpdateVendorMaster(Vendormaster vendorMaster, Vendormaster GetMaster)
+        public Vendormaster UpdateVendorMaster(Vendormaster vendorMaster, long id)
         {
+            var GetMaster = _dbContext.Vendormaster.SingleOrDefault(m => m.Id == id);
             _dbContext.Entry(GetMaster).CurrentValues.SetValues(vendorMaster);
             _dbContext.SaveChanges();
             return vendorMaster;

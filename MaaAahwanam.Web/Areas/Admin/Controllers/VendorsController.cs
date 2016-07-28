@@ -13,8 +13,12 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
     public class VendorsController : Controller
     {
         VendorSetupService vendorSetupService = new VendorSetupService();
-        public ActionResult AllVendors()
+        public ActionResult AllVendors(string dropdown)
         {
+            if (dropdown!=null)
+            {
+                ViewBag.VendorList = vendorSetupService.AllVendorList(dropdown);
+            }
             return View();
         }
         [HttpPost]
