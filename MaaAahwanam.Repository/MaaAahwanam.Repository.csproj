@@ -180,6 +180,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DBScript\StoredProcedures\AllVendorList.sql" />
     <Content Include="DBScript\StoredProcedures\SP_GetTestimonials.sql" />
     <Content Include="DBScript\StoredProcedures\MaaAahwanam_Others_TestimonialDetail.sql" />
     <Content Include="DBScript\StoredProcedures\MaaAahwanam_Others_Testimonials.sql" />
