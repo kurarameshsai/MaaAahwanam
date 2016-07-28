@@ -1,0 +1,81 @@
+﻿@model MaaAahwanam.Models.ServiceRequest
+@{
+    ViewBag.Title = "Bidding Response";
+    Layout = "~/Views/SharedWeb/VendorMaster.cshtml";
+}
+
+@section Navigation
+{
+    <div class="breads">
+        <div class="breads_inner">
+            <div class="pageWidth">
+                <div class="title">
+
+                    <h3>Bidding Response</h3>
+                </div>
+                <div class="breadcrumbs">
+                    <ul>
+                        <li><a href="~/VendorDashboard/index">Home</a></li>
+                        <li><i class="breads_arrow"></i></li>
+                        <li><a href="~/VendorBiddingslist/index">Bidding Response</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div class="dashboardList dashboardList-nospace">
+    <table class=" responsive">
+        <thead>
+            <tr>
+                <th style="width:11%">S.No</th>
+                <th style="width:11%">EventName</th>
+                <th style="width:12%">Preferences</th>
+                <th style="width:11%">EventLocation</th>
+                <th style="width:11%">EventStartDate</th>
+                <th style="width:11%">EventStartTime</th>
+                <th style="width:11%">EventEnddate</th>
+                <th style="width:11%">EventEndtime</th>
+                <th style="width:11%"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (ViewBag.bidlist.Count != 0)
+            {
+                foreach (var item in ViewBag.bidlist)
+                {
+                    <tr>
+                        <td><a href="#quatation" class="green-link ml-center popup-with-move-anim">@item.RequestId</a></td>
+                        <td>@item.EventName</td>
+                        <td>@item.Preferences</td>
+                        <td>@item.EventLocation</td>
+                        <td>@item.EventStartDate</td>
+                        <td>@item.EventStartTime</td>
+                        <td>@item.EventEnddate</td>
+                        <td>@item.EventEndtime</td>
+                        <td><a href="../VendorBiddingResponse?Rid=@item.RequestId" class="btn btn-default btn-xs">Respond</a></td>
+                    </tr>
+                }
+            }
+        </tbody>
+        @*<tbody>
+                <tr>
+                    <td colspan="6">No Records Found</td>
+                </tr>
+            </tbody>*@
+    </table>
+
+    @*<div class="pagination">
+        <ul>
+            <li><a href="javascript:void(0)">Prev</a></li>
+            <li><a href="javascript:void(0)" class="active">1</a></li>
+            <li><a href="javascript:void(0)">2</a></li>
+            <li><a class="pagination-gap">...</a></li>
+            <li><a href="javascript:void(0)">24</a></li>
+            <li><a href="javascript:void(0)">25</a></li>
+            <li><a href="javascript:void(0)">Next</a></li>
+        </ul>
+    </div>*@
+
+    <div class="clear"></div>
+</div>
