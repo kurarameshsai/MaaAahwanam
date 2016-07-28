@@ -10,11 +10,11 @@ using System.Data.SqlClient;
 
 namespace MaaAahwanam.Service
 {
-   public class ServiceResponseService
+    public class ServiceResponseService
     {
+        ServiceResponseRepository serviceResponseRepository = new ServiceResponseRepository();
         public long ServiceResponseCount(ServiceResponse serviceResponse)
         {
-            ServiceResponseRepository serviceResponseRepository = new ServiceResponseRepository();
             return serviceResponseRepository.ServiceResponseCount(serviceResponse);
         }
 
@@ -25,14 +25,27 @@ namespace MaaAahwanam.Service
         //}
         public List<MaaAahwanam_Services_Bidding_Result> GetServiceResponseList(long id)
         {
-            ServiceResponseRepository serviceResponseRepository = new ServiceResponseRepository();
             return serviceResponseRepository.ServiceResponseList(id);
         }
 
         public List<ServiceResponse> GetQuotationList(ServiceResponse serviceResponse)
         {
-            ServiceResponseRepository serviceResponseRepository = new ServiceResponseRepository();
             return serviceResponseRepository.GetQuotationList(serviceResponse);
+        }
+
+        public string SaveServiceResponse(ServiceResponse serviceResponse)
+        {
+            var a = serviceResponseRepository.SaveServiceResponse(serviceResponse);
+            string message = "";
+            if (a.ResponseId != 0)
+            {
+                message = "Success";
+            }
+            else
+            {
+                message = "Failed to save";
+            }
+            return message;
         }
     }
 }

@@ -345,46 +345,49 @@
 <section>
     <div class="pageWidth">
         <div class="testimonials">
-            <div class="heading-title">
-                <h2>What Our Customers Say!</h2>
-            </div>
 
 
-            <div id="testimonials" class="owl-carousel owl-theme">
-                @if (ViewBag.Testimonials.Count != 0)
-                {
-                foreach (var item in @ViewBag.Testimonials)
-                {
 
-                <div class="item">
-                    <div class="studentPic">
-                        <div class="studentPic-inner">
-                            <div> <img src="blank.gif" class="lazy" data-src="../Testimonial/@item.ImagePath" alt="student"> </div>
-                        </div>
-                    </div>
-                    <div class="studentTest">
-                        <p>
-                            @item.Description
-                            <a href="~/Testimonials">......More</a>
-                        </p>
-                        <div class="stuTitle">
-                            @item.Name
-                        </div>
-                        <small>@*@item.City*@</small>
-                    </div>
+            @if (ViewBag.Testimonials.Count != 0)
+            {
+                <div class="heading-title">
+                    <h2>What Our Customers Say!</h2>
                 </div>
+                <div id="testimonials" class="owl-carousel owl-theme">
 
-                }
-                }
-                else
-                {
+                    @foreach (var item in @ViewBag.Testimonials)
+                    {
+
+                    <div class="item">
+                        <div class="studentPic">
+                            <div class="studentPic-inner">
+                                <div> <img src="blank.gif" class="lazy" data-src="../Testimonial/@item.ImagePath" alt="student"> </div>
+                            </div>
+                        </div>
+                        <div class="studentTest">
+                            <p>
+                                @item.Description
+                                <a href="~/Testimonials">......More</a>
+                            </p>
+                            <div class="stuTitle">
+                                @item.Name
+                            </div>
+                            <small>@*@item.City*@</small>
+                        </div>
+                    </div>
+
+                    }
+                </div>
+            }
+            else
+            {
                 <div class="stuTitle">
                     No customers feelings yet..!!
                 </div>
-                }
-            </div>
+            }
         </div>
     </div>
+        
 </section>
 <!-- // testimonials -->
 
