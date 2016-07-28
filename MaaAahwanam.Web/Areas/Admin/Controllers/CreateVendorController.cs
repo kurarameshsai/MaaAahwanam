@@ -477,9 +477,23 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             }
             return View();
         }
-        public ActionResult Venue(string id, [Bind(Prefix = "Item2")] VendorVenue vendorVenue, [Bind(Prefix = "Item1")] Vendormaster vendorMaster)
+        public ActionResult Venue(string id, [Bind(Prefix = "Item2")] VendorVenue vendorVenue, [Bind(Prefix = "Item1")] Vendormaster vendorMaster,string src)
         {
             VendorVenueService vendorVenueService = new VendorVenueService();
+            if (src != null)
+            {
+                
+                var vendorImage = vendorImageService.GetImageId(src);
+                string delete = vendorImageService.DeleteImage(vendorImage);
+                if (delete == "success")
+                {
+                    return Content("<script language='javascript' type='text/javascript'>alert('Image deleted successfully!');location.href='" + @Url.Action("venue", "createvendor") + "'</script>");
+                }
+                if (delete == "success")
+                {
+                    return Content("<script language='javascript' type='text/javascript'>alert('Failed!');location.href='" + @Url.Action("venue", "createvendor") + "'</script>");
+                }
+            }
             if (id!=null)
             {
                 vendorVenue = vendorVenueService.GetVendorVenue(long.Parse(id)); 
@@ -492,43 +506,85 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Venue([Bind(Prefix = "Item2")] VendorVenue vendorVenue, [Bind(Prefix = "Item1")] Vendormaster vendorMaster, HttpPostedFileBase file)
+        public ActionResult Venue([Bind(Prefix = "Item2")] VendorVenue vendorVenue, [Bind(Prefix = "Item1")] Vendormaster vendorMaster, HttpPostedFileBase file,string Command,string id)
         {
             string fileName = string.Empty;
             VendorVenueService vendorVenueService = new VendorVenueService();
             vendorVenue.UpdatedBy = ValidUserUtility.ValidUser();
             vendorMaster.UpdatedBy = ValidUserUtility.ValidUser();
-            vendorVenue = vendorVenueService.AddVenue(vendorVenue, vendorMaster);
-            VendorImage vendorImage = new VendorImage();
-            vendorImage.VendorId = vendorVenue.Id;
-            vendorImage.UpdatedBy = ValidUserUtility.ValidUser();
-            //const string imagepath = @"/vendorimages";
-            if (Request.Files.Count <= 10)
+            if (Command == "Save")
             {
-                for (int i = 0; i < Request.Files.Count; i++)
+                vendorVenue = vendorVenueService.AddVenue(vendorVenue, vendorMaster);
+                VendorImage vendorImage = new VendorImage();
+                vendorImage.VendorId = vendorVenue.Id;
+                vendorImage.UpdatedBy = ValidUserUtility.ValidUser();
+                //const string imagepath = @"/vendorimages";
+                if (Request.Files.Count <= 10)
                 {
-                    int j = i + 1;
-                    
+                    for (int i = 0; i < Request.Files.Count; i++)
+                    {
+                        int j = i + 1;
+
                         var file1 = Request.Files[i];
                         if (file1 != null && file1.ContentLength > 0)
                         {
                             string path = System.IO.Path.GetExtension(file.FileName);
-                            var filename =  "Venue_" + vendorVenue.VendorMasterId + "_" + j + path;
+                            var filename = "Venue_" + vendorVenue.VendorMasterId + "_" + j + path;
                             fileName = System.IO.Path.Combine(System.Web.HttpContext.Current.Server.MapPath(imagepath + filename));
                             file1.SaveAs(fileName);
                             vendorImage.ImageName = filename;
                             vendorImage = vendorImageService.AddVendorImage(vendorImage, vendorMaster);
                         }
-                    
+
+                    }
+                }
+                if (vendorVenue.Id != 0 && vendorImage.ImageId != 0)
+                {
+                    return Content("<script language='javascript' type='text/javascript'>alert('Registered Successfully');location.href='" + @Url.Action("Venue", "CreateVendor") + "'</script>");
+                }
+                else
+                {
+                    return Content("<script language='javascript' type='text/javascript'>alert('Registration Failed');location.href='" + @Url.Action("Venue", "CreateVendor") + "'</script>");
                 }
             }
-            if (vendorVenue.Id != 0 && vendorImage.ImageId != 0)
+            if (Command=="update")
             {
-                return Content("<script language='javascript' type='text/javascript'>alert('Registered Successfully');location.href='" + @Url.Action("Venue", "CreateVendor") + "'</script>");
-            }
-            else
-            {
-                return Content("<script language='javascript' type='text/javascript'>alert('Registration Failed');location.href='" + @Url.Action("Venue", "CreateVendor") + "'</script>");
+                vendorMaster.Id = long.Parse(id);
+                vendorVenue.VendorMasterId = long.Parse(id);
+                VendorVenue getvendor = vendorVenueService.GetVendorVenue(long.Parse(id));
+                Vendormaster getmaster = vendorMasterService.GetVendor(long.Parse(id));
+                vendorVenue = vendorVenueService.UpdateVenue(vendorVenue, vendorMaster ,getvendor,getmaster);
+                //VendorImage vendorImage = new VendorImage();
+                //vendorImage.VendorId = vendorVenue.Id;
+                //vendorImage.UpdatedBy = ValidUserUtility.ValidUser();
+                //const string imagepath = @"/vendorimages";
+                //if (Request.Files.Count <= 10)
+                //{
+                //    for (int i = 0; i < Request.Files.Count; i++)
+                //    {
+                //        int j = i + 1;
+
+                //        var file1 = Request.Files[i];
+                //        if (file1 != null && file1.ContentLength > 0)
+                //        {
+                //            string path = System.IO.Path.GetExtension(file.FileName);
+                //            var filename = "Venue_" + vendorVenue.VendorMasterId + "_" + j + path;
+                //            fileName = System.IO.Path.Combine(System.Web.HttpContext.Current.Server.MapPath(imagepath + filename));
+                //            file1.SaveAs(fileName);
+                //            vendorImage.ImageName = filename;
+                //            vendorImage = vendorImageService.AddVendorImage(vendorImage, vendorMaster);
+                //        }
+
+                //    }
+                //}
+                if (vendorVenue.Id != 0) //&& vendorImage.ImageId != 0
+                {
+                    return Content("<script language='javascript' type='text/javascript'>alert('Registered Successfully');location.href='" + @Url.Action("Venue", "CreateVendor") + "'</script>");
+                }
+                else
+                {
+                    return Content("<script language='javascript' type='text/javascript'>alert('Registration Failed');location.href='" + @Url.Action("Venue", "CreateVendor") + "'</script>");
+                }
             }
             return View();
         }
@@ -579,7 +635,7 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             }
             return View();
         }
-        //public JsonResult images(string ids)
+        //public ActionResult images(string ids)
         //{
         //    var images = vendorImageService.GetVendorImagesService(long.Parse(ids));
         //    return Json(images);
