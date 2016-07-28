@@ -233,7 +233,11 @@
     <Compile Include="Controllers\TestimonialsController.cs" />
     <Compile Include="Controllers\TicketsController.cs" />
     <Compile Include="Controllers\UserTestimonialsController.cs" />
+    <Compile Include="Controllers\VendorRBResponseController.cs" />
+    <Compile Include="Controllers\VendorBiddingslistController.cs" />
     <Compile Include="Controllers\VendorDashboardController.cs" />
+    <Compile Include="Controllers\VendorBiddingResponseControllerController.cs" />
+    <Compile Include="Controllers\VendorReverseBiddingslistController.cs" />
     <Compile Include="Controllers\VendorSigninController.cs" />
     <Compile Include="data.cs" />
     <Compile Include="Global.asax.cs">
@@ -2376,6 +2380,11 @@
     <Content Include="Views\VendorSignin\Index.cshtml" />
     <Content Include="Views\SharedWeb\VendorMaster.cshtml" />
     <Content Include="Views\VendorDashboard\Index.cshtml" />
+    <Content Include="Views\VendorBiddingslist\Index.cshtml" />
+    <Content Include="Views\VendorReverseBiddingslist\Index.cshtml" />
+    <Content Include="Views\VendorReverseBiddingResponseController\Index.cshtml" />
+    <Content Include="Views\VendorRBResponse\Index.cshtml" />
+    <Content Include="Views\VendorBiddingResponse\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
