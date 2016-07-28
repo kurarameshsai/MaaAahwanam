@@ -705,9 +705,6 @@ E:\Project\Maa-Aahwanam\MaaAahwanam.Web\bin\EntityFramework.MappingAPI.pdb
 E:\Project\Maa-Aahwanam\MaaAahwanam.Web\obj\Debug\MaaAahwanam.Web.csprojResolveAssemblyReference.cache
 E:\Project\Maa-Aahwanam\MaaAahwanam.Web\obj\Debug\MaaAahwanam.Web.dll
 E:\Project\Maa-Aahwanam\MaaAahwanam.Web\obj\Debug\MaaAahwanam.Web.pdb
-D:\Maa 2.0\MaaAahwanam\MaaAahwanam\MaaAahwanam.Web\obj\Debug\MaaAahwanam.Web.csprojResolveAssemblyReference.cache
-D:\Maa 2.0\MaaAahwanam\MaaAahwanam\MaaAahwanam.Web\obj\Debug\MaaAahwanam.Web.dll
-D:\Maa 2.0\MaaAahwanam\MaaAahwanam\MaaAahwanam.Web\obj\Debug\MaaAahwanam.Web.pdb
 D:\Maa 2.0\MaaAahwanam\MaaAahwanam\MaaAahwanam.Web\bin\MaaAahwanam.Web.dll.config
 D:\Maa 2.0\MaaAahwanam\MaaAahwanam\MaaAahwanam.Web\bin\MaaAahwanam.Web.dll
 D:\Maa 2.0\MaaAahwanam\MaaAahwanam\MaaAahwanam.Web\bin\MaaAahwanam.Web.pdb
@@ -778,3 +775,6 @@ D:\Maa 2.0\MaaAahwanam\MaaAahwanam\MaaAahwanam.Web\bin\Microsoft.Owin.Security.G
 D:\Maa 2.0\MaaAahwanam\MaaAahwanam\MaaAahwanam.Web\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Maa 2.0\MaaAahwanam\MaaAahwanam\MaaAahwanam.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\Maa 2.0\MaaAahwanam\MaaAahwanam\MaaAahwanam.Web\bin\EntityFramework.MappingAPI.pdb
+D:\Maa 2.0\MaaAahwanam\MaaAahwanam\MaaAahwanam.Web\obj\Debug\MaaAahwanam.Web.csprojResolveAssemblyReference.cache
+D:\Maa 2.0\MaaAahwanam\MaaAahwanam\MaaAahwanam.Web\obj\Debug\MaaAahwanam.Web.dll
+D:\Maa 2.0\MaaAahwanam\MaaAahwanam\MaaAahwanam.Web\obj\Debug\MaaAahwanam.Web.pdb
