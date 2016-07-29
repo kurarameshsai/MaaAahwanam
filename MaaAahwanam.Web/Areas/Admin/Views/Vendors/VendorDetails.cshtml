@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Tuple<MaaAahwanam.Models.Vendormaster, MaaAahwanam.Models.VendorVenue>
+@{
     ViewBag.Title = "VendorDetails";
     Layout = "~/Areas/Admin/Views/Shared/MainMaster.cshtml";
 }
@@ -10,6 +11,21 @@
     <!-- END PAGE LEVEL  STYLES -->
 }
 
+<style>
+    #imgbox {
+        vertical-align: middle;
+        position: absolute;
+        border: 1px solid #999;
+        background-color: rgba(0,0,0,0.8);
+        filter: Alpha(Opacity=100);
+        visibility: hidden;
+        height: 300px;
+        width: 300px;
+        z-index: 50;
+        overflow: hidden;
+        text-align: center;
+    }
+</style>
 
 <!--PAGE CONTENT -->
 
@@ -46,155 +62,206 @@
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div id="collapse2" class="body collapse in">
-                                                <div class="form-group">
-                                                    <label class="control-label col-lg-4">Vendor Name</label>
-                                                    <div class="col-lg-4">
-                                                        <input type="text" id="businame" name="name" placeholder="Business Name" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-lg-4">Vendor Description</label>
-                                                    <div class="col-lg-4">
-                                                       <textarea rows="4" cols="30" class="form-control"></textarea>
-                                                        @*<input type="text" id="busidesc" name="name" placeholder="Description">*@
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-lg-4">Address</label>
-                                                    <div class="col-lg-4">
-                                                        <textarea rows="4" cols="30" class="form-control"></textarea>
-                                                        @*<input type="text" id="addr" name="name"  placeholder="Address">*@
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-lg-4">Location</label>
-                                                    <div class="col-lg-4">
-                                                        <input type="text" id="loc" name="name" placeholder="Location" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-lg-4">City</label>
-                                                    <div class="col-lg-4">
-                                                        <input type="text" id="city" name="name" placeholder="City" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-lg-4">State</label>
-                                                    <div class="col-lg-4">
-                                                        <select class="form-control">
-                                                            <option>Select State</option>
-                                                            <option>Telangana</option>
-                                                            <option>Andhra Pradesh</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-lg-4">ZIP Code</label>
-                                                    <div class="col-lg-4">
-                                                        <input type="text" id="zipcode" name="name" placeholder="Zip Code" class="form-control">
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group" style="align-items:center">
-                                                    <label class="control-label col-lg-4">Quotation</label>
-                                                    <div class="col-lg-4">
-                                                        <input type="checkbox" id="Quotation" name="name" value="Quotation" class="uniform" />
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-lg-4">Bidding</label>
-                                                    <div class="col-lg-4">
-                                                        <input type="checkbox" id="Bidding" name="name" value="Bidding" class="uniform" />
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-lg-4">Reverse Bidding</label>
-                                                    <div class="col-lg-4">
-                                                        <input type="checkbox" id="ReverseBidding" name="name" value="ReverseBidding" class="uniform" />
-                                                    </div>
-                                                </div>
-                                               
                                                 
-                                                
-                                                <div class="form-group">
-                                                    <label class="control-label col-lg-4">Contact Person</label>
-                                                    <div class="col-lg-4">
-                                                        <input type="text" id="contperson" name="name" placeholder="Contact Person" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-lg-4">Contact Number</label>
-                                                    <div class="col-lg-4">
-                                                        <input type="text" id="contno." name="name" placeholder="Contact Number" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-lg-4">Landline Number</label>
-                                                    <div class="col-lg-4">
-                                                        <input type="text" id="llno." name="name" placeholder="Landline Number" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-lg-4">E-mail</label>
-                                                    <div class="col-lg-4">
-                                                        <input type="text" id="email" name="name" placeholder="Email" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-lg-4">Url</label>
-                                                    <div class="col-lg-4">
-                                                        <input type="text" id="url" name="name" placeholder="Url" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-lg-4" for="dp2">Date of Establishment</label>
-                                                    <div class="col-lg-4">
-                                                        <input type="text" id="estdate" name="name" placeholder="Date of Establishment" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-lg-4">Experience</label>
-                                                    <div class="col-lg-4">
-                                                        <input type="text" id="exp" name="name" placeholder="Experience" class="form-control">
-                                                    </div>
-                                                </div>
-                                                @*<div class="form-group">
-                                                    <label class="control-label col-lg-4">Service Type</label>
-                                                    <div class="col-lg-4">
-                                                        <select class="form-control">
-                                                            <option>Select Service Type</option>
-                                                            <option>Venue</option>
-                                                            <option>Caterers</option>
-                                                            <option>Decorators</option>
-                                                            <option>Photographers</option>
-                                                            <option>Invitation Cards</option>
-                                                            <option>Cards Distribution</option>
-                                                            <option>Entertainment</option>
-                                                            <option>Event Organisers</option>
-                                                            <option>Beauty Services</option>
-                                                            <option>Wedding Collection</option>
-                                                            <option>Travel & Accomodation</option>
-                                                            <option>Return Gifts</option>
-                                                            <option>Others</option>
-                                                        </select>
-                                                    </div>
-                                                </div>*@                                               
-                                                <div class="form-group">                                                    
-                                                    <div class="col-lg-4">                                                        
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="col-lg-4">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="col-lg-4">
-                                                    </div>
-                                                </div>
-                                                <div style="text-align:center" class="form-actions no-margin-bottom">
-                                                    <input type="submit" value="Click To Validate GeneralInformation" class="btn btn-primary btn-lg" name="Command" />
-                                                </div>
+                                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                                    <tr>
+                                                        <td><strong>Vendor Name</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item1.BusinessName)</td>
+                                                    </tr>
 
+                                                    <tr>
+                                                        <td><strong>Vendor Description</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item1.Description)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>Address</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item1.Address)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>Location</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item1.Landmark)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>City</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item1.City)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>State</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item1.State)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>ZIP Code</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item1.ZipCode)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>Contact Person</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item1.ContactPerson)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>Landline Number</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item1.LandlineNumber)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>E-mail</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item1.EmailId)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>Url</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item1.Url)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>Date of Establishment</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item1.EstablishedYear)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>Experience</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item1.Experience)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>Venue Type</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item2.VenueType)</td>
+                                                    </tr>
+                                                    
+                                                    <tr>
+                                                        <td><strong>Food</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item2.Food)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>Food</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item2.Food)</td>
+                                                    </tr>
+                                                    
+                                                    <tr>
+                                                        <td><strong>CockTails</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item2.CockTails)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>Rooms</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item2.Rooms)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>Seating Capacity</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item2.SeatingCapacity)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>Dining Capacity</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item2.DiningCapacity)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>Minimum Seating Capacity</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item2.Minimumseatingcapacity)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>Maximum capacity</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item2.Maximumcapacity)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>Veg Lunch Price Per Plate</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item2.VegLunchCost)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>Non-Veg Lunch Price Per Plate</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item2.NonVegLunchCost)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>Veg Dinner Price Per Plate</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item2.VegDinnerCost)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>Non-Veg Dinner Price Per Plate</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item2.NonVegDinnerCost)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>Minimum Order</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item2.MinOrder)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>Maximum Order</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item2.MaxOrder)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>Decoration Allwoed</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item2.DecorationAllowed)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>Hall Type</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item2.HallType)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>Wi-Fi</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item2.Wifi)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>Menu with the no. of items</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item2.Menuwiththenoofitems)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>Distance from main places like</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item2.Distancefrommainplaceslike)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>LiveCooking Station</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item2.LiveCookingStation)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>Service Cost</strong></td>
+                                                        <td>@Html.DisplayFor(model => this.Model.Item2.ServiceCost)</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><strong>Images</strong></td>
+                                                        <td width="800px" height="10px">
+                                                            <div id="imgbox"></div>
+                                                            @if (@ViewBag.images != null)
+                                                            {
+                                                                foreach (var item in ViewBag.images)
+                                                                {
+                                                                    <img id="img" src="~/vendorimages/@item" alt="student" style="height:100px;width:150px;border:double" onmouseover='Large(this)' />
+                                                                }
+                                                            }
+                                                            
+                                                            <div id="editimage" style="min-height: 10px;min-width: 10px; "></div>
+
+                                                            <div id="dvPreview" align="center" style="padding:20px">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                                <div align="center">
+                                                    <input type="submit" value="Back To List" formaction="~/Admin/Vendors/AllVendors" />
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -212,37 +279,27 @@
     </div>
 </div>
 <script>
+    function Large(obj) {
+        var imgbox = document.getElementById("imgbox");
+        imgbox.style.visibility = 'visible';
+        var img = document.createElement("img");
 
-    function cTrig() {
-        var box = confirm("Are you sure you want to do this?");
-        if (box == true) {
-            $('input[name=Delete]').attr('checked', true);
+        img.src = obj.src;
+        img.style.width = '400px';
+        img.style.height = '400px';
+
+        if (img.addEventListener) {
+            img.addEventListener('mouseout', Out, false);
+        } else {
+            img.attachEvent('onmouseout', Out);
         }
-        else {
-            $('input[name=Delete]').attr('checked', false);
-        }
+        imgbox.innerHTML = '';
+        imgbox.appendChild(img);
+        imgbox.style.left = (getElementLeft(obj) - 50) + 'px';
+        imgbox.style.top = (getElementTop(obj) - 50) + 'px';
     }
-
-    function DeleteProduct(pid) {
-        if (confirm("Do you want to delete Image: " + pid)) {
-            var data = { 'ImgId': pid }
-            $.post('/Vendor/DeleteImg', data,
-            function (data) {
-                if (data == true) {
-                    var qrStr = window.location.search;
-                    qrStr = qrStr.split("=")[1];
-                    location.href = "/Admin/Vendor/VendorPhotoDet?id=" + qrStr;
-                    viewbag.I1 = "active";
-                }
-                else
-                    alert("Could not delete");
-            });
-        }
-    }
-
-    function test() {
-        $("#Home").removeClass("tab-pane fade in active");
-        $("#Packages").addClass("tab-pane fade in active");
+    function Out() {
+        document.getElementById("imgbox").style.visibility = 'hidden';
     }
 </script>
 

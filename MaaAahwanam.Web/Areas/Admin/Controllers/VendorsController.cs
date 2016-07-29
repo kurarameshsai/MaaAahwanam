@@ -12,6 +12,9 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
 {
     public class VendorsController : Controller
     {
+        //VendorVenueService vendorVenueService = new VendorVenueService();
+        //VendorImageService vendorImageService = new VendorImageService();
+        //VendorMasterService vendorMasterService = new VendorMasterService();
         VendorSetupService vendorSetupService = new VendorSetupService();
         public ActionResult AllVendors(string dropdown)
         {
@@ -22,7 +25,7 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult AllVendors(string dropstatus,string command,string id,string type)
+        public ActionResult AllVendors(string dropstatus,string command,string id,string type,[Bind(Prefix = "Item2")] VendorVenue vendorVenue, [Bind(Prefix = "Item1")] Vendormaster vendorMaster)
         {
             if (dropstatus != null)
             {
@@ -31,6 +34,10 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             if (command == "Edit")
             {
                 return RedirectToAction(dropstatus, "CreateVendor", new { id = id});
+            }
+            if (command == "View")
+            {
+                return RedirectToAction(dropstatus, "CreateVendor", new { id = id,op = "display" });
             }
             return View();
         }
@@ -46,8 +53,16 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
         {
             return View();
         }
-        public ActionResult VendorDetails()
+        public ActionResult VendorDetails(string id, [Bind(Prefix = "Item2")] VendorVenue vendorVenue, [Bind(Prefix = "Item1")] Vendormaster vendorMaster)
         {
+            //if (id!=null)
+            //{
+            //    vendorVenue = vendorVenueService.GetVendorVenue(long.Parse(id));
+            //    vendorMaster = vendorMasterService.GetVendor(long.Parse(id));
+            //    var a = new Tuple<Vendormaster, VendorVenue>(vendorMaster, vendorVenue);
+            //    ViewBag.images = vendorImageService.GetVendorImagesService(long.Parse(id));
+            //    return View(a);
+            //}
             return View();
         }
 	}
