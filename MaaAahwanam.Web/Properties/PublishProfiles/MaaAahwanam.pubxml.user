@@ -52,7 +52,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/11/2016 18:27:44</publishTime>
     </File>
     <File Include="Areas/Admin/Views/CreateVendor/Venue.cshtml">
-      <publishTime>07/26/2016 17:40:48</publishTime>
+      <publishTime>07/28/2016 17:21:19</publishTime>
     </File>
     <File Include="Areas/Admin/Views/CreateVendor/WeddingCollection.cshtml">
       <publishTime>07/11/2016 18:28:07</publishTime>
@@ -7063,19 +7063,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/10/2016 16:36:17</publishTime>
     </File>
     <File Include="bin/MaaAahwanam.Models.dll">
-      <publishTime>07/26/2016 18:33:09</publishTime>
+      <publishTime>07/28/2016 18:33:19</publishTime>
     </File>
     <File Include="bin/MaaAahwanam.Repository.dll">
-      <publishTime>07/26/2016 18:33:10</publishTime>
+      <publishTime>07/28/2016 18:33:20</publishTime>
     </File>
     <File Include="bin/MaaAahwanam.Service.dll">
-      <publishTime>07/26/2016 18:33:10</publishTime>
+      <publishTime>07/28/2016 18:33:20</publishTime>
     </File>
     <File Include="bin/MaaAahwanam.Utility.dll">
-      <publishTime>07/26/2016 18:33:10</publishTime>
+      <publishTime>07/28/2016 18:33:19</publishTime>
     </File>
     <File Include="bin/MaaAahwanam.Web.dll">
-      <publishTime>07/26/2016 18:33:11</publishTime>
+      <publishTime>07/28/2016 18:33:21</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>07/01/2016 12:29:48</publishTime>
@@ -8671,7 +8671,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/15/2016 17:54:49</publishTime>
     </File>
     <File Include="Views/Bidding/Index.cshtml">
-      <publishTime>07/01/2016 12:29:45</publishTime>
+      <publishTime>07/28/2016 18:24:19</publishTime>
     </File>
     <File Include="Views/BiddingConformation/Index.cshtml">
       <publishTime>07/01/2016 12:29:45</publishTime>
@@ -8722,7 +8722,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/01/2016 12:29:45</publishTime>
     </File>
     <File Include="Views/Dashboard/Index.cshtml">
-      <publishTime>07/01/2016 12:29:45</publishTime>
+      <publishTime>07/28/2016 18:24:19</publishTime>
     </File>
     <File Include="Views/DatesBooked/index.cshtml">
       <publishTime>07/15/2016 17:54:49</publishTime>
@@ -8767,7 +8767,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/23/2016 16:15:00</publishTime>
     </File>
     <File Include="Views/Index/Index.cshtml">
-      <publishTime>07/22/2016 18:00:16</publishTime>
+      <publishTime>07/28/2016 18:24:19</publishTime>
     </File>
     <File Include="Views/Index/ItemsCartViewBindingLayout.cshtml">
       <publishTime>07/01/2016 12:29:45</publishTime>
@@ -8851,10 +8851,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/15/2016 17:54:49</publishTime>
     </File>
     <File Include="Views/Product/Index.cshtml">
-      <publishTime>07/26/2016 18:29:49</publishTime>
+      <publishTime>07/28/2016 18:24:19</publishTime>
     </File>
     <File Include="Views/ProductInfo/Index.cshtml">
-      <publishTime>07/20/2016 18:37:56</publishTime>
+      <publishTime>07/28/2016 18:24:19</publishTime>
     </File>
     <File Include="Views/Quatation/Index.cshtml">
       <publishTime>07/01/2016 12:29:45</publishTime>
@@ -8887,7 +8887,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/15/2016 17:54:49</publishTime>
     </File>
     <File Include="Views/ReverseBidding/Index.cshtml">
-      <publishTime>07/01/2016 12:29:45</publishTime>
+      <publishTime>07/28/2016 18:24:19</publishTime>
     </File>
     <File Include="Views/ReverseBiddingConfirmation/Index.cshtml">
       <publishTime>07/01/2016 12:29:45</publishTime>
@@ -8917,7 +8917,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/08/2015 12:13:36</publishTime>
     </File>
     <File Include="Views/SharedWeb/VendorMaster.cshtml">
-      <publishTime>07/15/2016 17:54:49</publishTime>
+      <publishTime>07/28/2016 18:24:19</publishTime>
     </File>
     <File Include="Views/Signin/Index.cshtml">
       <publishTime>07/01/2016 12:29:45</publishTime>
@@ -8952,17 +8952,32 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/UserTestimonials/Index.cshtml">
       <publishTime>07/15/2016 17:54:49</publishTime>
     </File>
+    <File Include="Views/VendorBiddingResponse/Index.cshtml">
+      <publishTime>07/28/2016 18:24:19</publishTime>
+    </File>
+    <File Include="Views/VendorBiddingslist/Index.cshtml">
+      <publishTime>07/28/2016 18:24:19</publishTime>
+    </File>
     <File Include="Views/VendorDashboard/Index.cshtml">
-      <publishTime>07/15/2016 17:54:49</publishTime>
+      <publishTime>07/28/2016 18:24:19</publishTime>
+    </File>
+    <File Include="Views/VendorRBResponse/Index.cshtml">
+      <publishTime>07/28/2016 18:24:19</publishTime>
+    </File>
+    <File Include="Views/VendorReverseBiddingResponseController/Index.cshtml">
+      <publishTime>07/28/2016 18:24:19</publishTime>
+    </File>
+    <File Include="Views/VendorReverseBiddingslist/Index.cshtml">
+      <publishTime>07/28/2016 18:24:19</publishTime>
     </File>
     <File Include="Views/VendorSignin/Index.cshtml">
-      <publishTime>07/15/2016 17:54:49</publishTime>
+      <publishTime>07/28/2016 18:24:19</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>07/15/2016 17:54:49</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/19/2016 18:50:51</publishTime>
+      <publishTime>07/28/2016 18:34:34</publishTime>
     </File>
   </ItemGroup>
 </Project>
