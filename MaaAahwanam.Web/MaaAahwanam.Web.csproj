@@ -2194,7 +2194,6 @@
     <Content Include="vendorimages\Catering_13_5.jpg" />
     <Content Include="vendorimages\Catering_13_6.jpg" />
     <Content Include="vendorimages\Catering_13_7.jpg" />
-    <Content Include="vendorimages\Catering_13_8.jpg" />
     <Content Include="vendorimages\Catering_19_1.jpg" />
     <Content Include="vendorimages\Catering_19_2.jpg" />
     <Content Include="vendorimages\Catering_19_3.jpg" />
@@ -2208,9 +2207,6 @@
     <Content Include="vendorimages\Decorator_20_3.jpg" />
     <Content Include="vendorimages\Decorator_20_4.jpg" />
     <Content Include="vendorimages\Entertainment_11_1.jpg" />
-    <Content Include="vendorimages\Entertainment_11_2.jpg" />
-    <Content Include="vendorimages\Entertainment_11_3.jpg" />
-    <Content Include="vendorimages\Entertainment_11_4.jpg" />
     <Content Include="vendorimages\Entertainment_21_1.jpg" />
     <Content Include="vendorimages\Entertainment_21_2.jpg" />
     <Content Include="vendorimages\Entertainment_21_3.jpg" />
@@ -2236,7 +2232,7 @@
     <Content Include="vendorimages\Gift_9_2.jpg" />
     <Content Include="vendorimages\Gift_9_3.jpg" />
     <Content Include="vendorimages\Gift_9_4.jpg" />
-    <Content Include="vendorimages\InvitationCard8_1.jpg" />
+    <Content Include="vendorimages\InvitationCard_8_1.jpg" />
     <Content Include="vendorimages\InvitationCard8_2.jpg" />
     <Content Include="vendorimages\InvitationCard_24_1.jpg" />
     <Content Include="vendorimages\InvitationCard_24_2.jpg" />
@@ -2266,9 +2262,9 @@
     <Content Include="vendorimages\Others_4_2.jpg" />
     <Content Include="vendorimages\Others_4_3.jpg" />
     <Content Include="vendorimages\Others_4_4.jpg" />
-    <Content Include="vendorimages\Photography7_0.jpg" />
-    <Content Include="vendorimages\Photography7_1.jpg" />
-    <Content Include="vendorimages\Photography7_2.jpg" />
+    <Content Include="vendorimages\Photography_7_1.jpg" />
+    <Content Include="vendorimages\Photography_7_2.jpg" />
+    <Content Include="vendorimages\Photography_7_3.jpg" />
     <Content Include="vendorimages\Photography_25_1.jpg" />
     <Content Include="vendorimages\Photography_25_2.jpg" />
     <Content Include="vendorimages\Photography_25_3.jpg" />
@@ -2277,7 +2273,7 @@
     <Content Include="vendorimages\Photography_25_6.jpg" />
     <Content Include="vendorimages\Screenshot %2817%29.png" />
     <Content Include="vendorimages\tour4.jpg" />
-    <Content Include="vendorimages\TravelandAccomodation6_1.jpg" />
+    <Content Include="vendorimages\TravelandAccomodation_6_1.jpg" />
     <Content Include="vendorimages\TravelandAccomodation_26_1.jpg" />
     <Content Include="vendorimages\TravelandAccomodation_26_10.jpg" />
     <Content Include="vendorimages\TravelandAccomodation_26_2.jpg" />
@@ -2289,13 +2285,8 @@
     <Content Include="vendorimages\TravelandAccomodation_26_8.jpg" />
     <Content Include="vendorimages\TravelandAccomodation_26_9.jpg" />
     <Content Include="vendorimages\Venue_28_1.jpg" />
-    <Content Include="vendorimages\Venue_28_2.jpg" />
-    <Content Include="vendorimages\Venue_28_3.jpg" />
     <Content Include="vendorimages\Venue_28_4.jpg" />
     <Content Include="vendorimages\Venue_3_1.jpg" />
-    <Content Include="vendorimages\Venue_3_1.png" />
-    <Content Include="vendorimages\Venue_3_2.jpg" />
-    <Content Include="vendorimages\Venue_3_3.jpg" />
     <Content Include="vendorimages\WeddingCollection_27_1.jpg" />
     <Content Include="vendorimages\WeddingCollection_27_2.jpg" />
     <Content Include="vendorimages\WeddingCollection_27_3.jpg" />
