@@ -47,5 +47,9 @@ namespace MaaAahwanam.Service
             }
             return message;
         }
+        public List<SP_vendordatesbooked_Result> GetVendordatesbooked(int VID)
+        {
+            return serviceResponseRepository.GetVendordatesbooked(VID).ToList();
+        }
     }
 }

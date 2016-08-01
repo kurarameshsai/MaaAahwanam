@@ -34,5 +34,9 @@ namespace MaaAahwanam.Repository.db
             _dbContext.SaveChanges();
             return serviceResponse;
         }
+        public List<SP_vendordatesbooked_Result> GetVendordatesbooked(int VID)
+        {
+            return maaAahwanamEntities.SP_vendordatesbooked(VID).ToList();
+        }
     }
 }
