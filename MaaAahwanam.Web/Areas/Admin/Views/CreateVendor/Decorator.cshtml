@@ -23,7 +23,60 @@
         text-align: center;
     }
 </style>
+@if (ViewData["error"] != null)
+{
+    <script>
+        alert("You have crossed images limit");
+    </script>
+}
+<script>
+        window.onload = function () {
+            var url = window.location.href;
+            var op = url.substring(url.lastIndexOf('=') + 1);
+            if (op == 'display') {
+                $('#btn').hide();
+                $("#btncancel").hide();
+                $('#btnback').show();
+                $('.deletelink').hide();
+                $('#fileUpload').hide();
+                $('#msg').hide();
+                $('.form-control').prop("disabled", true);
+            }
+            else {
+                $('#btn').show();
+                $("#btncancel").show();
+                $('#btnback').hide();
+                $('.deletelink').show();
+                $('#fileUpload').show();
+                $('#msg').show();
+                $('.form-control').prop("disabled", false);
+            }
+        }
+</script>
+<script>
+    function Large(obj) {
+        var imgbox = document.getElementById("imgbox");
+        imgbox.style.visibility = 'visible';
+        var img = document.createElement("img");
 
+        img.src = obj.src;
+        img.style.width = '400px';
+        img.style.height = '400px';
+
+        if (img.addEventListener) {
+            img.addEventListener('mouseout', Out, false);
+        } else {
+            img.attachEvent('onmouseout', Out);
+        }
+        imgbox.innerHTML = '';
+        imgbox.appendChild(img);
+        imgbox.style.left = (getElementLeft(obj) - 50) + 'px';
+        imgbox.style.top = (getElementTop(obj) - 50) + 'px';
+    }
+    function Out() {
+        document.getElementById("imgbox").style.visibility = 'hidden';
+    }
+</script>
 
 
     <div id="content">
@@ -208,7 +261,7 @@
                                                             {
 
                                                                 <img id="img" src="~/vendorimages/@item" alt="student" style="height:100px;width:150px;border:double" onmouseover='Large(this)' />
-                                                                    @Html.ActionLink("X", "venue", null, new { src = @item, style = "height : 150px ; width:50px; max-height:75px; border: 2px solid; margin: 10px 10px 0 0; padding: 1px;", @class = "deletelink" })
+                                                                @Html.ActionLink("X", "decorator", new { src = @item }, new { @class = "deletelink", style = "height : 150px ; width:50px; max-height:75px; border: 2px solid; margin: 10px 10px 0 0; padding: 1px;" })
 
                                                             }
                                                         }
@@ -245,60 +298,7 @@
             </div>
         </div>
     </div>
-@if (ViewData["error"] != null)
-{
-    <script>
-        alert("You have crossed images limit");
-    </script>
-}
-<script>
-        window.onload = function () {
-            var url = window.location.href;
-            var op = url.substring(url.lastIndexOf('=') + 1);
-            if (op == 'display') {
-                $('#btn').hide();
-                $("#btncancel").hide();
-                $('#btnback').show();
-                $('.deletelink').hide();
-                $('#fileUpload').hide();
-                $('#msg').hide();
-                $('.form-control').prop("disabled", true);
-            }
-            else {
-                $('#btn').show();
-                $("#btncancel").show();
-                $('#btnback').hide();
-                $('.deletelink').show();
-                $('#fileUpload').show();
-                $('#msg').show();
-                $('.form-control').prop("disabled", false);
-            }
-        }
-</script>
-<script>
-    function Large(obj) {
-        var imgbox = document.getElementById("imgbox");
-        imgbox.style.visibility = 'visible';
-        var img = document.createElement("img");
 
-        img.src = obj.src;
-        img.style.width = '400px';
-        img.style.height = '400px';
-
-        if (img.addEventListener) {
-            img.addEventListener('mouseout', Out, false);
-        } else {
-            img.attachEvent('onmouseout', Out);
-        }
-        imgbox.innerHTML = '';
-        imgbox.appendChild(img);
-        imgbox.style.left = (getElementLeft(obj) - 50) + 'px';
-        imgbox.style.top = (getElementTop(obj) - 50) + 'px';
-    }
-    function Out() {
-        document.getElementById("imgbox").style.visibility = 'hidden';
-    }
-</script>
     @section Bottom{
         <script src="~/Assets/plugins/jquery-2.0.3.min.js"></script>
         <script src="~/Assets/plugins/bootstrap/js/bootstrap.min.js"></script>

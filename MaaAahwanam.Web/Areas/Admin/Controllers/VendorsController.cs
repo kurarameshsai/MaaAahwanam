@@ -16,12 +16,12 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
         //VendorImageService vendorImageService = new VendorImageService();
         //VendorMasterService vendorMasterService = new VendorMasterService();
         VendorSetupService vendorSetupService = new VendorSetupService();
-        public ActionResult AllVendors(string dropdown)
+        public ActionResult AllVendors() //string dropdown
         {
-            if (dropdown!=null)
-            {
-                ViewBag.VendorList = vendorSetupService.AllVendorList(dropdown);
-            }
+            //if (dropdown!=null)
+            //{
+            //    ViewBag.VendorList = vendorSetupService.AllVendorList(dropdown);
+            //}
             return View();
         }
         [HttpPost]

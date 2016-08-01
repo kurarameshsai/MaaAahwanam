@@ -8,6 +8,78 @@
                     <link href="~/Assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
                     <!-- END PAGE LEVEL  STYLES -->
                 }
+
+<style>
+    #imgbox {
+        vertical-align: middle;
+        position: absolute;
+        border: 1px solid #999;
+        background-color: rgba(0,0,0,0.8);
+        filter: Alpha(Opacity=100);
+        visibility: hidden;
+        height: 300px;
+        width: 300px;
+        z-index: 50;
+        overflow: hidden;
+        text-align: center;
+    }
+</style>
+
+@if (ViewData["error"] != null)
+{
+    <script>
+        alert("You have crossed images limit");
+    </script>
+}
+<script>
+        window.onload = function () {
+            var url = window.location.href;
+            var op = url.substring(url.lastIndexOf('=') + 1);
+            if (op == 'display') {
+                $('#btn').hide();
+                $("#btncancel").hide();
+                $('#btnback').show();
+                $('.deletelink').hide();
+                $('#fileUpload').hide();
+                $('#msg').hide();
+                $('.form-control').prop("disabled", true);
+            }
+            else {
+                $('#btn').show();
+                $("#btncancel").show();
+                $('#btnback').hide();
+                $('.deletelink').show();
+                $('#fileUpload').show();
+                $('#msg').show();
+                $('.form-control').prop("disabled", false);
+            }
+        }
+</script>
+<script>
+    function Large(obj) {
+        var imgbox = document.getElementById("imgbox");
+        imgbox.style.visibility = 'visible';
+        var img = document.createElement("img");
+
+        img.src = obj.src;
+        img.style.width = '400px';
+        img.style.height = '400px';
+
+        if (img.addEventListener) {
+            img.addEventListener('mouseout', Out, false);
+        } else {
+            img.attachEvent('onmouseout', Out);
+        }
+        imgbox.innerHTML = '';
+        imgbox.appendChild(img);
+        imgbox.style.left = (getElementLeft(obj) - 50) + 'px';
+        imgbox.style.top = (getElementTop(obj) - 50) + 'px';
+    }
+    function Out() {
+        document.getElementById("imgbox").style.visibility = 'hidden';
+    }
+</script>
+
     <div id="content">
         <div class="inner">
             <div class="row">
@@ -175,16 +247,48 @@
                                                 <div class="form-group">
                                                     <label for="tags" class="control-label col-lg-4">Multiple Uploads</label>
                                                     <div class="col-lg-4">
-                                                        <input type='file' multiple="multiple" accept="image/*" id='fileUpload' name="file" />
+                                                        <input type='file' multiple="multiple" accept="image/*" id='fileUpload' name="file" /> <p id="msg" style="color:red">You can Upload images upto @ViewBag.imagescount Only</p>
                                                     </div>
+                                                    <div id="imgbox"></div>
                                                     <br />
+                                                    <br />
+                                                    <br />
+
+                                                    <div align="center">
+
+                                                        @if (@ViewBag.images != null)
+                                                        {
+
+                                                            foreach (var item in ViewBag.images)
+                                                            {
+
+                                                                <img id="img" src="~/vendorimages/@item" alt="student" style="height:100px;width:150px;border:double" onmouseover='Large(this)' />
+                                                                    @Html.ActionLink("X", "entertainment", new { src = @item }, new { @class = "deletelink", style = "height : 150px ; width:50px; max-height:75px; border: 2px solid; margin: 10px 10px 0 0; padding: 1px;" })
+
+                                                            }
+                                                        }
+                                                    </div>
+
+                                                    <div id="editimage" style="min-height: 10px;min-width: 10px; "></div>
+
                                                     <div id="dvPreview" align="center" style="padding:20px">
                                                     </div>
 
                                                 </div>
                                                 <div style="text-align:center" class="form-actions no-margin-bottom">
-                                                    <input type="submit" value="Save" class="btn text-muted text-center btn-success" name="Command" />
-                                                    <input type="submit" value="Cancel" class="btn btn-danger" formaction="~/Admin/dashboard/dashboard">
+
+                                                    @if (ViewBag.operation != null)
+                                                    {
+                                                        <input type="submit" id="btn" value="Save" class="btn text-muted text-center btn-success" name="Command" />
+                                                    }
+                                                    else
+                                                    {
+                                                        <input type="submit" id="btn" value="update" class="btn text-muted text-center btn-success" name="Command" />
+                                                    }
+                                                    <input type="submit" id="btncancel" value="Cancel" class="btn btn-danger" formaction="~/Admin/dashboard/dashboard">
+
+                                                    <button formaction="~/Admin/Vendors/AllVendors" type="submit" class="btn btn-success" id="btnback"> Back To List </button>
+
                                                 </div>
                                             </form>
                                         </div>

@@ -10,11 +10,10 @@ namespace MaaAahwanam.Service
 {
    public class VendorBeautyServicesService
     {
+        VendormasterRepository vendorMasterRepository = new VendormasterRepository();
+        VendorsBeautyServiceRepository vendorBeautyServiceRespository = new VendorsBeautyServiceRepository();
         public VendorsBeautyService AddBeautyService(VendorsBeautyService vendorBeautyService,Vendormaster vendorMaster)
         {
-            VendormasterRepository vendorMasterRepository = new VendormasterRepository();
-            VendorsBeautyServiceRepository vendorBeautyServiceRespository = new VendorsBeautyServiceRepository();
-            
             vendorBeautyService.UpdatedDate = DateTime.Now;
             vendorBeautyService.Status = "Active";
             vendorMaster.UpdatedDate = DateTime.Now;
@@ -24,6 +23,22 @@ namespace MaaAahwanam.Service
             vendorBeautyService.VendorMasterId = vendorMaster.Id;
             vendorBeautyService = vendorBeautyServiceRespository.AddBeautyService(vendorBeautyService);
             return vendorBeautyService;
+        }
+        public VendorsBeautyService GetVendorBeautyService(long id)
+        {
+            return vendorBeautyServiceRespository.GetVendorsBeautyService(id);
+        }
+
+        public VendorsBeautyService UpdatesBeautyService(VendorsBeautyService vendorsBeautyService, Vendormaster vendorMaster, long masterid)
+        {
+            vendorsBeautyService.Status = "Active";
+            vendorsBeautyService.UpdatedDate = DateTime.Now;
+            vendorMaster.Status = "Active";
+            vendorMaster.UpdatedDate = DateTime.Now;
+            vendorMaster.ServicType = "BeautyServices";
+            vendorMaster = vendorMasterRepository.UpdateVendorMaster(vendorMaster, masterid);
+            vendorsBeautyService = vendorBeautyServiceRespository.UpdatesBeautyService(vendorsBeautyService, masterid);
+            return vendorsBeautyService;
         }
     }
 }

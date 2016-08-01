@@ -22,5 +22,19 @@ namespace MaaAahwanam.Repository.db
             _dbContext.SaveChanges();
             return vendorsEventOrganiser;
         }
+        public VendorsEventOrganiser GetVendorEventOrganiser(long id)
+        {
+            return _dbContext.VendorsEventOrganiser.Where(m => m.VendorMasterId == id).FirstOrDefault();
+        }
+
+        public VendorsEventOrganiser UpdateEventOrganiser(VendorsEventOrganiser vendorsEventOrganiser, long id)
+        {
+            var GetVendor = _dbContext.VendorsEventOrganiser.SingleOrDefault(m => m.VendorMasterId == id);
+            vendorsEventOrganiser.Id = GetVendor.Id;
+            _dbContext.Entry(GetVendor).CurrentValues.SetValues(vendorsEventOrganiser);
+            _dbContext.SaveChanges();
+            return vendorsEventOrganiser;
+        }
+
     }
 }

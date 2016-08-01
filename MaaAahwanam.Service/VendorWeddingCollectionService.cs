@@ -10,10 +10,10 @@ namespace MaaAahwanam.Service
 {
    public class VendorWeddingCollectionService
     {
-       public VendorsWeddingCollection AddWeddingCollection(VendorsWeddingCollection vendorsWeddingCollection, Vendormaster vendorMaster)
+        VendormasterRepository vendorMasterRepository = new VendormasterRepository();
+        VendorWeddingCollectionsRepository vendorsWeddingCollectionsRepository = new VendorWeddingCollectionsRepository();
+        public VendorsWeddingCollection AddWeddingCollection(VendorsWeddingCollection vendorsWeddingCollection, Vendormaster vendorMaster)
        {
-           VendormasterRepository vendorMasterRepository = new VendormasterRepository();
-           VendorWeddingCollectionsRepository vendorsWeddingCollectionsRepository = new VendorWeddingCollectionsRepository();
            vendorsWeddingCollection.Status = "Active";
            vendorsWeddingCollection.UpdatedDate = DateTime.Now;
            vendorMaster.Status = "Active";
@@ -24,5 +24,21 @@ namespace MaaAahwanam.Service
            vendorsWeddingCollection = vendorsWeddingCollectionsRepository.AddWeddingCollections(vendorsWeddingCollection);
            return vendorsWeddingCollection;
        }
+        public VendorsWeddingCollection GetVendorWeddingCollection(long id)
+        {
+            return vendorsWeddingCollectionsRepository.GetVendorWeddingCollection(id);
+        }
+
+        public VendorsWeddingCollection UpdateWeddingCollection(VendorsWeddingCollection vendorsWeddingCollection, Vendormaster vendorMaster, long masterid)
+        {
+            vendorsWeddingCollection.Status = "Active";
+            vendorsWeddingCollection.UpdatedDate = DateTime.Now;
+            vendorMaster.Status = "Active";
+            vendorMaster.UpdatedDate = DateTime.Now;
+            vendorMaster.ServicType = "WeddingCollection";
+            vendorMaster = vendorMasterRepository.UpdateVendorMaster(vendorMaster, masterid);
+            vendorsWeddingCollection = vendorsWeddingCollectionsRepository.UpdateWeddingCollection(vendorsWeddingCollection, masterid);
+            return vendorsWeddingCollection;
+        }
     }
 }

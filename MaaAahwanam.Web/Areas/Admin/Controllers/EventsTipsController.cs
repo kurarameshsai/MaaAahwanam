@@ -66,7 +66,7 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             {
                 return Content("<script language='javascript' type='text/javascript'>alert('Registration Failed');location.href='" + @Url.Action("Index", "EventsTips") + "'</script>");
             }
-            return View();
+            //return View();
         }
 	}
 }
