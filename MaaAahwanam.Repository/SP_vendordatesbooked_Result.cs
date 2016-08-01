@@ -11,12 +11,12 @@ namespace MaaAahwanam.Repository
 {
     using System;
     
-    public partial class sp_helpdiagrams_Result
+    public partial class SP_vendordatesbooked_Result
     {
-        public string Database { get; set; }
-        public string Name { get; set; }
-        public int ID { get; set; }
-        public string Owner { get; set; }
-        public int OwnerID { get; set; }
+        public string City { get; set; }
+        public string EventAddress { get; set; }
+        public Nullable<System.DateTime> EventStartDate { get; set; }
+        public Nullable<System.DateTime> EventEnddate { get; set; }
+        public string EventName { get; set; }
     }
 }
