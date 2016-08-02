@@ -2161,6 +2161,7 @@
     <None Include="Properties\PublishProfiles\MaaAahwanam.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="MaaAahwanam.Web.csproj.DotSettings.user" />
+    <Content Include="noimages.png" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery.min.js" />
@@ -2235,7 +2236,6 @@
     <Content Include="vendorimages\Gift_9_3.jpg" />
     <Content Include="vendorimages\Gift_9_4.jpg" />
     <Content Include="vendorimages\InvitationCard_8_1.jpg" />
-    <Content Include="vendorimages\InvitationCard8_2.jpg" />
     <Content Include="vendorimages\InvitationCard_24_1.jpg" />
     <Content Include="vendorimages\InvitationCard_24_2.jpg" />
     <Content Include="vendorimages\InvitationCard_24_3.jpg" />

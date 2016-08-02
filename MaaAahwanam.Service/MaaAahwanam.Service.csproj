@@ -87,6 +87,10 @@
       <Project>{8b73dd55-1b19-4fac-98ab-432d5af2e66c}</Project>
       <Name>MaaAahwanam.Repository</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MaaAahwanam.Utility\MaaAahwanam.Utility.csproj">
+      <Project>{4c881a69-1323-4bd4-afcd-7b7d20cfd2f8}</Project>
+      <Name>MaaAahwanam.Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
