@@ -699,50 +699,139 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             }
             return View();
         }
-        public ActionResult Gifts()
+        public ActionResult Gifts(string id, [Bind(Prefix = "Item2")] VendorsGift vendorsGift, [Bind(Prefix = "Item1")] Vendormaster vendorMaster, string src, string op)
         {
+            VendorGiftService vendorGiftService = new VendorGiftService();
+            if (src != null)
+            {
+                var vendorImage = vendorImageService.GetImageId(src);
+                string delete = vendorImageService.DeleteImage(vendorImage);
+                if (delete == "success")
+                {
+                    string fileName = System.IO.Path.Combine(System.Web.HttpContext.Current.Server.MapPath(imagepath + src));
+                    System.IO.File.Delete(fileName);
+                    return Content("<script language='javascript' type='text/javascript'>alert('Image deleted successfully!');location.href='" + @Url.Action("Gifts", "createvendor") + "'</script>");
+                }
+                else
+                {
+                    return Content("<script language='javascript' type='text/javascript'>alert('Failed!');location.href='" + @Url.Action("Gifts", "createvendor") + "'</script>");
+                }
+            }
+            if (id != null)
+            {
+                var list = vendorImageService.GetVendorImagesService(long.Parse(id));
+                ViewBag.imagescount = 10 - list.Count;
+                vendorsGift = vendorGiftService.GetVendorGift(long.Parse(id));
+                vendorMaster = vendorMasterService.GetVendor(long.Parse(id));
+                var a = new Tuple<Vendormaster, VendorsGift>(vendorMaster, vendorsGift);
+                ViewBag.images = vendorImageService.GetVendorImagesService(long.Parse(id));
+                ViewBag.masterid = id;
+                if (op != null)
+                {
+                    ViewBag.displaydata = "enable";
+                }
+                return View(a);
+            }
+            else
+            {
+                ViewBag.operation = 1;
+                ViewBag.imagescount = 10;
+            }
             return View();
         }
         [HttpPost]
-        public ActionResult Gifts([Bind(Prefix = "Item2")] VendorsGift vendorsGift, [Bind(Prefix = "Item1")] Vendormaster vendorMaster, HttpPostedFileBase file)
+        public ActionResult Gifts([Bind(Prefix = "Item2")] VendorsGift vendorsGift, [Bind(Prefix = "Item1")] Vendormaster vendorMaster, HttpPostedFileBase file, string Command, string id)
         {
             string fileName = string.Empty;
             VendorGiftService vendorGiftService = new VendorGiftService();
             vendorsGift.UpdatedBy = ValidUserUtility.ValidUser();
             vendorMaster.UpdatedBy = ValidUserUtility.ValidUser();
-            vendorsGift = vendorGiftService.AddGift(vendorsGift, vendorMaster);
-            VendorImage vendorImage = new VendorImage();
-            vendorImage.VendorId = vendorsGift.Id;
-            vendorImage.UpdatedBy = ValidUserUtility.ValidUser();
-            //const string imagepath = @"/vendorimages";
-            if (Request.Files.Count <= 10)
+            if (Command == "Save")
             {
-                for (int i = 0; i < Request.Files.Count; i++)
+                vendorsGift = vendorGiftService.AddGift(vendorsGift, vendorMaster);
+                VendorImage vendorImage = new VendorImage();
+                vendorImage.VendorId = vendorsGift.Id;
+                vendorImage.UpdatedBy = ValidUserUtility.ValidUser();
+                //const string imagepath = @"/vendorimages";
+                if (Request.Files.Count <= 10)
                 {
-                    int j = i + 1;
-                    
+                    for (int i = 0; i < Request.Files.Count; i++)
+                    {
+                        int j = i + 1;
+
                         var file1 = Request.Files[i];
                         if (file1 != null && file1.ContentLength > 0)
                         {
                             string path = System.IO.Path.GetExtension(file.FileName);
-                            var filename =  "Gift_" + vendorsGift.VendorMasterId + "_" + j + path;
+                            var filename = "Gift_" + vendorsGift.VendorMasterId + "_" + j + path;
                             fileName = System.IO.Path.Combine(System.Web.HttpContext.Current.Server.MapPath(imagepath + filename));
                             file1.SaveAs(fileName);
                             vendorImage.ImageName = filename;
                             vendorImage = vendorImageService.AddVendorImage(vendorImage, vendorMaster);
                         }
-                    
+
+                    }
+                }
+                if (vendorsGift.Id != 0 && vendorImage.ImageId != 0)
+                {
+                    return Content("<script language='javascript' type='text/javascript'>alert('Registered Successfully');location.href='" + @Url.Action("Gifts", "CreateVendor") + "'</script>");
+                }
+                else
+                {
+                    return Content("<script language='javascript' type='text/javascript'>alert('Registration Failed');location.href='" + @Url.Action("Gifts", "CreateVendor") + "'</script>");
                 }
             }
-            if (vendorsGift.Id != 0 && vendorImage.ImageId != 0)
+            if (Command == "update")
             {
-                return Content("<script language='javascript' type='text/javascript'>alert('Registered Successfully');location.href='" + @Url.Action("Gifts", "CreateVendor") + "'</script>");
+                long masterid = vendorsGift.VendorMasterId = vendorMaster.Id = long.Parse(id);
+                vendorMaster.UpdatedBy = vendorsGift.UpdatedBy = ValidUserUtility.ValidUser();
+                vendorsGift = vendorGiftService.UpdatesGift(vendorsGift, vendorMaster, masterid);
+                VendorImage vendorImage = new VendorImage();
+                vendorImage.VendorId = vendorsGift.Id;
+                int imagecount = 10;
+                var list = vendorImageService.GetVendorImagesService(long.Parse(id));
+                if (list.Count <= imagecount && Request.Files.Count <= imagecount - list.Count)
+                {
+                    int imageno = 0;
+                    for (int i = 0; i < list.Count; i++)
+                    {
+                        string x = list[i].ToString();
+                        string[] y = x.Split('_', '.');
+                        imageno = int.Parse(y[2]);
+                    }
+
+                    for (int i = 0; i < Request.Files.Count; i++)
+                    {
+                        int j = imageno + 1 + i;
+                        var file1 = Request.Files[i];
+                        if (file1 != null && file1.ContentLength > 0)
+                        {
+                            string path = System.IO.Path.GetExtension(file.FileName);
+                            var filename = "Gift_" + vendorsGift.VendorMasterId + "_" + j + path;
+                            fileName = System.IO.Path.Combine(System.Web.HttpContext.Current.Server.MapPath(imagepath + filename));
+                            file1.SaveAs(fileName);
+                            vendorImage.ImageName = filename;
+                            vendorImage.UpdatedBy = ValidUserUtility.ValidUser();
+                            vendorImage = vendorImageService.AddVendorImage(vendorImage, vendorMaster);
+                        }
+                    }
+                    if (vendorsGift.Id != 0 || vendorImage.ImageId != 0)
+                    {
+                        return Content("<script language='javascript' type='text/javascript'>alert('Updated Successfully');location.href='" + @Url.Action("AllVendors", "Vendors") + "'</script>"); //, new { dropdown = "InvitationCards" }
+                    }
+                    else
+                    {
+                        return Content("<script language='javascript' type='text/javascript'>alert('Update Failed');location.href='" + @Url.Action("AllVendors", "Vendors") + "'</script>");
+                    }
+                }
+                else
+                {
+                    ViewBag.images = vendorImageService.GetVendorImagesService(long.Parse(id));
+                    ViewBag.imagescount = imagecount - list.Count;
+                    ViewData["error"] = "You Have Crossed Images Limit";
+                }
             }
-            else
-            {
-                return Content("<script language='javascript' type='text/javascript'>alert('Registration Failed');location.href='" + @Url.Action("Gifts", "CreateVendor") + "'</script>");
-            }
-            //return View();
+            return View();
         }
         public ActionResult InvitationCards(string id, [Bind(Prefix = "Item2")] VendorsInvitationCard vendorsInvitationCard, [Bind(Prefix = "Item1")] Vendormaster vendorMaster, string src, string op)
         {

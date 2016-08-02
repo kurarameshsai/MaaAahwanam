@@ -30,5 +30,8 @@ namespace MaaAahwanam.Models
         public string Status { get; set; }
         public long UpdatedBy { get; set; }
         public DateTime? UpdatedDate { get; set; }
+        public bool Quotation { get; set; }
+        public bool Bidding { get; set; }
+        public bool ReverseBidding { get; set; }
     }
 }

@@ -49,5 +49,7 @@ namespace MaaAahwanam.Service
             var changes = userLoginRepository.UpdatePassword(userLogin,UserLoginId);
             return changes;
         }
+
+       
     }
 }
