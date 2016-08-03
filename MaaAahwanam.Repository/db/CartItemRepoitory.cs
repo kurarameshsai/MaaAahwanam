@@ -14,5 +14,11 @@ namespace MaaAahwanam.Repository.db
         {
             return _dbContext.CartItem.ToList();
         }
+        public CartItem AddCartItem(CartItem cartItem)
+        {
+            cartItem=_dbContext.CartItem.Add(cartItem);
+            _dbContext.SaveChanges();
+            return cartItem;
+        }
     }
 }

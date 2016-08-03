@@ -32,10 +32,10 @@ namespace MaaAahwanam.Web.Controllers
         }
         public ActionResult WriteaRiview([Bind(Prefix = "Item2")] Review review)
         {
-            int a= ValidUserUtility.ValidUser();
+            int a = ValidUserUtility.ValidUser();
             if (ValidUserUtility.ValidUser() != 0 && (ValidUserUtility.UserType() == "User"))
             {
-                review.UpdatedBy= ValidUserUtility.ValidUser();
+                review.UpdatedBy = ValidUserUtility.ValidUser();
                 review.Status = "Active";
                 review.UpdatedDate = DateTime.Now;
                 reviewService.InsertReview(review);
@@ -43,5 +43,18 @@ namespace MaaAahwanam.Web.Controllers
             }
             return RedirectToAction("Index", "Signin");
         }
-	}
+
+        public JsonResult Addtocart(string VID, string servicetype, string amount)
+        {
+            CartItem cartItem = new CartItem();
+            cartItem.VendorId = Int32.Parse(VID);
+            cartItem.ServiceType = servicetype;
+            cartItem.TotalPrice = decimal.Parse(amount);
+            cartItem.UpdatedBy = ValidUserUtility.ValidUser();
+            cartItem.UpdatedDate = DateTime.Now;
+            CartService cartService = new CartService();
+            string mesaage=cartService.AddCartItem(cartItem);
+            return Json(mesaage);
+        }
+    }
 }
