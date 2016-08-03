@@ -2142,7 +2142,6 @@
     <Content Include="Areas\Admin\Views\Vendors\PendingVendors.cshtml" />
     <Content Include="Areas\Admin\Views\Vendors\SuspendedVendors.cshtml" />
     <Content Include="Areas\Admin\Views\Vendors\VendorDetails.cshtml" />
-    <Content Include="Areas\Admin\Views\CreateVendor\BeautyServices.cshtml" />
     <Content Include="Areas\Admin\Views\CreateVendor\Catering.cshtml" />
     <Content Include="Areas\Admin\Views\CreateVendor\Decorator.cshtml" />
     <Content Include="Areas\Admin\Views\CreateVendor\Entertainment.cshtml" />
@@ -2158,6 +2157,7 @@
     <Content Include="Areas\Admin\Views\Shared\MainMaster.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\Master.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\Masterdata.cshtml" />
+    <Content Include="Areas\Admin\Views\CreateVendor\BeautyServices.cshtml" />
     <None Include="Properties\PublishProfiles\MaaAahwanam.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="MaaAahwanam.Web.csproj.DotSettings.user" />
