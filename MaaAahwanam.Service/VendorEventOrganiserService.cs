@@ -10,10 +10,10 @@ namespace MaaAahwanam.Service
 {
    public class VendorEventOrganiserService
     {
-       public VendorsEventOrganiser AddEventOrganiser(VendorsEventOrganiser vendorEventOrganiser, Vendormaster vendorMaster)
+        VendormasterRepository vendorMasterRepository = new VendormasterRepository();
+        VendorEventOrganiserRepository vendorEventOrganiserRepository = new VendorEventOrganiserRepository();
+        public VendorsEventOrganiser AddEventOrganiser(VendorsEventOrganiser vendorEventOrganiser, Vendormaster vendorMaster)
         {
-            VendormasterRepository vendorMasterRepository = new VendormasterRepository();
-            VendorEventOrganiserRepository vendorEventOrganiserRepository = new VendorEventOrganiserRepository();
             vendorEventOrganiser.Status = "Active";
             vendorEventOrganiser.UpdatedDate = DateTime.Now;
             vendorMaster.Status = "Active";
@@ -23,6 +23,22 @@ namespace MaaAahwanam.Service
             vendorEventOrganiser.VendorMasterId = vendorMaster.Id;
             vendorEventOrganiser = vendorEventOrganiserRepository.AddEventOrganiser(vendorEventOrganiser);
             return vendorEventOrganiser;
+        }
+        public VendorsEventOrganiser GetVendorEventOrganiser(long id)
+        {
+            return vendorEventOrganiserRepository.GetVendorEventOrganiser(id);
+        }
+
+        public VendorsEventOrganiser UpdateEventOrganiser(VendorsEventOrganiser vendorsEventOrganiser, Vendormaster vendorMaster, long masterid)
+        {
+            vendorsEventOrganiser.Status = "Active";
+            vendorsEventOrganiser.UpdatedDate = DateTime.Now;
+            vendorMaster.Status = "Active";
+            vendorMaster.UpdatedDate = DateTime.Now;
+            vendorMaster.ServicType = "EventOrganiser";
+            vendorMaster = vendorMasterRepository.UpdateVendorMaster(vendorMaster, masterid);
+            vendorsEventOrganiser = vendorEventOrganiserRepository.UpdateEventOrganiser(vendorsEventOrganiser, masterid);
+            return vendorsEventOrganiser;
         }
     }
 }

@@ -25,6 +25,61 @@
     }
 </style>
 
+@if (ViewData["error"] != null)
+{
+    <script>
+        alert("You have crossed images limit");
+    </script>
+}
+<script>
+        window.onload = function () {
+            var url = window.location.href;
+            var op = url.substring(url.lastIndexOf('=') + 1);
+            if (op == 'display') {
+                $('#btn').hide();
+                $("#btncancel").hide();
+                $('#btnback').show();
+                $('.deletelink').hide();
+                $('#fileUpload').hide();
+                $('#msg').hide();
+                $('.form-control').prop("disabled", true);
+            }
+            else {
+                $('#btn').show();
+                $("#btncancel").show();
+                $('#btnback').hide();
+                $('.deletelink').show();
+                $('#fileUpload').show();
+                $('#msg').show();
+                $('.form-control').prop("disabled", false);
+            }
+        }
+</script>
+<script>
+    function Large(obj) {
+        var imgbox = document.getElementById("imgbox");
+        imgbox.style.visibility = 'visible';
+        var img = document.createElement("img");
+
+        img.src = obj.src;
+        img.style.width = '400px';
+        img.style.height = '400px';
+
+        if (img.addEventListener) {
+            img.addEventListener('mouseout', Out, false);
+        } else {
+            img.attachEvent('onmouseout', Out);
+        }
+        imgbox.innerHTML = '';
+        imgbox.appendChild(img);
+        imgbox.style.left = (getElementLeft(obj) - 50) + 'px';
+        imgbox.style.top = (getElementTop(obj) - 50) + 'px';
+    }
+    function Out() {
+        document.getElementById("imgbox").style.visibility = 'hidden';
+    }
+</script>
+
 
 
     <div id="content">
@@ -106,20 +161,22 @@
                                                 <div class="form-group" style="align-items:center">
                                                     <label class="control-label col-lg-4">Quotation</label>
                                                     <div class="col-lg-4">
-                                                        <input type="checkbox" id="Quotation" name="name" value="Quotation" class="uniform" />
-
+                                                        @*<input type="checkbox" id="Quotation" name="name" value="Quotation" class="uniform" />*@
+                                                        @Html.CheckBoxFor(model => this.Model.Item1.Quotation, new { @style = "height : 25px ;width: 25px" })
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="control-label col-lg-4">Bidding</label>
                                                     <div class="col-lg-4">
-                                                        <input type="checkbox" id="Bidding" name="name" value="Bidding" class="uniform" />
+                                                        @*<input type="checkbox" id="Bidding" name="name" value="Bidding" class="uniform" />*@
+                                                        @Html.CheckBoxFor(model => this.Model.Item1.Bidding, new { @style = "height : 25px ;width: 25px" })
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="control-label col-lg-4">Reverse Bidding</label>
                                                     <div class="col-lg-4">
-                                                        <input type="checkbox" id="ReverseBidding" name="name" value="ReverseBidding" class="uniform" />
+                                                        @*<input type="checkbox" id="ReverseBidding" name="name" value="ReverseBidding" class="uniform" />*@
+                                                        @Html.CheckBoxFor(model => this.Model.Item1.ReverseBidding, new { @style = "height : 25px ;width: 25px" })
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -260,7 +317,9 @@
                                                 <div class="form-group">
                                                     <label for="tags" class="control-label col-lg-4">Multiple Uploads</label>
                                                     <div class="col-lg-4">
-                                                        <input type='file' multiple="multiple" accept="image/*" id='fileUpload' name="file" /> <p id="msg" style="color:red">You can Upload images upto @ViewBag.imagescount Only</p>
+                                                        <input type='file' multiple="multiple" accept="image/*" id='fileUpload' name="file" /> 
+                                                    @if (@ViewBag.imagescount != null) { <p id="msg" style="color:green">You can Upload images upto @ViewBag.imagescount Only </p> }
+                                                    @if (@ViewBag.imagescount == 0) { <p id="msg" style="color:red">You Have Reached Image Limit </p> }
                                                     </div>
                                                     <div id="imgbox"></div>
                                                     <br />
@@ -276,9 +335,13 @@
                                                             {
 
                                                                 <img id="img" src="~/vendorimages/@item" alt="student" style="height:100px;width:150px;border:double" onmouseover='Large(this)' />
-                                                                    @Html.ActionLink("X", "venue", null, new { src = @item, style = "height : 150px ; width:50px; max-height:75px; border: 2px solid; margin: 10px 10px 0 0; padding: 1px;", @class = "deletelink" })
+                                                                @Html.ActionLink("X", "catering", new { src = @item }, new { @class = "deletelink", style = "height : 150px ; width:50px; max-height:75px; border: 2px solid; margin: 10px 10px 0 0; padding: 1px;" })
 
                                                             }
+                                                        }
+                                                        @if (ViewBag.images.Count == 0)
+                                                        {
+                                                            <img src="~/noimages.png" />
                                                         }
                                                     </div>
 
@@ -312,60 +375,7 @@
             </div>
         </div>
     </div>
-@if (ViewData["error"] != null)
-{
-    <script>
-        alert("You have crossed images limit");
-    </script>
-}
-<script>
-        window.onload = function () {
-            var url = window.location.href;
-            var op = url.substring(url.lastIndexOf('=') + 1);
-            if (op == 'display') {
-                $('#btn').hide();
-                $("#btncancel").hide();
-                $('#btnback').show();
-                $('.deletelink').hide();
-                $('#fileUpload').hide();
-                $('#msg').hide();
-                $('.form-control').prop("disabled", true);
-            }
-            else {
-                $('#btn').show();
-                $("#btncancel").show();
-                $('#btnback').hide();
-                $('.deletelink').show();
-                $('#fileUpload').show();
-                $('#msg').show();
-                $('.form-control').prop("disabled", false);
-            }
-        }
-</script>
-<script>
-    function Large(obj) {
-        var imgbox = document.getElementById("imgbox");
-        imgbox.style.visibility = 'visible';
-        var img = document.createElement("img");
 
-        img.src = obj.src;
-        img.style.width = '400px';
-        img.style.height = '400px';
-
-        if (img.addEventListener) {
-            img.addEventListener('mouseout', Out, false);
-        } else {
-            img.attachEvent('onmouseout', Out);
-        }
-        imgbox.innerHTML = '';
-        imgbox.appendChild(img);
-        imgbox.style.left = (getElementLeft(obj) - 50) + 'px';
-        imgbox.style.top = (getElementTop(obj) - 50) + 'px';
-    }
-    function Out() {
-        document.getElementById("imgbox").style.visibility = 'hidden';
-    }
-</script>
     @section Bottom{
         <script src="~/Assets/plugins/jquery-2.0.3.min.js"></script>
         <script src="~/Assets/plugins/bootstrap/js/bootstrap.min.js"></script>

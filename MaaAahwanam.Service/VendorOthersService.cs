@@ -10,10 +10,10 @@ namespace MaaAahwanam.Service
 {
    public class VendorOthersService
     {
-       public VendorsOther AddOther(VendorsOther vendorOther, Vendormaster vendorMaster)
+        VendormasterRepository vendorMasterRepository = new VendormasterRepository();
+        VendorOthersRepository vendorOthersRepository = new VendorOthersRepository();
+        public VendorsOther AddOther(VendorsOther vendorOther, Vendormaster vendorMaster)
        {
-           VendormasterRepository vendorMasterRepository = new VendormasterRepository();
-           VendorOthersRepository vendorOthersRepository = new VendorOthersRepository();
            vendorOther.Status = "Active";
            vendorOther.UpdatedDate = DateTime.Now;
            vendorMaster.Status = "Active";
@@ -24,5 +24,22 @@ namespace MaaAahwanam.Service
            vendorOther = vendorOthersRepository.AddOthers(vendorOther);
            return vendorOther;
        }
+
+        public VendorsOther GetVendorOther(long id)
+        {
+            return vendorOthersRepository.GetVendorOthers(id);
+        }
+
+        public VendorsOther UpdateOther(VendorsOther vendorOther, Vendormaster vendorMaster, long masterid)
+        {
+            vendorOther.Status = "Active";
+            vendorOther.UpdatedDate = DateTime.Now;
+            vendorMaster.Status = "Active";
+            vendorMaster.UpdatedDate = DateTime.Now;
+            vendorMaster.ServicType = "Other";
+            vendorMaster = vendorMasterRepository.UpdateVendorMaster(vendorMaster, masterid);
+            vendorOther = vendorOthersRepository.UpdateOthers(vendorOther, masterid);
+            return vendorOther;
+        }
     }
 }

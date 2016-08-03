@@ -22,5 +22,18 @@ namespace MaaAahwanam.Repository.db
             _dbContext.SaveChanges();
             return vendorsWeddingCollections;
         }
+        public VendorsWeddingCollection GetVendorWeddingCollection(long id)
+        {
+            return _dbContext.VendorsWeddingCollection.Where(m => m.VendorMasterId == id).FirstOrDefault();
+        }
+
+        public VendorsWeddingCollection UpdateWeddingCollection(VendorsWeddingCollection vendorsWeddingCollection, long id)
+        {
+            var GetVendor = _dbContext.VendorsWeddingCollection.SingleOrDefault(m => m.VendorMasterId == id);
+            vendorsWeddingCollection.Id = GetVendor.Id;
+            _dbContext.Entry(GetVendor).CurrentValues.SetValues(vendorsWeddingCollection);
+            _dbContext.SaveChanges();
+            return vendorsWeddingCollection;
+        }
     }
 }

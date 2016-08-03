@@ -22,5 +22,18 @@ namespace MaaAahwanam.Repository.db
             _dbContext.SaveChanges();
             return vendorsTravelandAccomodation;
         }
+        public VendorsTravelandAccomodation GetVendorTravelandAccomodation(long id)
+        {
+            return _dbContext.VendorsTravelandAccomodation.Where(m => m.VendorMasterId == id).FirstOrDefault();
+        }
+
+        public VendorsTravelandAccomodation UpdateTravelandAccomodation(VendorsTravelandAccomodation vendorsTravelandAccomodation, long id)
+        {
+            var GetVendor = _dbContext.VendorsTravelandAccomodation.SingleOrDefault(m => m.VendorMasterId == id);
+            vendorsTravelandAccomodation.Id = GetVendor.Id;
+            _dbContext.Entry(GetVendor).CurrentValues.SetValues(vendorsTravelandAccomodation);
+            _dbContext.SaveChanges();
+            return vendorsTravelandAccomodation;
+        }
     }
 }

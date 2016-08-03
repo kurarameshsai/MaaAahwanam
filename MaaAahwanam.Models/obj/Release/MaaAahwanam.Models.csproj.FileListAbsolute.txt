@@ -22,6 +22,7 @@ F:\MaaAahwanam\MaaAahwanam.Models\obj\Release\MaaAahwanam.Models.dll
 F:\MaaAahwanam\MaaAahwanam.Models\obj\Release\MaaAahwanam.Models.pdb
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Release\MaaAahwanam.Models.dll
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Release\MaaAahwanam.Models.pdb
+E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Release\AutoMapper.dll
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Release\Microsoft.Web.Infrastructure.dll
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Release\System.Web.Helpers.dll
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Release\System.Web.Mvc.dll
@@ -29,6 +30,7 @@ E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Release\System.Web.Razor.dll
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Release\System.Web.WebPages.Deployment.dll
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Release\System.Web.WebPages.dll
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Release\System.Web.WebPages.Razor.dll
+E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Release\AutoMapper.xml
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Release\System.Web.Helpers.xml
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Release\System.Web.Mvc.xml
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Release\System.Web.Razor.xml
@@ -37,5 +39,3 @@ E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Release\System.Web.WebPages.Deplo
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Release\System.Web.WebPages.Razor.xml
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\obj\Release\MaaAahwanam.Models.dll
 E:\Project\Maa-Aahwanam\MaaAahwanam.Models\obj\Release\MaaAahwanam.Models.pdb
-E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Release\AutoMapper.dll
-E:\Project\Maa-Aahwanam\MaaAahwanam.Models\bin\Release\AutoMapper.xml

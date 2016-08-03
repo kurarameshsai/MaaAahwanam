@@ -14,14 +14,10 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
     {
         //VendorVenueService vendorVenueService = new VendorVenueService();
         //VendorImageService vendorImageService = new VendorImageService();
-        //VendorMasterService vendorMasterService = new VendorMasterService();
+        VendorMasterService vendorMasterService = new VendorMasterService();
         VendorSetupService vendorSetupService = new VendorSetupService();
-        public ActionResult AllVendors(string dropdown)
+        public ActionResult AllVendors()
         {
-            if (dropdown!=null)
-            {
-                ViewBag.VendorList = vendorSetupService.AllVendorList(dropdown);
-            }
             return View();
         }
         [HttpPost]
@@ -55,14 +51,6 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
         }
         public ActionResult VendorDetails(string id, [Bind(Prefix = "Item2")] VendorVenue vendorVenue, [Bind(Prefix = "Item1")] Vendormaster vendorMaster)
         {
-            //if (id!=null)
-            //{
-            //    vendorVenue = vendorVenueService.GetVendorVenue(long.Parse(id));
-            //    vendorMaster = vendorMasterService.GetVendor(long.Parse(id));
-            //    var a = new Tuple<Vendormaster, VendorVenue>(vendorMaster, vendorVenue);
-            //    ViewBag.images = vendorImageService.GetVendorImagesService(long.Parse(id));
-            //    return View(a);
-            //}
             return View();
         }
 	}

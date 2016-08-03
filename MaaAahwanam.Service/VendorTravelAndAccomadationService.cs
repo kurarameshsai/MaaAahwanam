@@ -10,10 +10,10 @@ namespace MaaAahwanam.Service
 {
    public class VendorTravelAndAccomadationService
     {
-       public VendorsTravelandAccomodation AddTravelAndAccomadation(VendorsTravelandAccomodation vendorsTravelandAccomodation, Vendormaster vendorMaster)
+        VendormasterRepository vendorMasterRepository = new VendormasterRepository();
+        VendorsTravelandAccomodationRepository vendorsTravelandAccomodationRepository = new VendorsTravelandAccomodationRepository();
+        public VendorsTravelandAccomodation AddTravelAndAccomadation(VendorsTravelandAccomodation vendorsTravelandAccomodation, Vendormaster vendorMaster)
        {
-           VendormasterRepository vendorMasterRepository = new VendormasterRepository();
-           VendorsTravelandAccomodationRepository vendorsTravelandAccomodationRepository = new VendorsTravelandAccomodationRepository();
            vendorsTravelandAccomodation.Status = "Active";
            vendorsTravelandAccomodation.UpdatedDate = DateTime.Now;
            vendorMaster.Status = "Active";
@@ -24,5 +24,22 @@ namespace MaaAahwanam.Service
            vendorsTravelandAccomodation = vendorsTravelandAccomodationRepository.AddTravelandAccomodation(vendorsTravelandAccomodation);
            return vendorsTravelandAccomodation;
        }
+
+        public VendorsTravelandAccomodation GetVendorTravelandAccomodation(long id)
+        {
+            return vendorsTravelandAccomodationRepository.GetVendorTravelandAccomodation(id);
+        }
+
+        public VendorsTravelandAccomodation UpdateTravelandAccomodation(VendorsTravelandAccomodation vendorTravelandAccomodation, Vendormaster vendorMaster, long masterid)
+        {
+            vendorTravelandAccomodation.Status = "Active";
+            vendorTravelandAccomodation.UpdatedDate = DateTime.Now;
+            vendorMaster.Status = "Active";
+            vendorMaster.UpdatedDate = DateTime.Now;
+            vendorMaster.ServicType = "Travel&Accomadation";
+            vendorMaster = vendorMasterRepository.UpdateVendorMaster(vendorMaster, masterid);
+            vendorTravelandAccomodation = vendorsTravelandAccomodationRepository.UpdateTravelandAccomodation(vendorTravelandAccomodation, masterid);
+            return vendorTravelandAccomodation;
+        }
     }
 }

@@ -56,5 +56,12 @@ namespace MaaAahwanam.Repository.db
             }
             return userLogin;
         }
+
+        public UserLogin AddVendorUserLogin(UserLogin userLogin)
+        {
+            _dbContext.UserLogin.Add(userLogin);
+            _dbContext.SaveChanges();
+            return userLogin;
+        }
     }
 }

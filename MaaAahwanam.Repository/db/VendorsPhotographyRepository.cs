@@ -21,5 +21,18 @@ namespace MaaAahwanam.Repository.db
             _dbContext.SaveChanges();
             return vendorsPhotography;
         }
+        public VendorsPhotography GetVendorsPhotography(long id)
+        {
+            return _dbContext.VendorsPhotography.Where(m => m.VendorMasterId == id).FirstOrDefault();
+        }
+
+        public VendorsPhotography UpdatesPhotography(VendorsPhotography vendorsPhotography, long id)
+        {
+            var GetVendor = _dbContext.VendorsPhotography.SingleOrDefault(m => m.VendorMasterId == id);
+            vendorsPhotography.Id = GetVendor.Id;
+            _dbContext.Entry(GetVendor).CurrentValues.SetValues(vendorsPhotography);
+            _dbContext.SaveChanges();
+            return vendorsPhotography;
+        }
     }
 }
