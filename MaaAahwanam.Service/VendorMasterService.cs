@@ -15,5 +15,10 @@ namespace MaaAahwanam.Service
         {
             return vendormasterRepository.GetVendor(id);
         }
+
+        public int checkemail(string emailid)
+        {
+            return vendormasterRepository.checkemail(emailid);
+        }
     }
 }

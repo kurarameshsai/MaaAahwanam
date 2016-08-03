@@ -1642,6 +1642,16 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             return View();
         }
 
+        public JsonResult checkemail(string emailid)
+        {
+            int query = vendorMasterService.checkemail(emailid);
+            if (query != 0)
+            {
+                return Json("exists", JsonRequestBehavior.AllowGet);
+            }
+            return Json("valid", JsonRequestBehavior.AllowGet);
+        }
+
         //public ActionResult images(string ids)
         //{
         //    var images = vendorImageService.GetVendorImagesService(long.Parse(ids));

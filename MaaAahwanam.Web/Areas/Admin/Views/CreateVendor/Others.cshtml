@@ -274,10 +274,10 @@
                                                     <label for="tags" class="control-label col-lg-4">Multiple Uploads</label>
                                                     <div class="col-lg-4">
                                                         <input type='file' multiple="multiple" accept="image/*" id='fileUpload' name="file" />
-                                                        @if (@ViewBag.imagescount != null)
-                                                        { <p id="msg" style="color:green">You can Upload images upto @ViewBag.imagescount Only </p> }
+                                                        @if (@ViewBag.imagescount != 0)
+                                                        { <p id="msg" style="color:green;font-size:large"><strong>You can Upload images upto @ViewBag.imagescount Only </strong></p> }
                                                         @if (@ViewBag.imagescount == 0)
-                                                        { <p id="msg" style="color:red">You Have Reached Image Limit </p> }
+                                                        { <p id="msg" style="color:red;font-size:large"><strong>You Have Reached Image Limit </strong></p> }
                                                     </div>
                                                     <div id="imgbox"></div>
                                                     <br />
@@ -296,11 +296,12 @@
                                                                     @Html.ActionLink("X", "venue", new { src = @item }, new { @class = "deletelink", style = "height : 150px ; width:50px; max-height:75px; border: 2px solid; margin: 10px 10px 0 0; padding: 1px;" })
 
                                                             }
+                                                            if (@ViewBag.images.Count == 0)
+                                                            {
+                                                                <img src="~/noimages.png" />
+                                                            }
                                                         }
-                                                        @if (ViewBag.images.Count == 0)
-                                                        {
-                                                            <img src="~/noimages.png" />
-                                                        }
+                                                        
                                                     </div>
 
                                                     <div id="editimage" style="min-height: 10px;min-width: 10px; "></div>

@@ -199,14 +199,14 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="control-label col-lg-4">E-mail</label>
-                                                    <div class=" col-lg-4">
+                                                    <div class="col-lg-4">
                                                         @*<input type="text" id="email" name="name" placeholder="Email" class="form-control">*@
                                                         @Html.TextBoxFor(model => this.Model.Item1.EmailId, new { @class = "form-control", placeholder = "Enter Email ID" })
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="control-label col-lg-4">Url</label>
-                                                    <div class=" col-lg-4">
+                                                    <div class="col-lg-4">
                                                         @*<input type="text" id="url" name="name" placeholder="Url" class="form-control">*@
                                                         @Html.TextBoxFor(model => this.Model.Item1.Url, new { @class = "form-control", placeholder = "Enter Url" })
                                                     </div>
@@ -220,7 +220,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="control-label col-lg-4">Experience</label>
-                                                    <div class=" col-lg-4">
+                                                    <div class="col-lg-4">
                                                         @*<input type="text" id="exp" name="name" placeholder="Experience" class="form-control">*@
                                                         @Html.TextBoxFor(model => this.Model.Item1.Experience, new { @class = "form-control", placeholder = "Enter Experience" })
                                                     </div>
@@ -259,10 +259,10 @@
                                                     <label for="tags" class="control-label col-lg-4">Multiple Uploads</label>
                                                     <div class="col-lg-4">
                                                         <input type='file' multiple="multiple" accept="image/*" id='fileUpload' name="file" />
-                                                        @if (@ViewBag.imagescount != null)
-                                                        { <p id="msg" style="color:green">You can Upload images upto @ViewBag.imagescount Only </p> }
+                                                        @if (@ViewBag.imagescount != 0)
+                                                        { <p id="msg" style="color:green;font-size:large"><strong>You can Upload images upto @ViewBag.imagescount Only </strong></p> }
                                                         @if (@ViewBag.imagescount == 0)
-                                                        { <p id="msg" style="color:red">You Have Reached Image Limit </p> }
+                                                        { <p id="msg" style="color:red;font-size:large"><strong>You Have Reached Image Limit </strong></p> }
                                                     </div>
                                                     <div id="imgbox"></div>
                                                     <br />
@@ -281,11 +281,12 @@
                                                                     @Html.ActionLink("X", "WeddingCollection", new { src = @item }, new { @class = "deletelink", style = "height : 150px ; width:50px; max-height:75px; border: 2px solid; margin: 10px 10px 0 0; padding: 1px;" })
 
                                                             }
+                                                            if (@ViewBag.images.Count == 0)
+                                                            {
+                                                                <img src="~/noimages.png" />
+                                                            }
                                                         }
-                                                        @if (ViewBag.images.Count == 0)
-                                                        {
-                                                            <img src="~/noimages.png" />
-                                                        }
+                                                        
                                                     </div>
 
                                                     <div id="editimage" style="min-height: 10px;min-width: 10px; "></div>

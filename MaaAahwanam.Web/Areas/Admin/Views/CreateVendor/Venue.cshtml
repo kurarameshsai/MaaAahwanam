@@ -449,13 +449,14 @@
 
                                                                     <img id="img" src="~/vendorimages/@item" alt="student" style="height:100px;width:150px;border:double" onmouseover='Large(this)' />
                                                                     @Html.ActionLink("X", "venue", new { src = @item },new { @class = "deletelink" , style = "height : 150px ; width:50px; max-height:75px; border: 2px solid; margin: 10px 10px 0 0; padding: 1px;" })
-                                                          
+
+                                                            }
+                                                            if (@ViewBag.images.Count == 0)
+                                                            {
+                                                                <img src="~/noimages.png" />
                                                             }
                                                         }
-                                                        @if (ViewBag.images.Count == 0)
-                                                        {
-                                                            <img src="~/noimages.png" />
-                                                        }
+                                                        
                                                     </div>
                                                     
                                                         <div id="editimage" style="min-height: 10px;min-width: 10px; "></div>
