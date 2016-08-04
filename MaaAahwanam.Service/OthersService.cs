@@ -65,6 +65,11 @@ namespace MaaAahwanam.Service
             return othersRepository.RegisteredUserDetails(id);
         }
 
+        public List<MaaAahwanam_Others_AllRegisteredUsersDetails_Result> AllRegisteredUsersDetails()
+        {
+            return othersRepository.AllRegisteredUsersList();
+        }
+
         //Testimonals Module
         public List<MaaAahwanam_Others_Testimonials_Result> TestimonalsList()
         {
@@ -74,5 +79,7 @@ namespace MaaAahwanam.Service
         {
             return othersRepository.TestimonalDetail(id);
         }
+
+        
     }
 }

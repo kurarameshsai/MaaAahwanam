@@ -73,5 +73,10 @@ namespace MaaAahwanam.Repository.db
         {
             return maaAahwanamEntities.MaaAahwanam_Others_TestimonialDetail(id).ToList();
         }
+
+        public List<MaaAahwanam_Others_AllRegisteredUsersDetails_Result> AllRegisteredUsersList()
+        {
+            return maaAahwanamEntities.MaaAahwanam_Others_AllRegisteredUsersDetails().ToList();
+        }
     }
 }

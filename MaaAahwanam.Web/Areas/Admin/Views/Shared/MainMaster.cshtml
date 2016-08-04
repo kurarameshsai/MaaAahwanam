@@ -31,7 +31,7 @@
             position: relative;
         }
     </style>
-
+    
     <!-- END PAGE LEVEL  STYLES -->
 
 </head>
@@ -55,11 +55,12 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i class="icon-user "></i>&nbsp; <i class="icon-chevron-down "></i> </a>
                         <ul class="dropdown-menu dropdown-user">
-                            <li><a href="/Admin/DashBoard/UserProfile"><i class="icon-user"></i> User Profile </a> </li>
-                            <li><a href="/Admin/DashBoard/ChangePassword"><i class="icon-bell-alt"></i> Change Password </a> </li>
-                            <li><a href="/Admin/DashBoard/Lock"><i class="icon-gear"></i> Lock </a> </li>
-                            <li class="divider"></li>
-                            <li>@Html.ActionLink("Logout", "SignOut", "Login")</li>
+                            @*<li><a href="/Admin/DashBoard/UserProfile"><i class="icon-user"></i> User Profile </a> </li>
+    <li><a href="/Admin/DashBoard/ChangePassword"><i class="icon-bell-alt"></i> Change Password </a> </li>
+    <li><a href="/Admin/DashBoard/Lock"><i class="icon-gear"></i> Lock </a> </li>
+    <li class="divider"></li>*@
+                            @*<li>@Html.ActionLink("Logout", "SignOut", "Login",new { @class="icon-signout"})</li>*@
+                            <li><a href="/Admin/Login/SignOut"><i class="icon-signout"></i> Logout </a></li>
                         </ul>
                     </li>
 
@@ -75,7 +76,7 @@
         <div id="left">
             <div class="media user-media well-small">
 
-                <a class="user-link" href="#"><img class="media-object img-thumbnail user-img" alt="User Picture" src="/Content/AdminUserfiles/53963d1f-0225-4019-8388-7b913ed5a460.png" style="width:74px; height:74px" /></a> <br />
+                <a class="user-link" href="#"><img class="media-object img-thumbnail user-img" alt="User Picture" src="~/adminimage.png" style="width:74px; height:74px" /></a> <br />
                 <br /> <div class="media-body">
                     @*<h5 class="media-heading"> Joe Romlin</h5>
                 @*<h5 class="media-heading"> @Html.Label(Model.FirstName)  @Html.Label(Model.LastName)</h5>*@
