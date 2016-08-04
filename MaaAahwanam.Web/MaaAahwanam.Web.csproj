@@ -248,6 +248,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="adminimage.png" />
     <Content Include="Assets\accodian\images\animated-overlay.gif" />
     <Content Include="Assets\accodian\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
     <Content Include="Assets\accodian\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
