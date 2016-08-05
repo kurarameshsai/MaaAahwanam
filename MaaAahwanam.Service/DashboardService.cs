@@ -31,5 +31,10 @@ namespace MaaAahwanam.Service
         {
             return dashboardRepository.OrdersCount();
         }
+
+        public UserDetail AdminNameService(long id)
+        {
+            return dashboardRepository.AdminName(id);
+        }
     }
 }

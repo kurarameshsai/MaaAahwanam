@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MaaAahwanam.Models;
 
 namespace MaaAahwanam.Repository.db
 {
@@ -29,6 +30,10 @@ namespace MaaAahwanam.Repository.db
         {
             return _dbContext.Order.ToList().Count();
         }
-        
+
+        public UserDetail AdminName(long id)
+        {
+            return _dbContext.UserDetail.Where(m => m.UserLoginId == id).FirstOrDefault();
+        }
     }
 }

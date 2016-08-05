@@ -81,7 +81,10 @@
                     @*<h5 class="media-heading"> Joe Romlin</h5>
                 @*<h5 class="media-heading"> @Html.Label(Model.FirstName)  @Html.Label(Model.LastName)</h5>*@
                            <br />
-                           <br />   <h5 class="media-heading"> Indu G </h5>
+                           <br />   @*<h5 class="media-heading" id="label">@ViewBag.admin</h5>*@
+                                <strong>@*<span id="label" style="font-size:medium" value="@ViewBag.admin">@ViewBag.admin</span>*@</strong>
+                <input type="text" id="label" value="@ViewBag.admin" />
+                <input type="hidden" id="adminname" name="adminname" />
                     @*<ul class="list-unstyled user-info">
                     <li> <a class="btn btn-success btn-xs btn-circle" style="width: 10px;height: 12px;"></a> Online </li>
                 </ul>*@
@@ -239,6 +242,17 @@
     <script src="../Testadmin/Assets/plugins/jasny/js/bootstrap-fileupload.js"></script>
     <script src="../Testadmin/Scripts/jquery.validate.min.js"></script>
     <script src="../Testadmin/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script>
+        //window.onload = function () {
+        //    //var username = $("#adminname").val();
+        //    var label = $("#label").val();
+        //    alert(label);
+            
+        //    //HttpContext.Current.User.Identity.Name = label;
+        //    //alert(HttpContext.Current.User.Identity.Name);
+        //    //label.html(username);
+        //}
+    </script>
     <script>
         $(document).ready(function () {
             $('#dataTables-example').dataTable();

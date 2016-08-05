@@ -20,7 +20,7 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
         DashboardService dashboardService = new DashboardService();
         OrderService orderService = new OrderService();
         OthersService othersService = new OthersService();
-        public ActionResult dashboard()
+        public ActionResult dashboard(string id)
         {
             ViewBag.vendorcount = dashboardService.VendorsCountService();
             ViewBag.commentscount = dashboardService.CommentsCountService();
@@ -28,7 +28,9 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             ViewBag.orderscount = dashboardService.OrdersCountService();
             ViewBag.orders = orderService.OrderList().OrderByDescending(m=>m.OrderDate).Take(10);
             ViewBag.users = othersService.AllRegisteredUsersDetails().OrderByDescending(m=>m.RegDate).Take(4);
-            //ViewBag.admin = othersService.RegisteredUsersList()
+            //UserDetail userdetail = dashboardService.AdminNameService(long.Parse(id));
+            //ViewBag.admin = userdetail.FirstName + " " + userdetail.LastName;
+            ViewBag.admin = "admin";
             return View();
         }
     }

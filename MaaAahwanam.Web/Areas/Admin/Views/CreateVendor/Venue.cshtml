@@ -31,10 +31,18 @@
     </script>
 }
 <script>
+    $(document).ready(function () {
+        $("#btnadd").click(function () {
+            alert("The paragraph was clicked.");
+        });
+    });
+</script>
+<script>
         window.onload = function () {
             var url = window.location.href;
             var op = url.substring(url.lastIndexOf('=') + 1);
             if (op == 'display') {
+                $("#btnadd").hide();
                 $('#btn').hide();
                 $("#btncancel").hide();
                 $('#btnback').show();
@@ -43,7 +51,19 @@
                 $('#msg').hide();
                 $('.form-control').prop("disabled", true);
             }
-            else {
+            if (op == 'add') {
+                $("[id^=Item1]").prop("disabled", true);
+                $("[id^=Item2]").val("");
+                $('#btn').hide();
+                $("#btncancel").show();
+                $('#btnback').hide();
+                $('.deletelink').hide();
+                $('#fileUpload').show();
+                $('#msg').show();
+                $("#btnadd").show();
+                $("#imagesdisplay").hide();
+            }
+            if (op == url) {
                 $('#btn').show();
                 $("#btncancel").show();
                 $('#btnback').hide();
@@ -51,9 +71,11 @@
                 $('#fileUpload').show();
                 $('#msg').show();
                 $('.form-control').prop("disabled", false);
+                $("#btnadd").hide();
             }
         }
 </script>
+
 <script>
     function Large(obj) {
         var imgbox = document.getElementById("imgbox");
@@ -79,7 +101,7 @@
     }
 </script>
 
-    <div id="content">
+<div id="content">
         <div class="inner">
             <div class="row">
                 <div class="col-lg-12">
@@ -439,15 +461,15 @@
                                                     <br/>
                                                     <br/>
                                                     
-                                                    <div align="center">
+                                                    <div align="center" id="imagesdisplay">
                                                         
                                                         @if (@ViewBag.images != null)
                                                         {
-                                                            
+
                                                             foreach (var item in ViewBag.images)
                                                             {
 
-                                                                    <img id="img" src="~/vendorimages/@item" alt="student" style="height:100px;width:150px;border:double" onmouseover='Large(this)' />
+                                                                <a id="popup"><img id="img" src="~/vendorimages/@item" alt="student" style="height:100px;width:150px;border:double" /></a> //onmouseover='Large(this)'
                                                                     @Html.ActionLink("X", "venue", new { src = @item },new { @class = "deletelink" , style = "height : 150px ; width:50px; max-height:75px; border: 2px solid; margin: 10px 10px 0 0; padding: 1px;" })
 
                                                             }
@@ -474,11 +496,14 @@
                                                     {
                                                         <input type="submit" id="btn" value="update" class="btn text-muted text-center btn-success" name="Command" />
                                                     }
+                                                    <button type="submit" class="btn btn-success" id="btnadd" name="Command" value="add"> Add New </button>
+
                                                     <input type="submit" id="btncancel" value="Cancel" class="btn btn-danger" formaction="~/Admin/dashboard/dashboard">
                                                     
                                                     <button formaction="~/Admin/Vendors/AllVendors" type="submit" class="btn btn-success"  id="btnback"> Back To List </button>
                                                     
-                                                </div>
+                                                    
+                                                </div> 
                                                 <div align="center"><label id="lblshow" style="color:red;display:none">You can save ur details only when you provide valid E-Mail ID</label></div>
                                             </form>
                                         </div>
@@ -491,6 +516,7 @@
             </div>
         </div>
     </div>
+
 <script>
     function check() {
         var emailId = $("#Item1_EmailId").val();
@@ -530,6 +556,15 @@
         <script>
             $(document).ready(function () {
                 $('#dataTables-example').dataTable();
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+            $("#popup").fancybox({
+                'titlePosition': 'outside',
+                'overlayColor': '#000',
+                'overlayOpacity': 0.9
+            });
             });
         </script>
     }

@@ -1504,6 +1504,42 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
                     ViewData["error"] = "You Have Crossed Images Limit";
                 }
             }
+            if (Command == "add")
+            {
+                vendorMaster.Id = long.Parse(id);
+                vendorVenue = vendorVenueService.AddNewVenue(vendorVenue, vendorMaster);
+                VendorImage vendorImage = new VendorImage();
+                vendorImage.VendorId = vendorVenue.Id;
+                vendorImage.UpdatedBy = ValidUserUtility.ValidUser();
+                //const string imagepath = @"/vendorimages";
+                if (Request.Files.Count <= 10)
+                {
+                    for (int i = 0; i < Request.Files.Count; i++)
+                    {
+                        int j = i + 1;
+
+                        var file1 = Request.Files[i];
+                        if (file1 != null && file1.ContentLength > 0)
+                        {
+                            string path = System.IO.Path.GetExtension(file.FileName);
+                            var filename = "Venue_" + vendorVenue.VendorMasterId + "_" + j + path;
+                            fileName = System.IO.Path.Combine(System.Web.HttpContext.Current.Server.MapPath(imagepath + filename));
+                            file1.SaveAs(fileName);
+                            vendorImage.ImageName = filename;
+                            vendorImage = vendorImageService.AddVendorImage(vendorImage, vendorMaster);
+                        }
+
+                    }
+                }
+                if (vendorVenue.Id != 0 && vendorImage.ImageId != 0)
+                {
+                    return Content("<script language='javascript' type='text/javascript'>alert('Registered Successfully');location.href='" + @Url.Action("Venue", "CreateVendor") + "'</script>");
+                }
+                else
+                {
+                    return Content("<script language='javascript' type='text/javascript'>alert('Registration Failed');location.href='" + @Url.Action("Venue", "CreateVendor") + "'</script>");
+                }
+            }
             return View();
         }
         public ActionResult Others(string id, [Bind(Prefix = "Item2")] VendorsOther vendorsOther, [Bind(Prefix = "Item1")] Vendormaster vendorMaster, string src, string op)

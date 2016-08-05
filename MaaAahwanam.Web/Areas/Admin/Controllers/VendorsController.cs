@@ -35,6 +35,10 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             {
                 return RedirectToAction(dropstatus, "CreateVendor", new { id = id,op = "display" });
             }
+            if (command == "Add New")
+            {
+                return RedirectToAction(dropstatus, "CreateVendor", new { id = id, op = "add" });
+            }
             return View();
         }
         public ActionResult ActiveVendors()
