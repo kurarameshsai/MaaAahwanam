@@ -33,5 +33,8 @@ namespace MaaAahwanam.Repository
         public string Status { get; set; }
         public long UpdatedBy { get; set; }
         public Nullable<System.DateTime> UpdatedDate { get; set; }
+        public bool Quotation { get; set; }
+        public bool Bidding { get; set; }
+        public bool ReverseBidding { get; set; }
     }
 }

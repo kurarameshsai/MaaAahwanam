@@ -1,4 +1,4 @@
-﻿
+﻿@model List<MaaAahwanam.Repository.GetCartItems_Result>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/SharedWeb/MainMaster.cshtml";
@@ -6,28 +6,28 @@
 
 @section Navigation
 {
-<div class="breads">
-    <div class="breads_inner">
-        <div class="pageWidth">
-            <div class="title">
-                <h3>Contrary to popular view</h3>
-            </div>
-            <div class="breadcrumbs">
-                <ul>
-                    <li><a href="~/Index/Index">Home</a></li>
-                    <li><i class="breads_arrow"></i></li>
-                    <li><a href="index.html">Categories</a></li>
-                    <li><i class="breads_arrow"></i></li>
-                    <li><a href="index.html">Photographers</a></li>
-                    <li><i class="breads_arrow"></i></li>
-                    <li><a href="deal-info.html">Suspendisse vel urna sit amet</a></li>
-                    <li><i class="breads_arrow"></i></li>
-                    <li>Contrary to popular view</li>
-                </ul>
+    <div class="breads">
+        <div class="breads_inner">
+            <div class="pageWidth">
+                <div class="title">
+                    <h3>Contrary to popular view</h3>
+                </div>
+                <div class="breadcrumbs">
+                    <ul>
+                        <li><a href="~/Index/Index">Home</a></li>
+                        <li><i class="breads_arrow"></i></li>
+                        <li><a href="index.html">Categories</a></li>
+                        <li><i class="breads_arrow"></i></li>
+                        <li><a href="index.html">Photographers</a></li>
+                        <li><i class="breads_arrow"></i></li>
+                        <li><a href="deal-info.html">Suspendisse vel urna sit amet</a></li>
+                        <li><i class="breads_arrow"></i></li>
+                        <li>Contrary to popular view</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
 }
 
 <section>
@@ -47,20 +47,22 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="item-img"><img src="../CSSWeb/images/dashboard/item-img.jpg" alt="item-img" /></div>
-                                        <div class="item-details">
-                                            <h4>Neque porro quisquam est qui dolorem ipsum quia</h4>
-                                        </div>
-                                        <div class="clear"></div>
-                                    </td>
-                                    <td>
-                                        <h4>Wedding Cermony</h4>
-                                        <p>
-                                            #311/A, Road No.12,<br>
-                                            MLA Colony, Banjara Hills,<br>
-                                            (+91) 40 64640441
+                                @foreach (var item in ViewBag.Cartlist)
+                                {
+                                    <tr>
+                                        <td>
+                                            <div class="item-img"><img src="../vendorimages/@item.image" alt="item-img" /></div>
+                                            <div class="item-details">
+                                                <h4>@item.Description</h4>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </td>
+                                        <td>
+                                            <h4>Wedding Cermony</h4>
+                                            <p>
+                                                @item.Landmark<br>
+                                                @item.Address, @item.City,<br>
+                                            (+91) @item.ContactNumber
                                         </p>
                                         @*<a href="#edit_event" class="orange-link upload_address popup-with-move-anim"><i class="ti-pencil"></i> Edit Event</a>*@
                                     </td>
@@ -76,10 +78,11 @@
                                     </td>
                                     <td>
                                         <div class="item-price">
-                                            <p>Rs. 1200.00</p>
+                                            <p>Rs.@item.TotalPrice</p>
                                         </div>
                                     </td>
                                 </tr>
+                                }
                             </tbody>
                         </table>
 
@@ -265,8 +268,8 @@
                 </div>
             </div>
             @*<div class="ad margin_bottom_20">
-                <div class="ad_728"> <img src="../CSSWeb/images/ad_728.jpg" alt="advertisement"> </div>
-            </div>*@
+                    <div class="ad_728"> <img src="../CSSWeb/images/ad_728.jpg" alt="advertisement"> </div>
+                </div>*@
             <div class="clear"></div>
         </div>
     </div>
