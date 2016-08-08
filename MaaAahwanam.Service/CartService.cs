@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MaaAahwanam.Repository.db;
 using MaaAahwanam.Models;
+using MaaAahwanam.Repository;
 
 namespace MaaAahwanam.Service
 {
@@ -12,16 +13,16 @@ namespace MaaAahwanam.Service
     {
         CartItemRepoitory cartItemRepoitory = new CartItemRepoitory();
 
-        public List<CartItem> CartItemsList()
+        public List<GetCartItems_Result> CartItemsList(int vid)
         {
-            List<CartItem> l1 = cartItemRepoitory.CartItemList();
+            List<GetCartItems_Result> l1 = cartItemRepoitory.CartItemList(vid);
             return l1;
         }
         public int CartItemsCount(int UserId)
         {
             var l1 = 0;
             if (UserId != 0)
-                l1 = cartItemRepoitory.CartItemList().Where(i => i.Orderedby == UserId).Count();
+                l1 = cartItemRepoitory.CartItemList(UserId).Count();
             return l1;
         }
         public string AddCartItem(CartItem cartItem)
