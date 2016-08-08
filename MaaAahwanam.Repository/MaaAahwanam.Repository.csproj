@@ -98,6 +98,9 @@
     <Compile Include="db\VendorsTravelandAccomodationRepository.cs" />
     <Compile Include="db\VendorVenueRepository.cs" />
     <Compile Include="db\VendorWeddingCollectionsRepository.cs" />
+    <Compile Include="GetCartItems_Result.cs">
+      <DependentUpon>MaaAahwanam.tt</DependentUpon>
+    </Compile>
     <Compile Include="GetProductsInfo_Result.cs">
       <DependentUpon>MaaAahwanam.tt</DependentUpon>
     </Compile>
@@ -145,6 +148,10 @@
     </Compile>
     <Compile Include="MaaAahwanam_Services_Bidding_Result.cs">
       <DependentUpon>MaaAahwanam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608080923045_migrations_date_08082016.cs" />
+    <Compile Include="Migrations\201608080923045_migrations_date_08082016.Designer.cs">
+      <DependentUpon>201608080923045_migrations_date_08082016.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -203,6 +210,11 @@
       <DependentUpon>MaaAahwanam.edmx</DependentUpon>
       <LastGenOutput>MaaAahwanam.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201608080923045_migrations_date_08082016.resx">
+      <DependentUpon>201608080923045_migrations_date_08082016.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
