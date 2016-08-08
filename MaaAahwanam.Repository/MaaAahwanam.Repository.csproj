@@ -66,6 +66,7 @@
     <Compile Include="db\AdminTestimonialPathRepository.cs" />
     <Compile Include="db\ApiContext.cs" />
     <Compile Include="db\AvailabledatesRepository.cs" />
+    <Compile Include="db\DashboardRepository.cs" />
     <Compile Include="db\EnquiryRepository.cs" />
     <Compile Include="db\OrderRepository.cs" />
     <Compile Include="db\OthersRepository.cs" />
@@ -119,6 +120,9 @@
       <DependentUpon>MaaAahwanam.edmx</DependentUpon>
     </Compile>
     <Compile Include="MaaAahwanam_Orders_OrderDetails_Result.cs">
+      <DependentUpon>MaaAahwanam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaaAahwanam_Others_AllRegisteredUsersDetails_Result.cs">
       <DependentUpon>MaaAahwanam.tt</DependentUpon>
     </Compile>
     <Compile Include="MaaAahwanam_Others_Comments_Result.cs">
@@ -175,6 +179,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DBScript\StoredProcedures\AllVendorList.sql" />
+    <Content Include="DBScript\StoredProcedures\MaaAahwanam_Others_AllRegisteredUsersDetails.sql" />
     <Content Include="DBScript\StoredProcedures\SP_GetTestimonials.sql" />
     <Content Include="DBScript\StoredProcedures\MaaAahwanam_Others_TestimonialDetail.sql" />
     <Content Include="DBScript\StoredProcedures\MaaAahwanam_Others_Testimonials.sql" />

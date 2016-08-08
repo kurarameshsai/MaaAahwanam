@@ -11,7 +11,7 @@
 <div id="content">
     <div class="inner">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12" align="center">
                 <h2> User Details</h2>
             </div>
         </div>
@@ -22,7 +22,7 @@
                 <div class="col-lg-12">
                     <div class="body collapse in" id="div1"> <a href="/Admin/Dashboard/dashboard" class="btn btn-primary btn-xs">Home</a>&nbsp;&nbsp;&nbsp;<a href="/Admin/Others/RegisteredUsers" class="btn btn-primary btn-xs">Registered Users</a>&nbsp;&nbsp;&nbsp;<a href="#" class="btn btn-primary btn-xs"> User Details</a> </div>
                     <br />
-                    <h4><i class="icon-th-list"></i> Id #: @item.UserLoginId | Registered Date: @item.RegDate </h4>
+                    <h4><i class="icon-th-list"></i> Id #: @item.UserLoginId | Registered Date: @item.RegDate.ToShortDateString() </h4>
 
                 </div>
                 <br />

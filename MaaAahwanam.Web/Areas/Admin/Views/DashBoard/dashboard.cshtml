@@ -23,23 +23,23 @@
         <div class="row">
             <div class="col-lg-12">              
                     <div style="text-align: center;">
-                        <a class="quick-btn" href="../Vendor/Index">
+                        <a class="quick-btn" href="/Admin/Vendors/AllVendors">
                             <i class="icon-check icon-2x"></i>
                             <span> Vendors</span>
-                            <span class="label label-danger">1000</span>
+                            <span class="label label-danger">@ViewBag.vendorcount</span>
                         </a>
-                        <a class="quick-btn" href="../Other/Index">
+                        <a class="quick-btn" href="/Admin/Others/Comments">
                             <i class="icon-envelope icon-2x"></i>
                             <span>Comments</span>
-                            <span class="label label-success">25</span>
-                        </a>  <a class="quick-btn" href="../IssueTicketsAdmin/AdminTicketIndex">
+                            <span class="label label-success">@ViewBag.commentscount</span>
+                        </a>  <a class="quick-btn" href="/Admin/Others/Tickets">
                             <i class="icon-bolt icon-2x"></i>
                             <span>Tickets</span>
-                            <span class="label label-warning">10</span>
-                        </a> <a class="quick-btn" href="../Other/Index">
+                            <span class="label label-warning">@ViewBag.ticketcount</span>
+                        </a> <a class="quick-btn" href="/Admin/Orders/AllOrders">
                             <i class="icon-external-link icon-2x"></i>
                             <span>Orders</span>
-                            <span class="label btn-metis-4">368</span>
+                            <span class="label btn-metis-4">@ViewBag.orderscount</span>
                         </a>
                     </div>               
             </div>
@@ -53,7 +53,7 @@
             </div><!-- /.box-header -->
             <div class="box-body">
                 <div class="table-responsive">
-                    <table class="table no-margin">
+                    @*<table class="table no-margin">
                         <thead>
                             <tr>
                                 <th>Order ID</th>
@@ -62,48 +62,56 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach (var item in ViewBag.orders)
+                            {
+                                <tr>
+                                    <td><a href="#">@item.OrderId</a></td>
+                                    <td>Call of Duty IV</td>
+                                    <td><span class="label label-success"></span></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>*@
+                    <table class="table no-margin">
+                        <thead>
                             <tr>
-                                <td><a href="#">OR9842</a></td>
-                                <td>Call of Duty IV</td>
-                                <td><span class="label label-success"></span></td>
+                                <th>Order Id</th>
+                                <th>Order Date</th>
+                                <th>Status</th>
+                                <th>Amount</th>
+                                <th>DueDate</th>
+                                <th></th>
                             </tr>
-                            <tr>
-                                <td><a href="#">OR1848</a></td>
-                                <td>Samsung Smart TV</td>
-                                <td><span class="label label-warning"></span></td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">OR7429</a></td>
-                                <td>iPhone 6 Plus</td>
-                                <td><span class="label label-danger"></span></td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">OR7429</a></td>
-                                <td>Samsung Smart TV</td>
-                                <td><span class="label label-info"></span></td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">OR1848</a></td>
-                                <td>Samsung Smart TV</td>
-                                <td><span class="label label-warning"></span></td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">OR7429</a></td>
-                                <td>iPhone 6 Plus</td>
-                                <td><span class="label label-danger"></span></td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">OR9842</a></td>
-                                <td>Call of Duty IV</td>
-                                <td><span class="label label-success"></span></td>
-                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in ViewBag.orders)
+                            {
+                                <tr class="even gradeX">
+                                    <td>
+                                        <a href="#">@item.OrderId</a>
+                                    </td>
+                                    <td>
+                                        <h5>@item.OrderDate.ToShortDateString()</h5>
+                                    </td>
+                                    <td>
+                                        <h5>@item.Status</h5>
+                                    </td>
+                                    <td>
+                                        <h5>@item.TotalPrice</h5>
+                                    </td>
+                                    <td>
+                                        <h5>@item.UpdatedDate.ToShortDateString()</h5>
+                                    </td>
+                                </tr>
+                            }
                         </tbody>
                     </table>
+
                 </div><!-- /.table-responsive -->
             </div><!-- /.box-body -->
             <div class="box-footer clearfix">
                 @*<a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>*@
-                <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a>
+                <a href="/Admin/Orders/AllOrders" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a>
             </div><!-- /.box-footer -->
         </div>
         <!-- PRODUCT LIST -->
@@ -113,41 +121,21 @@
             </div><!-- /.box-header -->
             <div class="box-body">
                 <ul class="products-list product-list-in-box">
-                    <li class="item">
-                        <div class="product-img">
-                            <img src="~/CSSWeb/bootstrap/css/default-50x50.gif" alt="Product Image" />
-                            @*<img src="CSSWeb/bootstrap/css/default-50x50.gif" alt="Product Image">*@
-                        </div>
-                        <div class="product-info">
-                            <a href="javascript::;" class="product-title">Sai Krishna<span class="label label-warning pull-right"></span></a>
-                            <span class="product-description">
-                                Event Organizer
-                            </span>
-                        </div>
-                    </li><!-- /.item -->
-                    <li class="item">
-                        <div class="product-img">
-                            <img src="~/CSSWeb/bootstrap/css/default-50x50.gif" alt="Product Image" />
-                        </div>
-                        <div class="product-info">
-                            <a href="javascript::;" class="product-title">Santosh <span class="label label-info pull-right"></span></a>
-                            <span class="product-description">
-                                Photography
-                            </span>
-                        </div>
-                    </li><!-- /.item -->
-                    <li class="item">
-                        <div class="product-img">
-                            <img src="~/CSSWeb/bootstrap/css/default-50x50.gif" alt="Product Image" />
-                        </div>
-                        <div class="product-info">
-                            <a href="javascript::;" class="product-title">Reddy<span class="label label-danger pull-right"></span></a>
-                            <span class="product-description">
-                                beautician
-                            </span>
-                        </div>
-                    </li><!-- /.item -->
-                    <li class="item">
+                    @foreach (var item in ViewBag.users)
+                    {
+                        <li class="item">
+                            <div class="product-img">
+                                <img src="~/CSSWeb/bootstrap/css/default-50x50.gif" alt="Product Image" />
+                            </div>
+                            <div class="product-info">
+                                <a href="javascript::;" class="product-title">@item.FirstName @item.LastName <span class="label label-success pull-right"></span></a>
+                                <span class="product-description">
+                                    @item.UserName,@item.UserPhone
+                                </span>
+                            </div>
+                        </li>
+                    }
+                    @*<li class="item">
                         <div class="product-img">
                             <img src="~/CSSWeb/bootstrap/css/default-50x50.gif" alt="Product Image" />
                         </div>
@@ -157,8 +145,12 @@
                                 electrician
                             </span>
                         </div>
-                    </li><!-- /.item -->
+                    </li>*@<!-- /.item -->
                 </ul>
+                <div class="box-footer clearfix">
+                    @*<a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>*@
+                    <a href="/Admin/Others/RegisteredUsers" class="btn btn-sm btn-default btn-flat pull-right">View All Users</a>
+                </div>
             </div><!-- /.box-body -->
             @*<div class="box-footer text-center">
                 <a href="javascript::;" class="uppercase">View All Services</a>

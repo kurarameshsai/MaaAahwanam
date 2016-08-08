@@ -42,7 +42,8 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
                 if (response != null)
                 {
                     ValidUserUtility.SetAuthCookie(response.UserLoginId.ToString(),response.UserType);
-                    Response.Redirect("DashBoard/Dashboard");
+                    return RedirectToAction("dashboard", "dashboard", new { id = response.UserLoginId });
+                        //("DashBoard/Dashboard", null,new { id = response.UserLoginId });
                 }
                 else
                 {

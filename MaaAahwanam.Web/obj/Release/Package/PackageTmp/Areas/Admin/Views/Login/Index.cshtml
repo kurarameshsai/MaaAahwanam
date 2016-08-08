@@ -42,9 +42,8 @@
                         </p>
                         @Html.TextBoxFor(model => this.Model.Item1.UserName, new { @class = "form-control", placeholder = "Username", required = "required", @type = "email" })
 
-                        @Html.PasswordFor(model => this.Model.Item1.Password, new { @class = "form-control", placeholder = "Password", required = "required", @id = "PasswordValue_Login" })
-                        <button class="btn text-muted text-center btn-danger" name="Command" value="Authenticate" type="submit">Sign in</button>
-
+                        @Html.PasswordFor(model => this.Model.Item1.Password, new { @class = "form-control", placeholder = "Password", required = "required" }) //, @id = "PasswordValue_Login"
+                        <div align="center"><button class="btn text-muted text-center btn-danger" name="Command" value="Authenticate" type="submit">Sign in</button></div>
                     }
                 </div>
                 <div id="forgot" class="tab-pane">
@@ -69,7 +68,7 @@
                     }
                 </div>
             </div>
-            <div class="text-center">
+            <div class="text-center" style="display:none">
                 <ul class="list-inline">
                     <li><a class="btn btn-default" href="#login" data-toggle="tab" onclick="Clear();">Login</a></li>
                     <li><a class="btn btn-default" href="#forgot" data-toggle="tab" onclick="Clear();">Forgot Password</a></li>

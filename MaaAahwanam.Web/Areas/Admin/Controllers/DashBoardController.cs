@@ -11,13 +11,26 @@ using System.Web.Security;
 //using MaaAahwanam.Repository;
 using System.Text;
 using System.IO;
+using MaaAahwanam.Service;
 
 namespace MaaAahwanam.Web.Areas.Admin.Controllers
 {
     public class DashBoardController : Controller
     {
-        public ActionResult dashboard()
+        DashboardService dashboardService = new DashboardService();
+        OrderService orderService = new OrderService();
+        OthersService othersService = new OthersService();
+        public ActionResult dashboard(string id)
         {
+            ViewBag.vendorcount = dashboardService.VendorsCountService();
+            ViewBag.commentscount = dashboardService.CommentsCountService();
+            ViewBag.ticketcount = dashboardService.TicketsCountService();
+            ViewBag.orderscount = dashboardService.OrdersCountService();
+            ViewBag.orders = orderService.OrderList().OrderByDescending(m=>m.OrderDate).Take(10);
+            ViewBag.users = othersService.AllRegisteredUsersDetails().OrderByDescending(m=>m.RegDate).Take(4);
+            //UserDetail userdetail = dashboardService.AdminNameService(long.Parse(id));
+            //ViewBag.admin = userdetail.FirstName + " " + userdetail.LastName;
+            ViewBag.admin = "admin";
             return View();
         }
     }

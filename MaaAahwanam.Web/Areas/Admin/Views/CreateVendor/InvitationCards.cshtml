@@ -201,7 +201,7 @@
                                                     <label class="control-label col-lg-4">E-mail</label>
                                                     <div class=" col-lg-4">
                                                         @*<input type="text" id="email" name="name" placeholder="Email" class="form-control">*@
-                                                        @Html.TextBoxFor(model => this.Model.Item1.EmailId, new { @class = "form-control", placeholder = "Enter Email ID" })
+                                                        @Html.TextBoxFor(model => this.Model.Item1.EmailId, new { @class = "form-control", placeholder = "Enter Email ID", @onchange = "check()" })   <strong><span id="label" style="font-size:medium"></span></strong>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -271,10 +271,10 @@
                                                     <label for="tags" class="control-label col-lg-4">Multiple Uploads</label>
                                                     <div class="col-lg-4">
                                                         <input type='file' multiple="multiple" accept="image/*" id='fileUpload' name="file" /> 
-                                                        @if (@ViewBag.imagescount != null)
-                                                        { <p id="msg" style="color:green">You can Upload images upto @ViewBag.imagescount Only </p> }
+                                                        @if (@ViewBag.imagescount != 0)
+                                                        { <p id="msg" style="color:green;font-size:large"><strong>You can Upload images upto @ViewBag.imagescount Only </strong></p> }
                                                         @if (@ViewBag.imagescount == 0)
-                                                        { <p id="msg" style="color:red">You Have Reached Image Limit </p> }
+                                                        { <p id="msg" style="color:red;font-size:large"><strong>You Have Reached Image Limit </strong></p> }
                                                     </div>
                                                     <div id="imgbox"></div>
                                                     <br />
@@ -293,11 +293,12 @@
                                                                     @Html.ActionLink("X", "invitationcards", new { src = @item }, new { @class = "deletelink", style = "height : 150px ; width:50px; max-height:75px; border: 2px solid; margin: 10px 10px 0 0; padding: 1px;" })
 
                                                             }
+                                                            if (@ViewBag.images.Count == 0)
+                                                            {
+                                                                <img src="~/noimages.png" />
+                                                            }
                                                         }
-                                                        @if (ViewBag.images.Count == 0)
-                                                        {
-                                                            <img src="~/noimages.png" />
-                                                        }
+                                                        
                                                     </div>
 
                                                     <div id="editimage" style="min-height: 10px;min-width: 10px; "></div>
@@ -321,6 +322,8 @@
                                                     <button formaction="~/Admin/Vendors/AllVendors" type="submit" class="btn btn-success" id="btnback"> Back To List </button>
 
                                                 </div>
+                                                <div align="center"><label id="lblshow" style="color:red;display:none">You can save ur details only when you provide valid E-Mail ID</label></div>
+                                                
                                             </form>
                                         </div>
                                     </div>
@@ -332,6 +335,34 @@
             </div>
         </div>
     </div>
+<script>
+    function check() {
+        var emailId = $("#Item1_EmailId").val();
+        var label = $("#label");
+        $.ajax({
+            url: window.location.href.split("/")[0] + '//' + window.location.href.split("/")[2] + '/' + window.location.href.split("/")[3] + '/CreateVendor/checkemail',
+                type: 'POST',
+                data: JSON.stringify({ emailid: emailId }),
+                dataType: 'json',
+                contentType: 'application/json',
+                success: function (data) {
+                    if (data == "exists") {
+                        $("#Item1_EmailId").focus();
+                        $("#btn").prop("disabled", true);
+                        $("#lblshow").show();
+                        label.html("E-Mail ID Already Taken!!! Try Another");
+                    }
+                    else {
+                        $("#btn").prop("disabled", false);
+                        $("#lblshow").hide();
+                        label.html("Valid");
+                    }
+                },
+                error :function(data)
+            { alert("Failed!!!");}
+            });
+        }
+</script>
                 @section Bottom{
                     <script src="~/Assets/plugins/jquery-2.0.3.min.js"></script>
                     <script src="~/Assets/plugins/bootstrap/js/bootstrap.min.js"></script>

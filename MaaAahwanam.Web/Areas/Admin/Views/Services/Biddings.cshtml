@@ -14,7 +14,7 @@
 <div id="content">
     <div class="inner">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12" align="center">
                 <h2> Biddings</h2>
             </div>
         </div>
@@ -23,9 +23,9 @@
             <div class="row">
             <div class="col-lg-12">
                 <h4>Bid RequestId: @ViewBag.bidid</h4>
-                <div class="panel panel-default">
+                <div class="panel panel-default" >
 
-                    <div class="panel-heading">
+                    <div class="panel-heading" style="display:none">
                         <button type="button" data-toggle="tooltip" data-placement="top" title="Export to PDF" class="btn btn-default btn-circle">
                             <i class="icon-check"></i>
                         </button>
@@ -59,7 +59,7 @@
                                         <td>@item.VendorType</td>
                                         <td>@item.Description</td>
                                         <td>@item.Amount</td>
-                                        <td>@item.UpdatedDate</td>
+                                        <td>@item.UpdatedDate.ToShortDateString()</td>
                                     </tr>
 }
                                     @*<tr class="even gradeX">

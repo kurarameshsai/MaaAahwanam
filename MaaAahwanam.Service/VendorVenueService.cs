@@ -41,5 +41,14 @@ namespace MaaAahwanam.Service
             vendorVenue = vendorVenueRepository.UpdateVenue(vendorVenue,masterid);
             return vendorVenue;
         }
+
+        public VendorVenue AddNewVenue(VendorVenue vendorVenue, Vendormaster vendorMaster)
+        {
+            vendorVenue.Status = "Active";
+            vendorVenue.UpdatedDate = DateTime.Now;
+            vendorVenue.VendorMasterId = vendorMaster.Id;
+            vendorVenue = vendorVenueRepository.AddVenue(vendorVenue);
+            return vendorVenue;
+        }
     }
 }
