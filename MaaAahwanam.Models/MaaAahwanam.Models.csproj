@@ -82,6 +82,7 @@
     <Compile Include="EventDate.cs" />
     <Compile Include="EventInformation.cs" />
     <Compile Include="EventsandTip.cs" />
+    <Compile Include="GetCartItems_ResultModel.cs" />
     <Compile Include="GetProducts_Results.cs" />
     <Compile Include="GetTestimonials.cs" />
     <Compile Include="IssueDetail.cs" />
