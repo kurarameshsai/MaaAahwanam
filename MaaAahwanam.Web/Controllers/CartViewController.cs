@@ -20,7 +20,9 @@ namespace MaaAahwanam.Web.Controllers
             {
                 int vid = ValidUserUtility.ValidUser();
                 List<GetCartItems_Result> cartlist = cartService.CartItemsList(vid);
+                decimal total = cartlist.Sum(s => s.TotalPrice);
                 ViewBag.Cartlist = cartlist;
+                ViewBag.Total = total;
                 return View();
             }
             return RedirectToAction("index", "Signin");

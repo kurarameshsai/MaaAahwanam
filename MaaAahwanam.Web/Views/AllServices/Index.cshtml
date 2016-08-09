@@ -1,0 +1,254 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/SharedWeb/MainMaster.cshtml";
+}
+@section Navigation
+{
+    <div class="breads">
+        <div class="breads_inner">
+            <div class="pageWidth">
+                <div class="title">
+                    <h3>All Services</h3>
+                </div>
+                <div class="breadcrumbs">
+                    <ul>
+                        <li><a href="../Index/Index">Home</a></li>
+                        <li><i class="breads_arrow"></i></li>
+                        <li><a href="">AllServices</a></li>
+                        @*<li><i class="breads_arrow"></i></li>
+                            <li>Deals</li>*@
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<section>
+    <div class="about_main">
+        <div class="pageWidth">
+            <aside>
+                <h4>Categories</h4>
+                <span>&nbsp;</span>
+                <ul>
+                    <li><a href="../product?par=Venue"> Venue</a></li>
+                    <li><a href="../product?par=Catering"> Catering</a></li>
+                    <li><a href="../product?par=Photography"> Photography</a></li>
+                    <li><a href="../product?par=InvitationCard"> InvitationCard</a></li>
+                    <li><a href="../product?par=Decorator"> Decorator</a></li>
+                    <li><a href="../product?par=Entertainment"> Entertainment</a></li>
+                    <li><a href="../product?par=Eventorganiser"> Eventorganiser</a></li>
+                    <li><a href="../product?par=BeautyService"> Beauty Service</a></li>
+                    <li><a href="../product?par=Travel"> Travel</a></li>
+                    <li><a href="../product?par=Gift"> Gift</a></li>
+                    <li><a href="../product?par=WeddingCollection"> WeddingCollection</a></li>
+                    <li><a href="../product?par=Other"> Other</a></li>
+                </ul>
+            </aside>
+            <article>
+                <div class="about_categories">
+                    <select>
+                        <option>Venues</option>
+                        <option>Caterers</option>
+                        <option>Decorators</option>
+                        <option>Photographers</option>
+                        <option>Invitation Cards</option>
+                        <option>Entertainment</option>
+                        <option>Event Organizers</option>
+                        <option>Beauty Services</option>
+                        <option>Wedding Collection</option>
+                        <option>Travel & Accomodation</option>
+                        <option>Wedding Favors</option>
+                        <option>Others</option>
+                    </select>
+                </div>
+
+                <div id="parentHorizontalTab">
+                    <ul class="resp-tabs-list hor_1">
+                        <li>Venues</li>
+                    </ul>
+                    <div class="deals_all">
+                        <a href="../product?par=Venue">View All</a>
+                    </div>
+
+                    <!-- Venues -->
+                    <div class="resp-tabs-container hor_1">
+                        <div>
+                            @foreach (var item in ViewBag.Venue)
+                            {
+                            <div class="deals-main">
+                                <div class="deal newDeal">
+                                    <div class="deal-thumb">
+                                        <a href="../ProductInfo?par=@item.ServicType.Trim()&VID=@item.Id">
+                                            <div class="zoomDiv">
+                                                <img src="../vendorimages/@item.image" alt="thumb">
+                                                <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span>  </div>
+                                            </div>
+                                        </a>
+                                        <div class="amount"> <span style="background: rgba(0,0,0,0.8);float: left;color: #fff;padding: 4px 10px;font-size: 13px;" class="price">Rs. @item.Cost</span> 
+                                        <span style="background: rgba(0,0,0,0.8);color: #fff;padding: 4px 10px;font-size: 13px;" class="buy"><a href="../ProductInfo?par=@item.ServicType.Trim()&VID=@item.Id"><i class="ti-shopping-cart"></i> Book Now</a></span> </div>
+                                    </div>
+                                    <div class="deal-details">
+                                        <h2><a href="deal-info.html">@item.BusinessName</a></h2>
+                                        <p>@item.Description</p>
+                                        <div class="deal-footer">
+                                            <ul>
+                                                <li><div class="rate" data-rate-value=4></div></li>
+                                                <li><i class="ti-comment-alt"></i> 1362</li>
+                                                <li><i class="ti-eye"></i> 1500</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div id="parentHorizontalTab2">
+                    <ul class="resp-tabs-list hor_1">
+                        <li>Caterers</li>
+                    </ul>
+                    <div class="deals_all">
+                        <a href="../product?par=Catering">View All</a>
+                    </div>
+
+                    <div class="resp-tabs-container hor_1">
+                        <!-- Caterers -->
+                        <div>
+                            @foreach (var itemCaterers in ViewBag.Catering)
+                            {
+                                <div class="deals-main">
+                                    <div class="deal newDeal">
+                                        <div class="deal-thumb">
+                                            <a href="../ProductInfo?par=@itemCaterers.ServicType.Trim()&VID=@itemCaterers.Id">
+                                                <div class="zoomDiv">
+                                                    <img src="../vendorimages/@itemCaterers.image" alt="thumb">
+                                                    <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span>  </div>
+                                                </div>
+                                            </a>
+                                            <div class="amount"> <span style="background: rgba(0,0,0,0.8);float: left;color: #fff;padding: 4px 10px;font-size: 13px;" class="price">Rs. @itemCaterers.Cost</span>
+                                            <span style="background: rgba(0,0,0,0.8);color: #fff;padding: 4px 10px;font-size: 13px;" class="buy"><a href="../ProductInfo?par=@itemCaterers.ServicType.Trim()&VID=@itemCaterers.Id"><i class="ti-shopping-cart"></i> Book Now</a></span> </div>
+                                        </div>
+                                        <div class="deal-details">
+                                            <h2><a href="deal-info.html">@itemCaterers.BusinessName</a></h2>
+                                            <p>@itemCaterers.Description</p>
+                                            <div class="deal-footer">
+                                                <ul>
+                                                    <li><div class="rate" data-rate-value=4></div></li>
+                                                    <li><i class="ti-comment-alt"></i> 1362</li>
+                                                    <li><i class="ti-eye"></i> 1500</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div id="parentHorizontalTab3">
+                    <ul class="resp-tabs-list hor_1">
+                        <li>Decorators</li>
+                    </ul>
+                    <div class="deals_all">
+                        <a href="../product?par=Decorator">View All</a>
+                    </div>
+
+                    <div class="resp-tabs-container hor_1">
+                        <!--Decorators-->
+                        <div>
+                            @foreach (var itemDecorator in ViewBag.Decorator)
+                            {
+                                <div class="deals-main">
+                                    <div class="deal newDeal">
+                                        <div class="deal-thumb">
+                                            <a href="../ProductInfo?par=@itemDecorator.ServicType.Trim()&VID=@itemDecorator.Id">
+                                                <div class="zoomDiv">
+                                                    <img src="../vendorimages/@itemDecorator.image" alt="thumb">
+                                                    <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span>  </div>
+                                                </div>
+                                            </a>
+                                            <div class="amount"> <span style="background: rgba(0,0,0,0.8);float: left;color: #fff;padding: 4px 10px;font-size: 13px;" class="price">Rs. @itemDecorator.Cost</span>
+                                            <span style="background: rgba(0,0,0,0.8);color: #fff;padding: 4px 10px;font-size: 13px;" class="buy"><a href="../ProductInfo?par=@itemDecorator.ServicType.Trim()&VID=@itemDecorator.Id"><i class="ti-shopping-cart"></i> Book Now</a></span> </div>
+                                        </div>
+                                        <div class="deal-details">
+                                            <h2><a href="deal-info.html">@itemDecorator.BusinessName</a></h2>
+                                            <p>@itemDecorator.Description</p>
+                                            <div class="deal-footer">
+                                                <ul>
+                                                    <li><div class="rate" data-rate-value=4></div></li>
+                                                    <li><i class="ti-comment-alt"></i> 1362</li>
+                                                    <li><i class="ti-eye"></i> 1500</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                </div>
+                <div id="parentHorizontalTab4">
+                    <ul class="resp-tabs-list hor_1">
+                        <li>Photographers</li>
+                    </ul>
+                    <div class="deals_all">
+                        <a href="../product?par=Photography">View All</a>
+                    </div>
+
+                    <div class="resp-tabs-container hor_1">
+                        <!--Photographers-->
+                        <div>
+                            @foreach (var itemPhotographers in ViewBag.Photography)
+                            {
+                                <div class="deals-main">
+                                    <div class="deal newDeal">
+                                        <div class="deal-thumb">
+                                            <a href="../ProductInfo?par=@itemPhotographers.ServicType.Trim()&VID=@itemPhotographers.Id">
+                                                <div class="zoomDiv">
+                                                    <img src="../vendorimages/@itemPhotographers.image" alt="thumb">
+                                                    <div class="deal-mask"> <span class="pic_img"><i class="ti-image"></i></span>  </div>
+                                                </div>
+                                            </a>
+                                            <div class="amount">
+                                                <span style="background: rgba(0,0,0,0.8);float: left;color: #fff;padding: 4px 10px;font-size: 13px;" class="price">Rs. @itemPhotographers.Cost</span>
+                                            <span style="background: rgba(0,0,0,0.8);color: #fff;padding: 4px 10px;font-size: 13px;" class="buy"><a href="../ProductInfo?par=@itemPhotographers.ServicType.Trim()&VID=@itemPhotographers.Id"><i class="ti-shopping-cart"></i> Book Now</a></span>
+                                        </div>
+                                        </div>
+                                        <div class="deal-details">
+                                            <h2><a href="deal-info.html">@itemPhotographers.BusinessName</a></h2>
+                                            <p>@itemPhotographers.Description</p>
+                                            <div class="deal-footer">
+                                                <ul>
+                                                    <li><div class="rate" data-rate-value=4></div></li>
+                                                    <li><i class="ti-comment-alt"></i> 1362</li>
+                                                    <li><i class="ti-eye"></i> 1500</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            <!--<div class="loadMore">
+                                <button name="loadmore" class="btn btn-green more-button"><i class="ti-reload"></i> Load More</button>
+                            </div>-->
+                            <div class="clear"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+            </article>
+        </div>
+
+    </div>
+</section>
+
+
+<div class="clear"></div>
