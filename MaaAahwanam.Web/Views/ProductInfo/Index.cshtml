@@ -355,7 +355,8 @@
 
                             <input type="hidden" id="stype" name="Minvalue" value=@ViewBag.servicetype>
                             <div class="deal_buttons">
-                                <a href="~/Product/Index" class="btn btn-big btn-orange">Add To Cart </a> <a href="~/CartView/Index" class="btn btn-big btn-green" id="lnkproceedtonext">Buy Now </a>
+                                <a href="~/Product/Index" class="btn btn-big btn-orange" id="lnkaddtocart">Add To Cart </a>
+                                <a href="~/CartView/Index" class="btn btn-big btn-green" id="lnkproceedtonext">Buy Now </a>
                             </div>
                     </div>
                     <div class="clear"></div>
@@ -695,7 +696,42 @@
             });
             return false;
         });
-
+        
+        $('#lnkaddtocart').on('click', function (e) {
+            //var minvalue1 = document.getElementById("hmin").value;
+            //var maxvalue1 = document.getElementById("hmax").value;
+            //if (document.getElementById("txtquantity").value < minvalue1) {
+            //    alert('Enter minimum Quantity');
+            //}
+            //if (document.getElementById("txtquantity").value > maxvalue1) {
+            //    alert('Required exeeded maximum Quantity');
+            //}
+            var a = document.getElementById("Service").value;
+            var b = document.getElementById("Review").value;
+            var c = document.getElementById("demovenue").innerHTML;
+            //alert(c);
+            var obj = {};
+            obj.VID = b;
+            obj.servicetype = a;
+            obj.amount = c;
+            $.ajax({
+                type: "POST",
+                url: window.location.href.split("/")[0] + '//' + window.location.href.split("/")[2] + '/ProductInfo/Addtocart',
+                data: {},
+                data: JSON.stringify(obj),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    //window.location.href = '/ProductInfo/' + id;
+                    location.reload();
+                    //alert('Added to cart')
+                },
+                error: function (data) {
+                    alert('error')
+                }
+            });
+            return false;
+        });
     </script>
     <style type="text/css">
         fieldset {
