@@ -850,3 +850,4 @@ E:\Project\Maa-Aahwanam\MaaAahwanam.Web\bin\Microsoft.Owin.Security.MicrosoftAcc
 E:\Project\Maa-Aahwanam\MaaAahwanam.Web\bin\EntityFramework.MappingAPI.pdb
 E:\Project\Maa-Aahwanam\MaaAahwanam.Web\obj\Debug\MaaAahwanam.Web.dll
 E:\Project\Maa-Aahwanam\MaaAahwanam.Web\obj\Debug\MaaAahwanam.Web.pdb
+E:\Project\Maa-Aahwanam\MaaAahwanam.Web\bin\MaaAahwanam.Service.pdb
