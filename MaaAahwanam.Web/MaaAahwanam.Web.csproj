@@ -183,6 +183,7 @@
     <Compile Include="Areas\Admin\Controllers\VendorsController.cs" />
     <Compile Include="Controllers\AboutusController.cs" />
     <Compile Include="Controllers\AddressBookController.cs" />
+    <Compile Include="Controllers\AllServicesController.cs" />
     <Compile Include="Controllers\AvailableDatesController.cs" />
     <Compile Include="Controllers\BeautyTipsController.cs" />
     <Compile Include="Controllers\BiddingConformationController.cs" />
@@ -2381,6 +2382,7 @@
     <Content Include="Views\VendorBiddingResponse\Index.cshtml" />
     <Content Include="Views\VendorsDatesbooked\Index.cshtml" />
     <Content Include="Views\AvailableDates\Index.cshtml" />
+    <Content Include="Views\AllServices\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
