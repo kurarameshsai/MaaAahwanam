@@ -30,7 +30,6 @@ namespace MaaAahwanam.Web.Controllers
             ViewBag.Beautician = Productlist_BeautyService;
             ViewBag.Decorators = Productlist_Decorator;
             ViewBag.ToursandTravels = Productlist_Travel;
-
             return View();
         }
 
