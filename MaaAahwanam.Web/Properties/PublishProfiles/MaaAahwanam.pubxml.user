@@ -55,7 +55,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/04/2016 11:49:31</publishTime>
     </File>
     <File Include="Areas/Admin/Views/CreateVendor/Venue.cshtml">
-      <publishTime>08/08/2016 18:04:42</publishTime>
+      <publishTime>08/09/2016 18:22:35</publishTime>
     </File>
     <File Include="Areas/Admin/Views/CreateVendor/WeddingCollection.cshtml">
       <publishTime>08/04/2016 11:51:13</publishTime>
@@ -250,7 +250,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Shared/MainMaster.cshtml">
-      <publishTime>08/05/2016 14:29:22</publishTime>
+      <publishTime>08/09/2016 16:49:51</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Shared/Master.cshtml">
       <publishTime>07/01/2016 12:29:20</publishTime>
@@ -505,7 +505,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/15/2016 17:54:46</publishTime>
     </File>
     <File Include="Assets/js/image_gallery.js">
-      <publishTime>07/15/2016 17:54:46</publishTime>
+      <publishTime>08/09/2016 15:42:21</publishTime>
     </File>
     <File Include="Assets/js/jquery-ui.min.js">
       <publishTime>07/01/2016 12:29:20</publishTime>
@@ -7078,7 +7078,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2016 18:21:01</publishTime>
     </File>
     <File Include="bin/MaaAahwanam.Web.dll">
-      <publishTime>08/08/2016 18:21:09</publishTime>
+      <publishTime>08/09/2016 18:29:55</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>07/01/2016 12:29:48</publishTime>
@@ -8311,13 +8311,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/15/2016 17:54:49</publishTime>
     </File>
     <File Include="vendorimages/Catering_13_1.jpg">
-      <publishTime>07/11/2016 11:50:42</publishTime>
+      <publishTime>08/09/2016 18:24:45</publishTime>
     </File>
     <File Include="vendorimages/Catering_13_2.jpg">
-      <publishTime>07/11/2016 11:50:42</publishTime>
+      <publishTime>08/09/2016 18:24:46</publishTime>
     </File>
     <File Include="vendorimages/Catering_13_3.jpg">
-      <publishTime>07/11/2016 11:50:42</publishTime>
+      <publishTime>08/09/2016 18:24:46</publishTime>
     </File>
     <File Include="vendorimages/Catering_13_4.jpg">
       <publishTime>07/11/2016 11:50:42</publishTime>
@@ -8344,13 +8344,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/15/2016 17:54:49</publishTime>
     </File>
     <File Include="vendorimages/Decorator_12_1.jpg">
-      <publishTime>07/11/2016 11:48:51</publishTime>
+      <publishTime>08/09/2016 18:24:46</publishTime>
     </File>
     <File Include="vendorimages/Decorator_12_2.jpg">
-      <publishTime>07/11/2016 11:48:51</publishTime>
+      <publishTime>08/09/2016 18:24:46</publishTime>
     </File>
     <File Include="vendorimages/Decorator_12_3.jpg">
-      <publishTime>07/11/2016 11:48:51</publishTime>
+      <publishTime>08/09/2016 18:24:46</publishTime>
     </File>
     <File Include="vendorimages/Decorator_12_4.jpg">
       <publishTime>07/11/2016 11:48:51</publishTime>
@@ -8686,7 +8686,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/01/2016 12:29:45</publishTime>
     </File>
     <File Include="Views/AllServices/Index.cshtml">
-      <publishTime>11/02/2016 15:24:10</publishTime>
+      <publishTime>08/09/2016 18:24:47</publishTime>
     </File>
     <File Include="Views/AvailableDates/Index.cshtml">
       <publishTime>08/01/2016 18:32:34</publishTime>
@@ -8734,7 +8734,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/05/2016 10:45:33</publishTime>
     </File>
     <File Include="Views/CartView/Index.cshtml">
-      <publishTime>08/08/2016 18:12:11</publishTime>
+      <publishTime>08/09/2016 18:24:47</publishTime>
     </File>
     <File Include="Views/ChangePassword/Index.cshtml">
       <publishTime>07/01/2016 12:29:45</publishTime>
@@ -8791,7 +8791,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Index/Index.cshtml">
-      <publishTime>07/28/2016 18:24:19</publishTime>
+      <publishTime>08/09/2016 18:24:47</publishTime>
     </File>
     <File Include="Views/Index/ItemsCartViewBindingLayout.cshtml">
       <publishTime>07/01/2016 12:29:45</publishTime>
@@ -8878,7 +8878,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/28/2016 18:24:19</publishTime>
     </File>
     <File Include="Views/ProductInfo/Index.cshtml">
-      <publishTime>08/08/2016 18:12:11</publishTime>
+      <publishTime>08/09/2016 18:24:47</publishTime>
     </File>
     <File Include="Views/Quatation/Index.cshtml">
       <publishTime>07/01/2016 12:29:45</publishTime>
@@ -8932,7 +8932,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/01/2016 12:29:45</publishTime>
     </File>
     <File Include="Views/SharedWeb/MainMaster.cshtml">
-      <publishTime>07/20/2016 18:37:56</publishTime>
+      <publishTime>08/09/2016 18:24:47</publishTime>
     </File>
     <File Include="Views/SharedWeb/ServicesMaster.cshtml">
       <publishTime>07/01/2016 12:29:45</publishTime>

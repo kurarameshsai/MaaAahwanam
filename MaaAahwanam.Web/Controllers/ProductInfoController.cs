@@ -17,22 +17,19 @@ namespace MaaAahwanam.Web.Controllers
         // GET: /CardInfo/
         public ActionResult Index()
         {
-            if (ValidUserUtility.ValidUser() != 0 && (ValidUserUtility.UserType() == "User" || ValidUserUtility.UserType() == "Vendor"))
-            {
-                ProductInfoService productInfoService = new ProductInfoService();
-                Review review = new Review();
-                string Servicetype = Request.QueryString["par"];
-                int vid = Convert.ToInt32(Request.QueryString["VID"]);
-                GetProductsInfo_Result Productinfo = productInfoService.getProductsInfo_Result(vid, Servicetype);
-                string[] imagenameslist = Productinfo.image.Replace(" ", "").Split(',');
-                ViewBag.Imagelist = imagenameslist;
-                ViewBag.servicetype = Servicetype;
-                ViewBag.Reviewlist = reviewService.GetReview(vid);
 
-                var tupleModel = new Tuple<GetProductsInfo_Result, Review>(Productinfo, review);
-                return View(tupleModel);
-            }
-            return RedirectToAction("index", "Signin");
+            ProductInfoService productInfoService = new ProductInfoService();
+            Review review = new Review();
+            string Servicetype = Request.QueryString["par"];
+            int vid = Convert.ToInt32(Request.QueryString["VID"]);
+            GetProductsInfo_Result Productinfo = productInfoService.getProductsInfo_Result(vid, Servicetype);
+            string[] imagenameslist = Productinfo.image.Replace(" ", "").Split(',');
+            ViewBag.Imagelist = imagenameslist;
+            ViewBag.servicetype = Servicetype;
+            ViewBag.Reviewlist = reviewService.GetReview(vid);
+
+            var tupleModel = new Tuple<GetProductsInfo_Result, Review>(Productinfo, review);
+            return View(tupleModel);
         }
         public ActionResult WriteaRiview([Bind(Prefix = "Item2")] Review review)
         {
@@ -50,15 +47,19 @@ namespace MaaAahwanam.Web.Controllers
 
         public JsonResult Addtocart(string VID, string servicetype, string amount)
         {
-            CartItem cartItem = new CartItem();
-            cartItem.VendorId = Int32.Parse(VID);
-            cartItem.ServiceType = servicetype;
-            cartItem.TotalPrice = decimal.Parse(amount);
-            cartItem.Orderedby = ValidUserUtility.ValidUser();
-            cartItem.UpdatedDate = DateTime.Now;
-            CartService cartService = new CartService();
-            string mesaage = cartService.AddCartItem(cartItem);
-            return Json(mesaage);
+            if (ValidUserUtility.ValidUser() != 0 && (ValidUserUtility.UserType() == "User" || ValidUserUtility.UserType() == "Vendor"))
+            {
+                CartItem cartItem = new CartItem();
+                cartItem.VendorId = Int32.Parse(VID);
+                cartItem.ServiceType = servicetype;
+                cartItem.TotalPrice = decimal.Parse(amount);
+                cartItem.Orderedby = ValidUserUtility.ValidUser();
+                cartItem.UpdatedDate = DateTime.Now;
+                CartService cartService = new CartService();
+                string mesaage = cartService.AddCartItem(cartItem);
+                return Json(mesaage);
+            }
+            return Json("NotLogin");
         }
     }
 }

@@ -7,33 +7,13 @@ using MaaAahwanam.Models;
 
 namespace MaaAahwanam.Repository.db
 {
-    public class DashboardRepository
+    public class DashBoardRepository
     {
         readonly ApiContext _dbContext = new ApiContext();
 
-        public int VendorsCount()
+        public List<Order> GetOrders()
         {
-            return _dbContext.Vendormaster.ToList().Count();
-        }
-
-        public int CommentsCount()
-        {
-            return _dbContext.Comment.ToList().Count();
-        }
-
-        public int TicketsCount()
-        {
-            return _dbContext.IssueTicket.ToList().Count();
-        }
-
-        public int OrdersCount()
-        {
-            return _dbContext.Order.ToList().Count();
-        }
-
-        public UserDetail AdminName(long id)
-        {
-            return _dbContext.UserDetail.Where(m => m.UserLoginId == id).FirstOrDefault();
+          return  _dbContext.Order.ToList();
         }
     }
 }

@@ -4,7 +4,7 @@
     */
 
     $("a#example1").fancybox();
-
+    
     $("a#example2").fancybox({
         'overlayShow': false,
         'transitionIn': 'elastic',
