@@ -235,6 +235,5 @@ F:\Maa-Aahwanam\MaaAahwanam.Models\bin\Debug\System.Web.Razor.xml
 F:\Maa-Aahwanam\MaaAahwanam.Models\bin\Debug\System.Web.WebPages.xml
 F:\Maa-Aahwanam\MaaAahwanam.Models\bin\Debug\System.Web.WebPages.Deployment.xml
 F:\Maa-Aahwanam\MaaAahwanam.Models\bin\Debug\System.Web.WebPages.Razor.xml
-F:\Maa-Aahwanam\MaaAahwanam.Models\obj\Debug\MaaAahwanam.Models.csprojResolveAssemblyReference.cache
 F:\Maa-Aahwanam\MaaAahwanam.Models\obj\Debug\MaaAahwanam.Models.dll
 F:\Maa-Aahwanam\MaaAahwanam.Models\obj\Debug\MaaAahwanam.Models.pdb
