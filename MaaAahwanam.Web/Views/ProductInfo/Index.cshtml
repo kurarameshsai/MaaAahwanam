@@ -102,7 +102,7 @@
                                     &nbsp;53
                                 </li>
                                 <li><a href="#review" class="move_review text-green"><i class="ti-comment-alt text-green"></i> Reviews @ViewBag.Reviewlist.Count</a></li>
-                                <li class="text-red"> <a href="#writeReview" class=" text-red popup-with-move-anim"><i class="ti-pencil-alt text-red"></i> Write a Review</a></li>
+                                <li class="text-red"> <a href="#writeReview" class="text-red popup-with-move-anim"><i class="ti-pencil-alt text-red"></i> Write a Review</a></li>
                             </ul>
 
 
@@ -155,209 +155,211 @@
                             <!-- end popup -->
 
                         </div>
-                            <div class="product_review">
-                                <h4>Location</h4>
-                                <p>@Model.Item1.Landmark,@Model.Item1.Address,@Model.Item1.City,@Model.Item1.State</p>
-                            </div>
-                            <div class="product_review">
-                                <h4>Description</h4>
-                                <p class="comment">@Model.Item1.Description</p>
-                            </div>
+                        <div class="product_review">
+                            <h4>Location</h4>
+                            <p>@Model.Item1.Landmark,@Model.Item1.Address,@Model.Item1.City,@Model.Item1.State</p>
+                        </div>
+                        <div class="product_review">
+                            <h4>Description</h4>
+                            <p class="comment">@Model.Item1.Description</p>
+                        </div>
 
-                            @*Calculation other Div*@
-                            <div class="deal_price" id="Calcdiv_Other" style="display:none">
-                                <div class="price_details">
-                                    <dl>
-                                        <dt>Deal Price: </dt>
-                                        <dd>
-                                            <p id="demoother" style="color:#8ca436;font-size:20px">@*Rs. @Model.cost*@</p>
-                                        </dd>
-                                        <dt>Selling Price: </dt>
-                                        <dd>
-                                            <h2>Rs. 1,800</h2>
-                                        </dd>
-                                        <dt>Total Price: </dt>
-                                        <dd>
-                                            <h2>Rs. 2,200</h2>
-                                        </dd>
-                                    </dl>
-                                    <form name="myFormother">
-                                        <label>Number of items<span>*</span></label>
-                                        <input type="hidden" id="hmin" name="Minvalue" value="10">
-                                        <input type="hidden" id="hmax" name="Maxvalue" value="50">
-                                        <input type="text" id="txtquantityother" value="10" placeholder="Enter Quantity" onchange="Onchangequantityother()" /><br>
-                                        <input type="radio" id="vlother" name="platetypeother" value="500" checked> item cost 500/-<br>
-                                    </form>
-                                </div>
-                                <div class="deal_save">
-                                    <p>You Save: <span class="text-red">Rs. 1,800</span></p>
-                                    <h3>30% OFF</h3>
-                                </div>
+                        @*Calculation other Div*@
+                        <div class="deal_price" id="Calcdiv_Other" style="display:none">
+                            <div class="price_details">
+                                <dl>
+                                    <dt>Deal Price: </dt>
+                                    <dd>
+                                        <p id="demoother" style="color:#8ca436;font-size:20px">@*Rs. @Model.cost*@</p>
+                                    </dd>
+                                    <dt>Selling Price: </dt>
+                                    <dd>
+                                        <h2>Rs. 1,800</h2>
+                                    </dd>
+                                    <dt>Total Price: </dt>
+                                    <dd>
+                                        <h2>Rs. 2,200</h2>
+                                    </dd>
+                                </dl>
+                                <form name="myFormother">
+                                    <label>Number of items<span>*</span></label>
+                                    <input type="hidden" id="hmin" name="Minvalue" value="10">
+                                    <input type="hidden" id="hmax" name="Maxvalue" value="50">
+                                    <input type="text" id="txtquantityother" value="10" placeholder="Enter Quantity" onchange="Onchangequantityother()" /><br>
+                                    <input type="radio" id="vlother" name="platetypeother" value="500" checked> item cost 500/-<br>
+                                </form>
                             </div>
+                            <div class="deal_save">
+                                <p>You Save: <span class="text-red">Rs. 1,800</span></p>
+                                <h3>30% OFF</h3>
+                            </div>
+                        </div>
 
-                            @*Calculation venue Div*@
-                            <div class="deal_price" id="Calcdiv_venue" style="display:none">
-                                <div class="price_details">
-                                    <dl>
-                                        <dt>Deal Price: </dt>
-                                        <dd>
-                                            <p id="demovenue" style="color:#8ca436;font-size:20px"></p>
-                                        </dd>
-                                        <dt>Selling Price: </dt>
-                                        <dd>
-                                            <h2>Rs. 1,800</h2>
-                                        </dd>
-                                        <dt>Total Price: </dt>
-                                        <dd>
-                                            <h2>Rs. 2,200</h2>
-                                        </dd>
-                                    </dl>
-                                    <form name="myFormvenue">
-                                        <label>Quantity<span>*</span></label>
-                                        <input type="text" style="height:32px;" id="txtquantityvenue" value="10" onchange="Onchangequantityvenue()" /><br><br>
-                                        <fieldset>
-                                            <input style="width: 19px;height: 25px;padding: 0 5px 0 0;background: url(checkbox.png) no-repeat;display: block;clear: left;float: left;" type="radio" id="vlvenue" name="platetypevenue" value=@Model.Item1.cost checked><br>
-                                            <label for="vlvenue" style="">Veg lunch Per plate cost @Model.Item1.cost/-</label>
-                                            <input style="width: 19px;height: 25px;padding: 0 5px 0 0;background: url(checkbox.png) no-repeat;display: block;clear: left;float: left;" type="radio" id="nvlvenue" name="platetypevenue" value=@Model.Item1.cost1> <br>
-                                            <label for="nvlvenue">Non veg lunch Per plate cost @Model.Item1.cost1/-</label>
-                                            <input style="width: 19px;height: 25px;padding: 0 5px 0 0;background: url(checkbox.png) no-repeat;display: block;clear: left;float: left;" type="radio" id="vdvenue" name="platetypevenue" value=@Model.Item1.cost2> <br>
-                                            <label for="vdvenue">Veg DinnerVeg Per plate cost @Model.Item1.cost2/-</label>
-                                            <input style="width: 19px;height: 25px;padding: 0 5px 0 0;background: url(checkbox.png) no-repeat;display: block;clear: left;float: left;" type="radio" id="nvdvenue" name="platetypevenue" value=@Model.Item1.cost3>
-                                            <label for="nvdvenue">Non Veg Dinner Per plate cost @Model.Item1.cost3/-</label>
-                                        </fieldset>
-                                    </form>
-                                </div>
-                                <div class="deal_save">
-                                    <p>You Save: <span class="text-red">Rs. 1,800</span></p>
-                                    <h3>30% OFF</h3>
-                                </div>
+                        @*Calculation venue Div*@
+                        <div class="deal_price" id="Calcdiv_venue" style="display:none">
+                            <div class="price_details">
+                                <dl>
+                                    <dt>Deal Price: </dt>
+                                    <dd>
+                                        <p id="demovenue" style="color:#8ca436;font-size:20px"></p>
+                                    </dd>
+                                    <dt>Selling Price: </dt>
+                                    <dd>
+                                        <h2>Rs. 1,800</h2>
+                                    </dd>
+                                    <dt>Total Price: </dt>
+                                    <dd>
+                                        <h2>Rs. 2,200</h2>
+                                    </dd>
+                                </dl>
+                                <form name="myFormvenue">
+                                    <label>Quantity<span>*</span></label>
+                                    <input type="text" style="height:32px;" id="txtquantityvenue" value="10" onchange="Onchangequantityvenue()" /><br><br>
+                                    <fieldset>
+                                        <input style="width: 19px;height: 25px;padding: 0 5px 0 0;background: url(checkbox.png) no-repeat;display: block;clear: left;float: left;" type="radio" id="vlvenue" name="platetypevenue" value=@Model.Item1.cost checked><br>
+                                        <label for="vlvenue" style="">Veg lunch Per plate cost @Model.Item1.cost/-</label>
+                                        <input style="width: 19px;height: 25px;padding: 0 5px 0 0;background: url(checkbox.png) no-repeat;display: block;clear: left;float: left;" type="radio" id="nvlvenue" name="platetypevenue" value=@Model.Item1.cost1> <br>
+                                        <label for="nvlvenue">Non veg lunch Per plate cost @Model.Item1.cost1/-</label>
+                                        <input style="width: 19px;height: 25px;padding: 0 5px 0 0;background: url(checkbox.png) no-repeat;display: block;clear: left;float: left;" type="radio" id="vdvenue" name="platetypevenue" value=@Model.Item1.cost2> <br>
+                                        <label for="vdvenue">Veg DinnerVeg Per plate cost @Model.Item1.cost2/-</label>
+                                        <input style="width: 19px;height: 25px;padding: 0 5px 0 0;background: url(checkbox.png) no-repeat;display: block;clear: left;float: left;" type="radio" id="nvdvenue" name="platetypevenue" value=@Model.Item1.cost3>
+                                        <label for="nvdvenue">Non Veg Dinner Per plate cost @Model.Item1.cost3/-</label>
+                                    </fieldset>
+                                </form>
                             </div>
+                            <div class="deal_save">
+                                <p>You Save: <span class="text-red">Rs. 1,800</span></p>
+                                <h3>30% OFF</h3>
+                            </div>
+                        </div>
 
-                            @*Calculation Caterer Div*@
-                            <div class="deal_price" id="Calcdiv_Caterer" style="display:none">
-                                <div class="price_details">
-                                    <dl>
-                                        <dt>Deal Price: </dt>
-                                        <dd>
-                                            <p id="demoCatering" style="color:#8ca436;font-size:20px"></p>
-                                        </dd>
-                                        <dt>Selling Price: </dt>
-                                        <dd>
-                                            <h2>Rs. 1,800</h2>
-                                        </dd>
-                                        <dt>Total Price: </dt>
-                                        <dd>
-                                            <h2>Rs. 2,200</h2>
-                                        </dd>
-                                    </dl>
-                                    <form name="myFormCatering">
-                                        <label>Number of plates<span>*</span></label>
-                                        <input type="text" id="txtquantityCatering" value="10" placeholder="Enter Quantity" onchange="OnchangequantityCatering()" /><br>
-                                        <input type="radio" id="vlCatering" name="platetypeCatering" value="500" checked> Veg Per plate cost 500/-<br>
-                                        <input type="radio" id="nvlCatering" name="platetypeCatering" value="1000"> Non veg Per plate cost 1000/-<br>
-                                    </form>
-                                </div>
-                                <div class="deal_save">
-                                    <p>You Save: <span class="text-red">Rs. 1,800</span></p>
-                                    <h3>30% OFF</h3>
-                                </div>
+                        @*Calculation Caterer Div*@
+                        <div class="deal_price" id="Calcdiv_Caterer" style="display:none">
+                            <div class="price_details">
+                                <dl>
+                                    <dt>Deal Price: </dt>
+                                    <dd>
+                                        <p id="demoCatering" style="color:#8ca436;font-size:20px"></p>
+                                    </dd>
+                                    <dt>Selling Price: </dt>
+                                    <dd>
+                                        <h2>Rs. 1,800</h2>
+                                    </dd>
+                                    <dt>Total Price: </dt>
+                                    <dd>
+                                        <h2>Rs. 2,200</h2>
+                                    </dd>
+                                </dl>
+                                <form name="myFormCatering">
+                                    <label>Number of plates<span>*</span></label>
+                                    <input type="text" id="txtquantityCatering" value="10" placeholder="Enter Quantity" onchange="OnchangequantityCatering()" /><br>
+                                    <input type="radio" id="vlCatering" name="platetypeCatering" value="500" checked> Veg Per plate cost 500/-<br>
+                                    <input type="radio" id="nvlCatering" name="platetypeCatering" value="1000"> Non veg Per plate cost 1000/-<br>
+                                </form>
                             </div>
+                            <div class="deal_save">
+                                <p>You Save: <span class="text-red">Rs. 1,800</span></p>
+                                <h3>30% OFF</h3>
+                            </div>
+                        </div>
 
-                            @*Calculation Gift Div*@
-                            <div class="deal_price" id="Calcdiv_Gift" style="display:none">
-                                <div class="price_details">
-                                    <dl>
-                                        <dt>Deal Price: </dt>
-                                        <dd>
-                                            <p id="demoGift" style="color:#8ca436;font-size:20px"></p>
-                                        </dd>
-                                        <dt>Selling Price: </dt>
-                                        <dd>
-                                            <h2>Rs. 1,800</h2>
-                                        </dd>
-                                        <dt>Total Price: </dt>
-                                        <dd>
-                                            <h2>Rs. 2,200</h2>
-                                        </dd>
-                                    </dl>
-                                    <form name="myFormGift">
-                                        <label>Number of gifts<span>*</span></label>
-                                        <input type="text" id="txtquantityGift" value="10" placeholder="Enter Quantity" onchange="OnchangequantityGift()" /><br>
-                                        <input type="radio" id="vlGift" name="platetypeGift" value="500" checked> Gift cost 500/-<br>
-                                    </form>
-                                </div>
-                                <div class="deal_save">
-                                    <p>You Save: <span class="text-red">Rs. 1,800</span></p>
-                                    <h3>30% OFF</h3>
-                                </div>
+                        @*Calculation Gift Div*@
+                        <div class="deal_price" id="Calcdiv_Gift" style="display:none">
+                            <div class="price_details">
+                                <dl>
+                                    <dt>Deal Price: </dt>
+                                    <dd>
+                                        <p id="demoGift" style="color:#8ca436;font-size:20px"></p>
+                                    </dd>
+                                    <dt>Selling Price: </dt>
+                                    <dd>
+                                        <h2>Rs. 1,800</h2>
+                                    </dd>
+                                    <dt>Total Price: </dt>
+                                    <dd>
+                                        <h2>Rs. 2,200</h2>
+                                    </dd>
+                                </dl>
+                                <form name="myFormGift">
+                                    <label>Number of gifts<span>*</span></label>
+                                    <input type="text" id="txtquantityGift" value="10" placeholder="Enter Quantity" onchange="OnchangequantityGift()" /><br>
+                                    <input type="radio" id="vlGift" name="platetypeGift" value="500" checked> Gift cost 500/-<br>
+                                </form>
                             </div>
+                            <div class="deal_save">
+                                <p>You Save: <span class="text-red">Rs. 1,800</span></p>
+                                <h3>30% OFF</h3>
+                            </div>
+                        </div>
 
-                            @*Calculation invitation Div*@
-                            <div class="deal_price" id="Calcdiv_invitation" style="display:none">
-                                <div class="price_details">
-                                    <dl>
-                                        <dt>Deal Price: </dt>
-                                        <dd>
-                                            <p id="demoinvitation" style="color:#8ca436;font-size:20px"></p>
-                                        </dd>
-                                        <dt>Selling Price: </dt>
-                                        <dd>
-                                            <h2>Rs. 1,800</h2>
-                                        </dd>
-                                        <dt>Total Price: </dt>
-                                        <dd>
-                                            <h2>Rs. 2,200</h2>
-                                        </dd>
-                                    </dl>
-                                    <form name="myForminvitation">
-                                        <label>Number of cards<span>*</span></label>
-                                        <input type="text" id="txtquantityinvitation" value="10" placeholder="Enter Quantity" onchange="Onchangequantityinvitation()" /><br>
-                                        <input type="radio" id="vlinvitation" name="platetypeinvitation" value="500" checked> Card cost 500/-<br>
-                                        <input type="radio" id="nvlinvitation" name="platetypeinvitation" value="1000"> Carrd cost with print 1000/-<br>
-                                    </form>
-                                </div>
-                                <div class="deal_save">
-                                    <p>You Save: <span class="text-red">Rs. 1,800</span></p>
-                                    <h3>30% OFF</h3>
-                                </div>
+                        @*Calculation invitation Div*@
+                        <div class="deal_price" id="Calcdiv_invitation" style="display:none">
+                            <div class="price_details">
+                                <dl>
+                                    <dt>Deal Price: </dt>
+                                    <dd>
+                                        <p id="demoinvitation" style="color:#8ca436;font-size:20px"></p>
+                                    </dd>
+                                    <dt>Selling Price: </dt>
+                                    <dd>
+                                        <h2>Rs. 1,800</h2>
+                                    </dd>
+                                    <dt>Total Price: </dt>
+                                    <dd>
+                                        <h2>Rs. 2,200</h2>
+                                    </dd>
+                                </dl>
+                                <form name="myForminvitation">
+                                    <label>Number of cards<span>*</span></label>
+                                    <input type="text" id="txtquantityinvitation" value="10" placeholder="Enter Quantity" onchange="Onchangequantityinvitation()" /><br>
+                                    <input type="radio" id="vlinvitation" name="platetypeinvitation" value="500" checked> Card cost 500/-<br>
+                                    <input type="radio" id="nvlinvitation" name="platetypeinvitation" value="1000"> Carrd cost with print 1000/-<br>
+                                </form>
                             </div>
+                            <div class="deal_save">
+                                <p>You Save: <span class="text-red">Rs. 1,800</span></p>
+                                <h3>30% OFF</h3>
+                            </div>
+                        </div>
 
-                            @*Calculation General Div*@
-                            <div class="deal_price" id="Calcdiv_General" style="display:none">
-                                <div class="price_details">
-                                    <dl>
-                                        <dt>(General)Deal Price: </dt>
-                                        <dd>
-                                            <p id="demoGeneral" style="color:#8ca436;font-size:20px">Rs. @Model.Item1.cost</p>
-                                        </dd>
-                                        <dt>Selling Price: </dt>
-                                        <dd>
-                                            <h2>Rs. 1,800</h2>
-                                        </dd>
-                                        <dt>Total Price: </dt>
-                                        <dd>
-                                            <h2>Rs. 2,200</h2>
-                                        </dd>
-                                    </dl>
-                                    <form name="myFormGeneral">
-                                        <label>Number of items<span>*</span></label>
-                                        <input type="hidden" id="hmin" name="Minvalue" value="10">
-                                        <input type="hidden" id="hmax" name="Maxvalue" value="50">
-                                        <input type="text" id="txtquantityGeneral" value="10" placeholder="Enter Quantity" onchange="OnchangequantityGeneral()" /><br>
-                                        <input type="radio" id="vlGeneral" name="platetypeGeneral" value="500" checked> item cost 500/-<br>
-                                    </form>
-                                </div>
-                                <div class="deal_save">
-                                    <p>You Save: <span class="text-red">Rs. 1,800</span></p>
-                                    <h3>30% OFF</h3>
-                                </div>
+                        @*Calculation General Div*@
+                        <div class="deal_price" id="Calcdiv_General" style="display:none">
+                            <div class="price_details">
+                                <dl>
+                                    <dt>(General)Deal Price: </dt>
+                                    <dd>
+                                        <p id="demoGeneral" style="color:#8ca436;font-size:20px">Rs. @Model.Item1.cost</p>
+                                    </dd>
+                                    <dt>Selling Price: </dt>
+                                    <dd>
+                                        <h2>Rs. 1,800</h2>
+                                    </dd>
+                                    <dt>Total Price: </dt>
+                                    <dd>
+                                        <h2>Rs. 2,200</h2>
+                                    </dd>
+                                </dl>
+                                <form name="myFormGeneral">
+                                    <label>Number of items<span>*</span></label>
+                                    <input type="hidden" id="hmin" name="Minvalue" value="10">
+                                    <input type="hidden" id="hmax" name="Maxvalue" value="50">
+                                    <input type="text" id="txtquantityGeneral" value="10" placeholder="Enter Quantity" onchange="OnchangequantityGeneral()" /><br>
+                                    <input type="radio" id="vlGeneral" name="platetypeGeneral" value="500" checked> item cost 500/-<br>
+                                </form>
                             </div>
+                            <div class="deal_save">
+                                <p>You Save: <span class="text-red">Rs. 1,800</span></p>
+                                <h3>30% OFF</h3>
+                            </div>
+                        </div>
 
-                            <input type="hidden" id="stype" name="Minvalue" value=@ViewBag.servicetype>
-                            <div class="deal_buttons">
-                                <a href="~/Product/Index" class="btn btn-big btn-orange" id="lnkaddtocart">Add To Cart </a>
-                                <a href="~/CartView/Index" class="btn btn-big btn-green" id="lnkproceedtonext">Buy Now </a>
-                            </div>
+                        <input type="hidden" id="stype" name="Minvalue" value=@ViewBag.servicetype>
+                        <div class="deal_buttons">
+                            <a href="~/Product/Index" class="btn btn-big btn-orange" id="lnkaddtocart">Add To Cart </a>
+                            @*<a href="#quatation" class="btn btn-big btn-red popup-with-move-anim"><i class="ti-money"></i> Book Now</a>*@
+                            <a href="#quatation" class="btn btn-big btn-green popup-with-move-anim"><i class="ti-money"></i> Buy Now </a>
+                            @*<a href="~/CartView/Index" class="btn btn-big btn-green" id="lnkproceedtonext">Buy Now </a>*@
+                        </div>
                     </div>
                     <div class="clear"></div>
                     <div class="deal_amenties">
@@ -457,6 +459,127 @@
             <div class="clear"></div>
         </div>
     </div>
+
+    <!-- popup -->
+    <div id="quatation" class="zoom-anim-dialog mfp-hide large-dialog">
+        <div class="popup-box pop-content">
+            <div class="popup-head">
+                <h3>Book Now</h3>
+            </div>
+            <!-- /popup-head -->
+            <div class="popup-space popup-desc-space">
+                <div class="dashboardList">
+                    <form id="contact_form" class="form">
+                        <ul>
+                            <li>
+                                <label>Event Name</label>
+                                <input type="text" id="Ename" name="Eventname" placeholder="Event Name">
+                            </li>
+                            @*<li>
+                                    <label>Last Name</label>
+                                    <input type="text" id="lname" name="lastname" placeholder="last Name">
+                                </li>*@
+                            <li>
+                                <label>Email ID</label>
+                                <input type="text" id="Eemail" name="email" placeholder="Email">
+                            </li>
+                        </ul>
+                        @*<ul>
+
+                                <li>
+                                    <label>Gender</label>
+                                    <select name="select_option" id="select_option">
+                                        <option value="">---Select---</option>
+                                        <option value="1">Male</option>
+                                        <option value="2">Female</option>
+                                    </select>
+                                </li>
+                            </ul>*@
+                        <ul>
+                            <li>
+                                <label>Mobile Number</label>
+                                <input type="text" id="Emobile" name="mobile" placeholder="Mobile Number">
+                            </li>
+                            @*<li>
+                                    <label>Alternative Mobile Number</label>
+                                    <input type="text" id="mobile2" name="mobile2" placeholder="Alternative Mobile Number">
+                                </li>*@
+                            <li>
+                                <label>Street1</label>
+                                <input type="text" id="Estreet1" name="street2" placeholder="Street Name">
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <label>Street2</label>
+                                <input type="text" id="Estreet2" name="street2" placeholder="Street Name">
+                            </li>
+                            <li>
+                                <label>City</label>
+                                <input type="text" id="ECity" name="City" placeholder="City">
+                            </li>
+                        </ul>
+                        <ul>
+                            @*<li>
+                                    <label>Country</label>
+                                    <select name="select_option" id="select_option">
+                                        <option value="">---Select---</option>
+                                        <option value="1">India</option>
+                                        <option value="2">USA</option>
+                                    </select>
+                                </li>*@
+                            <li>
+                                <label>PostalCode</label>
+                                <input type="text" id="EPostalCode" name="PostalCode" placeholder="PostalCode">
+                            </li>
+                            <li>
+                                <label>State</label>
+                                <select name="select_option" id="select_option">
+                                    <option value="">---Select---</option>
+                                    <option value="1">Andhrapradesh</option>
+                                    <option value="2">Telangana</option>
+                                </select>
+                            </li>
+                        </ul>
+
+                        <ul class="subinputs2">
+                            <li>
+                                <div class="event-date">
+                                    <label>Event Start Date <span>*</span></label>
+                                    <input type="text" name="Email" placeholder="DD/MM/YYYY" id="datetimepicker1">
+                                </div>
+                                <div class="event-date">
+                                    <label>Event Start Time <span>*</span></label>
+                                    <input type="text" name="Email" placeholder="HH:MM" id="datetimepicker3">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="event-date">
+                                    <label>Event End Date <span>*</span></label>
+                                    <input type="text" name="Email" placeholder="DD/MM/YYYY" id="datetimepicker2">
+                                </div>
+                                <div class="event-date">
+                                    <label>Event End Time <span>*</span></label>
+                                    <input type="text" name="Email" placeholder="HH:MM" id="datetimepicker4">
+                                </div>
+                            </li>
+                        </ul>
+                        @*<a href="#" class="add_field_button2">Add More</a>*@
+                        <ul>
+                            <li>&nbsp;</li>
+                            <li>
+                                <button type="button" name="submit" class="btn btn-big btn-green float-right" value="submit" id="lnkproceedtonext">Submit <i class="ti-angle-double-right"></i></button>
+                            </li>
+                        </ul>
+                    </form>
+                    <div class="clear"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end popup -->
+
 </section>
 <div class="clear"></div>
 @section scripts
@@ -661,6 +784,8 @@
                 document.getElementById("demoother").innerHTML = document.getElementById("vlother").value * a;
             }
         }
+
+
         $('#lnkproceedtonext').on('click', function (e) {
             //var minvalue1 = document.getElementById("hmin").value;
             //var maxvalue1 = document.getElementById("hmax").value;
@@ -673,11 +798,38 @@
             var a = document.getElementById("Service").value;
             var b = document.getElementById("Review").value;
             var c = document.getElementById("demovenue").innerHTML;
+
+            //Pop-up Values
+            var Ename = document.getElementById("Ename").value;
+            var Eemail = document.getElementById("Eemail").value;
+            var Emobile = document.getElementById("Emobile").value;
+            var EStreet1 = document.getElementById("Estreet1").value;
+            var EStreet2 = document.getElementById("Estreet2").value;
+            var Ecity = document.getElementById("ECity").value;
+            var EPostalCode = document.getElementById("EPostalCode").value;
+            var EState = document.getElementById("select_option").value;
+            var EstartDate = document.getElementById("datetimepicker1").value;
+            var EstartTime = document.getElementById("datetimepicker3").value;
+            var EendDate = document.getElementById("datetimepicker2").value;
+            var Eendtime = document.getElementById("datetimepicker4").value;
+            //End of pop-Up values
             //alert(c);
             var obj = {};
             obj.VID = b;
             obj.servicetype = a;
             obj.amount = c;
+            obj.Ename = Ename;
+            obj.Eemail = Eemail;
+            obj.Emobile = Emobile;
+            obj.EStreet1 = EStreet1;
+            obj.EStreet2 = EStreet2;
+            obj.Ecity = Ecity;
+            obj.EPostalCode = EPostalCode;
+            obj.EState = EState;
+            obj.EstartDate = EstartDate;
+            obj.EstartTime = EstartTime;
+            obj.EendDate = EendDate;
+            obj.Eendtime = Eendtime;
             $.ajax({
                 type: "POST",
                 url: window.location.href.split("/")[0] + '//' + window.location.href.split("/")[2] + '/ProductInfo/Addtocart',
@@ -687,16 +839,22 @@
                 dataType: "json",
                 success: function (data) {
                     //window.location.href = '/CartView/Details/' + id;
-                    window.location.href = '/CartView';
+                    if (data == "Success") {
+                        window.location.href = '/CartView';
+                    }
+                    else if (data == "NotLogin") {
+                        //window.location.href = '/Signin';
+                    }
                     //alert('success')
                 },
                 error: function (data) {
+
                     alert('error')
                 }
             });
             return false;
         });
-        
+
         $('#lnkaddtocart').on('click', function (e) {
             //var minvalue1 = document.getElementById("hmin").value;
             //var maxvalue1 = document.getElementById("hmax").value;
@@ -722,8 +880,12 @@
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (data) {
-                    //window.location.href = '/ProductInfo/' + id;
-                    location.reload();
+                    if (data == "Success") {
+                        location.reload();
+                    }
+                    else if (data == "NotLogin") {
+                        window.location.href = '/Signin';
+                    }
                     //alert('Added to cart')
                 },
                 error: function (data) {
