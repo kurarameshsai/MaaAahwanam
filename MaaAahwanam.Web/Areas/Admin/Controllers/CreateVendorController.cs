@@ -62,7 +62,6 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             }
             return View();
         }
-
         [HttpPost]
         public ActionResult BeautyServices([Bind(Prefix = "Item2")] VendorsBeautyService vendorsBeautyService, [Bind(Prefix = "Item1")] Vendormaster vendorMaster, HttpPostedFileBase file, string Command, string id)
         {
@@ -197,7 +196,6 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             }
             return View();
         }
-
         [HttpPost]
         public ActionResult Catering([Bind(Prefix = "Item2")] VendorsCatering vendorsCatering, [Bind(Prefix = "Item1")] Vendormaster vendorMaster, HttpPostedFileBase file,string Command, string id)
         {
@@ -332,7 +330,6 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             }
             return View();
         }
-
         [HttpPost]
         public ActionResult Decorator([Bind(Prefix = "Item2")] VendorsDecorator vendorsDecorator, [Bind(Prefix = "Item1")] Vendormaster vendorMaster, HttpPostedFileBase file, string Command, string id)
         {
@@ -429,7 +426,6 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
 
             return View();
         }
-
         public ActionResult Entertainment(string id, [Bind(Prefix = "Item2")] VendorsEntertainment vendorsEntertainment, [Bind(Prefix = "Item1")] Vendormaster vendorMaster, string src, string op)
         {
             VendorEntertainmentService vendorEntertainmentService = new VendorEntertainmentService();
@@ -470,7 +466,6 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             }
             return View();
         }
-
         [HttpPost]
         public ActionResult Entertainment([Bind(Prefix = "Item2")] VendorsEntertainment vendorsEntertainment, [Bind(Prefix = "Item1")] Vendormaster vendorMaster, HttpPostedFileBase file, string Command, string id)
         {
@@ -1677,7 +1672,6 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
             }
             return View();
         }
-
         public JsonResult checkemail(string emailid)
         {
             int query = vendorMasterService.checkemail(emailid);

@@ -17,7 +17,7 @@ namespace MaaAahwanam.Web.Areas.Admin.Controllers
 {
     public class DashBoardController : Controller
     {
-        DashboardService dashboardService = new DashboardService();
+        AdminDashboardService dashboardService = new AdminDashboardService();
         OrderService orderService = new OrderService();
         OthersService othersService = new OthersService();
         public ActionResult dashboard(string id)

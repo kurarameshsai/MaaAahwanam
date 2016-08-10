@@ -8,9 +8,9 @@ using MaaAahwanam.Models;
 
 namespace MaaAahwanam.Service
 {
-    public class DashboardService
+    public class AdminDashboardService
     {
-        DashboardRepository dashboardRepository = new DashboardRepository();
+        AdminDashboardRepository dashboardRepository = new AdminDashboardRepository();
 
         public int VendorsCountService()
         {
