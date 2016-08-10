@@ -66,7 +66,8 @@
     <Compile Include="db\AdminTestimonialPathRepository.cs" />
     <Compile Include="db\ApiContext.cs" />
     <Compile Include="db\AvailabledatesRepository.cs" />
-    <Compile Include="db\DashboardRepository.cs" />
+    <Compile Include="db\AdminDashboardRepository.cs" />
+    <Compile Include="db\DashBoardRepository.cs" />
     <Compile Include="db\EnquiryRepository.cs" />
     <Compile Include="db\OrderRepository.cs" />
     <Compile Include="db\OthersRepository.cs" />
